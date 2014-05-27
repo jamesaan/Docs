@@ -1,0 +1,251 @@
+\documentclass[12pt]{article}
+\usepackage[top = 3cm,bottom=3cm,left=2cm,right=2cm]{geometry}        
+\geometry{letterpaper}
+\usepackage[parfill]{parskip}  
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usetikzlibrary{decorations.markings,arrows}
+\usepackage{bm}
+ 
+ \begin{document}  
+ 
+\baselineskip 2.7ex
+\parskip 3.5ex
+
+\pagestyle{myheadings}
+\markright{James Antonaglia \hfill Phonon Libron Spectra \hfill}
+
+
+%Equations/Entries
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\bequo}{\begin{quotation}}
+\newcommand{\beqa}{\begin{eqnarray}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\leeq}[1]{\label{#1}\end{equation}}
+\newcommand{\equo}{\end{quotation}}
+\newcommand{\eeqa}{\end{eqnarray}}
+\newcommand{\non}{\nonumber}
+\newcommand{\mx}{\mbox}
+\newcommand{\mxf}[1]{\mbox{\footnotesize{#1}}}
+\newcommand{\lb}{\label}
+\newcommand{\fr}[1]{(\ref{#1})}
+\newtheorem{entry}{}[section]
+\newcommand{\bent}[1]{\vspace*{-2cm}\hspace*{-1cm}\begin{entry}\lb{e{#1}}\rm}
+\newcommand{\eent}{\end{entry}}
+\newcommand{\fre}[1]{{\bf\ref{e{#1}}}}
+\newcommand{\Emark}{$\sqcap\hspace{-2.7mm}\sqcup$}
+\newcommand{\sEmark}{{\fns $\sqcap\hspace{-2.3mm}\sqcup$}}
+\newcommand{\fn}{\footnote}
+
+
+%Greek Letters
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\newcommand{\g}{\gamma}
+\newcommand{\G}{\Gamma}
+\renewcommand{\d}{\delta}
+\renewcommand{\th}{\theta}
+\renewcommand{\k}{\kappa}
+\newcommand{\Th}{\Theta}
+\newcommand{\D}{\Delta}
+\newcommand{\e}{\epsilon}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\s}{\sigma}
+\renewcommand{\S}{\Sigma}
+\newcommand{\w}{\omega}
+\newcommand{\W}{\Omega}
+\newcommand{\al}{\alpha}
+\newcommand{\bet}{\beta}
+\newcommand{\gam}{\gamma}
+\newcommand{\lam}{\lambda}
+\newcommand{\Lam}{\Lambda}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ichi}\sichi
+\renewcommand{\ni}{\sni}
+\renewcommand{\r}{\rho}
+\renewcommand{\t}{\tau}
+\newcommand{\ph}{\varphi}
+\newcommand{\sichi}{{\mbox{{\footnotesize I}}}}
+\newcommand{\sni}{{\mbox{{\footnotesize II}}}}
+
+%color2010/6/9
+\newcommand{\red}{\color{red}}
+\newcommand{\blue}{\color{blue}}
+\newcommand{\green}{\color{green}}
+\definecolor{gray}{rgb}{0.5, 0.5, 0.5}
+\newcommand{\gray}{\color{gray}}
+
+%Derivatives
+\newcommand{\pder}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\pdert}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\fder}[2]{\frac{\delta {#1}}{\delta {#2}}}
+\newcommand{\PDD}[3]{\left.\frac{\partial^{2}{#1}}{\partial{#2}^{2}}\right|_{#3}
+}
+\newcommand{\PD}[3]{\left.\frac{\partial{#1}}{\partial{#2}}\right|_{#3}}
+\newcommand{\der}[2]{\frac{d {#1}}{d {#2}}}
+\newcommand{\pdder}[3]{\frac{\del^2 {#1}}{\del {#2} \del {#3}}}
+
+
+\renewcommand{\deg}{^\circ}
+\newcommand{\com}{{\bf [C] }}
+\newcommand{\cend}{\Emark\[\]\vspace*{-1. cm}}
+\newcommand{\x}{\times}
+
+%My commands
+\newcommand{\win}{\ddot\smile}
+\newcommand{\lose}{\ddot\frown}
+\newcommand{\avg}[1]{\left \langle #1 \right \rangle}
+\newcommand{\E}[1]{\ensuremath{\times10^{#1}}}
+\newcommand{\abs}[1]{\ensuremath{\left | #1 \right |}}
+\newcommand{\paren}[1]{\left(#1\right)}
+\newcommand{\recip}[1]{\frac{1}{#1}}
+\newcommand{\ex}[1]{\mathbb{E}[#1]}
+\newcommand{\bprob}[1]{\textbf{#1~---}}
+\newcommand{\unitv}[1]{\ensuremath{\mathbf{\hat{e}}_{#1}}}
+\newcommand{\goto}{\rightarrow}
+\newcommand{\expct}[1]{\mathbb{E}[#1]}
+\newcommand{\mtrx}[1]{\begin{matrix}#1\end{matrix}}
+\newcommand{\pmtrx}[1]{\paren{\begin{matrix}#1\end{matrix}}}
+\newcommand{\cosp}[1]{\cos{\paren{#1}}}
+\newcommand{\sinp}[1]{\sin{\paren{#1}}}
+\newcommand{\tanp}[1]{\tan{\paren{#1}}}
+\newcommand{\half}[1]{\frac{#1}{2}}
+\newcommand{\ham}{\mathcal{H}}
+\newcommand{\tr}{\mathrm{Tr}}
+\newcommand{\bv}[1]{\mathbf{#1}}
+\newcommand{\Der}[2]{\frac{d#1}{d#2}}
+\renewcommand{\Dot}[2]{\ensuremath{\bv{#1}\cdot\bv{#2}}}
+\newcommand{\Cross}[2]{\ensuremath{\bv{#1}\times\bv{#2}}}
+\newcommand{\del}{\ensuremath{\partial}}
+\newcommand{\R}{\ensuremath{\bv{r-r'}}}
+\newcommand{\aR}{\ensuremath{\abs{\R}}}
+\newcommand{\br}{\ensuremath{\bv{r}}}
+\newcommand{\impl}{\ensuremath{\quad \Rightarrow \quad}}
+\renewcommand{\div}[1]{\nabla \cdot \bv{#1}}
+\newcommand{\curl}[1]{\nabla \times \bv{#1}}
+\newcommand{\lapl}{\nabla^2}
+\newcommand{\vint}{\int d^3r}
+\newcommand{\oocs}{\recip{c^2}}
+\newcommand{\mnfp}[1]{\frac{\mu_0 #1}{4\pi}}
+\renewcommand{\iiint}{\int_{-\infty}^{\infty}}
+\newcommand{\tpi}[1]{\paren{2\pi}^{#1}}
+\newcommand{\ootpi}[1]{\recip{\paren{2\pi}^{#1}}}
+
+%%%%%%%%
+
+\section{Coupled Lattice Fields}
+I'm going to write a simple toy model to illustrate the approach to solving a system of equations to find the dispersion relation for some coupled fields on our lattice.
+\subsection{1D Chain}
+Let's start simple, with a one dimensional chain with some harmonic coupling between some arbitrary fields $a_i$ and $b_i$ that are defined on our one dimensional lattice of lattice spacing $\ell$. The potential energy will be
+\[ V = \sum_i \half{1}A (a_i-a_{i+1})^2 + \half{1} B(b_i - b_{i+1})^2 + C(a_i-a_{i+1})(b_i - b_{i+1}) + \half{1} M a_i^2.\]
+The first two terms are the coupling between nearest neighboring lattice sites, the third term couples the $a$ fields to the $b$ fields, and the last term we'll see is what will give the $a$ modes a mass, \emph{i.e.} their frequencies don't go to zero at zero wavelength. Let's give the $a$ particles a mass $m$ and the $b$ particles a mass $\mu$. So the Lagrangian looks like
+\[ \mathcal{L} = \sum_i \half{1}m \dot{a}_i^2 + \half{1}\mu \dot{b}_i^2 - V.\]
+Newton's equations then read:
+\[ m\ddot{a}_i = -2Aa_i + Aa_{i+1} +Aa_{i-1} - 2Cb_i +Cb_{i+1} + Cb_{i-1} - Ma_i.\]
+\[ m\ddot{b}_i = -2Ca_i + Ca_{i+1} +Ca_{i-1} - 2Bb_i +Bb_{i+1} + Bb_{i-1}.\]
+Now we go to Fourier space to turn this difference equation into an algebraic equation. The transformation is:
+\[ a_j = \sum_j \tilde{a}(k) e^{-i k(j\ell)},\qquad b_j = \sum_j \tilde{b}(k) e^{-ik(j\ell)}.\]
+We put in these transforms in the above difference equations and exploit the orthonormality of the exponential to get equality term by term:
+\[ m\ddot{\tilde{a}} = -2A\tilde{a} + A\tilde{a}e^{-ik\ell} + A\tilde{a}e^{ik\ell} - 2C \tilde{b} + C \tilde b e^{-ik\ell} + C\tilde b e^{i k \ell} - M\tilde a.\]
+\[ \mu\ddot{\tilde{b}} = -2C\tilde{a} + C\tilde{a}e^{-ik\ell} + C\tilde{a}e^{ik\ell} - 2B \tilde{b} + B \tilde b e^{-ik\ell} + B\tilde b e^{i k \ell}.\]
+We then look for time-harmonic solutions such that $\der{^2}{t^2}\goto -\w^2$, and we finally have a matrix equation, setting $\sinp{k\ell/2} = \g$:
+\[ \pmtrx{m\w^2 - 4\g^2 A - M & -4\g^2 C \\ - 4\g^2 C & \mu \w^2 - 4\g^2 B} \pmtrx{\tilde a \\ \tilde b} = 0.\]
+Now if we wanted to, we could put this in Mathematica and get the eigenmodes and corresponding dispersion relations. But let's just set $k=0$ so $\gamma = 0$:
+\[ \pmtrx{m\w^2 - M & 0 \\ 0 & \mu \w^2}\pmtrx{\tilde a \\ \tilde b} = 0.\]
+The solution to this eigenvalue problem is $\w^2 = 0$ and $\w^2 = M/m$. The first case has eigenvector $\tilde a = 0$ and $\tilde b = b_0$, so this is a wave with zero frequency and zero wavelength with arbitrary amplitude, which corresponds to a global constant shift of the $b$ field. This doesn't couple to the $a$ field. However, for the other eigenvalue, $\w = \sqrt{M/m}$ is a finite frequency with $k=0$ and $\tilde a = a_0$ and $\tilde b = 0$. This is a global and spatially homogenous oscillation of the $a$ field.
+
+\subsection{$d=n$ Spring Field}
+Now let's consider two coupled fields in $n$ dimensions situated on a lattice. Suppose that we don't need a basis to characterize our unit cell (if we did, we'd expect some optical modes), and let the nearest neighbors of a lattice site be given by the set of vectors $\{\bv c\}$. For this situation, we must sum up the potential energies of all the bonds and be careful not to double count, so we should include appropriate $1/2$'s. So if we focus on a lattice site at position $\br$, then the potential energy is:
+\[ V = \sum_\br \half{1}\paren{\sum_{\bv c}\recip{2}A(a_\br - a_{\br + \bv c})^2 + \recip{2}B(b_\br - b_{\br + \bv c})^2 + C(a_\br - a_{\br+\bv c})(b_\br - b_{\br+\bv c})} + \half{1}Ma_\br^2.\]
+So we once again prescribe some kinetic energy:
+\[ \mathcal{L} = \sum_\br \half{1}m \dot{a}_\br^2 + \half{1}\mu \dot{b}_\br^2 - V.\]
+\[ m\ddot{a}_\br = -Ma_\br -\recip{2} \sum_{\bv c} A\paren{2 a_\br - a_{\br + \bv c} - a_{\br - \bv c}}-\recip{2}\sum_{\bv c} C\paren{2 b_\br - b_{\br + \bv c} - b_{\br - \bv c}}.\]
+\[ \mu\ddot{b}_\br = -\recip{2} \sum_{\bv c} C\paren{2 a_\br - a_{\br + \bv c} - a_{\br - \bv c}}-\recip{2}\sum_{\bv c} B\paren{2 b_\br - b_{\br + \bv c} - b_{\br - \bv c}}.\]
+From here, we once again go to Fourier space and the story is very similar. We impose time-harmonic solutions and solve another eigenproblem.
+\[ a(\br) = \sum_{\bv k} \tilde{a}_{\bv k} e^{-i \Dot k r},\qquad b(\br) = \sum_{\bv k} \tilde{b}_{\bv k}e^{-i \Dot k r}.\]
+\[ -\w^2 m \tilde a = -M \tilde a - \half{1}\sum_{\bv c}A \paren{2 \tilde a - \tilde a e^{-i\Dot k c} - \tilde a e^{i\Dot k c}} - \half{1}\sum_{\bv c}C \paren{2 \tilde b - \tilde b e^{-i\Dot k c} - \tilde b e^{i\Dot k c}}.\]
+\[ -\w^2 \mu \tilde b =  - \half{1}\sum_{\bv c} C\paren{2 \tilde a - \tilde a e^{-i\Dot k c} - \tilde a e^{i\Dot k c}} - \half{1}\sum_{\bv c} B\paren{2 \tilde b - \tilde b e^{-i\Dot k c} - \tilde b e^{i\Dot k c}}.\]
+\[ -\w^2 m \tilde a = -M \tilde a + 4A\g^2 \tilde a + 4C\g^2 \tilde b.\]
+\[ -\w^2 \mu \tilde a = 4C \g^2 \tilde a + 4B \g^2 \tilde b.\]
+Here, the story is the same as the $d=1$ case, except instead of $\g = \sinp{k\ell/2}$, we have
+\[ \g^2 = \half{1} \sum_{\bv c}\sin^2 \paren{\half{\Dot k c}}.\]
+This is comforting, because if we set $\{\bv c\} = \pm \ell \hat{x}$, then $\g = \sin^2\paren{\half{k\ell}}$. So we're back to the simple 1D case. But here, the factor $\g$ is just characteristic of the lattice. For true crystals, there is a neighbor that lives $+\bv c$ away from the site at $\br$ and also at $-\bv c$ from $\br$, so we can use this symmetry to simplify our expression for $\g$, but really this isn't a difficult thing to compute. So we've come to the regular matrix equation in 1D as the solution in $n$D.
+
+Let's calculate $\g^2$ for a cubic lattice:
+\[ \{\bv c\} = \{\pm \hat x, \pm \hat y,\pm \hat z\} c.\]
+\[ \g^2 = \sin^2\paren{\half{k_xc}} + \sin^2\paren{\half{k_yc}}+\sin^2\paren{\half{k_zc}}.\]
+For small magnitudes of $\bv k$, $\g^2$ is isotropic:
+\[ \g^2(k \ll \pi/c) \approx \frac{k^2c^2}{4}.\]
+And for a triangular lattice:
+\[ \{\bv c\} = \{\pm \hat x,\pm \paren{\half{1}\hat x + \half{\sqrt 3} \hat y},\pm \paren{ \half 1 \hat x - \half{\sqrt 3} \hat y}\}c.\]
+\[ \g^2 = \sin^2\paren{\half{k_x c}} + \sin^2\paren{\frac{k_x c + \sqrt 3 k_y c}{4}} + \sin^2 \paren{\frac{ k_x c - \sqrt 3 k_y c}{4}}.\]
+For $k \ll \pi/c$, we once again see isotropic dispersion:
+\[ \g^2 \approx \frac{c^2}{16}\paren{4k_x^2 + k_x^2 + 2\sqrt 3 k_x k_y + 3 k_y^2 + k_x^2 - 2\sqrt 3 k_x k_y + 3 k_y^2} = \frac{3 c^2 k^2}{8}.\]
+
+\section{Vibrational and Librational Coupling}
+Now we can apply what we derived above to the problem of vibrational and librational coupling. Librations, from Latin \emph{librare}, to sway  or balance (same as \emph{Libra}, by the way), is an oscillatory mode of an anistropic particle. Vibrations are disturbances in the positional ordering of a lattice of particles, and librations are disturbances in the orientational ordering of a lattice of particles. The goal is to characterize the physics of phonons and \emph{librons}, which is the name of the quasiparticle associated with an excitation of the libration field. Aside: evidently, the moon and Earth exhibit mutual librations, which actually allows us to see more than half the face of the moon. Though the moon is tidally locked with the Earth, it exhibits slow swayings back and forth and different parts of the dark side oscillate into view, permitting us to see about 59\% of the moon's surface. 
+
+
+Now, the first step is to assume there is a pair-wise potential between the objects that sit at our crystal lattice sites that is dependent not only on the interparticle distance but the interparticle orientations. By translational invariance of the pair of particles, it must be that the potential only depends on the relative positions, but we don't have any reason to suppose that the potential only depends on the relative orientation. So we write:
+\[ V = V(\bv u_{\br}-\bv u_{\br + \bv c},\th_\br,\th_{\br+\bv c}).\]
+Here, I'm putting us in $d=2$, so that we only need one parameter to describe the orientation of our particles. We would like to explore excitations around the \emph{global} ground state. I'm going to suppose that the particle shapes we have are not so terribly complicated such that the unit cell of the crystal has one particle each, and that we can expand the orientations $\th_\br$ around an equilibrium $\th$ that is the same for all particles. It's probably not difficult to come up with a counter-example to this configuration, and I'm sure what would result is higher-frequency optical librons.
+
+I'm going to reparametrize the potential such that its arguments are a bit more intuitive and coincide more closely with what has been done in the group previously. I'll characterize the orientations with a sum $\th_\br + \th_{\br + \bv c} = \th^+_{\bv c}$ and a difference $\th_\br - \th_{\br - \bv c} = \th^-_{\bv c}$. Simulations have shown that a displacement in $\th^+$ is significantly easier than a displacement in $\th^-$, which will later give us some spring constants that are very disparate in magnitude to do some nice perturbation theory, I'm sure.
+
+Now, a second order expansion of the potential yields:
+\[ V^{(2)} = \recip{4}\sum_{\bv c} x_i \frac{\del^2 V}{\del x_i \del x_j}x_j.\]
+The $\recip{4}$ is the product of one half from the double counting over lattice spacings, and the other half from the Taylor expansion of the potential. Here, I'm using Einstein summation convention, and the entries of $x_i$ are:
+\[ \bv x = \paren{u_{x,\bv r}-u_{x,\bv r + \bv c},u_{y,\bv r} - u_{y,\bv r + \bv c},\th^+_{\br, \bv c},\th^-_{\br,\bv{c}}}.\]
+
+Thus we have
+\[ \frac{\del^2 V}{\del x_i \del x_j} = \pmtrx{\pdert{V}{\D u_x} & \pdder{V}{\D u_x}{\D u_y} & \pdder{V}{\D u_x}{\th^+} & \pdder{V}{\D u_x}{\th^-} \\ \pdder{V}{\D u_y}{\D u_x} & \pdert{V}{\D u_y} & \pdder{V}{\D u_y}{\th^+} & \pdder{V}{\D u_y}{\th^-} \\ \pdder{V}{\th^+}{\D u_x} & \pdder{V}{\th^+}{\D u_y} & \pdert{V}{\th^+} & \pdder{V}{\th^+}{\th^-} \\ \pdder{V}{\th^-}{\D u_x} & \pdder{V}{\th^-}{\D u_y} & \pdder{V}{\th^-}{\th^+} & \pdert{V}{\th^-}}.\]
+We have symmetry in the second derivatives, so that constrains this matrix to be symmetric (is this necessarily so in 3D when rotations don't commute with each other?). So we're already down to ten distinct coupling constants. We can exploit symmetries of the lattice to constrain the elments of this matrix. The potential energy can be written as:
+\[ V^{(2)} = \half{1} x_i M_{ij} x_j,\]
+where $M_{ij}$ is the matrix of derivatives of $V$. If we perform a transformation on $\bv x$ such that $\bv x \goto \bv f(\bv x)$ and the potential energy is invariant under this transformation, then we must have
+\[ x_i M_{ij} x_j = f_i M_{ij} f_j.\]
+Now let's consider rotation by $\pi/2$, that sends
+\[ \D u_x \goto \D u_y,\quad \D u_y \goto -\D u_x,\quad \th^+\goto \th+\pi,\quad \th^-\goto \th^-.\]
+The fourfold degeneracy of ground state guarantees that $\th^+$ and $\th^++\pi$ have the same dynamical properties, so we can take $\th^+$ to be invariant as well. This is equivalent to defining $\th_\br$ up to a mod $\pi/2$. Therefore, the transformation is then linear, and we can write it as:
+\[ x_i M_{ij} x_j = x_i T_{ij}M_{jk}T_{jk}x_k, \quad T = \pmtrx{0 & 1 & 0 & 0 \\ -1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1}.\]
+So I'm going to define $M$ with the following shorthand:
+\[ M = \pmtrx{A & E & F & G \\ E & B & H & I \\ F & H & C & J \\ G & I & J & D}.\]
+So our matrix equation now reads:
+\[ \bv x^T M \bv x = \bv x^T \pmtrx{B & -E & -H & -I \\ -E & A & F & G \\ -H & F & C & J \\ -I & G & J & D}\bv x.\]
+This equation must hold for arbitrary $\bv x$, so if we put in $\bv x = (\D u_x, \D u_y, 0 ,0),$ we find
+\[ E = 0,\quad A = B.\]
+We can set $\bv x = (\D u_x,0,\th^+,0)$ and various other combinations, and it will follow that
+\[ H = -F, \quad G = -I.\]
+So we have six independent elastic coupling constants. There might be further constraints we could use (\emph{i.e.} inversion symmetry) but $\th$ transforms nontrivially under reflections about axes, so I'm not going to worry about that at the moment. As it stands, the elastic matrix is now:
+\[ M = \pmtrx{A & 0 & F & G \\ 0 & A & -F & -G \\ F & -F & C & J \\ G & -G & J & D}.\]
+So now the potential energy of the entire network is:
+\[ V = \recip{4}\sum_\br \sum_{\bv c} x_i M_{ij} x_j.\]
+We can write the kinetic energies:
+\[ T = \sum_\br \half{1}m\paren{\dot u_{x,\br}^2 + \dot u_{y,\br}^2} + \recip{2} I \dot \th_\br^2.\]
+So now we finally have our Lagrangian:
+\begin{multline*}  \mathcal{L} = T - \recip{4}\sum_\br\sum_{\bv c}A(u_{x,\br}-u_{x,\br+\bv c})^2 +A(u_{y,\br}-u_{y,\br+\br c})^2 + C(\th_\br + \th_{\br+\bv c})^2\\ + D(\th_\br - \th_{\br+\bv c})^2 + 2F(\th_\br + \th_{\br + \bv c})(u_{x,\br}-u_{y,\br} - u_{x,\br+\bv c} + u_{y,\br+\bv c})\\ + 2G (\th_\br - \th_{\br+\bv c})(u_{x,\br}-u_{y,\br} - u_{x,\br+\bv c} + u_{y,\br+\bv c}) + 2 J(\th_{\br}^2 - \th_{\br+\bv c}^2). \end{multline*}
+Holy crap this is awful. Well it's not really different from the equations we solved before, so let's write down the equations of motion:
+\[ m \ddot u_{x,\br} = -\half{1}\sum_{\bv c} A(2u_{x,\br} - u_{x,\br+\bv c}-u_{x,\br - \bv c}) + F(\th_{\br+\bv c} - \th_{\br - \bv c}) + G(2\th_{\br} - \th_{\br+\bv c} - \th_{\br -\bv c}).\] 
+\[ m \ddot u_{y,\br} = -\half{1}\sum_{\bv c} A(2u_{y,\br} - u_{y,\br+\bv c}-u_{y,\br - \bv c}) - F(\th_{\br+\bv c} - \th_{\br - \bv c}) - G(2\th_{\br} - \th_{\br+\bv c} - \th_{\br -\bv c}).\]
+\begin{multline*} I \ddot \th_{\br} = -\half{1} \sum_{\bv c} C(2\th_\br + \th_{\br + \bv c} + \th_{\br - \bv c}) + D(2\th_\br - \th_{\br + \bv c} - \th_{\br - \bv c})\\ + F(u_{x,\br - \bv c} - u_{x,\br + \bv c} + u_{y,\br + \bv c} - u_{y, \br - \bv c}) + G(2u_{x,\br} - u_{x,\br+\bv c} - u_{x,\br - \bv c} -2 u_{y,\br} + u_{y,\br+\bv c} + u_{y,\br - \bv c})\\ + 4J\th_\br - 4J\th_\br. \end{multline*}
+Interestingly, the $J$ terms vanish in the equation of motion for the $\th$ fields. We make the usual Fourier transform and get:
+\[ \w^2 m \tilde u_x = \half{1}\sum_{\bv c} \paren{ 4A\tilde u_x \sin^2\paren{\half{\Dot kc}} - 2iF\tilde \th \sinp{\Dot kc} + 4G\tilde \th \sin^2\paren{\half{\Dot kc}}}.\]
+\[ \w^2 m \tilde u_y = \half{1}\sum_{\bv c} \paren{ 4A\tilde u_y \sin^2\paren{\half{\Dot kc}} + 2iF\tilde \th \sinp{\Dot kc} - 4G\tilde \th \sin^2\paren{\half{\Dot kc}}}.\]
+\[ \w^2 I \tilde \th = \half{1}\sum_{\bv c} \paren{ 4 \tilde \th\paren{C \cos^2\paren{\half{\Dot kc}} + D \tilde \th \sin^2\paren{\half{\Dot kc}}} + \paren{-2i F\sinp{\Dot kc} + 4G \sin^2\paren{\half{\Dot kc}}}\paren{\tilde u_x - \tilde u_y} }.\]
+Had I noticed before, I could have eliminated the terms involving the coupling $F$, because the fields that show up with $F$ as a coefficient are odd under the swap $\bv c\goto- \bv c$. Since we are summing over a square lattice, we then have
+\[ \sum_{\bv c} \sinp{\Dot kc} = 0,\quad \half{1}\sum_{\bv c} \cos^2\paren{\half{\Dot kc}} = \cos^2\paren{\half{k_x c}} + \cos^2\paren{\half{k_y c}} = \mu^2.\]
+\[ \half{1}\sum_{\bv c} \sin^2\paren{\half{\Dot kc}} = \g^2.\]
+Finally, we have a matrix equation for the dynamics of the fields:
+\[ \w^2\pmtrx{m & 0 & 0 \\ 0 & m & 0 \\ 0 & 0 & I}\pmtrx{\tilde u_x \\\tilde  u_y \\\tilde \th} = 4\pmtrx{A\g^2 & 0 & G\g^2 \\ 0 & A\g^2 & -G\g^2 \\ G \g^2 & - G\g^2 & C\mu^2 + D\g^2}\pmtrx{\tilde u_x \\ \tilde u_y \\ \tilde \th}.\]
+From here, we could diagonalize this matrix equation and find the eigenmodes in terms of the phonons ($\bv{\tilde u}$) and the librons ($\tilde \th$). But I think it's interesting to take the limit as $k\goto 0$. In this limit, $\g^2\goto 0$ and $\mu^2 \goto 2$. In this limit, the frequency of phonon waves goes to zero, but the frequency of the libration field oscillation is nonzero:
+\[ \w^2 I = 8C.\]
+So we find that the libration field is \emph{massive}. Its mass is proportional to $\sqrt{C}$, and $C$ is the elastic constant
+\[ C = \pdert{V}{\th^+}.\]
+This is the constant that tells us how difficult it is to mutually rotate our squares. Experiment has shown that this elastic constant is far smaller than $D$, the constant associated with rotating our squares antisymmetrically. So in practice, it would probably be difficult to observe this mass. Furthermore, all the off-diagonal elements are proportional to $G$, so if this term is small compared to $A$ and $D$, then we can do perturbation theory and get a more intuitive picture of the coupling between phonons and librons.
+%%%%%%%%%
+\end{document} 

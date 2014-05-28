@@ -246,6 +246,50 @@ From here, we could diagonalize this matrix equation and find the eigenmodes in 
 \[ \w^2 I = 8C.\]
 So we find that the libration field is \emph{massive}. Its mass is proportional to $\sqrt{C}$, and $C$ is the elastic constant
 \[ C = \pdert{V}{\th^+}.\]
-This is the constant that tells us how difficult it is to mutually rotate our squares. Experiment has shown that this elastic constant is far smaller than $D$, the constant associated with rotating our squares antisymmetrically. So in practice, it would probably be difficult to observe this mass. Furthermore, all the off-diagonal elements are proportional to $G$, so if this term is small compared to $A$ and $D$, then we can do perturbation theory and get a more intuitive picture of the coupling between phonons and librons.
+This is the constant that tells us how difficult it is to mutually rotate our squares. Experiment has shown that this elastic constant is far smaller than $D$, the constant associated with rotating our squares antisymmetrically. So in practice, it would probably be difficult to observe this mass. 
+
+
+\section{Harmonic Hamiltonians and Correlation Functions}
+Now we establish some useful results to try to measure the elastic constants defined above in terms of correlation functions in thermodynamics. For this derivation, I will restrict myself to the canonical ensemble. If we are in the $pTN$ ensemble, then I don't think things get much different, but I will point out in the appropriate place in the derivation this difference would need to be accounted for.
+
+Consider the following Hamiltonian:
+\[\mathcal{H} = \half{1} \bv p \cdot \bv M ^{-1} \cdot \bv p + \half{1} \bv x \cdot \bv K \cdot \bv x = \half{1}p_i M^{-1}_{ij} pj + \half{1}x_i K_{ij}x_j.\]
+In our case, we'll take $\bv M^{-1}$ to be diagonal, which it almost always is, and $\bv K$ will be a positive definite symmetric matrix, which it always will be for a system with harmonic inter-particle potentials. That it is positive definite means that the product $\bv x \cdot \bv K \cdot \bv x$ will always be greater than zero except for $\bv x = 0$, which just tells us that we can't reduce the energy of our system to arbitrarily low energies. So let's first integrate out the momentum degrees of freedom in our partition function. Let's call $m_i$ the $i^\mathrm{th}$ eigenvalue of the mass matrix.
+\[ Z = \recip{h^N} \paren{\int \prod_idp_i e^{-\recip{2m_i}\b p_i^2}}\int d\bv x e^{-\recip{2}\b x_iK_{ij}x_j}.\]
+\[ Z = \frac{(2\pi k_BT)^{N/2}}{h^N}\sqrt{\prod_i m_i} \paren{\int d\bv x e^{-\recip{2}\b x_iK_{ij}x_j}}.\]
+\[ Z = \frac{(2\pi k_BT)^{N/2}}{h^N}\sqrt{\det M} \paren{\int d\bv x e^{-\recip{2}\b x_iK_{ij}x_j}} = Z_0(T,\bv M) \int d\bv x e^{-\recip{2}\b x_iK_{ij}x_j}.\]
+To evaluate this Gaussian integral, we diagonalize the matrix $\bv K$ by a unitary transformation into $\bv U^\dagger \bv D \bv U$. We can change variables with impunity, because the transformation is unitary:
+\[ \bv u = \bv U \bv x.\]
+\[ d\bv u = \abs{\pder{\bv u}{\bv x}} d\bv x.\]
+Here, the thing in absolute value bars is the Jacobian matrix of the transformation, which, since the transformation is linear, is simply the matrix $\bv U$ itself. The transformation is unitary so its determinant is 1, and thus $d\bv u = d\bv x$:
+\[ \int d\bv x e^{-\half{1}\b x_i K_{ij} x_j} = \int d\bv u e^{-\half{1}\b u_i D_{ij} u_j} = \prod_i \int du_i e^{-\half{1} \b u_i^2 \lam_i}.\]
+Here, $\lam_i$ is the $i^\mathrm{th}$ eigenvalue of $\bv K$ corresponding to the eigenmode $u_i$. Thus we have
+\[ \int d\bv x e^{-\half{1}\b x_i K_{ij} x_j} = \prod_i \frac{2\pi}{\lam_i} = \frac{\paren{2\pi}^{N/2}}{\sqrt{\det D}} = \frac{\paren{2\pi}^{N/2}}{\sqrt{\det K}}.\]
+It is at \emph{this point} where the ensemble matters. Consider a system of two particles connected by one spring. Their relative positions have an associated potential energy, but their \emph{center of mass position has no energy associated with it}. This is the same as finding that one of the eigenvalues of the $\bv K$ matrix is zero. This isn't a problem, we just have to be careful when doing the Gaussian integral. In this case, we would not integrate over all of space, $-\infty \goto \infty$, but rather we integrate over the volume of the box and we pick up one factor of $V$ which would couple to the external pressure. We can integrate over all of space with the other modes because the exponential factor $e^{-\b k x^2/2}$ dies off sufficiently quickly that we can consider it localized, and we can safely extend the region of integration to all of space.
+
+So now let's look at some correlation functions. We can recast the Hamiltonian in terms of the eigenmodes of the potential, which by their definition are independent degrees of freedom (independent in that their exponential factors in the Boltzmann factor factorize), and so we find:
+\[ \avg{u_i} = \recip{Z} \int du_i \, u_i e^{-\recip 2 \b u_i^2 \lam_i} \prod_{j\neq i} \int du_j \, e^{-\recip{2}\b u_j^2 \lam_i} = 0.\]
+\[ \avg{u_i u_j}_{i\neq j} = \recip{Z} \int du_i \, u_i e^{-\recip 2 \b u_i^2 \lam_i} \int du_j \, u_j e^{-\recip 2 u_j^2 \lam _ j} \prod_{k \neq i,j} du_k e^{-\recip 2 \b u_k^2 \lam_k} = \avg{u_i}\avg{u_j} = 0.\]
+\[ \avg{u_i^2} = \recip{Z} \int du_i \, u_i^2 e^{-\recip 2 \b u_i^2 \lam_i} \prod_{j\neq i} \int du_j \, e^{-\recip{2}\b u_j^2 \lam_i}.\]
+\[ \avg{u_i^2} = -\recip{Z} \pder{Z}{\recip 2 \b \lam_i} = -2k_BT \pder{\log Z}{\lam_i}.\]
+We have the partition function explicitly already,
+\[ \avg{u_i^2} = -2k_BT \pder{}{\lam_i} \paren{ -\recip{2} \log \det \bv D} = \frac{k_BT}{\lam_i}.\]
+So we can summarize:
+\[ \avg{u_iu_j} = \frac{k_BT}{\lam_i}\d_{ij}.\]
+From the first equation regarding $\avg{u_i}$, we have $u_i = U_{ij} x_j$, from which it follows $U^{-1}_{ij} u_j = x_i$ and so
+\[ \avg{x_i} = 0.\]
+We can in addition compute all the correlation functions:
+\[ \avg{x_i x_j} = \avg{U^{-1}_{ik}u_k U^{-1}_{j\ell}u_\ell} = U^\dagger_{ik} U_{\ell j} \paren{\frac{k_BT}{\lam_k}}\d_{k\ell}.\]
+But $\lam_k$ are the elements of the diagonal matrix $D_{k\ell} = \lam_k \d_{k\ell}$, so
+\[ \avg{x_i x_j} = k_BT U^\dagger_{ik} D^{-1}_{k\ell} U_{\ell j}.\]
+\[ \boxed{\avg{x_i x_j} = k_BT K^{-1}_{ij}.}\]
+We could have done this in the $x$ basis without switching to the $u$ basis, but this is much clearer to me.
+
+The power of this formulation is that we now do not need to characterize our lattice in terms of Fourier modes in order to correlate the position and orientation of one particle with the position and orientation of another. However, I would guess that doing a Fourier transform is a computationally easier thing to do than to compute the inverse of a $dN \times dN$ matrix.
+
+Side cautionary note: it's entirely possible that $\bv K$ has no inverse because it has one or more zero eigenvalues. As I alluded to before, the zero-eigenvalue eigenmodes can then explore all of their configuration space and are not constrained by being Gaussian distributed. In this case, we must single out these free modes and find their mean value and variance, then make a new matrix $\bv D'$ excluding these floppy degrees of freedom.
+
+
+
 %%%%%%%%%
 \end{document} 

@@ -19,7 +19,7 @@
 \parskip 3.5ex
 
 \pagestyle{myheadings}
-\markright{James Antonaglia \hfill Phonon Libron Spectra \hfill}
+\markright{James Antonaglia \hfill fuckin partial derivatives, man \hfill}
 
 
 %Equations/Entries
@@ -137,29 +137,19 @@
 
 %%%%%%%%
 
-\section{Coupled Lattice Fields}
-I'm going to write a simple toy model to illustrate the approach to solving a system of equations to find the dispersion relation for some coupled fields on our lattice.
-\subsection{1D Chain}
-Let's start simple, with a one dimensional chain with some harmonic coupling between some arbitrary fields $a_i$ and $b_i$ that are defined on our one dimensional lattice of lattice spacing $\ell$. The potential energy will be
-\[ V = \sum_i \half{1}A (a_i-a_{i+1})^2 + \half{1} B(b_i - b_{i+1})^2 + C(a_i-a_{i+1})(b_i - b_{i+1}) + \half{1} M a_i^2.\]
-The first two terms are the coupling between nearest neighboring lattice sites, the third term couples the $a$ fields to the $b$ fields, and the last term we'll see is what will give the $a$ modes a mass, \emph{i.e.} their frequencies don't go to zero at zero wavelength. Let's give the $a$ particles a mass $m$ and the $b$ particles a mass $\mu$. So the Lagrangian looks like
-\[ \mathcal{L} = \sum_i \half{1}m \dot{a}_i^2 + \half{1}\mu \dot{b}_i^2 - V.\]
-Newton's equations then read:
-\[ m\ddot{a}_i = -2Aa_i + Aa_{i+1} +Aa_{i-1} - 2Cb_i +Cb_{i+1} + Cb_{i-1} - Ma_i.\]
-\[ m\ddot{b}_i = -2Ca_i + Ca_{i+1} +Ca_{i-1} - 2Bb_i +Bb_{i+1} + Bb_{i-1}.\]
-Now we go to Fourier space to turn this difference equation into an algebraic equation. The transformation is:
-\[ a_j = \sum_j \tilde{a}(k) e^{-i k(j\ell)},\qquad b_j = \sum_j \tilde{b}(k) e^{-ik(j\ell)}.\]
-We put in these transforms in the above difference equations and exploit the orthonormality of the exponential to get equality term by term:
-\[ m\ddot{\tilde{a}} = -2A\tilde{a} + A\tilde{a}e^{-ik\ell} + A\tilde{a}e^{ik\ell} - 2C \tilde{b} + C \tilde b e^{-ik\ell} + C\tilde b e^{i k \ell} - M\tilde a.\]
-\[ \mu\ddot{\tilde{b}} = -2C\tilde{a} + C\tilde{a}e^{-ik\ell} + C\tilde{a}e^{ik\ell} - 2B \tilde{b} + B \tilde b e^{-ik\ell} + B\tilde b e^{i k \ell}.\]
-We then look for time-harmonic solutions such that $\der{^2}{t^2}\goto -\w^2$, and we finally have a matrix equation, setting $\sinp{k\ell/2} = \g$:
-\[ \pmtrx{m\w^2 - 4\g^2 A - M & -4\g^2 C \\ - 4\g^2 C & \mu \w^2 - 4\g^2 B} \pmtrx{\tilde a \\ \tilde b} = 0.\]
-Now if we wanted to, we could put this in Mathematica and get the eigenmodes and corresponding dispersion relations. But let's just set $k=0$ so $\gamma = 0$:
-\[ \pmtrx{m\w^2 - M & 0 \\ 0 & \mu \w^2}\pmtrx{\tilde a \\ \tilde b} = 0.\]
-The solution to this eigenvalue problem is $\w^2 = 0$ and $\w^2 = M/m$. The first case has eigenvector $\tilde a = 0$ and $\tilde b = b_0$, so this is a wave with zero frequency and zero wavelength with arbitrary amplitude, which corresponds to a global constant shift of the $b$ field. This doesn't couple to the $a$ field. However, for the other eigenvalue, $\w = \sqrt{M/m}$ is a finite frequency with $k=0$ and $\tilde a = a_0$ and $\tilde b = 0$. This is a global and spatially homogenous oscillation of the $a$ field.
+Yeah, I see exactly what happens now. What you have is totally fine until you sub out $\PD{E}{x}{T}$ for $J$, which isn't exactly right. We can get the right expression by expressing $E$ as a function of $x$ and $S$:
+\[ E(x,T) = E(x,S(x,T)).\]
+\[ \PD{E}{x}{T} = \PD ExS + \PD ES x \PD S x T.\]
+We can use a Maxwell relation to swap out the last partial derivative:
+\[ \PD S x T = - \PD J T x.\]
+Now we can use
+\[ dE = T dS + J dx.,\qquad \PD ExS = J,\quad \PD E S x = T.\]
+So all in all:
+\[ \PD E x T = J - T \PD J T x.\]
+\[ \PD E x T = ax - bT + cTx - T(-b + cx) = ax.\]
+And this is all preceded by $\PD{}{T}{x}$, so then we get 0!
 
-\subsection{2D Spring Field}
-Now let's consider two coupled fields in two dimensions situated on a lattice. Suppose that we don't need a basis to characterize our unit cell (if we did, we'd expect some optical modes), and let the nearest neighbors of a lattice site be given by the set of vectors $\{\bv c\}$.
+
 
 %%%%%%%%%
 \end{document} 

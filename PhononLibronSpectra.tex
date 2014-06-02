@@ -192,102 +192,140 @@ For $k \ll \pi/c$, we once again see isotropic dispersion:
 Now we can apply what we derived above to the problem of vibrational and librational coupling. Librations, from Latin \emph{librare}, to sway  or balance (same as \emph{Libra}, by the way), is an oscillatory mode of an anistropic particle. Vibrations are disturbances in the positional ordering of a lattice of particles, and librations are disturbances in the orientational ordering of a lattice of particles. The goal is to characterize the physics of phonons and \emph{librons}, which is the name of the quasiparticle associated with an excitation of the libration field. Aside: evidently, the moon and Earth exhibit mutual librations, which actually allows us to see more than half the face of the moon. Though the moon is tidally locked with the Earth, it exhibits slow swayings back and forth and different parts of the dark side oscillate into view, permitting us to see about 59\% of the moon's surface. 
 
 
-Now, the first step is to assume there is a pair-wise potential between the objects that sit at our crystal lattice sites that is dependent not only on the interparticle distance but the interparticle orientations. By translational invariance of the pair of particles, it must be that the potential only depends on the relative positions, but we don't have any reason to suppose that the potential only depends on the relative orientation. So we write:
-\[ V = V(\bv u_{\br}-\bv u_{\br + \bv c},\th_\br,\th_{\br+\bv c}).\]
+Now, the first step is to assume there is a pair-wise potential between the objects that sit at our crystal lattice sites that is dependent not only on the interparticle distance but the interparticle orientations. By translational invariance of the pair of particles, it must be that the potential only depends on the relative positions, but we don't have any reason to suppose that the potential only depends on the relative orientation. However, any orientation dependence can be absorbed into the two rotational orientation variables of our particles, so we need only consider their absolute distance. So we write:
+\[ V = V(\abs{\br_1 - \br_2},\th_1,\th_2).\]
 Here, I'm putting us in $d=2$, so that we only need one parameter to describe the orientation of our particles. We would like to explore excitations around the \emph{global} ground state. I'm going to suppose that the particle shapes we have are not so terribly complicated such that the unit cell of the crystal has one particle each, and that we can expand the orientations $\th_\br$ around an equilibrium $\th$ that is the same for all particles. It's probably not difficult to come up with a counter-example to this configuration, and I'm sure what would result is higher-frequency optical librons.
 
-I'm going to reparametrize the potential such that its arguments are a bit more intuitive and coincide more closely with what has been done in the group previously. I'll characterize the orientations with a sum $\th_\br + \th_{\br + \bv c} = \th^+_{\bv c}$ and a difference $\th_\br - \th_{\br - \bv c} = \th^-_{\bv c}$. Simulations have shown that a displacement in $\th^+$ is significantly easier than a displacement in $\th^-$, which will later give us some spring constants that are very disparate in magnitude to do some nice perturbation theory, I'm sure.
+I'm going to reparametrize the potential such that its arguments are a bit more intuitive and coincide more closely with what has been done in the group previously. I'll characterize the orientations with a sum $\th_\br + \th_{\br + \bv c} = \th^+_{\bv c}$ and a difference $\th_\br - \th_{\br - \bv c} = \th^-_{\bv c}$, and here, I'm labeling the variables with their lattice sites. Simulations have shown that a displacement in $\th^+$ is significantly easier than a displacement in $\th^-$, which will later give us some spring constants that are very disparate in magnitude to do some nice perturbation theory, I'm sure.
 
-Now, a second order expansion of the potential yields:
-\[ V^{(2)} = \recip{4}\sum_{\bv c} x_i \frac{\del^2 V}{\del x_i \del x_j}x_j.\]
-The $\recip{4}$ is the product of one half from the double counting over lattice spacings, and the other half from the Taylor expansion of the potential. Here, I'm using Einstein summation convention, and the entries of $x_i$ are:
-\[ \bv x = \paren{u_{x,\bv r}-u_{x,\bv r + \bv c},u_{y,\bv r} - u_{y,\bv r + \bv c},\th^+_{\br, \bv c},\th^-_{\br,\bv{c}}}.\]
+Now, a second order expansion of the potential for only the nearest neighbor coupling yields:
+\[ V^{(2)} = \recip{4}\sum_{\bv c} v_i \left.\frac{\del^2 V}{\del v_i \del v_j}\right|_{\br = \bv c} v_j.\]
+The $\recip{4}$ is the product of one half from the double counting over lattice spacings, and the other half from the Taylor expansion of the potential. Here, I'm using Einstein summation convention, and the entries of the generalized displacement $v_i$ are:
+\[ \bv v = \paren{u_{x,\bv r}-u_{x,\bv r + \bv c},u_{y,\bv r} - u_{y,\bv r + \bv c},\th_\br + \th_{\br + \bv c},\th_\br - \th_{\br + \bv c}}.\]
 
 Thus we have
-\[ \frac{\del^2 V}{\del x_i \del x_j} = \pmtrx{\pdert{V}{\D u_x} & \pdder{V}{\D u_x}{\D u_y} & \pdder{V}{\D u_x}{\th^+} & \pdder{V}{\D u_x}{\th^-} \\ \pdder{V}{\D u_y}{\D u_x} & \pdert{V}{\D u_y} & \pdder{V}{\D u_y}{\th^+} & \pdder{V}{\D u_y}{\th^-} \\ \pdder{V}{\th^+}{\D u_x} & \pdder{V}{\th^+}{\D u_y} & \pdert{V}{\th^+} & \pdder{V}{\th^+}{\th^-} \\ \pdder{V}{\th^-}{\D u_x} & \pdder{V}{\th^-}{\D u_y} & \pdder{V}{\th^-}{\th^+} & \pdert{V}{\th^-}}.\]
-We have symmetry in the second derivatives, so that constrains this matrix to be symmetric (is this necessarily so in 3D when rotations don't commute with each other?). So we're already down to ten distinct coupling constants. We can exploit symmetries of the lattice to constrain the elments of this matrix. The potential energy can be written as:
-\[ V^{(2)} = \half{1} x_i M_{ij} x_j,\]
-where $M_{ij}$ is the matrix of derivatives of $V$. If we perform a transformation on $\bv x$ such that $\bv x \goto \bv f(\bv x)$ and the potential energy is invariant under this transformation, then we must have
-\[ x_i M_{ij} x_j = f_i M_{ij} f_j.\]
-Now let's consider rotation by $\pi/2$, that sends
-\[ \D u_x \goto \D u_y,\quad \D u_y \goto -\D u_x,\quad \th^+\goto \th+\pi,\quad \th^-\goto \th^-.\]
-The fourfold degeneracy of ground state guarantees that $\th^+$ and $\th^++\pi$ have the same dynamical properties, so we can take $\th^+$ to be invariant as well. This is equivalent to defining $\th_\br$ up to a mod $\pi/2$. Therefore, the transformation is then linear, and we can write it as:
-\[ x_i M_{ij} x_j = x_i T_{ij}M_{jk}T_{jk}x_k, \quad T = \pmtrx{0 & 1 & 0 & 0 \\ -1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1}.\]
-So I'm going to define $M$ with the following shorthand:
-\[ M = \pmtrx{A & E & F & G \\ E & B & H & I \\ F & H & C & J \\ G & I & J & D}.\]
-So our matrix equation now reads:
-\[ \bv x^T M \bv x = \bv x^T \pmtrx{B & -E & -H & -I \\ -E & A & F & G \\ -H & F & C & J \\ -I & G & J & D}\bv x.\]
-This equation must hold for arbitrary $\bv x$, so if we put in $\bv x = (\D u_x, \D u_y, 0 ,0),$ we find
-\[ E = 0,\quad A = B.\]
-We can set $\bv x = (\D u_x,0,\th^+,0)$ and various other combinations, and it will follow that
-\[ H = -F, \quad G = -I.\]
-So we have six independent elastic coupling constants. There might be further constraints we could use (\emph{i.e.} inversion symmetry) but $\th$ transforms nontrivially under reflections about axes, so I'm not going to worry about that at the moment. As it stands, the elastic matrix is now:
-\[ M = \pmtrx{A & 0 & F & G \\ 0 & A & -F & -G \\ F & -F & C & J \\ G & -G & J & D}.\]
-So now the potential energy of the entire network is:
-\[ V = \recip{4}\sum_\br \sum_{\bv c} x_i M_{ij} x_j.\]
+\[ \frac{\del^2 V}{\del v_i \del v_j} = \pmtrx{\pdert{V}{\D u_x} & \pdder{V}{\D u_x}{\D u_y} & \pdder{V}{\D u_x}{\th^+} & \pdder{V}{\D u_x}{\th^-} \\ \pdder{V}{\D u_y}{\D u_x} & \pdert{V}{\D u_y} & \pdder{V}{\D u_y}{\th^+} & \pdder{V}{\D u_y}{\th^-} \\ \pdder{V}{\th^+}{\D u_x} & \pdder{V}{\th^+}{\D u_y} & \pdert{V}{\th^+} & \pdder{V}{\th^+}{\th^-} \\ \pdder{V}{\th^-}{\D u_x} & \pdder{V}{\th^-}{\D u_y} & \pdder{V}{\th^-}{\th^+} & \pdert{V}{\th^-}}.\]
+We have symmetry in the second derivatives, so that constrains this matrix to be symmetric (is this necessarily so in 3D when rotations don't commute with each other?). So we're already down to ten distinct coupling constants. Now we exploit the various symmetry properties of the potential to eliminate some of these independent coupling constants. Let's examine the derivative of the potential with respect to the spatial displacements.
+\[ V(x_1-x_2,y_1-y_2,\th_1,\th_2) = V(\sqrt{(x_1-x_2)^2+(y_1-y_2)^2},\th_1,\th_2) = V(r,\th_1,\th_2).\]
+\[ \pder{V}{x_1} = \pder{V}{r}\pder{r}{x_1} = \pder{V}{r}\frac{(x_1-x_2)}{r}.\]
+\[ \pdder{V}{x_1}{y_1} = -\frac{(x_1-x_2) (y_1-y_2)}{r^3}\pder{V}{r} + \frac{(x_1-x_2)(y_1-y_2)}{r^2} \pdert V r.\]
+\[ \pdert{V}{x_1} = \recip{r} \pder V r - \frac{(x_1-x_2)^2}{r^3}\pder V r + \frac{(x_1-x_2)^2}{r^2} \pdert V r.\]
+We evaluate these derivatives at the equilibrium position of $V$, which is $r = \abs{c}$, and the first derivatives vanish and we finally end up with:
+\[ \pdder{V}{x_1}{y_1} = \frac{c_x c_y}{c^2}\pdert V r = \hat c _x \hat c_y \left. \pdert V r\right |_{\bv c}.\]
+\[ \pdert {V }{x_1} = \frac{c_x^2}{c^2} \pdert V r = \hat c_x^2 \left. \pdert V r\right |_{\bv c}.\]
+So this is good, we arrive at derivatives involving explicit reference to the crystal lattice vectors, and we extract one common coupling constant: $\pdert V r$. Thus, \emph{ a derivative with respect to a physical displacement is equivalent to a derivative in the radial displacement r and an explicit reference to the crystal lattice vector, which constitutes the equilibrium displacement between two particles.} So let's redefine $\bv v$ to incorporate the crystal lattice unit vectors:
+\[ \bv v_{\br,\bv c} = \paren{ (u_{x,\br} - u_{x,\br + \bv c})\hat c_x, (u_{y,\br} - u_{y,\br+\bv c}) \hat c_y, \th_\br + \th_{\br + \bv c},\th_\br - \th_{\br + \bv c}}.\]
+And now we only have six coupling constants, which I'll put in a matrix $\bv M$:
+\[ \bv M = \pmtrx{\pdert V r & \pdert V r & \pdder{V}{r}{\th^+} &  \pdder{V}{r}{\th^-} \\ \pdert V r & \pdert V r & \pdder{V}{r}{\th^+} & \pdder{V}{r}{\th^-} \\ \pdder{V}{r}{\th^+} & \pdder{V}{r}{\th^+} & \pdert{V}{\th^+} & \pdder{V}{\th^+}{\th^-} \\ \pdder{V}{r}{\th^-} & \pdder{V}{r}{\th^-} & \pdder{V}{\th^+}{\th^-} & \pdert {V}{\th^-}} = \pmtrx{ A & A & B & C \\ A & A & B & C \\ B & B & D & F \\ C & C & F & E}.\]
+
 We can write the kinetic energies:
 \[ T = \sum_\br \half{1}m\paren{\dot u_{x,\br}^2 + \dot u_{y,\br}^2} + \recip{2} I \dot \th_\br^2.\]
-So now we finally have our Lagrangian:
-\begin{multline*}  \mathcal{L} = T - \recip{4}\sum_\br\sum_{\bv c}A(u_{x,\br}-u_{x,\br+\bv c})^2 +A(u_{y,\br}-u_{y,\br+\br c})^2 + C(\th_\br + \th_{\br+\bv c})^2\\ + D(\th_\br - \th_{\br+\bv c})^2 + 2F(\th_\br + \th_{\br + \bv c})(u_{x,\br}-u_{y,\br} - u_{x,\br+\bv c} + u_{y,\br+\bv c})\\ + 2G (\th_\br - \th_{\br+\bv c})(u_{x,\br}-u_{y,\br} - u_{x,\br+\bv c} + u_{y,\br+\bv c}) + 2 J(\th_{\br}^2 - \th_{\br+\bv c}^2). \end{multline*}
-Holy crap this is awful. Well it's not really different from the equations we solved before, so let's write down the equations of motion:
-\[ m \ddot u_{x,\br} = -\half{1}\sum_{\bv c} A(2u_{x,\br} - u_{x,\br+\bv c}-u_{x,\br - \bv c}) + F(\th_{\br+\bv c} - \th_{\br - \bv c}) + G(2\th_{\br} - \th_{\br+\bv c} - \th_{\br -\bv c}).\] 
-\[ m \ddot u_{y,\br} = -\half{1}\sum_{\bv c} A(2u_{y,\br} - u_{y,\br+\bv c}-u_{y,\br - \bv c}) - F(\th_{\br+\bv c} - \th_{\br - \bv c}) - G(2\th_{\br} - \th_{\br+\bv c} - \th_{\br -\bv c}).\]
-\begin{multline*} I \ddot \th_{\br} = -\half{1} \sum_{\bv c} C(2\th_\br + \th_{\br + \bv c} + \th_{\br - \bv c}) + D(2\th_\br - \th_{\br + \bv c} - \th_{\br - \bv c})\\ + F(u_{x,\br - \bv c} - u_{x,\br + \bv c} + u_{y,\br + \bv c} - u_{y, \br - \bv c}) + G(2u_{x,\br} - u_{x,\br+\bv c} - u_{x,\br - \bv c} -2 u_{y,\br} + u_{y,\br+\bv c} + u_{y,\br - \bv c})\\ + 4J\th_\br - 4J\th_\br. \end{multline*}
-Interestingly, the $J$ terms vanish in the equation of motion for the $\th$ fields. We make the usual Fourier transform and get:
-\[ \w^2 m \tilde u_x = \half{1}\sum_{\bv c} \paren{ 4A\tilde u_x \sin^2\paren{\half{\Dot kc}} - 2iF\tilde \th \sinp{\Dot kc} + 4G\tilde \th \sin^2\paren{\half{\Dot kc}}}.\]
-\[ \w^2 m \tilde u_y = \half{1}\sum_{\bv c} \paren{ 4A\tilde u_y \sin^2\paren{\half{\Dot kc}} + 2iF\tilde \th \sinp{\Dot kc} - 4G\tilde \th \sin^2\paren{\half{\Dot kc}}}.\]
-\[ \w^2 I \tilde \th = \half{1}\sum_{\bv c} \paren{ 4 \tilde \th\paren{C \cos^2\paren{\half{\Dot kc}} + D \tilde \th \sin^2\paren{\half{\Dot kc}}} + \paren{-2i F\sinp{\Dot kc} + 4G \sin^2\paren{\half{\Dot kc}}}\paren{\tilde u_x - \tilde u_y} }.\]
-Had I noticed before, I could have eliminated the terms involving the coupling $F$, because the fields that show up with $F$ as a coefficient are odd under the swap $\bv c\goto- \bv c$. Since we are summing over a square lattice, we then have
-\[ \sum_{\bv c} \sinp{\Dot kc} = 0,\quad \half{1}\sum_{\bv c} \cos^2\paren{\half{\Dot kc}} = \cos^2\paren{\half{k_x c}} + \cos^2\paren{\half{k_y c}} = \mu^2.\]
-\[ \half{1}\sum_{\bv c} \sin^2\paren{\half{\Dot kc}} = \g^2.\]
-Finally, we have a matrix equation for the dynamics of the fields:
-\[ \w^2\pmtrx{m & 0 & 0 \\ 0 & m & 0 \\ 0 & 0 & I}\pmtrx{\tilde u_x \\\tilde  u_y \\\tilde \th} = 4\pmtrx{A\g^2 & 0 & G\g^2 \\ 0 & A\g^2 & -G\g^2 \\ G \g^2 & - G\g^2 & C\mu^2 + D\g^2}\pmtrx{\tilde u_x \\ \tilde u_y \\ \tilde \th}.\]
-From here, we could diagonalize this matrix equation and find the eigenmodes in terms of the phonons ($\bv{\tilde u}$) and the librons ($\tilde \th$). But I think it's interesting to take the limit as $k\goto 0$. In this limit, $\g^2\goto 0$ and $\mu^2 \goto 2$. In this limit, the frequency of phonon waves goes to zero, but the frequency of the libration field oscillation is nonzero:
-\[ \w^2 I = 8C.\]
-So we find that the libration field is \emph{massive}. Its mass is proportional to $\sqrt{C}$, and $C$ is the elastic constant
-\[ C = \pdert{V}{\th^+}.\]
-This is the constant that tells us how difficult it is to mutually rotate our squares. Experiment has shown that this elastic constant is far smaller than $D$, the constant associated with rotating our squares antisymmetrically. So in practice, it would probably be difficult to observe this mass. 
+So now we can write down our Lagrangian:
+\[ \mathcal{L} = T - \recip 4 \sum_\br \sum_{\bv c} v_i v_j M_{ij}.\]
+At this point, it is probably worth saying that it's far easier to handle the ensuing matrix math if we rescale our generalized coordinates by the square root of their associated mass. That is, we should send
+\[ \bv u \goto \frac{\bv u}{\sqrt m},\quad \th \goto \frac{\th}{\sqrt I}.\]
+This also scales all the derivatives in the matrix $M$, and we'll just use all the same variable names without fussing around further. Now we write down the equations of motion:
+\[  \ddot u_{x,\br} = -\pder{}{u_{x,\br}} \paren{\recip{4}\sum_{\br'}\sum_{\bv c} v_i v_j M_{ij}}.\]
+\[ \ddot u_{x,\br} = -\half{1} \sum_{\bv c} \hat c_x  \left [   A\hat c \cdot  (2\bv u_{\br} - \bv u_{\br + \bv c} - \bv u_{\br - \bv c})  + B( \th_{\br + \bv c} - \th_{\br - \bv c}) + C(2\th_\br - \th_{\br +\bv c} - \th_{\br - \bv c})   \right]. \]
+\[ \ddot u_{y,\br} = -\half{1} \sum_{\bv c} \hat c_y  \left [   A\hat c \cdot  (2\bv u_{\br} - \bv u_{\br + \bv c} - \bv u_{\br - \bv c})  + B(\th_{\br + \bv c} -\th_{\br - \bv c}) + C(2\th_\br - \th_{\br +\bv c} - \th_{\br - \bv c})   \right]. \]
+We can simplify this a bit:
+\[ \ddot {\bv u}_{\br} = -\half{1} \sum_{\bv c} \hat c  \left [   A\hat c \cdot  (2\bv u_{\br} - \bv u_{\br + \bv c} - \bv u_{\br - \bv c})  + B(\th_{\br + \bv c} - \th_{\br - \bv c}) + C(2\th_\br - \th_{\br +\bv c} - \th_{\br - \bv c})   \right]. \]
+The $\th$ field is a bit trickier, so I'm going to write out the whole thing:
+\begin{multline*}
+ \ddot \th_{\br} = -\recip{4} \sum_{\bv c} \pder{}{\th_{\br}} \left [ D(\th_\br + \th_{\br + \bv c})^2 + D(\th_{\br - \bv c}+\th_{\br})^2 + E(\th_\br - \th_{\br + \bv c})^2 + E(\th_{\br - \bv c} - \th_{\br})^2 \right .\\ \left.+ 2F(\th_{\br}^2 - \th_{\br + \bv c}^2) + 2F(\th_{\br-\bv c}^2 - \th_\br^2) + 2B \hat c \cdot (\bv u_\br - \bv u_{\br + \bv c}) (\th_\br + \th_{\br + \bv c}) + 2B \hat c \cdot (\bv u_{\br - \bv c} - \bv u_\br) (\th_{\br - \bv c} + \th_{\br})  \right. \\ \left.+ 2C \hat c \cdot (\bv u _\br - \bv u_{\br + \bv c})(\th_\br - \th_{\br + \bv c}) + 2C \hat c \cdot (\bv u_{\br - \bv c} - \bv u_{\br})(\th_{\br - \bv c} - \th_{\br})\right ] .
+ \end{multline*}
+ We can see right away that the terms involving $F$ actually cancel out upon summation over the crystal lattice sites, so we can just remove them from the coupling matrix. This is a nice unintended consequence of inversion symmetry. Thus, we have
+\begin{multline*}   \ddot \th_\br = -\half{1} \sum_{\bv c} \left [ D(2\th_{\br} + \th_{\br + \bv c} + \th_{\br - \bv c}) + E(2\th_{\br} - \th_{\br + \bv c} - \th_{\br - \bv c}) + B \hat c \cdot (- \bv u_{\br + \bv c} + \bv u_{\br - \bv c})  \right. \\ \left.+ C\hat c \cdot (2\bv u_\br - \bv u_{\br + \bv c} - \bv u_{\br - \bv c}) \right ]. \end{multline*}
+
+Now it's time to bring in the Fourier transforms of the fields. Let's define:
+\[ \bv u_\br = \sum_{\bv k} \tilde{\bv u}_{\bv k} e^{-i \Dot k r},\quad \th_\br = \sum_{\bv k} \tilde \th_{\bv k} e^{-i \Dot k r}.\]
+And just like before, we'll assume time harmonic solutions so we get $-\w^2$ on the left (and I'll drop the dependence on $\bv k$ for the sake of brevity):
+\[ \w^2  \tilde{\bv u} = \half{A} \tilde{\bv u} \cdot \sum_{\bv c} \hat c \hat c \paren{2 - e^{-i\Dot k c} - e^{i \Dot k c}} + \half{B} \tilde \th \sum_{\bv c} \hat c\paren{e^{-i \Dot k c} - e^{i \Dot k c}} + \half{C} \tilde \th \sum_{\bv c} \hat c \paren{2 - e^{-i \Dot k c} - e^{i \Dot k c}}.\]
+\begin{multline*} \w^2  \tilde \th = \half{D}\tilde \th \sum_{\bv c} \paren{2 + e^{-i \Dot k c} + e^{i \Dot k c}} + \half{E} \tilde \th \sum_{\bv c} \paren{ 2 - e^{- i \Dot k c} - e^{i \Dot k c}} + \half{B} \tilde{\bv u} \cdot \sum_{\bv c} \hat c \paren{e^{i \Dot k c} - e^{-i \Dot k c}} \\ + \half{C} \bv{\tilde u} \sum_{\bv c} \hat c \paren{2 - e^{-i \Dot k c} - e^{i \Dot k c}}. \end{multline*}
+Now I'm going to swap out for some trig functions:
+\[ \w^2  \tilde{\bv u} = 2A\tilde{\bv u} \cdot \sum_{\bv c} \hat c \hat c \sin^2\paren{\half{\Dot k c}} - i B\tilde \th \sum_{\bv c} \hat c\sinp{\Dot k c} + 2C \tilde \th \sum_{\bv c} \hat c \sin^2\paren{\half{\Dot k c}}.\]
+\[ \w^2  \tilde \th = 2D\tilde \th \sum_{\bv c} \cos^2\paren{\half{\Dot k c}}+ 2E \tilde \th \sum_{\bv c} \sin^2\paren{\half{\Dot k c}} + iB \tilde{\bv u} \cdot \sum_{\bv c} \hat c \sinp{\Dot k c} + 2C \tilde{\bv u} \sum_{\bv c} \hat c \sin^2\paren{\half{\Dot k c}}.\]
+The sums involving $C$ are odd in $\bv c$, so due to inversion symmetry, they add up to zero. Finally, we have a matricial equation for the phonon and libron modes:
+\[ \w^2 \pmtrx{ \tilde u_x \\ \tilde u_y \\ \tilde \th} = \sum_{\bv c} \pmtrx{ 2A \hat c_x^2 \sin^2\paren{\Dot k c/2} & 2A \hat c_x \hat c_y \sin^2 \paren{\Dot k c/2} & - i B \hat c_x \sinp{\Dot k c} \\ 2A \hat c_x \hat c_y \sin^2\paren{\Dot k c/2} & 2A \hat c_y^2 \sin^2 \paren{\Dot k c/2} & - i B \hat c_y \sinp{\Dot k c} \\ i B \hat c_x \sinp{\Dot k c} & i B \hat c_y \sinp{\Dot k c} & 2D \cos^2\paren{\Dot k c/2} + 2E \sin^2 \paren{ \Dot k c/2}}  \pmtrx{ \tilde u_x \\ \tilde u_y \\ \tilde \th}. \]
+
+
+At this point, it's difficult to move forward in a concrete way without specifying a lattice. As a clear example, let's look at the square lattice:
+\[ \{ \bv c \} = \{ \pm c \hat x, \pm c \hat y \}.\]
+In this case, the matrix is very simple, and for small $k$, we have:
+\[  \w^2 \pmtrx{ \tilde u_x \\ \tilde u_y \\ \tilde \th} = \\ \pmtrx{ Ak_x^2c^2 & 0 & - 2i B k_x c \\ 0 & Ak_y^2 c^2 & -2iBk_y c \\ 2i B k_x c & 2i B k_y c & 8D + Ek^2c^2} \pmtrx{ \tilde u_x \\ \tilde u_y \\ \tilde \th}.  \]
+
+From here, we could diagonalize this matrix equation and find the eigenmodes in terms of the phonons ($\bv{\tilde u}$) and the librons ($\tilde \th$). But I think it's interesting to take the limit as $k\goto 0$. In this limit, the frequency of phonon waves goes to zero, but the frequency of the libration field oscillation is nonzero:
+\[ \w^2= 8D.\]
+So we find that the libration field is \emph{massive}. Its mass is proportional to $\sqrt{D}$, and $D$ is the elastic constant
+\[ D = \recip{I}\pdert{V}{\th^+}.\]
+This is the constant that tells us how difficult it is to mutually rotate our squares. Experiment has shown that this elastic constant is far smaller than $D$, the constant associated with rotating our squares antisymmetrically. So in practice, it would probably be difficult to observe this mass.
+
+Furthermore, we see that the elastic coupling matrix has imaginary entries. This tells us that the eigenmodes of the libration and vibration fields are \emph{in general, not in phase with each other.}
+
+For my first project, Wenbo and I are going to be working with the hexagonal lattice formed by hard hexagons in 2D. So we have the set of crystal lattice vectors:
+\[ \{ \bv c \} = \{\pm \bv c_1,\pm \bv c_2,\pm \bv c_3\} =    \left \{ \pm c \hat x, \pm \half{c} (\hat x + \sqrt 3 \hat y),\pm \half{c} (\hat x - \sqrt 3 \hat y) \right \}.\]
+I've implicitly chosen a particular orientation of the crystal, but this isn't necessary.
 
 
 \section{Harmonic Hamiltonians and Correlation Functions}
-Now we establish some useful results to try to measure the elastic constants defined above in terms of correlation functions in thermodynamics. For this derivation, I will restrict myself to the canonical ensemble. If we are in the $pTN$ ensemble, then I don't think things get much different, but I will point out in the appropriate place in the derivation this difference would need to be accounted for.
+Now we establish some useful results to try to measure the elastic constants defined above in terms of correlation functions in thermodynamics. For this derivation, I will restrict myself to the canonical ensemble. If we are in the $NpT$ ensemble, then I don't think things get much different, but I will point out in the appropriate place in the derivation this difference would need to be accounted for.
 
 Consider the following Hamiltonian:
-\[\mathcal{H} = \half{1} \bv p \cdot \bv M ^{-1} \cdot \bv p + \half{1} \bv x \cdot \bv K \cdot \bv x = \half{1}p_i M^{-1}_{ij} pj + \half{1}x_i K_{ij}x_j.\]
-In our case, we'll take $\bv M^{-1}$ to be diagonal, which it almost always is, and $\bv K$ will be a positive definite symmetric matrix, which it always will be for a system with harmonic inter-particle potentials. That it is positive definite means that the product $\bv x \cdot \bv K \cdot \bv x$ will always be greater than zero except for $\bv x = 0$, which just tells us that we can't reduce the energy of our system to arbitrarily low energies. So let's first integrate out the momentum degrees of freedom in our partition function. Let's call $m_i$ the $i^\mathrm{th}$ eigenvalue of the mass matrix.
+\[\mathcal{H} = \half{1} \bv p \cdot \bv M ^{-1} \cdot \bv p + \half{1} \bv x \cdot \bv K \cdot \bv x = \half{1}p_i M^{-1}_{ij} p_j + \half{1}x_i K_{ij}x_j.\]
+In our case, we'll take $\bv M^{-1}$ to be diagonal, which it almost always is, and $\bv K$ will be a positive definite symmetric matrix, which it always will be for a system with harmonic inter-particle potentials. In our derivation in the last section, the elements of the vector $x_i$ will be all the fields $u_{x,i}$, $u_{y,i}$ and $\th_i$. Then we understand $K_{ij}$ to be an elastic coupling matrix that keeps track of every nearest neighbor interaction. That it is positive definite means that the product $\bv x \cdot \bv K \cdot \bv x$ will always be greater than zero except for $\bv x = 0$, which just tells us that we can't reduce the energy of our system to arbitrarily low energies. So let's first integrate out the momentum degrees of freedom in our partition function. Let's call $m_i$ the $i^\mathrm{th}$ eigenvalue of the mass matrix.
 \[ Z = \recip{h^N} \paren{\int \prod_idp_i e^{-\recip{2m_i}\b p_i^2}}\int d\bv x e^{-\recip{2}\b x_iK_{ij}x_j}.\]
 \[ Z = \frac{(2\pi k_BT)^{N/2}}{h^N}\sqrt{\prod_i m_i} \paren{\int d\bv x e^{-\recip{2}\b x_iK_{ij}x_j}}.\]
 \[ Z = \frac{(2\pi k_BT)^{N/2}}{h^N}\sqrt{\det M} \paren{\int d\bv x e^{-\recip{2}\b x_iK_{ij}x_j}} = Z_0(T,\bv M) \int d\bv x e^{-\recip{2}\b x_iK_{ij}x_j}.\]
 To evaluate this Gaussian integral, we diagonalize the matrix $\bv K$ by a unitary transformation into $\bv U^\dagger \bv D \bv U$. We can change variables with impunity, because the transformation is unitary:
-\[ \bv u = \bv U \bv x.\]
-\[ d\bv u = \abs{\pder{\bv u}{\bv x}} d\bv x.\]
-Here, the thing in absolute value bars is the Jacobian matrix of the transformation, which, since the transformation is linear, is simply the matrix $\bv U$ itself. The transformation is unitary so its determinant is 1, and thus $d\bv u = d\bv x$:
-\[ \int d\bv x e^{-\half{1}\b x_i K_{ij} x_j} = \int d\bv u e^{-\half{1}\b u_i D_{ij} u_j} = \prod_i \int du_i e^{-\half{1} \b u_i^2 \lam_i}.\]
-Here, $\lam_i$ is the $i^\mathrm{th}$ eigenvalue of $\bv K$ corresponding to the eigenmode $u_i$. Thus we have
+\[ \bv n = \bv U \bv x.\]
+\[ d\bv n = \abs{\pder{\bv n}{\bv x}} d\bv x.\]
+Here, the thing in absolute value bars is the Jacobian matrix of the transformation, which, since the transformation is linear, is simply the matrix $\bv U$ itself. The transformation is unitary so its determinant is 1, and thus $d\bv n = d\bv x$:
+\[ \int d\bv x e^{-\half{1}\b x_i K_{ij} x_j} = \int d\bv n e^{-\half{1}\b n_i D_{ij} n_j} = \prod_i \int dn_i e^{-\half{1} \b n_i^2 \lam_i}.\]
+Here, $\lam_i$ is the $i^\mathrm{th}$ eigenvalue of $\bv K$ corresponding to the eigenmode $n_i$. Thus we have
 \[ \int d\bv x e^{-\half{1}\b x_i K_{ij} x_j} = \prod_i \frac{2\pi}{\lam_i} = \frac{\paren{2\pi}^{N/2}}{\sqrt{\det D}} = \frac{\paren{2\pi}^{N/2}}{\sqrt{\det K}}.\]
 It is at \emph{this point} where the ensemble matters. Consider a system of two particles connected by one spring. Their relative positions have an associated potential energy, but their \emph{center of mass position has no energy associated with it}. This is the same as finding that one of the eigenvalues of the $\bv K$ matrix is zero. This isn't a problem, we just have to be careful when doing the Gaussian integral. In this case, we would not integrate over all of space, $-\infty \goto \infty$, but rather we integrate over the volume of the box and we pick up one factor of $V$ which would couple to the external pressure. We can integrate over all of space with the other modes because the exponential factor $e^{-\b k x^2/2}$ dies off sufficiently quickly that we can consider it localized, and we can safely extend the region of integration to all of space.
 
 So now let's look at some correlation functions. We can recast the Hamiltonian in terms of the eigenmodes of the potential, which by their definition are independent degrees of freedom (independent in that their exponential factors in the Boltzmann factor factorize), and so we find:
-\[ \avg{u_i} = \recip{Z} \int du_i \, u_i e^{-\recip 2 \b u_i^2 \lam_i} \prod_{j\neq i} \int du_j \, e^{-\recip{2}\b u_j^2 \lam_i} = 0.\]
-\[ \avg{u_i u_j}_{i\neq j} = \recip{Z} \int du_i \, u_i e^{-\recip 2 \b u_i^2 \lam_i} \int du_j \, u_j e^{-\recip 2 u_j^2 \lam _ j} \prod_{k \neq i,j} du_k e^{-\recip 2 \b u_k^2 \lam_k} = \avg{u_i}\avg{u_j} = 0.\]
-\[ \avg{u_i^2} = \recip{Z} \int du_i \, u_i^2 e^{-\recip 2 \b u_i^2 \lam_i} \prod_{j\neq i} \int du_j \, e^{-\recip{2}\b u_j^2 \lam_i}.\]
-\[ \avg{u_i^2} = -\recip{Z} \pder{Z}{\recip 2 \b \lam_i} = -2k_BT \pder{\log Z}{\lam_i}.\]
+\[ \avg{n_i} = \recip{Z} \int dn_i \, n_i e^{-\recip 2 \b n_i^2 \lam_i} \prod_{j\neq i} \int dn_j \, e^{-\recip{2}\b n_j^2 \lam_i} = 0.\]
+\[ \avg{n_i n_j}_{i\neq j} = \recip{Z} \int dn_i \, n_i e^{-\recip 2 \b n_i^2 \lam_i} \int dn_j \, n_j e^{-\recip 2 n_j^2 \lam _ j} \prod_{k \neq i,j} dn_k e^{-\recip 2 \b n_k^2 \lam_k} = \avg{n_i}\avg{n_j} = 0.\]
+\[ \avg{n_i^2} = \recip{Z} \int dn_i \, n_i^2 e^{-\recip 2 \b n_i^2 \lam_i} \prod_{j\neq i} \int dn_j \, e^{-\recip{2}\b n_j^2 \lam_i}.\]
+\[ \avg{n_i^2} = -\recip{Z} \pder{Z}{\recip 2 \b \lam_i} = -2k_BT \pder{\log Z}{\lam_i}.\]
 We have the partition function explicitly already,
-\[ \avg{u_i^2} = -2k_BT \pder{}{\lam_i} \paren{ -\recip{2} \log \det \bv D} = \frac{k_BT}{\lam_i}.\]
+\[ \avg{n_i^2} = -2k_BT \pder{}{\lam_i} \paren{ -\recip{2} \log \det \bv D} = \frac{k_BT}{\lam_i}.\]
 So we can summarize:
-\[ \avg{u_iu_j} = \frac{k_BT}{\lam_i}\d_{ij}.\]
-From the first equation regarding $\avg{u_i}$, we have $u_i = U_{ij} x_j$, from which it follows $U^{-1}_{ij} u_j = x_i$ and so
+\[ \avg{n_in_j} = \frac{k_BT}{\lam_i}\d_{ij}.\]
+From the first equation regarding $\avg{n_i}$, we have $n_i = U_{ij} x_j$, from which it follows $U^{-1}_{ij} n_j = x_i$ and so
 \[ \avg{x_i} = 0.\]
 We can in addition compute all the correlation functions:
-\[ \avg{x_i x_j} = \avg{U^{-1}_{ik}u_k U^{-1}_{j\ell}u_\ell} = U^\dagger_{ik} U_{\ell j} \paren{\frac{k_BT}{\lam_k}}\d_{k\ell}.\]
+\[ \avg{x_i x_j} = \avg{U^{-1}_{ik}n_k U^{-1}_{j\ell}n_\ell} = U^\dagger_{ik} U_{\ell j} \paren{\frac{k_BT}{\lam_k}}\d_{k\ell}.\]
 But $\lam_k$ are the elements of the diagonal matrix $D_{k\ell} = \lam_k \d_{k\ell}$, so
 \[ \avg{x_i x_j} = k_BT U^\dagger_{ik} D^{-1}_{k\ell} U_{\ell j}.\]
 \[ \boxed{\avg{x_i x_j} = k_BT K^{-1}_{ij}.}\]
-We could have done this in the $x$ basis without switching to the $u$ basis, but this is much clearer to me.
+We could have done this in the $x$ basis without switching to the $n$ basis, but this is much clearer to me.
 
-The power of this formulation is that we now do not need to characterize our lattice in terms of Fourier modes in order to correlate the position and orientation of one particle with the position and orientation of another. However, I would guess that doing a Fourier transform is a computationally easier thing to do than to compute the inverse of a $dN \times dN$ matrix.
+The power of this formulation is that we now do not need to characterize our lattice in terms of Fourier modes in order to correlate the position and orientation of one particle with the position and orientation of another. However, I would guess that doing a Fourier transform is a computationally easier thing to do than to compute the inverse of a $dN \times dN$ matrix. In fact, by doing the appropriate unitary transformation, we can compute the correlation function of \emph{any linear combination of the field values} and get an entry of the inverse coupling constant matrix.
 
 Side cautionary note: it's entirely possible that $\bv K$ has no inverse because it has one or more zero eigenvalues. As I alluded to before, the zero-eigenvalue eigenmodes can then explore all of their configuration space and are not constrained by being Gaussian distributed. In this case, we must single out these free modes and find their mean value and variance, then make a new matrix $\bv D'$ excluding these floppy degrees of freedom.
+
+\section{Measurements \emph{in silico}}
+
+I generally try not to miss opportunities to use goofy Latin phrases. Anyway, all of the previous derivations are cool, but we now need some way to efficiently measure these elastic constants from the correlations functions. Of particular importance is $G$, the elastic coupling constant that shows up in the equations of motion for the Fourier modes on page 7.
+
+A particularly useful basis to work in is the Fourier basis: though the fields are still coupled to each other, their Fourier components \emph{are decoupled with respect to wavelength}. That is, a phonon of wavelength $\bv k_1$ may interact with librons of wavelength $\bv k_1$, but it will not interact with phonons or librons of wavelength $\bv k_2$. The matrix equation of motion for the Fourier modes given on page 7 guarantees that modes of different wavelengths are uncoupled.
+
+Furthermore, the matrix of coupling constants in real space is sparse, but it has many off-diagonal components. Schematically speaking:
+\[ \bv K_{\br} = \pmtrx{ k_1 & - k_{12} & 0 & 0 & 0 & \ldots \\ -k_{12} & k_2 & -k_{23} & 0 & 0 & \\ 0 & -k_{23} & k_3 & -k_{34} & 0 & \\ 0 & 0 & -k_{34} & k_4 & -k_{45} & \\ 0 & 0 & 0 & -k_{45} & k_5 & \\ \vdots & & & & & \ddots }.\]
+This guarantees that the inverse matrix $\bv K_\br^{-1}$ is \emph{the exact opposite of sparse, i.e.} every element is nonzero (if the inverse exists). On the other hand, in the Fourier basis, because modes of different wavelength are uncoupled, the matrix has a very useful structure. If we let:
+\[ \bv E(\bv k) = 4\pmtrx{A\g^2 & 0 & G\g^2 \\ 0 & A\g^2 & -G\g^2 \\ G \g^2 & - G\g^2 & C\mu^2 + D\g^2}\pmtrx{\tilde u_x \\ \tilde u_y \\ \tilde \th},\]
+as I write on page 7, with $\g$ and $\mu$ defined previously, then we can write the total coupling matrix in a block diagonal form:
+\[ \bv K_{\bv k} = \pmtrx{\bv E(\bv k_0) & 0 & 0 & \ldots \\ 0 & \bv E(\bv k_1) & 0 & \\ 0 & 0 & \bv E(\bv k_2) & \\ \vdots & & & \ddots}.\]
+The inverse is simply
+\[ \bv K^{-1}_{\bv k} = \pmtrx{\bv E^{-1}(\bv k_0) & 0 & 0 & \ldots \\ 0 & \bv E^{-1}(\bv k_1) & 0 & \\ 0 & 0 & \bv E^{-1}(\bv k_2) & \\ \vdots & & & \ddots},\]
+so this inverse matrix is also sparse. The inverse of $\bv E$ is (\emph{grace \`{a}} Mathematica):
+\[\bv E^{-1}(\bv k) =  \pmtrx{(AD-G^2)\g^2 + A C\mu^2 & -G^2 \g^2 & -A G \g^2 \\ -G^2 \g^2 & (AD-G^2)\g^2 + AC \mu^2 & AG\g^2 \\ -A G\g^2 & AG \g^2 & A^2 \g^2}\recip{4A\g^2\paren{(AD-2G^2)\g^2 + A C \mu^2}}.\]
+Now, it's entirely possible that the determinant is zero, depending on the constants $A,C,D,$ and $G$. Also, this matrix clearly does not exist for $\g=k = 0$. This is because phonon modes with $\bv k = 0$ correspond to uniform displacements of the lattice, which are modes I foretold earlier which contribute a factor of $V$ to the partition function. So we wouldn't want to look at the $\bv k  =  0$ modes to help us figure out these coupling constants. But this doesn't prevent us from asking about correlations within modes of $\bv k \neq 0$. So if I am able to compute $\avg{\tilde \th_\bv k \tilde u_{x,\bv k}}$, then that gives me the numerical value of
+\[ \avg{\tilde \th_{\bv k} \tilde u_{x,\bv k}} = \frac{-G}{4\paren{(AD-2G^2)\g^2 + AC\mu^2}}k_BT.\]
+We can compute the three other independent correlation functions and solve a system of equations to get all the coupling constants!
 
 
 

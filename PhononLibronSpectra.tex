@@ -249,7 +249,7 @@ The sums involving $C$ are odd in $\bv c$, so due to inversion symmetry, they ad
 \[ \w^2 \pmtrx{ \tilde u_x \\ \tilde u_y \\ \tilde \th} = \sum_{\bv c} \pmtrx{ 2A \hat c_x^2 \sin^2\paren{\Dot k c/2} & 2A \hat c_x \hat c_y \sin^2 \paren{\Dot k c/2} & - i B \hat c_x \sinp{\Dot k c} \\ 2A \hat c_x \hat c_y \sin^2\paren{\Dot k c/2} & 2A \hat c_y^2 \sin^2 \paren{\Dot k c/2} & - i B \hat c_y \sinp{\Dot k c} \\ i B \hat c_x \sinp{\Dot k c} & i B \hat c_y \sinp{\Dot k c} & 2D \cos^2\paren{\Dot k c/2} + 2E \sin^2 \paren{ \Dot k c/2}}  \pmtrx{ \tilde u_x \\ \tilde u_y \\ \tilde \th}. \]
 
 
-At this point, it's difficult to move forward in a concrete way without specifying a lattice. As a clear example, let's look at the square lattice:
+As a clear example, let's look at the square lattice:
 \[ \{ \bv c \} = \{ \pm c \hat x, \pm c \hat y \}.\]
 In this case, the matrix is very simple, and for small $k$, we have:
 \[  \w^2 \pmtrx{ \tilde u_x \\ \tilde u_y \\ \tilde \th} = \\ \pmtrx{ Ak_x^2c^2 & 0 & - 2i B k_x c \\ 0 & Ak_y^2 c^2 & -2iBk_y c \\ 2i B k_x c & 2i B k_y c & 8D + Ek^2c^2} \pmtrx{ \tilde u_x \\ \tilde u_y \\ \tilde \th}.  \]
@@ -263,16 +263,21 @@ This is the constant that tells us how difficult it is to mutually rotate our sq
 Furthermore, we see that the elastic coupling matrix has imaginary entries. This tells us that the eigenmodes of the libration and vibration fields are \emph{in general, not in phase with each other.}
 
 For my first project, Wenbo and I are going to be working with the hexagonal lattice formed by hard hexagons in 2D. So we have the set of crystal lattice vectors:
-\[ \{ \bv c \} = \{\pm \bv c_1,\pm \bv c_2,\pm \bv c_3\} =    \left \{ \pm c \hat x, \pm \half{c} (\hat x + \sqrt 3 \hat y),\pm \half{c} (\hat x - \sqrt 3 \hat y) \right \}.\]
-I've implicitly chosen a particular orientation of the crystal, but this isn't necessary.
+\[ \{ \bv c \} = \{\pm \bv c_1,\pm \bv c_2,\pm \bv c_3\}.\]
+These Bravais lattice vectors are all related by rotations by $\pi/3$, and they define the set of neighbors whose interactions we consider in the Hamiltonian. Really, specifying it like this doesn't help us come up with an analytically clean result. The sum over crystal vectors gives us sines and cosines of $\Dot{k}{c_i}$ in various combinations that don't reduce nicely. So we'll have
+\[ \w^2 \pmtrx{\tilde u_x \\ \tilde u_y \\ \tilde \th} = \pmtrx{4A \g_{xx}^2 & 4A \g_{xy}^2 & -2i B \g_{x}^2 \\ 4A \g_{xy}^2 & 4A\g_{yy}^2 & - 2i B \g_{y}^2 \\ 2i B \g_{x}^2 & 2i B\g_{y}^2 & 4D \mu^2 + 4 E \g^2} \pmtrx{\tilde u_x \\ \tilde u_y \\ \tilde \th}.\]
+Here, I've defined:
+\[ \g_{ij}^2 = \half{1}\sum_{\bv c} \hat{c}_{i}\hat{c}_{j} \sin^2\paren{\half{\Dot k c}},\quad \g_{i}^2 = \half{1} \sum_{\bv c} \hat{c}_i \sinp{\Dot k c},\]
+\[ \g^2 = \half{1}\sum_{\bv c} \sin^2\paren{\half{\Dot k c}},\quad \mu^2 = \half{1} \sum_{\bv c} \cos^2 \paren{\half{\Dot k c}}.\]
+With these declarations, I've factored out the dependence on $\bv k$ and the lattice vectors $\bv c$. We can compute these $\g$'s in Mathematica or something, and these will essentially define the functional dependence of our dispersion relations.
 
 
 \section{Harmonic Hamiltonians and Correlation Functions}
 Now we establish some useful results to try to measure the elastic constants defined above in terms of correlation functions in thermodynamics. For this derivation, I will restrict myself to the canonical ensemble. If we are in the $NpT$ ensemble, then I don't think things get much different, but I will point out in the appropriate place in the derivation this difference would need to be accounted for.
 
 Consider the following Hamiltonian:
-\[\mathcal{H} = \half{1} \bv p \cdot \bv M ^{-1} \cdot \bv p + \half{1} \bv x \cdot \bv K \cdot \bv x = \half{1}p_i M^{-1}_{ij} p_j + \half{1}x_i K_{ij}x_j.\]
-In our case, we'll take $\bv M^{-1}$ to be diagonal, which it almost always is, and $\bv K$ will be a positive definite symmetric matrix, which it always will be for a system with harmonic inter-particle potentials. In our derivation in the last section, the elements of the vector $x_i$ will be all the fields $u_{x,i}$, $u_{y,i}$ and $\th_i$. Then we understand $K_{ij}$ to be an elastic coupling matrix that keeps track of every nearest neighbor interaction. That it is positive definite means that the product $\bv x \cdot \bv K \cdot \bv x$ will always be greater than zero except for $\bv x = 0$, which just tells us that we can't reduce the energy of our system to arbitrarily low energies. So let's first integrate out the momentum degrees of freedom in our partition function. Let's call $m_i$ the $i^\mathrm{th}$ eigenvalue of the mass matrix.
+\[\mathcal{H} = \half{1} \bv p \cdot \bv M^{-1} \cdot \bv p + \half{1} \bv x \cdot \bv K \cdot \bv x = \half{1}p_i M_{ij} p_j + \half{1}x_i K_{ij}x_j.\]
+The inverse mass matrix $\bv M$ is diagonal, and $\bv K$ will be a positive definite symmetric matrix, which it always will be for a system with harmonic inter-particle potentials. In our derivation in the last section, the elements of the vector $x_i$ will be all the fields $u_{x,i}$, $u_{y,i}$ and $\th_i$. Then we understand $K_{ij}$ to be an elastic coupling matrix that keeps track of every nearest neighbor interaction. That it is positive definite means that the product $\bv x \cdot \bv K \cdot \bv x$ will always be greater than zero except for $\bv x = 0$, which just tells us that we can't reduce the energy of our system to arbitrarily low energies. So let's first integrate out the momentum degrees of freedom in our partition function. Let's call $m_i$ the mass of the $i^\mathrm{th}$ degree of freedom, or we could think of it as the inverse of the $i^\mathrm{th}$ eigenvalue of the inverse mass matrix that's multiplying our momenta. Then we have
 \[ Z = \recip{h^N} \paren{\int \prod_idp_i e^{-\recip{2m_i}\b p_i^2}}\int d\bv x e^{-\recip{2}\b x_iK_{ij}x_j}.\]
 \[ Z = \frac{(2\pi k_BT)^{N/2}}{h^N}\sqrt{\prod_i m_i} \paren{\int d\bv x e^{-\recip{2}\b x_iK_{ij}x_j}}.\]
 \[ Z = \frac{(2\pi k_BT)^{N/2}}{h^N}\sqrt{\det M} \paren{\int d\bv x e^{-\recip{2}\b x_iK_{ij}x_j}} = Z_0(T,\bv M) \int d\bv x e^{-\recip{2}\b x_iK_{ij}x_j}.\]
@@ -316,7 +321,7 @@ A particularly useful basis to work in is the Fourier basis: though the fields a
 Furthermore, the matrix of coupling constants in real space is sparse, but it has many off-diagonal components. Schematically speaking:
 \[ \bv K_{\br} = \pmtrx{ k_1 & - k_{12} & 0 & 0 & 0 & \ldots \\ -k_{12} & k_2 & -k_{23} & 0 & 0 & \\ 0 & -k_{23} & k_3 & -k_{34} & 0 & \\ 0 & 0 & -k_{34} & k_4 & -k_{45} & \\ 0 & 0 & 0 & -k_{45} & k_5 & \\ \vdots & & & & & \ddots }.\]
 This guarantees that the inverse matrix $\bv K_\br^{-1}$ is \emph{the exact opposite of sparse, i.e.} every element is nonzero (if the inverse exists). On the other hand, in the Fourier basis, because modes of different wavelength are uncoupled, the matrix has a very useful structure. If we let:
-\[ \bv E(\bv k) = 4\pmtrx{A\g^2 & 0 & G\g^2 \\ 0 & A\g^2 & -G\g^2 \\ G \g^2 & - G\g^2 & C\mu^2 + D\g^2}\pmtrx{\tilde u_x \\ \tilde u_y \\ \tilde \th},\]
+\[ \bv E(\bv k) = \pmtrx{4A \g_{xx}^2 & 4A \g_{xy}^2 & -2i B \g_{x}^2 \\ 4A \g_{xy}^2 & 4A\g_{yy}^2 & - 2i B \g_{y}^2 \\ 2i B \g_{x}^2 & 2i B\g_{y}^2 & 4D \mu^2 + 4 E \g^2}\pmtrx{\tilde u_x \\ \tilde u_y \\ \tilde \th},\]
 as I write on page 7, with $\g$ and $\mu$ defined previously, then we can write the total coupling matrix in a block diagonal form:
 \[ \bv K_{\bv k} = \pmtrx{\bv E(\bv k_0) & 0 & 0 & \ldots \\ 0 & \bv E(\bv k_1) & 0 & \\ 0 & 0 & \bv E(\bv k_2) & \\ \vdots & & & \ddots}.\]
 The inverse is simply
@@ -325,7 +330,10 @@ so this inverse matrix is also sparse. The inverse of $\bv E$ is (\emph{grace \`
 \[\bv E^{-1}(\bv k) =  \pmtrx{(AD-G^2)\g^2 + A C\mu^2 & -G^2 \g^2 & -A G \g^2 \\ -G^2 \g^2 & (AD-G^2)\g^2 + AC \mu^2 & AG\g^2 \\ -A G\g^2 & AG \g^2 & A^2 \g^2}\recip{4A\g^2\paren{(AD-2G^2)\g^2 + A C \mu^2}}.\]
 Now, it's entirely possible that the determinant is zero, depending on the constants $A,C,D,$ and $G$. Also, this matrix clearly does not exist for $\g=k = 0$. This is because phonon modes with $\bv k = 0$ correspond to uniform displacements of the lattice, which are modes I foretold earlier which contribute a factor of $V$ to the partition function. So we wouldn't want to look at the $\bv k  =  0$ modes to help us figure out these coupling constants. But this doesn't prevent us from asking about correlations within modes of $\bv k \neq 0$. So if I am able to compute $\avg{\tilde \th_\bv k \tilde u_{x,\bv k}}$, then that gives me the numerical value of
 \[ \avg{\tilde \th_{\bv k} \tilde u_{x,\bv k}} = \frac{-G}{4\paren{(AD-2G^2)\g^2 + AC\mu^2}}k_BT.\]
-We can compute the three other independent correlation functions and solve a system of equations to get all the coupling constants!
+Better yet, we can instead just make the correlation function matrix:
+\[ \bv C(\bv k) = \pmtrx{\avg{\tilde u_x^2} & \avg{\tilde u_x \tilde u_y} & \avg{\tilde u_x \tilde \th} \\ \avg{\tilde u_x \tilde u_y} & \avg{\tilde u_y^2} & \avg{\tilde u_y \tilde \th} \\ \avg{\tilde u_x \tilde \th} & \avg{\tilde u_y \tilde \th} & \avg{\tilde \th^2} }.\]
+From here, the inverse of this matrix should give the coupling constant matrix!
+\[ k_BT \bv C^{-1}(k) = \bv E(k).\]
 
 
 

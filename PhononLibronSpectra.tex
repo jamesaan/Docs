@@ -150,8 +150,8 @@ Newton's equations then read:
 \[ m\ddot{a}_i = -2Aa_i + Aa_{i+1} +Aa_{i-1} - 2Cb_i +Cb_{i+1} + Cb_{i-1} - Ma_i.\]
 \[ m\ddot{b}_i = -2Ca_i + Ca_{i+1} +Ca_{i-1} - 2Bb_i +Bb_{i+1} + Bb_{i-1}.\]
 Now we go to Fourier space to turn this difference equation into an algebraic equation. The transformation is:
-\[ a_j = \sum_j \tilde{a}(k) e^{-i k(j\ell)},\qquad b_j = \sum_j \tilde{b}(k) e^{-ik(j\ell)}.\]
-We put in these transforms in the above difference equations and exploit the orthonormality of the exponential to get equality term by term:
+\[ a_j = \recip{\sqrt{N}}\sum_j \tilde{a}(k) e^{-i k(j\ell)},\qquad b_j = \recip{\sqrt{N}}\sum_j \tilde{b}(k) e^{-ik(j\ell)}.\]
+I use this convention of the Fourier transform, where we have a minus sign going from momentum space to real space. This convention doesn't really matter. What \emph{does} matter is the factor of $\sqrt{N}$ out in front to make the transformation \emph{unitary}. We put in these transforms in the above difference equations and exploit the orthonormality of the exponential to get equality term by term:
 \[ m\ddot{\tilde{a}} = -2A\tilde{a} + A\tilde{a}e^{-ik\ell} + A\tilde{a}e^{ik\ell} - 2C \tilde{b} + C \tilde b e^{-ik\ell} + C\tilde b e^{i k \ell} - M\tilde a.\]
 \[ \mu\ddot{\tilde{b}} = -2C\tilde{a} + C\tilde{a}e^{-ik\ell} + C\tilde{a}e^{ik\ell} - 2B \tilde{b} + B \tilde b e^{-ik\ell} + B\tilde b e^{i k \ell}.\]
 We then look for time-harmonic solutions such that $\der{^2}{t^2}\goto -\w^2$, and we finally have a matrix equation, setting $\sinp{k\ell/2} = \g$:
@@ -168,7 +168,7 @@ So we once again prescribe some kinetic energy:
 \[ m\ddot{a}_\br = -Ma_\br -\recip{2} \sum_{\bv c} A\paren{2 a_\br - a_{\br + \bv c} - a_{\br - \bv c}}-\recip{2}\sum_{\bv c} C\paren{2 b_\br - b_{\br + \bv c} - b_{\br - \bv c}}.\]
 \[ \mu\ddot{b}_\br = -\recip{2} \sum_{\bv c} C\paren{2 a_\br - a_{\br + \bv c} - a_{\br - \bv c}}-\recip{2}\sum_{\bv c} B\paren{2 b_\br - b_{\br + \bv c} - b_{\br - \bv c}}.\]
 From here, we once again go to Fourier space and the story is very similar. We impose time-harmonic solutions and solve another eigenproblem.
-\[ a(\br) = \sum_{\bv k} \tilde{a}_{\bv k} e^{-i \Dot k r},\qquad b(\br) = \sum_{\bv k} \tilde{b}_{\bv k}e^{-i \Dot k r}.\]
+\[ a(\br) = \recip{\sqrt{N}} \sum_{\bv k} \tilde{a}_{\bv k} e^{-i \Dot k r},\qquad b(\br) = \recip{\sqrt N}\sum_{\bv k} \tilde{b}_{\bv k}e^{-i \Dot k r}.\]
 \[ -\w^2 m \tilde a = -M \tilde a - \half{1}\sum_{\bv c}A \paren{2 \tilde a - \tilde a e^{-i\Dot k c} - \tilde a e^{i\Dot k c}} - \half{1}\sum_{\bv c}C \paren{2 \tilde b - \tilde b e^{-i\Dot k c} - \tilde b e^{i\Dot k c}}.\]
 \[ -\w^2 \mu \tilde b =  - \half{1}\sum_{\bv c} C\paren{2 \tilde a - \tilde a e^{-i\Dot k c} - \tilde a e^{i\Dot k c}} - \half{1}\sum_{\bv c} B\paren{2 \tilde b - \tilde b e^{-i\Dot k c} - \tilde b e^{i\Dot k c}}.\]
 \[ -\w^2 m \tilde a = -M \tilde a + 4A\g^2 \tilde a + 4C\g^2 \tilde b.\]
@@ -238,7 +238,7 @@ The $\th$ field is a bit trickier, so I'm going to write out the whole thing:
 \begin{multline*}   \ddot \th_\br = -\half{1} \sum_{\bv c} \left [ D(2\th_{\br} + \th_{\br + \bv c} + \th_{\br - \bv c}) + E(2\th_{\br} - \th_{\br + \bv c} - \th_{\br - \bv c}) + B \hat c \cdot (- \bv u_{\br + \bv c} + \bv u_{\br - \bv c})  \right. \\ \left.+ C\hat c \cdot (2\bv u_\br - \bv u_{\br + \bv c} - \bv u_{\br - \bv c}) \right ]. \end{multline*}
 
 Now it's time to bring in the Fourier transforms of the fields. Let's define:
-\[ \bv u_\br = \sum_{\bv k} \tilde{\bv u}_{\bv k} e^{-i \Dot k r},\quad \th_\br = \sum_{\bv k} \tilde \th_{\bv k} e^{-i \Dot k r}.\]
+\[ \bv u_\br = \recip{\sqrt N}\sum_{\bv k} \tilde{\bv u}_{\bv k} e^{-i \Dot k r},\quad \th_\br = \recip{\sqrt N}\sum_{\bv k} \tilde \th_{\bv k} e^{-i \Dot k r}.\]
 And just like before, we'll assume time harmonic solutions so we get $-\w^2$ on the left (and I'll drop the dependence on $\bv k$ for the sake of brevity):
 \[ \w^2  \tilde{\bv u} = \half{A} \tilde{\bv u} \cdot \sum_{\bv c} \hat c \hat c \paren{2 - e^{-i\Dot k c} - e^{i \Dot k c}} + \half{B} \tilde \th \sum_{\bv c} \hat c\paren{e^{-i \Dot k c} - e^{i \Dot k c}} + \half{C} \tilde \th \sum_{\bv c} \hat c \paren{2 - e^{-i \Dot k c} - e^{i \Dot k c}}.\]
 \begin{multline*} \w^2  \tilde \th = \half{D}\tilde \th \sum_{\bv c} \paren{2 + e^{-i \Dot k c} + e^{i \Dot k c}} + \half{E} \tilde \th \sum_{\bv c} \paren{ 2 - e^{- i \Dot k c} - e^{i \Dot k c}} + \half{B} \tilde{\bv u} \cdot \sum_{\bv c} \hat c \paren{e^{i \Dot k c} - e^{-i \Dot k c}} \\ + \half{C} \bv{\tilde u} \sum_{\bv c} \hat c \paren{2 - e^{-i \Dot k c} - e^{i \Dot k c}}. \end{multline*}
@@ -285,24 +285,31 @@ To evaluate this Gaussian integral, we diagonalize the matrix $\bv K$ by a unita
 \[ \bv n = \bv U \bv x.\]
 \[ d\bv n = \abs{\pder{\bv n}{\bv x}} d\bv x.\]
 Here, the thing in absolute value bars is the Jacobian matrix of the transformation, which, since the transformation is linear, is simply the matrix $\bv U$ itself. The transformation is unitary so its determinant is 1, and thus $d\bv n = d\bv x$:
-\[ \int d\bv x e^{-\half{1}\b x_i K_{ij} x_j} = \int d\bv n e^{-\half{1}\b n_i D_{ij} n_j} = \prod_i \int dn_i e^{-\half{1} \b n_i^2 \lam_i}.\]
+\[ \int d\bv x e^{-\half{1}\b x_i K_{ij} x_j} = \int d\bv n e^{-\half{1}\b n_i^* D_{ij} n_j} = \prod_i \int dn_i e^{-\half{1} \b \abs{n_i}^2 \lam_i}.\]
 Here, $\lam_i$ is the $i^\mathrm{th}$ eigenvalue of $\bv K$ corresponding to the eigenmode $n_i$. Thus we have
 \[ \int d\bv x e^{-\half{1}\b x_i K_{ij} x_j} = \prod_i \frac{2\pi}{\lam_i} = \frac{\paren{2\pi}^{N/2}}{\sqrt{\det D}} = \frac{\paren{2\pi}^{N/2}}{\sqrt{\det K}}.\]
 It is at \emph{this point} where the ensemble matters. Consider a system of two particles connected by one spring. Their relative positions have an associated potential energy, but their \emph{center of mass position has no energy associated with it}. This is the same as finding that one of the eigenvalues of the $\bv K$ matrix is zero. This isn't a problem, we just have to be careful when doing the Gaussian integral. In this case, we would not integrate over all of space, $-\infty \goto \infty$, but rather we integrate over the volume of the box and we pick up one factor of $V$ which would couple to the external pressure. We can integrate over all of space with the other modes because the exponential factor $e^{-\b k x^2/2}$ dies off sufficiently quickly that we can consider it localized, and we can safely extend the region of integration to all of space.
 
 So now let's look at some correlation functions. We can recast the Hamiltonian in terms of the eigenmodes of the potential, which by their definition are independent degrees of freedom (independent in that their exponential factors in the Boltzmann factor factorize), and so we find:
-\[ \avg{n_i} = \recip{Z} \int dn_i \, n_i e^{-\recip 2 \b n_i^2 \lam_i} \prod_{j\neq i} \int dn_j \, e^{-\recip{2}\b n_j^2 \lam_i} = 0.\]
-\[ \avg{n_i n_j}_{i\neq j} = \recip{Z} \int dn_i \, n_i e^{-\recip 2 \b n_i^2 \lam_i} \int dn_j \, n_j e^{-\recip 2 n_j^2 \lam _ j} \prod_{k \neq i,j} dn_k e^{-\recip 2 \b n_k^2 \lam_k} = \avg{n_i}\avg{n_j} = 0.\]
-\[ \avg{n_i^2} = \recip{Z} \int dn_i \, n_i^2 e^{-\recip 2 \b n_i^2 \lam_i} \prod_{j\neq i} \int dn_j \, e^{-\recip{2}\b n_j^2 \lam_i}.\]
-\[ \avg{n_i^2} = -\recip{Z} \pder{Z}{\recip 2 \b \lam_i} = -2k_BT \pder{\log Z}{\lam_i}.\]
+\[ \avg{n_i} = \recip{Z} \int dn_i \, n_i e^{-\recip 2 \b \abs{n_i}^2 \lam_i} \prod_{j\neq i} \int dn_j \, e^{-\recip{2}\b \abs{n_j}^2 \lam_i} = 0.\]
+\[ \avg{n_i n_j^*}_{i\neq j} = \recip{Z} \int dn_i \, n_i e^{-\recip 2 \b \abs{n_i}^2 \lam_i} \int dn_j \, n_j^* e^{-\recip 2 \abs{n_j}^2 \lam _ j} \prod_{k \neq i,j} dn_k e^{-\recip 2 \b \abs{n_k}^2 \lam_k} = \avg{n_i}\avg{n_j} = 0.\]
+\[ \avg{\abs{n_i^2}} = \recip{Z} \int dn_i \, \abs{n_i}^2 e^{-\recip 2 \b \abs{n_i}^2 \lam_i} \prod_{j\neq i} \int dn_j \, e^{-\recip{2}\b \abs{n_j}^2 \lam_i}.\]
+\[ \avg{\abs{n_i}^2} = -\recip{Z} \pder{Z}{\recip 2 \b \lam_i} = -2k_BT \pder{\log Z}{\lam_i}.\]
 We have the partition function explicitly already,
-\[ \avg{n_i^2} = -2k_BT \pder{}{\lam_i} \paren{ -\recip{2} \log \det \bv D} = \frac{k_BT}{\lam_i}.\]
+\[ \avg{\abs{n_i}^2} = -2k_BT \pder{}{\lam_i} \paren{ -\recip{2} \log \det \bv D} = \frac{k_BT}{\lam_i}.\]
 So we can summarize:
-\[ \avg{n_in_j} = \frac{k_BT}{\lam_i}\d_{ij}.\]
+\[ \avg{n_in_j^*} = \frac{k_BT}{\lam_i}\d_{ij}.\]
 From the first equation regarding $\avg{n_i}$, we have $n_i = U_{ij} x_j$, from which it follows $U^{-1}_{ij} n_j = x_i$ and so
 \[ \avg{x_i} = 0.\]
 We can in addition compute all the correlation functions:
-\[ \avg{x_i x_j} = \avg{U^{-1}_{ik}n_k U^{-1}_{j\ell}n_\ell} = U^\dagger_{ik} U_{\ell j} \paren{\frac{k_BT}{\lam_k}}\d_{k\ell}.\]
+\[ \avg{x_i x_j} = \avg{U^{-1}_{ik}n_k U^{-1}_{j\ell}n_\ell}.\]
+The transformation $\bv U$ is unitary, so we have
+\[ x_i = U^{-1}_{ij}n_j = U^\dagger_{ij} n_j.\]
+In addition, $x_i$ is a real field, so
+\[ x_i^* = U^{\dagger *}_{ij} n_j^* = U^{T}_{ij}n_j^* = U_{ji}n_j^*.\]
+So we have
+\[ \avg{x_i x_j} = \avg{x_i x_j^*} = \avg{\paren{U^{-1}_{ik} n_k}\paren{U_{\ell j}n^*_\ell}} = \avg{n_k n_\ell^*}  U^{-1}_{i k} U_{\ell j}.\]
+\[ \avg{x_i x_j} =  U^{-1}_{ik} U_{\ell j}  \paren{\frac{k_BT}{\lam_k}}\d_{k\ell}.\]
 But $\lam_k$ are the elements of the diagonal matrix $D_{k\ell} = \lam_k \d_{k\ell}$, so
 \[ \avg{x_i x_j} = k_BT U^\dagger_{ik} D^{-1}_{k\ell} U_{\ell j}.\]
 \[ \boxed{\avg{x_i x_j} = k_BT K^{-1}_{ij}.}\]
@@ -314,26 +321,24 @@ Side cautionary note: it's entirely possible that $\bv K$ has no inverse because
 
 \section{Measurements \emph{in silico}}
 
-I generally try not to miss opportunities to use goofy Latin phrases. Anyway, all of the previous derivations are cool, but we now need some way to efficiently measure these elastic constants from the correlations functions. Of particular importance is $G$, the elastic coupling constant that shows up in the equations of motion for the Fourier modes on page 7.
+I generally try not to miss opportunities to use goofy Latin phrases. Anyway, all of the previous derivations are cool, but we now need some way to efficiently measure these elastic constants from the correlations functions. Of particular importance is $B$, the elastic coupling constant that shows up in the equations of motion for the Fourier modes on page 8.
 
 A particularly useful basis to work in is the Fourier basis: though the fields are still coupled to each other, their Fourier components \emph{are decoupled with respect to wavelength}. That is, a phonon of wavelength $\bv k_1$ may interact with librons of wavelength $\bv k_1$, but it will not interact with phonons or librons of wavelength $\bv k_2$. The matrix equation of motion for the Fourier modes given on page 7 guarantees that modes of different wavelengths are uncoupled.
 
 Furthermore, the matrix of coupling constants in real space is sparse, but it has many off-diagonal components. Schematically speaking:
 \[ \bv K_{\br} = \pmtrx{ k_1 & - k_{12} & 0 & 0 & 0 & \ldots \\ -k_{12} & k_2 & -k_{23} & 0 & 0 & \\ 0 & -k_{23} & k_3 & -k_{34} & 0 & \\ 0 & 0 & -k_{34} & k_4 & -k_{45} & \\ 0 & 0 & 0 & -k_{45} & k_5 & \\ \vdots & & & & & \ddots }.\]
-This guarantees that the inverse matrix $\bv K_\br^{-1}$ is \emph{the exact opposite of sparse, i.e.} every element is nonzero (if the inverse exists). On the other hand, in the Fourier basis, because modes of different wavelength are uncoupled, the matrix has a very useful structure. If we let:
-\[ \bv E(\bv k) = \pmtrx{4A \g_{xx}^2 & 4A \g_{xy}^2 & -2i B \g_{x}^2 \\ 4A \g_{xy}^2 & 4A\g_{yy}^2 & - 2i B \g_{y}^2 \\ 2i B \g_{x}^2 & 2i B\g_{y}^2 & 4D \mu^2 + 4 E \g^2}\pmtrx{\tilde u_x \\ \tilde u_y \\ \tilde \th},\]
-as I write on page 7, with $\g$ and $\mu$ defined previously, then we can write the total coupling matrix in a block diagonal form:
+Here, this matrix is $3N\times 3N$, where $N$ is the number of particles, and 3 is the number of fields we have, two translational and one rotational. This structure guarantees that the inverse matrix $\bv K_\br^{-1}$ is \emph{the exact opposite of sparse, i.e.} every element is nonzero (if the inverse exists). On the other hand, in the Fourier basis, because modes of different wavelength are uncoupled, the matrix has a very useful structure. If we let:
+\[ \bv E(\bv k) = \pmtrx{4A \g_{xx}^2 & 4A \g_{xy}^2 & -2i B \g_{x}^2 \\ 4A \g_{xy}^2 & 4A\g_{yy}^2 & - 2i B \g_{y}^2 \\ 2i B \g_{x}^2 & 2i B\g_{y}^2 & 4D \mu^2 + 4 E \g^2},\]
+as I write on page 8, with $\g$ and $\mu$ defined previously, then we can write the total coupling matrix in a block diagonal form:
 \[ \bv K_{\bv k} = \pmtrx{\bv E(\bv k_0) & 0 & 0 & \ldots \\ 0 & \bv E(\bv k_1) & 0 & \\ 0 & 0 & \bv E(\bv k_2) & \\ \vdots & & & \ddots}.\]
 The inverse is simply
 \[ \bv K^{-1}_{\bv k} = \pmtrx{\bv E^{-1}(\bv k_0) & 0 & 0 & \ldots \\ 0 & \bv E^{-1}(\bv k_1) & 0 & \\ 0 & 0 & \bv E^{-1}(\bv k_2) & \\ \vdots & & & \ddots},\]
-so this inverse matrix is also sparse. The inverse of $\bv E$ is (\emph{grace \`{a}} Mathematica):
-\[\bv E^{-1}(\bv k) =  \pmtrx{(AD-G^2)\g^2 + A C\mu^2 & -G^2 \g^2 & -A G \g^2 \\ -G^2 \g^2 & (AD-G^2)\g^2 + AC \mu^2 & AG\g^2 \\ -A G\g^2 & AG \g^2 & A^2 \g^2}\recip{4A\g^2\paren{(AD-2G^2)\g^2 + A C \mu^2}}.\]
-Now, it's entirely possible that the determinant is zero, depending on the constants $A,C,D,$ and $G$. Also, this matrix clearly does not exist for $\g=k = 0$. This is because phonon modes with $\bv k = 0$ correspond to uniform displacements of the lattice, which are modes I foretold earlier which contribute a factor of $V$ to the partition function. So we wouldn't want to look at the $\bv k  =  0$ modes to help us figure out these coupling constants. But this doesn't prevent us from asking about correlations within modes of $\bv k \neq 0$. So if I am able to compute $\avg{\tilde \th_\bv k \tilde u_{x,\bv k}}$, then that gives me the numerical value of
-\[ \avg{\tilde \th_{\bv k} \tilde u_{x,\bv k}} = \frac{-G}{4\paren{(AD-2G^2)\g^2 + AC\mu^2}}k_BT.\]
-Better yet, we can instead just make the correlation function matrix:
-\[ \bv C(\bv k) = \pmtrx{\avg{\tilde u_x^2} & \avg{\tilde u_x \tilde u_y} & \avg{\tilde u_x \tilde \th} \\ \avg{\tilde u_x \tilde u_y} & \avg{\tilde u_y^2} & \avg{\tilde u_y \tilde \th} \\ \avg{\tilde u_x \tilde \th} & \avg{\tilde u_y \tilde \th} & \avg{\tilde \th^2} }.\]
-From here, the inverse of this matrix should give the coupling constant matrix!
-\[ k_BT \bv C^{-1}(k) = \bv E(k).\]
+so this inverse matrix is also sparse. Now, it's entirely possible that the determinant of $\bv E$ is zero, depending on the coupling constants. Also, this inverse matrix clearly does not exist for $\g=k = 0$. This is because phonon modes with $\bv k = 0$ correspond to uniform displacements of the lattice, which are modes I foretold earlier which contribute a factor of $V$ to the partition function. So we wouldn't want to look at the $\bv k  =  0$ modes to help us figure out these coupling constants. But this doesn't prevent us from asking about correlations within modes of $\bv k \neq 0$. We can then make the correlation function matrix:
+\[ \bv C(\bv k) = \pmtrx{\avg{\abs{\tilde u_x}^2} & \avg{\tilde u_x \tilde u_y^*} & \avg{\tilde u_x \tilde \th^*} \\ \avg{\tilde u_x^* \tilde u_y} & \avg{\abs{\tilde u_y}^2} & \avg{\tilde u_y \tilde \th^*} \\ \avg{\tilde u_x^* \tilde \th} & \avg{\tilde u_y^* \tilde \th} & \avg{\abs{\tilde \th}^2} }.\]
+(Disclaimer: the positions of the complex conjugates here depend nontrivially on the definitions of the Fourier transform, and I'm not entirely certain if this should be the definition of $\bv C$ or its transpose) From here, the inverse of this matrix should give the coupling constant matrix!
+\[ k_BT \bv C^{-1}(\bv k) = \bv E(\bv k).\]
+So what does this do for us? If we sample $\bv E$ across many values of $\bv k$, we can build a two-dimensional dispersion relation in $k_x$ and $k_y$. From this dispersion relation, we fit it to the predicted dispersion relation and get the constants $A,B,D,$ and $E$. These will act as our second order characterizations of the interparticle potential and characterize the phase of the system. We expect in the plastic crystal phase that all the couplings to the $\th$ field should vanish: we expect $B,D,$ and $E$ to vanish, but $A$ should remain finite, as this is related to the phonon frequency.
+
 
 
 

@@ -386,7 +386,7 @@ which is what we're looking at here. So we're justified in dropping these
 terms from the free energy. Continuing on, we can take the sum over $\bv k$ to 
 an integral with the continuum limit
 \[ \sum_{\bv k} \goto \frac{V}{(2\pi)^2} \int d\bv k.\]
-\[ F = \frac{k_BT V}{8\pi^2} \int d \bv k \, \log \paren{\lam^2 \b \det E_{\bv k}}.\]
+\[ F = \frac{k_BT V}{8\pi^2} \int d \bv k \, \log \paren{\det \paren{ \lam^2 \b E_{\bv k}}}.\]
 The integral is over the entirety of the first Brillouin zone, and there's really no problem when we have $\det E_{\bv k}$ going to zero because that singularity in the integrand is usually integrable.
 
 For our 2-dimensional crystal, we can write down $E_{\bv k}$ right away by using the results of Section 2. If the crystal lattice spacing is $c$, then 
@@ -406,10 +406,68 @@ We could have seen before that the second term does not depend on volume, so it 
 Generally, $A$ decreases with volume for normal interatomic forces.
 
 \subsection{Massive Modes in the Phonon Dispersion Matrix}
-So now that we've gotten a good handle on the mechanics of the calculation, we can skip right to the part where we plug in the dispersion matrix. For our model of phonons interacting with librons, the determinant of our matrix is
+So now that we've gotten a good handle on the mechanics of the calculation, we can skip right to the part where we plug in the dispersion matrix. As a first step, we can neglect the interactions between phonons and librons ($B=0$), as preliminary simulations have shown the coupling is far smaller than any other phenomenological parameter. Thus the determinant of our matrix is
 \[ \det E_{\bv k} = 64 A^2(\g_{xx}\g_{yy} - \g_{xy}^2)(D\mu + E\g).\]
 \[ \g_{ij} = \half{1} \sum_{\bv c} \hat{c}_i \hat{c}_j \sin^2\paren{\half{\Dot k c}}, \quad \g = \half{1}\sum_{\bv c} \sin^2 \paren{\half{ \Dot k c}},\quad \mu = \half{1} \sum_{\bv c} \cos^2\paren{\half{\Dot k c}} .\]
-Furthermore, the first Brillouin zone is the regular hexagon centered at $\bv k = 0$ whose side lengths are equal to $\pi/c$.
+We'll need to essentially integrate this over the first Brillouin zone, which is the regular hexagon centered at $\bv k = 0$ whose side lengths are equal to $\pi/c$ (Figure 1).
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+\path [fill=purple] (1,0) -- (0.5,0.866) -- (-0.5,0.866) -- (-1,0) -- (-0.5,-0.866) -- (0.5,-0.866) -- (1,0);
+\draw [ultra thick] (1,0) -- (0.5,0.866) -- (-0.5,0.866) -- (-1,0) -- (-0.5,-0.866) -- (0.5,-0.866) -- (1,0);
+\draw [thick,<->] (-2,0) -- (2,0) node[anchor=south ] {$k_x$};
+\draw [thick,<->] (0,-2)--(0,2) node [anchor= west] {$k_y$};
+\end{tikzpicture}
+\caption{Brillouin zone for a hexagonal lattice. The hexagon's side lengths are $\pi/ c$, where $c$ is the lattice constant.}
+\end{figure}
+
+Without going through much of the detail of the previous simple example, the free energy of our hexagonal lattice is
+\[ F = \frac{k_BTV}{8\pi^2} \int d\bv k \, \paren{ \log 64 + 2\log \paren{\lam^2 \b} + \log\paren{\eth^2 \b} + \log A^2 + \log \paren{\g_{xx} \g_{yy} - \g_{xy}^2} + \log \paren{D\mu + E\g} } .\]
+Here, since one of our degrees of freedom is an angle, we don't have the thermal de Broglie wavelength, but rather a thermal de Broglie angle:
+\[ \eth = \sqrt{\frac{h^2}{2\pi I k_BT}}.\]
+We can do a change of variables, $\bv u = \half{ \bv k c}$, which pulls out a factor of $\frac{4}{c^2}$ from the integral. Furthermore, since we're only interested in the parts of the free energy that are dependent on the volume, we can remove the numerical factors like $\log 64$ and the thermal factors $\log \lam^2 \b$ and $\log \eth^2 \b$. The term $\log \paren{\g_{xx}\g_{yy} - \g_{xy}^2}$ integrates to some numerical constant over the Brillouin zone, as well, so we can remove it from the integral. The term $\log A^2$ can be integrated over the Brillouin zone immediately, since it doesn't depend on $\bv k$. That leaves just the last term:
+\[ F_V = \frac{k_BTN}{\pi^2}\paren{\frac{3\sqrt{3} \pi^2}{8}\log A} + \frac{k_BTN}{2\pi^2} \int d\bv u \, \log \paren{D\mu + E\g}.\]
+\[ F_V = \frac{3k_BT N \sqrt{3}}{8}\log A + \frac{k_BTN}{2\pi^2} \int d\bv u\, \log \paren{D\mu + E\g}.\]
+\[ \g = \sin^2u_x + \sin^2\paren{\half{u_x+\sqrt{3} u_y}} + \sin^2 \paren{\half{u_x - \sqrt{3}u_y}}.\]
+\[ \mu = \cos^2u_x + \cos^2\paren{\half{u_x+\sqrt{3} u_y}} + \cos^2 \paren{\half{u_x - \sqrt{3}u_y}}.\]
+Both $\g$ and $\mu$ are symmetric if we rotate $\bv u$ by $\pi/3$, so instead of integrating over the whole Brillouin zone, we can just integrate over one sixth of the Brillouin zone. However we're better served by integrating over a \emph{third} of the Brillouin zone and multiplying by 3, because this gives us a rhombic region to integrate, which is far easier to do using two integration variables. Define
+\[ u_x = \half{\th_1 + \th_2},\qquad u_y = \half{\sqrt{3}(\th_1-\th_2)}.\]
+Then the $\th$ variables range from $0\goto \pi/2$. This change of variables is shown in Figure 2. Then $\g$ becomes
+\[ \g = \sin^2\paren{\half{\th_1+\th_2}} + \sin^2 \paren{\half{2\th_1 - \th_2}} + \sin^2 \paren{\half{\th_1 - 2\th_2}},\]
+and $\mu$ is defined similarly.
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+\path [fill=purple] (1,0) -- (0.5,0.866) -- (0,0) -- (0.5,-0.866) -- (1,0);
+\draw [ultra thick] (1,0) -- (0.5,0.866) -- (-0.5,0.866) -- (-1,0) -- (-0.5,-0.866) -- (0.5,-0.866) -- (1,0);
+\draw [thick,<->] (-2,0) -- (2,0) node[anchor=south ] {$u_x$};
+\draw [thick,<->] (0,-2)--(0,2) node [anchor= west] {$u_y$};
+\draw [thick,->] (0,0)--(0.7,1.212) node [anchor = west] {$\th_1$};
+\draw [thick,->] (0,0)--(0.7,-1.212) node [anchor = west] {$\th_2$};
+\end{tikzpicture}
+\caption{Integrating over a third of the first Brillouin zone using some transformed variables.}
+\end{figure}
+Gathering all this together:
+\[ F_V = \frac{3k_BTN\sqrt{3}}{8}\log A + 3\times \frac{k_BTN\sqrt{3}}{4\pi^2} \int_0^{\pi/2}\int_0^{\pi/2}d\th_1 d\th_2 \, \log\paren{D\mu + E\g}.\]
+To get the pressure, we derive with respect to the volume. But what is more useful and intuitive is to derive with respect to the packing fraction, where
+\[ \phi = \frac{Nv_0}{V}.\]
+\[ \pder{}{V} = \pder{\phi}{V}\pder{}{\phi} = -\frac{Nv_0}{V^2}\pder{}{\phi} = -\frac{\phi^2}{Nv_0}\pder{}{\phi}.\]
+\[ P = -\pder{F_V}{V} = \frac{\phi^2}{Nv_0}\pder{F_V}{\phi}.\]
+Now let's define the dimensionless parameter $\e = E/D$, which is experimentally shown to be small. If we denote derivatives with respect to packing fraction as $A' = \pder{A}{\phi}$, then with a little manipulation, our pressure becomes
+\[ P = \frac{3k_BT\phi^2A'\sqrt{3}}{8Av_0} + \frac{3k_BT\phi^2 E'\sqrt{3}}{16Ev_0} + \frac{3k_BT\phi^2 \e'\sqrt{3}}{4\pi^2v_0}\int_0^{\pi/2}\int_0^{\pi/2}d\th_1d\th_2\, \frac{\mu}{\e\mu+\g}.\]
+\[ P = \frac{3k_BT\phi^2\sqrt{3}}{16v_0} \paren{ \frac{2A'}{A} + \frac{E'}{E} + \e' h(\e)}.\]
+\[ h(\e) = \frac{4}{\pi^2} \int_0^{\pi/2}\int_0^{\pi/2}d\th_1d\th_2\, \frac{\mu}{\e\mu+\g}, \qquad \e = \frac{D}{E}, \qquad \e' = \frac{D'}{E} - \frac{DE'}{E^2}.\]
+Because $\g(\th_1=\th_2=0) \propto \th_1^2 + \th_2^2$, but $\mu \propto 1$ there is a logarithmic divergence at the origin unless $\e\neq 0$. As it stands, I believe this integral is intractable. Furthermore, an expansion in $\e$ is no good, because the very first term of the series diverges, and every following term is more severely divergent. If anybody has a good idea where to go from here, that'd be great.
+
+%However, we can do some gleaning about the equation of state based on the assumption that the coupling constants $E$ and $D$ depend on the packing fraction $\phi$. In the traditional spirit surrounding critical phenomena, I'm going to make the assumption that these parameters go to 0 as a power law as we approach the critical density (densities):
+%\[ E = E_0 (\phi-\phi_E)^{\nu_E},\qquad D = D_0 (\phi-\phi_D)^{\nu_D}, \qquad \e = \frac{D_0}{E_0}\frac{(\phi-\phi_D)^{\nu_D}}{(\phi-\phi_E)^{\nu_E}}.\]
+%We don't have much information about the critical densities or the critical exponents (besides that they are both greater than 0), but we can discern a few different cases. First, $\phi_E = \phi_D$ or $\phi_E \neq \phi_D$. Then, we have the case that $\nu_E > \nu_D$, $\nu_E = \nu_D$, or $\nu_E < \nu_D$. First, I'll explore what happens when $\phi_E = \phi_D$, so that
+%\[ \e = \e_0 (\phi - \phi_c)^{\nu_D - \nu_E}, \qquad \e' = \e_0 (\phi-\phi_c)^{\nu_D-\nu_E - 1}.\]
+%In this case,
+%\[ P = \frac{3k_BT\phi^2\sqrt{3}}{16v_0}\paren{\frac{2A'}{A} + (\phi-\phi_c)^{-1} + (\phi-\phi_c)^{-1} \paren{ \e h(\e)}}.\]
+
 
 %%%%%%%%%
 \end{document} 

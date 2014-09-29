@@ -340,7 +340,59 @@ From here, the inverse of this matrix should give the coupling constant matrix!
 So what does this do for us? If we sample $\bv E$ across many values of $\bv k$, we can build a two-dimensional dispersion relation in $k_x$ and $k_y$. From this dispersion relation, we fit it to the predicted dispersion relation and get the constants $A,B,D,$ and $E$. These will act as our second order characterizations of the interparticle potential and characterize the phase of the system. We expect in the plastic crystal phase that all the couplings to the $\th$ field should vanish: we expect $B,D,$ and $E$ to vanish, but $A$ should remain finite, as this is related to the phonon frequency.
 
 
+\section{Equation of State}
 
+To obtain the equation of state, we first need to compute the free energy from the Hamiltonian of the system. This is essentially done because we already have the partition function. Next, we take a derivative of the free energy with respect to volume, which gives us the pressure. Let's see how this is done for a simple example: a two-dimensional square lattice with nearest neighbor spring couplings.
+
+\subsection{Simple Example}
+As a reminder, we have the Hamiltonian:
+\[ \mathcal{H} = \recip{2m}p_i\d_{ij}p_j + \half{1} x_i K_{ij} x_j.\]
+We'll work in two dimensions, but the results are not much different in more or fewer dimensions. The matrix $K$ contains all the nearest-neighbor coupling information. We may as well perform our transformation to Fourier modes now. I'm going to make it very explicit by using subscript Greek letters to denote the vector components of our crystal displacements $x_i$ and their Fourier components, instead writing either $\bv x _i$ and $\bv u_{\bv k}$ or $x_{i,\mu}$ and $u_{\bv k, \mu}$.
+\[ \bv u_{\bv k} = \recip{\sqrt{N}} \sum_i \bv x_i e^{i \Dot k r_i}.\]
+So now we can just straight-away put it into our partition function:
+\[ Z = \recip{h^{2N}}\prod_i\paren{\int dp_i e^{-\frac{\b}{2m} p_i^2} }\int \prod_{\bv k} d\bv u_{\bv k} e^{-\half{\b} u^*_{\bv k,\mu} E_{\bv k, \mu\nu} u_{\bv k,\nu}}.\]
+I didn't bother with the vector notation for the momenta because all the components of momenta are independent anyway, and we're integrating them out quickly. Each momentum integral contributes a factor of $\sqrt{2\pi m k_BT}$, and there are $2N$ integrals, where $N$ is the number of particles in our system. We often just stuff this factor in with the Planck's constants and make the thermal de Broglie wavelength:
+\[ \recip{\lam^{2N}} = \paren{\frac{\sqrt{2\pi m k_BT}}{h}}^{2N}.\]
+\[ Z = \recip{\lam^{2N}} \int \prod_{\bv k} d\bv u_{\bv k} e^{-\half{\b} u^*_{\bv k,\mu} E_{\bv k, \mu\nu} u_{\bv k,\nu}}.\]
+Now, I should say something about this matrix $E$. Each of these Gaussian integrals is simple to compute. For a given $\bv k$,
+\[ \int d\bv u_{\bv k} e^{-\half{\b} u^*_{\bv k,\mu} E_{\bv k, \mu\nu} u_{\bv k,\nu}} = \frac{2\pi k_BT}{\sqrt{\det E_{\bv k}}}.\]
+But what if the determinant is zero? What does a determinant zero here mean, physically? For the moment, let's assume that the matrix $E_{\bv k}$ is diagonal, which isn't an unreasonable assumption because we can always just do a transformation among the components of $\bv u_{\bv k}$ to \emph{make} the matrix diagonal. But what this means is:
+\[ \half{1}u^*_{\bv k, \mu} E_{\bv k, \mu\nu} u_{\bv k,\nu} = \half{1}\paren{ \abs{u_{\bv k,x}}^2 E_{\bv k, xx} + \abs{u_{\bv k,y}}^2 E_{\bv k, yy} }.\]
+The potential energy breaks apart into phonons along the $x$ direction and phonons along the $y$ direction. Remember that the matrix $E$ is essentially the dispersion relation, so it gives us the frequency (squared) of the phonons. For the determinant of $E$ to vanish means that one or both of these matrix components is zero. A zero-frequency mode is a uniform shift of all the atomic constituents, which of course costs no energy. Nothing unreasonable so far. However, the existence of these zero-energy modes mucks up the really elegant integral result we have. So why is there a divergence?
+
+We have a divergence when the determinant is zero because we are implicitly integrating from $-\infty$ to $\infty$ in every configurational integral we perform. This of course isn't physical because we stipulate that the particles are confined to some large, but finite, volume. So for these zero energy modes, the configurational integral is \emph{even easier to perform} because there the Boltzmann weight is equal to 1! It follows that $Z$ has factors of $V\sqrt{N}$ to the power of the number of modes of zero frequency in our system (the $\sqrt{N}$ comes from the definition of the Fourier transform we used). Let's compute the free energy now:
+\[ F = -k_BT \log Z = \sum_{\bv k,\mu} k_BT \log\paren{ \lam \sqrt{\b E_{\bv k,\mu\mu}} } + \sum_{\bv k, \mu} k_BT \log\paren{\frac{\lam}{L_\mu \sqrt{N}} }.\]
+The first sum is over all the $\bv k$ and $\mu$ for which the corresponding quantity $E_{\bv k,\mu\mu}$ is not zero. The second sum is over all the $\bv k$ and $\mu$ that correspond to zero frequency modes. Instead of writing the volume, I've written $L_\mu$, which is the length of the system in the $\mu$ direction. I just wanted to be particularly explicit, as we see how this will generalize to higher dimensions. So how do we go about counting how many modes of zero frequency we have? The exact number will depend on the matrix $E$, but in general, they will be of order $N^{(d-1)/d}$. For example, in a one dimensional spring system, we examine the Brillouin zone and find that of all the $k$ between $-\pi/a$ and $\pi/a$, only $k=0$ has zero frequency. In two dimensions, there are modes all along the line $k_x =0$ and the line $k_y = 0$, so there are of order $L_x + L_y \propto \sqrt{N}$ modes with zero frequency.
+
+Why am I bothering to do this counting anyway? Well, in the thermodynamic limit, we take $N\goto \infty$, so it would be nice if these modes contributed very little to the free energy. Or rather, I should say the free energy density $F/N$. In the thermodynamic limit, this is the only quantity with physical significance. The contribution to the free energy density of the zero energy modes will go as
+\[ f_0 \propto \frac{N^{(d-1)/d} \log{N}}{N} = \frac{\log N}{N^{1/d}} \goto 0.\]
+
+In high dimensions, this convergence is slow, but for $d=2$, what we're looking at here, isn't terrible. So we're justified in dropping these terms from the free energy. Continuing on, we can take the sum over $\bv k$ to an integral with the continuum limit
+\[ \sum_{\bv k} \goto \frac{V}{(2\pi)^2} \int d\bv k.\]
+\[ F = \frac{k_BT V}{8\pi^2} \int d \bv k \, \log \paren{\lam^2 \b \det E_{\bv k}}.\]
+The integral is over the entirety of the first Brillouin zone, and there's really no problem when we have $\det E_{\bv k}$ going to zero because that singularity in the integrand is usually integrable.
+
+For our 2-dimensional crystal, we can write down $E_{\bv k}$ right away by using the results of Section 2. If the crystal lattice spacing is $c$, then 
+\[ E_{\bv k} = \pmtrx{ 4A \sin^2\paren{\half{k_x c}} & 0 \\ 0 & 4A \sin^2\paren{\half{k_y c}} }.\]
+\[ \det E_{\bv k} = 16 A^2 \sin^2\paren{\half{k_x c}} \sin^2\paren{\half{k_yc}}.\]
+Then our free energy becomes:
+\[ F = \frac{k_BTV}{8\pi^2}\int d\bv k \, \log\paren{16A^2\lam^2\b} + \log\paren{\sin^2\paren{\half{k_x c}} \sin^2\paren{\half{k_yc}}}.\]
+The first term is independent of $\bv k$ and we recover the volume over the first Brillouin zone:
+\[ F = \frac{k_BTV}{8\pi^2} \paren{\frac{2\pi}{c}}^2 \log\paren{16 A^2 \lam^2 \b} + \frac{k_BTV}{8\pi^2}\int_{-\pi/c}^{\pi/c} dk_x \int_{-\pi/c}^{\pi/c} dk_y \, \log\paren{\sin^2\paren{\half{k_x c}} \sin^2\paren{\half{k_yc}}}.\]
+The first term can be simplified by using the volume of the real-space unit cell, $N c^2 = V$, and the second integral is very symmetric, so we can simplify it quite a bit.
+\[ F = \frac{k_BT N}{2}\log\paren{16 A^2 \lam^2 \b} + \frac{2k_BT V}{\pi c} \int_0^{\pi/c} dk_x\,\log \sinp{\frac{k_x c}{2}}.\]
+The integral can be solved analytically:
+\[ F = \frac{k_BT N}{2}\log\paren{16 A^2 \lam^2 \b} - \frac{2 k_BT V \log 2}{c^2}.\]
+\[ F = \frac{k_BT N}{2} \log\paren{16 A^2 \lam^2 \b} - 2k_BT N \log 2.\]
+We could have seen before that the second term does not depend on volume, so it will not contribute to the pressure. It does, however, contribute to the entropy. So our pressure is:
+\[ P = -\pder{F}{V} = -\frac{k_BTN}{A}\pder{A}{V}.\]
+Generally, $A$ decreases with volume for normal interatomic forces.
+
+\subsection{Massive Modes in the Phonon Dispersion Matrix}
+So now that we've gotten a good handle on the mechanics of the calculation, we can skip right to the part where we plug in the dispersion matrix. For our model of phonons interacting with librons, the determinant of our matrix is
+\[ \det E_{\bv k} = 64 A^2(\g_{xx}\g_{yy} - \g_{xy}^2)(D\mu + E\g).\]
+\[ \g_{ij} = \half{1} \sum_{\bv c} \hat{c}_i \hat{c}_j \sin^2\paren{\half{\Dot k c}}, \quad \g = \half{1}\sum_{\bv c} \sin^2 \paren{\half{ \Dot k c}},\quad \mu = \half{1} \sum_{\bv c} \cos^2\paren{\half{\Dot k c}} .\]
+Furthermore, the first Brillouin zone is the regular hexagon centered at $\bv k = 0$ whose side lengths are equal to $\pi/c$.
 
 %%%%%%%%%
 \end{document} 

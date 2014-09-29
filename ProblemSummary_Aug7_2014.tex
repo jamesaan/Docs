@@ -1,0 +1,164 @@
+\documentclass[12pt]{article}
+\usepackage[top = 3cm,bottom=3cm,left=2cm,right=2cm]{geometry}        
+\geometry{letterpaper}
+\usepackage[parfill]{parskip}  
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usetikzlibrary{decorations.markings,arrows}
+\usepackage{bm}
+ 
+ \begin{document}  
+ 
+\baselineskip 2.7ex
+\parskip 3.5ex
+
+\pagestyle{myheadings}
+\markright{James Antonaglia  \hfill}
+
+
+%Equations/Entries
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\bequo}{\begin{quotation}}
+\newcommand{\beqa}{\begin{eqnarray}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\leeq}[1]{\label{#1}\end{equation}}
+\newcommand{\equo}{\end{quotation}}
+\newcommand{\eeqa}{\end{eqnarray}}
+\newcommand{\non}{\nonumber}
+\newcommand{\mx}{\mbox}
+\newcommand{\mxf}[1]{\mbox{\footnotesize{#1}}}
+\newcommand{\lb}{\label}
+\newcommand{\fr}[1]{(\ref{#1})}
+\newtheorem{entry}{}[section]
+\newcommand{\bent}[1]{\vspace*{-2cm}\hspace*{-1cm}\begin{entry}\lb{e{#1}}\rm}
+\newcommand{\eent}{\end{entry}}
+\newcommand{\fre}[1]{{\bf\ref{e{#1}}}}
+\newcommand{\Emark}{$\sqcap\hspace{-2.7mm}\sqcup$}
+\newcommand{\sEmark}{{\fns $\sqcap\hspace{-2.3mm}\sqcup$}}
+\newcommand{\fn}{\footnote}
+
+
+%Greek Letters
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\newcommand{\g}{\gamma}
+\newcommand{\G}{\Gamma}
+\renewcommand{\d}{\delta}
+\renewcommand{\th}{\theta}
+\renewcommand{\k}{\kappa}
+\newcommand{\Th}{\Theta}
+\newcommand{\D}{\Delta}
+\newcommand{\e}{\epsilon}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\s}{\sigma}
+\renewcommand{\S}{\Sigma}
+\newcommand{\w}{\omega}
+\newcommand{\W}{\Omega}
+\newcommand{\al}{\alpha}
+\newcommand{\bet}{\beta}
+\newcommand{\gam}{\gamma}
+\newcommand{\lam}{\lambda}
+\newcommand{\Lam}{\Lambda}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ichi}\sichi
+\renewcommand{\ni}{\sni}
+\renewcommand{\r}{\rho}
+\renewcommand{\t}{\tau}
+\newcommand{\ph}{\varphi}
+\newcommand{\sichi}{{\mbox{{\footnotesize I}}}}
+\newcommand{\sni}{{\mbox{{\footnotesize II}}}}
+
+%color2010/6/9
+\newcommand{\red}{\color{red}}
+\newcommand{\blue}{\color{blue}}
+\newcommand{\green}{\color{green}}
+\definecolor{gray}{rgb}{0.5, 0.5, 0.5}
+\newcommand{\gray}{\color{gray}}
+
+%Derivatives
+\newcommand{\pder}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\pdert}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\fder}[2]{\frac{\delta {#1}}{\delta {#2}}}
+\newcommand{\PDD}[3]{\left.\frac{\partial^{2}{#1}}{\partial{#2}^{2}}\right|_{#3}
+}
+\newcommand{\PD}[3]{\left.\frac{\partial{#1}}{\partial{#2}}\right|_{#3}}
+\newcommand{\der}[2]{\frac{d {#1}}{d {#2}}}
+
+\renewcommand{\deg}{^\circ}
+\newcommand{\com}{{\bf [C] }}
+\newcommand{\cend}{\Emark\[\]\vspace*{-1. cm}}
+\newcommand{\x}{\times}
+
+%My commands
+\newcommand{\win}{\ddot\smile}
+\newcommand{\lose}{\ddot\frown}
+\newcommand{\avg}[1]{\left \langle #1 \right \rangle}
+\newcommand{\E}[1]{\ensuremath{\times10^{#1}}}
+\newcommand{\abs}[1]{\ensuremath{\left | #1 \right |}}
+\newcommand{\paren}[1]{\left(#1\right)}
+\newcommand{\recip}[1]{\frac{1}{#1}}
+\newcommand{\ex}[1]{\mathbb{E}[#1]}
+\newcommand{\bprob}[1]{\textbf{#1~---}}
+\newcommand{\unitv}[1]{\ensuremath{\mathbf{\hat{e}}_{#1}}}
+\newcommand{\goto}{\rightarrow}
+\newcommand{\expct}[1]{\mathbb{E}[#1]}
+\newcommand{\mtrx}[1]{\begin{matrix}#1\end{matrix}}
+\newcommand{\pmtrx}[1]{\paren{\begin{matrix}#1\end{matrix}}}
+\newcommand{\cosp}[1]{\cos{\paren{#1}}}
+\newcommand{\sinp}[1]{\sin{\paren{#1}}}
+\newcommand{\tanp}[1]{\tan{\paren{#1}}}
+\newcommand{\half}[1]{\frac{#1}{2}}
+\newcommand{\ham}{\mathcal{H}}
+\newcommand{\tr}{\mathrm{Tr}}
+\newcommand{\bv}[1]{\mathbf{#1}}
+\newcommand{\Der}[2]{\frac{d#1}{d#2}}
+\renewcommand{\Dot}[2]{\ensuremath{\bv{#1}\cdot\bv{#2}}}
+\newcommand{\Cross}[2]{\ensuremath{\bv{#1}\times\bv{#2}}}
+\newcommand{\del}{\ensuremath{\partial}}
+\newcommand{\R}{\ensuremath{\bv{r-r'}}}
+\newcommand{\aR}{\ensuremath{\abs{\R}}}
+\newcommand{\br}{\ensuremath{\bv{r}}}
+\newcommand{\impl}{\ensuremath{\quad \Rightarrow \quad}}
+\renewcommand{\div}[1]{\nabla \cdot \bv{#1}}
+\newcommand{\curl}[1]{\nabla \times \bv{#1}}
+\newcommand{\lapl}{\nabla^2}
+\newcommand{\vint}{\int d^3r}
+\newcommand{\oocs}{\recip{c^2}}
+\newcommand{\mnfp}[1]{\frac{\mu_0 #1}{4\pi}}
+\renewcommand{\iiint}{\int_{-\infty}^{\infty}}
+\newcommand{\tpi}[1]{\paren{2\pi}^{#1}}
+\newcommand{\ootpi}[1]{\recip{\paren{2\pi}^{#1}}}
+
+%%%%%%%%
+
+My problem is in the realm of the theory of elasticity, but at this point, I'm not sure even how to search for my problem. The particles in my system are hard, regular hexagons in two dimensions. The corresponding microscopic Hamiltonian is
+\[ \mathcal{H} = \sum_i \recip{2m} \dot{r}^2 + \recip{2I}\dot{\th}^2 + V(\br_i,\th_i).\]
+Here, the interaction potential is infinite if any of the particles overlap and is 0 otherwise.
+
+Simulations show that, at sufficiently high density, the hexagons nearly tile space and make a triangular lattice. They are more or less rigidly fixed but exhibit fluctuations about their crystal lattice positions. Furthermore, they cannot arbitrarily rotate, because the crystal is so dense, if they were to rotate, they would overlap each other. In this dense phase, there is small spatial deviation from both the particles' crystal lattice sites and small angular deviation from a globally determined orientation.
+
+As the density is slightly lowered, there appears to be a phase where the hexagons can freely rotate. In other words, angular fluctuations destroy the orientational order and the hexagons explore their angular phase space uninhibited. However, the hexagons are still pinned to their lattice positions.
+
+My hypothesis is that in the low density, solid "rotator crystal" phase, the field $\th_i$ can undergo arbitrary rotations. That is, the system is invariant under a local U(1) symmetry defined by $\th_i \goto \th_i + \d_i$ where $\d_i$ is an arbitrary angle. As the density is increased to the solid crystal phase, this gauge symmetry is broken, and there should exist a massive excitation of the field $\th$. That these modes exist has been demonstrated in molecular crystals, but their mass is difficult to detect. Whereas the breaking of translational symmetry and disturbance of a vibrational field yields phonons, the breaking of this local rotational symmetry generates \textit{librons}, or disturbances of the librational field. That these excitations should have mass is not difficult to see: a perfect crystal of hexagons, if subjected to a universal rotation, i.e. $\th_i \goto \th_i + \d$, will cause the lattice to expand and take up more space (unless the container is also rotated).
+
+My goal is to arrive at a meaningful phenomenological formulation of this field theory involving the libration field $\th$. In general, it couples to the vibrational field $\bv u_i = \bv r_i - \avg{\bv r_i}$. Thus, my first stab at a phenomenological free energy (to quadratic order in derivatives) goes something like this:
+
+\[ \mathcal{L} = \int d^2r \Phi(\nabla \bv u(\br), \th(\br), \nabla \th(\br)).\]
+\[ \Phi = \frac{K_1}{2} (\del_\a u_\b) (\del_\a u_\b) + \frac{K_2}{2} (\del_\a u_\a) (\del_\b u_\b) + J_{1,\a} (\del_\a u_\b)  (\del_\b\th) + J_{2,\a} (\del_\b u_\a)(\del_\b \th)+ \frac{K_\th}{2} (\del_\a\th)(\del_\a\th) + f(\th).\]
+
+I haven't been terribly careful and will later revise this free energy, as there may be redundant terms. However, the most important and troublesome term is the final one which I have left unspecified. The quadratic term in the expansion of $f(\th)$ should produce the mass. However, by expanding $f(\th)$ to quadratic order, we fundamentally throw out the discrete symmetry of the hexagons themselves, that is:
+\beq \mathcal{L}(\th(\br)) = \mathcal{L}\paren{\th(\br) + \frac{2\pi}{6} n(\br)} \eeq
+Here, $n(\br)$ is an integer defined for each hexagon at position $\br$.
+
+Furthermore, I haven't yet looked into how many further higher order terms (or which ones) will be required to give me interesting and relevant information about the transition between the rotator crystal phase and the solid crystal phase. A priori, I feel that all couplings between the field $\bv u$ and the field $\th$ need to vanish at the critical point. Furthermore, since in the rotator crystal phase, since every orientation of the particles is degenerate, every coupling constant that multiplies a term involving $\th$ at all should vanish.
+
+A further difficulty, how does the symmetry described by Eq. (1) put constraints on $f(\th)$ in the effective Hamiltonian? Does this kind of symmetry breaking (local, continuous symmetry $\goto$ local, discrete symmetry) happen in other systems? What should I be googling?
+
+%%%%%%%%%
+\end{document} 

@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  30 MAY 2014 12:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  7 AUG 2014 16:09
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **"fuckin partials.tex"
 (./fuckin partials.tex
@@ -574,7 +573,7 @@ Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 138.
 LaTeX Info: Redefining \bm on input line 204.
 )
-No file "fuckin partials".aux.
+(./fuckin partials.aux)
 \openout1 = `"fuckin partials.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
@@ -589,6 +588,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -654,8 +654,8 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 (./fuckin partials.aux) ) 
 Here is how much of TeX's memory you used:
- 13597 strings out of 493315
- 252286 string characters out of 6137904
+ 13599 strings out of 493315
+ 252326 string characters out of 6137904
  303790 words of memory out of 5000000
  16762 multiletter control sequences out of 15000+600000
  11406 words of font info for 42 fonts, out of 8000000 for 9000

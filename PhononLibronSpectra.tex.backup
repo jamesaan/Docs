@@ -340,9 +340,9 @@ A particularly useful basis to work in is the Fourier basis: though the fields a
 Furthermore, the matrix of coupling constants in real space is sparse, but it has many off-diagonal components. Schematically speaking:
 \[ \bv K_{\br} = \pmtrx{ k_1 & - k_{12} & 0 & 0 & 0 & \ldots \\ -k_{12} & k_2 & -k_{23} & 0 & 0 & \\ 0 & -k_{23} & k_3 & -k_{34} & 0 & \\ 0 & 0 & -k_{34} & k_4 & -k_{45} & \\ 0 & 0 & 0 & -k_{45} & k_5 & \\ \vdots & & & & & \ddots }.\]
 Here, this matrix is $3N\times 3N$, where $N$ is the number of particles, and 3 is the number of fields we have, two translational and one rotational. This structure guarantees that the inverse matrix $\bv K_\br^{-1}$ is \emph{the exact opposite of sparse, i.e.} every element is nonzero (if the inverse exists). On the other hand, in the Fourier basis, because modes of different wavelength are uncoupled, the matrix has a very useful structure. If we let:
-\[ \bv E(\bv k) = \pmtrx{4A \g_{xx} & 4A \g_{xy} & -2i B \g_{x} \\ 4A 
-\g_{xy} & 4A\g_{yy} & - 2i B \g_{y} \\ 2i B \g_{x} & 2i B\g_{y} & 4D 
-\mu + 4 E \g},\]
+\[ \bv E(\bv k) = \pmtrx{4A \g_{xx}^2 & 4A \g_{xy}^2 & -2i B \g_{x}^2 \\ 4A 
+\g_{xy}^2 & 4A\g_{yy}^2 & - 2i B \g_{y}^2 \\ 2i B \g_{x}^2 & 2i B\g_{y}^2 & 4D 
+\mu^2 + 4 E \g},\]
 as I write on page 8, with $\g$ and $\mu$ defined previously, then we can write the total coupling matrix in a block diagonal form:
 \[ \bv K_{\bv k} = \pmtrx{\bv E(\bv k_0) & 0 & 0 & \ldots \\ 0 & \bv E(\bv k_1) & 0 & \\ 0 & 0 & \bv E(\bv k_2) & \\ \vdots & & & \ddots}.\]
 The inverse is simply

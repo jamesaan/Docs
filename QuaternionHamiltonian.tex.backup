@@ -1,0 +1,289 @@
+\documentclass[12pt]{article}
+\usepackage[top = 3cm,bottom=3cm,left=2cm,right=2cm]{geometry}        
+\geometry{letterpaper}
+\usepackage[parfill]{parskip}  
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usetikzlibrary{decorations.markings,arrows}
+\usepackage{bm}
+\usepackage{bbm}
+\usepackage{hyperref}
+ 
+ \begin{document}  
+ 
+\baselineskip 2.7ex
+\parskip 3.5ex
+
+\pagestyle{myheadings}
+\markright{James Antonaglia \hfill Quaternion Hamiltonian \hfill}
+
+
+%Equations/Entries
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\bequo}{\begin{quotation}}
+\newcommand{\beqa}{\begin{eqnarray}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\leeq}[1]{\label{#1}\end{equation}}
+\newcommand{\equo}{\end{quotation}}
+\newcommand{\eeqa}{\end{eqnarray}}
+\newcommand{\non}{\nonumber}
+\newcommand{\mx}{\mbox}
+\newcommand{\mxf}[1]{\mbox{\footnotesize{#1}}}
+\newcommand{\lb}{\label}
+\newcommand{\fr}[1]{(\ref{#1})}
+\newtheorem{entry}{}[section]
+\newcommand{\bent}[1]{\vspace*{-2cm}\hspace*{-1cm}\begin{entry}\lb{e{#1}}\rm}
+\newcommand{\eent}{\end{entry}}
+\newcommand{\fre}[1]{{\bf\ref{e{#1}}}}
+\newcommand{\Emark}{$\sqcap\hspace{-2.7mm}\sqcup$}
+\newcommand{\sEmark}{{\fns $\sqcap\hspace{-2.3mm}\sqcup$}}
+\newcommand{\fn}{\footnote}
+
+
+%Greek Letters
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\newcommand{\g}{\gamma}
+\newcommand{\G}{\Gamma}
+\renewcommand{\d}{\delta}
+\renewcommand{\th}{\theta}
+\renewcommand{\k}{\kappa}
+\newcommand{\Th}{\Theta}
+\newcommand{\D}{\Delta}
+\newcommand{\e}{\epsilon}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\s}{\sigma}
+\renewcommand{\S}{\Sigma}
+\newcommand{\w}{\omega}
+\newcommand{\W}{\Omega}
+\newcommand{\al}{\alpha}
+\newcommand{\bet}{\beta}
+\newcommand{\gam}{\gamma}
+\newcommand{\lam}{\lambda}
+\newcommand{\Lam}{\Lambda}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ichi}\sichi
+\renewcommand{\ni}{\sni}
+\renewcommand{\r}{\rho}
+\renewcommand{\t}{\tau}
+\newcommand{\ph}{\varphi}
+\newcommand{\sichi}{{\mbox{{\footnotesize I}}}}
+\newcommand{\sni}{{\mbox{{\footnotesize II}}}}
+
+%color2010/6/9
+\newcommand{\red}{\color{red}}
+\newcommand{\blue}{\color{blue}}
+\newcommand{\green}{\color{green}}
+\definecolor{gray}{rgb}{0.5, 0.5, 0.5}
+\newcommand{\gray}{\color{gray}}
+
+%Derivatives
+\newcommand{\pder}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\pdert}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\fder}[2]{\frac{\delta {#1}}{\delta {#2}}}
+\newcommand{\PDD}[3]{\left.\frac{\partial^{2}{#1}}{\partial{#2}^{2}}\right|_{#3}
+}
+\newcommand{\PD}[3]{\left.\frac{\partial{#1}}{\partial{#2}}\right|_{#3}}
+\newcommand{\der}[2]{\frac{d {#1}}{d {#2}}}
+
+\renewcommand{\deg}{^\circ}
+\newcommand{\com}{{\bf [C] }}
+\newcommand{\cend}{\Emark\[\]\vspace*{-1. cm}}
+\newcommand{\x}{\times}
+
+%My commands
+\newcommand{\win}{\ddot\smile}
+\newcommand{\lose}{\ddot\frown}
+\newcommand{\avg}[1]{\left \langle #1 \right \rangle}
+\newcommand{\E}[1]{\ensuremath{\times10^{#1}}}
+\newcommand{\abs}[1]{\ensuremath{\left | #1 \right |}}
+\newcommand{\paren}[1]{\left(#1\right)}
+\newcommand{\recip}[1]{\frac{1}{#1}}
+\newcommand{\ex}[1]{\mathbb{E}[#1]}
+\newcommand{\bprob}[1]{\textbf{#1~---}}
+\newcommand{\unitv}[1]{\ensuremath{\mathbf{\hat{e}}_{#1}}}
+\newcommand{\goto}{\rightarrow}
+\newcommand{\expct}[1]{\mathbb{E}[#1]}
+\newcommand{\mtrx}[1]{\begin{matrix}#1\end{matrix}}
+\newcommand{\pmtrx}[1]{\paren{\begin{matrix}#1\end{matrix}}}
+\newcommand{\cosp}[1]{\cos{\paren{#1}}}
+\newcommand{\sinp}[1]{\sin{\paren{#1}}}
+\newcommand{\tanp}[1]{\tan{\paren{#1}}}
+\newcommand{\half}[1]{\frac{#1}{2}}
+\newcommand{\ham}{\mathcal{H}}
+\newcommand{\tr}{\mathrm{Tr}}
+\newcommand{\bv}[1]{\mathbf{#1}}
+\newcommand{\Der}[2]{\frac{d#1}{d#2}}
+\renewcommand{\Dot}[2]{\ensuremath{\bv{#1}\cdot\bv{#2}}}
+\newcommand{\Cross}[2]{\ensuremath{\bv{#1}\times\bv{#2}}}
+\newcommand{\del}{\ensuremath{\partial}}
+\newcommand{\R}{\ensuremath{\bv{r-r'}}}
+\newcommand{\aR}{\ensuremath{\abs{\R}}}
+\newcommand{\br}{\ensuremath{\bv{r}}}
+\newcommand{\impl}{\ensuremath{\quad \Rightarrow \quad}}
+\renewcommand{\div}[1]{\nabla \cdot \bv{#1}}
+\newcommand{\curl}[1]{\nabla \times \bv{#1}}
+\newcommand{\lapl}{\nabla^2}
+\newcommand{\vint}{\int d^3r}
+\newcommand{\oocs}{\recip{c^2}}
+\newcommand{\mnfp}[1]{\frac{\mu_0 #1}{4\pi}}
+\renewcommand{\iiint}{\int_{-\infty}^{\infty}}
+\newcommand{\tpi}[1]{\paren{2\pi}^{#1}}
+\newcommand{\ootpi}[1]{\recip{\paren{2\pi}^{#1}}}
+\newcommand{\Sig}{\bm{\s}}
+\renewcommand{\dag}{^\dagger}
+
+%%%%%%%%
+\section{Derivation of kinetic energy in terms of quaternions}
+A representation of the quaternion algebra are the 2 $\times$ 2 Pauli matrices, 
+or equivalently, the 3 $\times$ 3 rotation generator matrices. Pauli matrices 
+are a bit nicer than the generator matrices because they have very useful trace 
+and determinant properties. Furthermore, they, plus the identity matrix, form 
+an orthonormal basis for all 2 $\times$ 2 matrices. We can express every 
+\emph{unit} quaternion with three indepenent parameters (restricting them to be 
+of unit magnitude removes one of our degrees of freedom) which can be 
+represented as
+\[ \bv q = e^{\frac{i}{2}\th_\mu \bm{\s}_\mu}.\]
+I'm going to try to stick to the convention that Greek indices run from 1 to 3 
+and label either components of a vector (here a vector of rotation parameters 
+$\th_\mu$) or a tensor (later we'll have the moment of inertia tensor). Later, 
+I'll use Latin indices to label components of matrices. Furthermore, when I say 
+that an object is a quaternion, I am writing it as a matrix. Namely, \emph{any} 
+quaternion can be represented as:
+\[ \bv{z} = z_0 \mathbbm{1} + z_\mu \Sig_\mu.\]
+And as well, Einstein summation notation is presumed. Also, bold objects 
+represent matrices, unless I write them out with their indices explicitly.
+
+The goal is to get from $\bv q$ to the angular velocity $\vec{\w}$, then to the 
+kinetic energy $T$, and then finally to the conjugate variable to $\bv q$, 
+which we'll call $\bv M$. This will help us write down a Hamiltonian for a 
+rotating particle, and then ultimately, we will construct the partition 
+function for a group of particles who interact by way of their orientations. So 
+first thing's first, we need $\vec{\w}$.
+\subsection{Angular velocity vector}
+I won't prove this, but if we represent the orientation of some object by a 
+quaternion $\bv e$ which is fixed, we can rotate it into a different position 
+by \emph{conjugating} by $\bv q$:
+\[ \bv e' = \bv{q^\dagger eq}.\]
+Here, the dagger is a complex transpose, so we have
+\[ \bv q^\dagger = e^{-\half{i}\th_\mu \Sig_\mu}.\]
+So say now we make $\bv q$ time dependent and move it forward in time by $dt$. 
+The new orientation of our object is now:
+\[ \bv e'' = (d\bv q)^\dagger \bv e' (d\bv q),\qquad d\bv q = e^{\half{i}dt 
+\w_\mu \Sig_\mu} \approx 1 + \half{i}dt \w_\mu \Sig_\mu.\]
+So we can also instead write
+\[ \bv e'' = \bv q'^\dagger \bv e \bv q',\qquad \bv q' = \bv q(d\bv q).\]
+So we have
+\[ \dot{\bv q}dt = \bv q(d\bv q) - \bv q = \bv q\paren{\half{i}\w_\mu\Sig_\mu} 
+dt.\]
+Because $\bv q$ is a unit quaternion, we have
+\[ \bv q^\dagger \bv q = \bv q \bv q^\dagger = \mathbbm{1}.\]
+So we can multiply from the left by $\bv q^\dagger$ and get
+\[ \w_\mu \Sig_\mu = -2i\bv q^\dagger\dot{\bv q} .\]
+The left-hand side is a Hermitian matrix, so we can also write
+\[ \w_\mu \Sig_\mu = 2i \dot{\bv q}^\dagger \bv q.\]
+So this is all good, but we'd like the individual components of the vector 
+$\w_\mu$. To do this, we can use the algebraic properties of the Pauli matrices:
+\[ \left [ \Sig_\mu, \Sig_\nu \right ] = 2i \e_{\mu\nu\g} \Sig_\g,\qquad 
+\left\{ \Sig_\mu, \Sig_\nu \right \} = 2\mathbbm{1}\d_{\mu \nu}.\]
+\[ \Sig_\mu \Sig_\nu = \half{1}\left\{ \Sig_\mu, \Sig_\nu \right \} 
++ \half{1}\left [ \Sig_\mu,\Sig_\nu \right ] = \mathbbm{1}\d_{\mu\nu} + 
+i\e_{\mu\nu\g}\Sig_\g.\]
+\[ \mathrm{Tr}(\Sig_\mu) = 0,\qquad \mathrm{Tr}(\Sig_\mu\Sig_\nu) = 
+\mathrm{Tr}(\mathbbm{1}\d_{\mu\nu}) = 2\d_{\mu\nu}.\]
+So we can multiply by another Pauli matrix and take the trace of both sides of 
+our equation to isolate the components of the vector $\vec{\w}$.
+\[ \w_\mu\mathrm{Tr}(\Sig_\mu \Sig_\nu) = -2i \mathrm{Tr}(\bv q\dag \dot{\bv 
+q} \Sig_\nu).\]
+\[ \boxed{ \w_\nu = -i \mathrm{Tr}(\bv q\dag \dot{ \bv q} \Sig_\nu).}\]
+We can also take the Hermitian conjugate of both sides, and since $\w_\nu$ is 
+real, we also obtain
+\[ \boxed{ \w_\nu = i \mathrm{Tr} (\dot{\bv q}\dag \bv q \Sig_\nu).}\]
+
+
+\subsection{Conjugate momentum and matrix derivatives}
+The kinetic energy of our rotating object is simply expressed with the moment 
+of inertia tensor:
+\[ T = \half{1} \w_\mu I_{\mu\nu}\w_\nu.\]
+So we can simply plug in our work from above:
+\[ T = -\half{1} I_{\mu\nu} \mathrm{Tr}(\bv q \dag \dot{\bv q}\Sig_\mu) 
+\mathrm{Tr}(\bv q \dag \dot{\bv q}\Sig_\nu) = -\half{1}I_{\mu\nu} 
+\mathrm{Tr}(\dot{\bv q}\Sig_\mu\bv q\dag ) 
+\mathrm{Tr}(\dot{\bv q}\Sig_\nu\bv q \dag ).\]
+On the far right hand side, I used the cyclic property of the trace to move the 
+time derivative to the front, which will be useful now when we take derivatives 
+with respect to it.
+
+In order to construct the Hamiltonian, we need to first find the conjugate 
+momentum to our dynamical variable $\bv q$. This is done with a derivative with 
+respect to its time derivative:
+\[ \bv M = \pder{T}{\dot{\bv q}}.\]
+But what does the derivative with respect to a matrix mean? Well it just means 
+a derivative with respect to all of its components. For the sake of 
+illustration, we can calculate the derivative of a trace of a matrix $f(\bv X) 
+= Tr(XY)$ in the following way:
+\[ f(\bv X) = X_{ij}Y_{ji}.\]
+\[ \pder{f}{X_{k\ell}} = \d_{ik}d_{j \ell} Y_{ji} = Y_{\ell k}.\]
+\[ \pder{f}{\bv X} = \bv Y ^T.\]
+This will really be all we need. For more details, I recommend \emph{The Matrix 
+Cookbook} 
+(\url{http://www.imm.dtu.dk/pubdb/views/edoc_download.php/3274/pdf/imm3274.pdf}
+) written by some smart folks at MIT. As for now, we can go back to finding the 
+conjugate momentum:
+\[ \bv M^T = \paren{\pder{T}{\dot{\bv q}}}^T = -\half{1}I_{\mu\nu} \paren{ 
+\Sig_\mu \bv q\dag \mathrm{Tr}(\dot{\bv q}  \Sig_\nu\bv q\dag) + \Sig_\nu \bv 
+q\dag \mathrm{Tr}(\dot{\bv q} \dag \Sig_\mu\bv q)}.\]
+The two objects in parentheses are the same tensor, but transposed in the 
+indices $\mu$ and $\nu$. But we're summing over these indices with the moment 
+of inertia tensor $I_{\mu\nu}$, which is symmetric. So we really have two of 
+the same object, and we can combine them together. Thus we have
+\[ \bv M^T = -I_{\mu\nu}\Sig_\mu \bv q\dag \mathrm{Tr}(\dot{\bv q}\Sig_\nu \bv 
+q\dag).\]
+In index notation:
+\[ M_{ij} = -I_{\mu\nu} \paren{\Sig_\mu \bv q\dag}_{ji}\mathrm{Tr}(\bv 
+q\dag \dot{\bv q}\Sig_\nu).\]
+A useful quantity is the Hermitian conjugate:
+\[ M\dag_{ij} = -I_{\mu\nu} \paren{\bv q \Sig_\mu}_{ji} \mathrm{Tr}(\dot{\bv 
+q}\dag \bv q \Sig_\nu).\]
+
+\subsection{Kinetic energy in terms of conjugate momentum}
+In order to use the power of the Hamiltonian formalism, we need to express the 
+kinetic energy in terms of the conjugate momentum instead of the time 
+derivative of our generalized coordinate $\bv q$. However, I can't think of a 
+way to invert the above two relations to get $\dot{\bv q}$ in terms of $\bv M$. 
+However, we can totally sub out $\dot{\bv q}$ for $\bv M$ in a particular case 
+when the moment of inertia tensor is proportional to the identity matrix. First 
+we begin with a particularly useful quantity, the trace over $\bv M\dag 
+\bv M$:
+\[ \mathrm{Tr}\paren{\bv M\dag \bv M} = M\dag_{ij}M_{ji} = I_{\mu\nu}I_{\g\eta} 
+(\bv q \Sig_\mu)_{ji} (\Sig_\g \bv q\dag)_{ij} \mathrm{Tr}(\bv q \dag \dot{\bv 
+q} \Sig_\nu) \mathrm{Tr}(\dot{\bv q}\dag \bv q \Sig_\eta).\]
+\[ \mathrm{Tr}\paren{\bv M\dag \bv M} = I_{\mu\nu}I_{\g\eta} \mathrm{Tr}(\bv q 
+\Sig_\mu \Sig_\g \bv q\dag) \mathrm{Tr}(\bv q \dag \dot{\bv q} 
+\Sig_\nu) \mathrm{Tr}(\dot{\bv q}\dag \bv q \Sig_\eta).\]
+In the first trace, because it's cyclic, we can shuttle the $\bv q\dag$ to the 
+front which cancels with the $\bv q$. And we have a very simple expression for 
+the trace over a product of Pauli matrices:
+\[ \mathrm{Tr}\paren{\bv M\dag \bv M} = 2I_{\mu\nu}I_{\g\eta}\d_{\mu\g} 
+\mathrm{Tr}(\bv q \dag \dot{\bv q} 
+\Sig_\nu) \mathrm{Tr}(\dot{\bv q}\dag \bv q \Sig_\eta).\]
+\[ \mathrm{Tr}\paren{\bv M\dag \bv M} = -2I^2_{\nu\eta} \mathrm{Tr}(\bv q \dag 
+\dot{\bv q}\Sig_\nu) \mathrm{Tr}(\bv q \dag 
+\dot{\bv q}\Sig_\eta).\]
+Here, I've used $\bv q\dag \dot{\bv q} = - \dot{\bv q}\dag \bv q.$ But this is 
+extremely similar to our result for the kinetic energy.
+\[ T = -\half{1} I_{\mu\nu} \mathrm{Tr}(\bv q \dag \dot{\bv q}\Sig_\mu) 
+\mathrm{Tr}(\bv q \dag \dot{\bv q}\Sig_\nu).\]
+The only difference is a factor of $4$ and an extra power of the tensor $I$. As 
+far as I can get, I can't figure out a way to substitute these expressions for 
+a general 
+
+
+%%%%%%%%%
+\end{document} 

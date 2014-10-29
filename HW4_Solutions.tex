@@ -1,0 +1,262 @@
+\documentclass[12pt]{article}
+\usepackage[top = 3cm,bottom=3cm,left=2cm,right=2cm]{geometry}        
+\geometry{letterpaper}
+\usepackage[parfill]{parskip}  
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usetikzlibrary{decorations.markings,arrows}
+\usepackage{bm}
+\usepackage{bbm}
+\usepackage{hyperref}
+ 
+ \begin{document}  
+ 
+\baselineskip 2.7ex
+\parskip 3.5ex
+
+\pagestyle{myheadings}
+\markright{\today \hfill Homework \# 4 Solutions \hfill}
+
+
+%Equations/Entries
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\bequo}{\begin{quotation}}
+\newcommand{\beqa}{\begin{eqnarray}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\leeq}[1]{\label{#1}\end{equation}}
+\newcommand{\equo}{\end{quotation}}
+\newcommand{\eeqa}{\end{eqnarray}}
+\newcommand{\non}{\nonumber}
+\newcommand{\mx}{\mbox}
+\newcommand{\mxf}[1]{\mbox{\footnotesize{#1}}}
+\newcommand{\lb}{\label}
+\newcommand{\fr}[1]{(\ref{#1})}
+\newtheorem{entry}{}[section]
+\newcommand{\bent}[1]{\vspace*{-2cm}\hspace*{-1cm}\begin{entry}\lb{e{#1}}\rm}
+\newcommand{\eent}{\end{entry}}
+\newcommand{\fre}[1]{{\bf\ref{e{#1}}}}
+\newcommand{\Emark}{$\sqcap\hspace{-2.7mm}\sqcup$}
+\newcommand{\sEmark}{{\fns $\sqcap\hspace{-2.3mm}\sqcup$}}
+\newcommand{\fn}{\footnote}
+
+
+%Greek Letters
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\newcommand{\g}{\gamma}
+\newcommand{\G}{\Gamma}
+\renewcommand{\d}{\delta}
+\renewcommand{\th}{\theta}
+\renewcommand{\k}{\kappa}
+\newcommand{\Th}{\Theta}
+\newcommand{\D}{\Delta}
+\newcommand{\e}{\epsilon}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\s}{\sigma}
+\renewcommand{\S}{\Sigma}
+\newcommand{\w}{\omega}
+\newcommand{\W}{\Omega}
+\newcommand{\al}{\alpha}
+\newcommand{\bet}{\beta}
+\newcommand{\gam}{\gamma}
+\newcommand{\lam}{\lambda}
+\newcommand{\Lam}{\Lambda}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ichi}\sichi
+\renewcommand{\ni}{\sni}
+\renewcommand{\r}{\rho}
+\renewcommand{\t}{\tau}
+\newcommand{\ph}{\varphi}
+\newcommand{\sichi}{{\mbox{{\footnotesize I}}}}
+\newcommand{\sni}{{\mbox{{\footnotesize II}}}}
+
+%color2010/6/9
+\newcommand{\red}{\color{red}}
+\newcommand{\blue}{\color{blue}}
+\newcommand{\green}{\color{green}}
+\definecolor{gray}{rgb}{0.5, 0.5, 0.5}
+\newcommand{\gray}{\color{gray}}
+
+%Derivatives
+\newcommand{\pder}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\pdert}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\fder}[2]{\frac{\delta {#1}}{\delta {#2}}}
+\newcommand{\PDD}[3]{\left.\frac{\partial^{2}{#1}}{\partial{#2}^{2}}\right|_{#3}
+}
+\newcommand{\PD}[3]{\left.\frac{\partial{#1}}{\partial{#2}}\right|_{#3}}
+\newcommand{\der}[2]{\frac{d {#1}}{d {#2}}}
+
+\renewcommand{\deg}{^\circ}
+\newcommand{\com}{{\bf [C] }}
+\newcommand{\cend}{\Emark\[\]\vspace*{-1. cm}}
+\newcommand{\x}{\times}
+
+%My commands
+\newcommand{\win}{\ddot\smile}
+\newcommand{\lose}{\ddot\frown}
+\newcommand{\avg}[1]{\left \langle #1 \right \rangle}
+\newcommand{\E}[1]{\ensuremath{\times10^{#1}}}
+\newcommand{\abs}[1]{\ensuremath{\left | #1 \right |}}
+\newcommand{\paren}[1]{\left(#1\right)}
+\newcommand{\recip}[1]{\frac{1}{#1}}
+\newcommand{\ex}[1]{\mathbb{E}[#1]}
+\newcommand{\bprob}[1]{\textbf{#1~---}}
+\newcommand{\unitv}[1]{\ensuremath{\mathbf{\hat{e}}_{#1}}}
+\newcommand{\goto}{\rightarrow}
+\newcommand{\expct}[1]{\mathbb{E}[#1]}
+\newcommand{\mtrx}[1]{\begin{matrix}#1\end{matrix}}
+\newcommand{\pmtrx}[1]{\paren{\begin{matrix}#1\end{matrix}}}
+\newcommand{\cosp}[1]{\cos{\paren{#1}}}
+\newcommand{\sinp}[1]{\sin{\paren{#1}}}
+\newcommand{\tanp}[1]{\tan{\paren{#1}}}
+\newcommand{\half}[1]{\frac{#1}{2}}
+\newcommand{\ham}{\mathcal{H}}
+\newcommand{\tr}{\mathrm{Tr}}
+\newcommand{\bv}[1]{\mathbf{#1}}
+\newcommand{\Der}[2]{\frac{d#1}{d#2}}
+\renewcommand{\Dot}[2]{\ensuremath{\bv{#1}\cdot\bv{#2}}}
+\newcommand{\Cross}[2]{\ensuremath{\bv{#1}\times\bv{#2}}}
+\newcommand{\del}{\ensuremath{\partial}}
+\newcommand{\R}{\ensuremath{\bv{r-r'}}}
+\newcommand{\aR}{\ensuremath{\abs{\R}}}
+\newcommand{\br}{\ensuremath{\bv{r}}}
+\newcommand{\impl}{\ensuremath{\quad \Rightarrow \quad}}
+\renewcommand{\div}[1]{\nabla \cdot \bv{#1}}
+\newcommand{\curl}[1]{\nabla \times \bv{#1}}
+\newcommand{\lapl}{\nabla^2}
+\newcommand{\vint}{\int d^3r}
+\newcommand{\oocs}{\recip{c^2}}
+\newcommand{\mnfp}[1]{\frac{\mu_0 #1}{4\pi}}
+\renewcommand{\iiint}{\int_{-\infty}^{\infty}}
+\newcommand{\tpi}[1]{\paren{2\pi}^{#1}}
+\newcommand{\ootpi}[1]{\recip{\paren{2\pi}^{#1}}}
+\newcommand{\Sig}{\bm{\s}}
+\renewcommand{\dag}{^\dagger}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\bprob{1} We can obtain all the properties of the classical ideal gas from its partition function:
+\[ Q = \recip{N! h^3}V^N \paren{2\pi m k_BT}^{3N/2}= \recip{N!}\frac{V^N}{\b^{3N/2}c^{3N}}, \qquad c = \sqrt{2\pi mk_BT}.\]
+I stuffed all the constants into one to make things easier. Easiest is probably the Helmholtz free energy:
+\[ A = -k_BT \log Q = k_BT\paren{N\log N - N + N \log \frac{c^3\b^{3/2}}{V}}.\]
+\[ \boxed{ A = Nk_BT \log \frac{N \b^{3/2}c^3}{eV}.}\]
+A bunch of these quantities are derivatives of the free energy:
+\[ E = -\PD{\log Q}{\b}{V,N},\quad S = -\PD{A}{T}{V,N}, \quad P = -\PD{A}{V}{T,N},\quad \mu = \PD{A}{N}{V,T}.\]
+\[ \boxed{E = \half{3} Nk_BT.}\]
+\[ \boxed{ S = Nk_B\log \frac{eV}{N\b^{3/2}c^3} - \half{3}Nk_B = Nk_B \log \frac{V}{N\b^{3/2}c^3 e^{1/2}}.}\]
+\[ \boxed{ P = \frac{Nk_BT}{V}.}\]
+\[ \boxed{ \mu = k_BT \log \frac{N\b^{3/2}c^d}{eV} + k_BT = k_BT\log \frac{N\b^{3/2}c^3}{V}.}\]
+The heat capacity is very easy:
+\[ \boxed{ C_V = \PD{E}{T}{V,N} = \half{3}Nk_B.}\]
+
+\hrulefill
+
+\bprob{2} The electronic partition function is given by
+\[ Q_\mathrm{electronic} = \w_0 + \w_1 e^{-\b \D \e_1} + \w_2 e^{-\b \D \e_2} + \ldots.\]
+Here, $\w_i$ is the degeneracy of the $i$th atomic state, and $\D \e_i$ is the energy difference between the $i$th state and the ground state. Usually, there is only one ground state ($\w_0 = 1$), but this isn't always necessarily the case, so we'll keep it general.
+
+\bprob{2a} The Helmoholtz free energy allows us to separate the contributions. The total partition function is
+\[ Q = \recip{N!} Q_k^N Q_e^N.\]
+The regular ideal gas free energy is untouched by the electronic degrees of freedom.
+\[ A = Nk_BT \log\frac{N}{eV} - \frac{3}{2}Nk_BT \log \frac{2m\pi k_BT}{h^2} - Nk_BT \log Q_e.\]
+
+\bprob{2b} The pressure is a derivative of the free energy with respect to $V$:
+\[ P = -\PD{A}{V}{T,N}.\]
+But the last term involving $Q_e$ does not depend on the volume, so we get the ideal gas result:
+\[ P = \frac{Nk_BT}{V}.\]
+
+\bprob{2c} The chemical potential will depend on the electronic degrees of freedom:
+\[ \mu = \PD{A}{N}{V,T}.\]
+\[ \mu = k_BT \log \frac{N}{V} - \frac{3}{2}k_BT \log \frac{2\pi mk_BT}{h^2} - k_BT\log Q_e.\]
+Using the ideal gas law, we can sub out the volume:
+\[ \mu = k_BT \log \paren{ \frac{P}{k_BTQ_e} \paren{\frac{h^2}{2\pi m k_BT}}^{3/2} }.\]
+\[ \boxed{ \mu = -k_BT\log \paren{ {k_BTQ_e} \paren{\frac{2\pi m k_BT}{h^2}}^{3/2} } + k_BT \log P.}.\]
+This is in the form $\mu_0(T) + k_BT \log P$, so we're done.
+
+\hrulefill
+
+\bprob{3} The ideal gas partition function we already have, but I want to show you in detail how to derive it. The integral $\int d\bv q$ (which I now realize is a notation that engineers are not familiar with, but it is an integral over the position of the particle $\bv x$) gives $V$, and the nasty thing we need to deal with is the integral over the momenta:
+\[ Q = \frac{V}{h^3} \int \int \int \, e^{-\b/2m (p_x^2+p_y^2+p_z^2)} dp_x dp_ydp_z.\]
+Here, the limits of the integral are from $-\infty \goto \infty$ for all three. I can do this one way by breaking up the integral into the product of three:
+\[ Q = \frac{V}{h^3} \paren{ \int dp_x e^{-\b p_x^2/2m} }\paren{ \int dp_y e^{-\b p_y^2/2m } }\paren{ \int dp_z e^{-\b p_z^2/2m} } = \frac{V}{h^3}\paren{ \int dp_x e^{-\b p_x^2/2m} }^3.\]
+This is just a Gaussian integral:
+\[ \int_{-\infty}^\infty dz\, e^{-z^2/2\s^2} = \sqrt{2\pi}\s.\]
+So we have
+\[ Q = \frac{V}{h^3}\paren{ \sqrt{\frac{2\pi m}{\b}}}^3 = \frac{V(2\pi m k_BT)^{3/2}}{h^3}.\]
+Another way we can do this integral is by going to spherical coordinates, which is a trick you'll need to do the other problems. This involves a transformation of coordinates (if you need a refresher, \url{http://en.wikipedia.org/wiki/Spherical_coordinate_system}):
+\[ p_x = p\cos\phi \sin\th,\quad p_y = p\sin\phi \sin\th, \quad p_z = p\cos\th.\]
+The transformation of the differentials is:
+\[ dp_xdp_ydp_z = p^2\sin\th \, dp d\th d\phi.\]
+So our integral becomes
+\[ Q = \frac{V}{h^3} \int_0^\infty p^2 dp \int_0^\pi \sin\th d\th \int_0^{2\pi} d \phi \, p^2 e^{-\b p^2/2m}.\]
+The angular integrals can be done straight away. The integral over $\phi$ gives $2\pi$ and the integral over $\th$ gives 2 (do a change of variables $u = \cos\th$). And I'm going to call $\b/2m = a$ for brevity.
+\[ Q = \frac{4\pi V}{h^3} \int_0^\infty dp \, p^2 e^{-ap^2}.\]
+These kind of Gaussian integrals are totally doable, but when there's an even power of $p$, we need a little trick. If there's an odd power of $p$ such as $\int dp \, p^3 e^{-ap^2}$, we can do a change of variables $u = ap^2$ and it turns into an exponential integral which we can do with integration by parts. With this even power of $p$, we can do a trick with derivatives. Let's take for example the regular Gaussian integral (a good derivation is at \url{http://mathworld.wolfram.com/GaussianIntegral.html}):
+\[ \int_0^\infty dp\, e^{-ap^2} = \half{1}\sqrt{\frac{\pi}{a}}.\]
+If we take the derivative of this with respect to $a$ (with a minus sign) we have our integral:
+\[ -\der{}{a} \int_0^\infty dp\, e^{-ap^2} = \int_0^{\infty} dp\, p^2 e^{-ap^2}.\]
+So if we take take the derivative of $1/\sqrt{a}$:
+\[ \int_0^\infty dp\, p^2 e^{-ap^2} = \recip{4}\frac{\sqrt{\pi}}{a^{3/2}}.\]
+\emph{Now} we can start the problem.
+
+\bprob{3a} We want to compute $\avg{\abs{\bv p}}$, which we can easily do in polar coordinates:
+\[ \avg{p} = \frac{4\pi}{(2\pi mk_BT)^{3/2}} \int_0^\infty p^2 dp\, \paren{p e^{-\b p^2/2m}}.\]
+\[ \avg{p} = \frac{4\pi}{(2\pi mk_BT)^{3/2}} \int_0^\infty dp\, p^3 e^{-\b p^2/2m}.\]
+If we let $u = \b p^2/2m$, then we can transform this to an exponential integral:
+\[ \avg{p} = \frac{4\pi}{(2\pi mk_BT)^{3/2}} \paren{\frac{2 m}{\b}}\paren{\frac{m}{\b}} \int_0^\infty du\, u e^{-u}.\]
+\[ \avg{p} = \frac{8\pi (mk_BT)^2}{(2\pi m k_BT)^{3/2}} \paren{1} = \frac{\sqrt{8 m k_BT}}{\sqrt{\pi}}.\]
+So the average speed is
+\[ \boxed{ \avg{v} = \sqrt{\frac{8k_BT}{m\pi}} }.\]
+
+\bprob{3b} To get the rms speed, we need to compute $\avg{p^2}$, which we can do with the trick I derived above (using it twice).
+\[ \avg{p^2} = \frac{4\pi}{(2\pi mk_BT)^{3/2}} \int_0^{\infty} dp\, p^4 e^{-a p^2} = \frac{4\pi}{(2\pi mk_BT)^{3/2}} \der{^2}{a^2} \int_0^\infty dp\, e^{-ap^2}.\]
+\[ \avg{p^2} = \frac{2\pi^{3/2}}{(2\pi mk_BT)^{3/2}} \der{^2}{a^2}\, a^{-1/2}.\]
+\[ \avg{p^2} = \frac{2\pi^{3/2}}{(2\pi mk_BT)^{3/2}} \paren{ \recip{2}\half{3} a^{-5/2}}.\]
+After you plug in the definition of $a$, when the dust settles, you should get
+\[ \boxed{ \avg{p^2} = 3mk_BT,\qquad \avg{v^2} = \frac{3k_BT}{m}.} \]
+\[ \boxed{ v_{\mathrm{rms}} = \sqrt{\avg{v^2}} = \sqrt{\frac{3k_BT}{m}}.}\]
+This is what we expect from equipartition, anyway.
+
+\bprob{3c} To compute the variance, we take
+\[ \s^2_v = \avg{v^2} - \avg{v}^2 = \frac{3k_BT}{m} - \frac{8k_BT}{m\pi}.\]
+\[ \boxed{ \s^2_v = \frac{k_BT}{m\pi}(3\pi - 8) \approx \frac{0.45 k_BT}{m} }.\]
+So the standard deviation, $\sqrt{\s^2_v}$, goes as the square root of $T$ and one over the square root of $m$. The heavier your particles, the tighter your distribution, and the hotter your gas, the wider the distribution.
+
+\hrulefill
+
+\bprob{4} The ultrarelativistic gas is actually simpler than the classical ideal gas, because the Boltzmann distribution is not Gaussian, rather it is exponential. Let's compute the partition function first. Everything is exactly the same as before, except when we get to the integral over the magnitude $p$:
+\[ Q = \frac{4\pi V}{h^3} \int_0^{\infty} dp\, p^2 e^{-\b c p} = \frac{4\pi V}{h^3} \recip{(\b c)^3} \int_0^\infty du\, u^2 e^{-u}.\]
+A useful relation for these exponential integrals is:
+\[ \int_0^{\infty} du \, u^{n} e^{-u} = n!.\]
+So our partition function is
+\[ Q = 8\pi V \paren{\frac{k_BT}{hc}}^3.\]
+
+\bprob{4a} The average momentum $\avg{p}$ is:
+\[ \avg{p} = \frac{4\pi V}{Q h^3} \int_0^\infty dp\, p^3 e^{-\b c p} = \half{(c\b)^3} \recip{(c\b)^4} \int_0^\infty du\, u^3 e^{-u}.\]
+\[ \boxed{ \avg{p} = \frac{3k_BT}{c}.}\]
+I forgot to consider this, but it's not a very big point, that for ultrarelativistic particles, $p \neq mv$, and we'd have to use special relativity, which wasn't my goal for this exercise. So if you have an extra factor of $m$ that's nothing to worry about.
+
+\bprob{4b} The momentum squared average is
+\[ \avg{p^2} = \frac{(c\b)^3}{2} \recip{(c\b)^5} \int_0^\infty du \, u^4 e^{-u} = \frac{12(k_BT)^2}{c^2}.\]
+\[ \boxed{ \sqrt{\avg{p^2}} = \sqrt{12}\frac{k_BT}{c}.}\]
+Then the variance is
+\[\boxed{ \s^2_p = \avg{p^2} - \avg{p}^2 = \paren{\frac{k_BT}{c}}^2\paren{12 - 9} = \frac{3(k_BT)^2}{c^2}.}\]
+
+\hrulefill
+
+\bprob{5} As we solved in problem 3, the average speed and momentum is
+\[ \avg{p} = \sqrt{\frac{8 m k_BT}{\pi}},\qquad \avg{v} = \sqrt{\frac{8k_BT}{m\pi}}.\]
+An argon atom is $6.63\E{-26}$ kg, so plugging in $T=300$K and the Boltzmann constant:
+\[ \boxed{ \avg{p} = 2.644\E{-23} \mathrm{~kg\cdot m/s},\qquad \avg{v} = 398.7\mathrm{~m/s} .}\]
+
+
+
+
+
+
+\end{document}

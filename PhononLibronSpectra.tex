@@ -469,5 +469,96 @@ Because $\g(\th_1=\th_2=0) \propto \th_1^2 + \th_2^2$, but $\mu \propto 1$ there
 %\[ P = \frac{3k_BT\phi^2\sqrt{3}}{16v_0}\paren{\frac{2A'}{A} + (\phi-\phi_c)^{-1} + (\phi-\phi_c)^{-1} \paren{ \e h(\e)}}.\]
 
 
+\section{Complex Unit Cells and Optical Libron Bands}
+
+\subsection{Toy Model: 1D Chain Revisited}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here we'll treat the case where the unit cell of the lattice contains multiple 
+particles. For this, we'll need another index for all of our fields. Every 
+particle position now needs to be indexed by the unit cell $i$ and the 
+particle within the unit cell $\a$, so we should identify lattice cites by 
+position vectors $\br_i^\a$. Thus, we have the field $\bv u_{\br_i^\a}$ and 
+$\th_{\br_i^\a}$. Sometimes, I will drop the $\br$ and just use the indices 
+$i$ and $\a$ on $\bv u$ and $\th$. To clarify, the field $u_{i,\mu}^\a$, now 
+needs three indices: $i$ counts over the unit cells, $\mu$ counts over the 
+components of $u$ ($x$ and $y$), and $\a$ is now the index that counts over the 
+particles \emph{within} the unit cell $i$. We can also address the field in 
+vector form as $\bv u_i^\a$. The field $\th_{i}^\a$ has two indices because it's 
+a scalar field without Cartesian components $\mu$. Hopefully, the notation 
+will be transparent enough to continue, so we can now generalize the equations 
+of motion from Section 2:
+\[ \ddot {\bv u}_{\br_i} = -\sum_{\{\bv 
+c\}_{\br_i}} \hat c  \left [   A_{\bv c} \hat c \cdot  (\bv 
+u_{\br_i^\a} - \bv u_{\br_i^\a + \bv c})  + 
+B_{\bv c}(\th_{\br_i^\a} + \th_{\br_i^\a + \bv c}) 
+\right. \\ \left.+ C_{\bv c} (\th_{\br_i^\a} - \th_{\br_i^\a +\bv c})   
+\right].\]
+And the equation of motion for the $\th$ field:
+\[ \ddot \th_{\br_i} = -\sum_{\{\bv c\}_{\br_i} } \left [D_{\bv c}(\th_{\br_i} 
++\th_{\br_i + \bv c}) + E_{\bv c} (\th_{\br_i} - \th_{\br_i + \bv c}) + B_{\bv 
+c} \hat c \cdot (\bv u_{\br_i} - \bv u_{\br_i +\bv c} ) + C_{\bv c}   \right ]  
+  \]
+\begin{multline*}   \ddot \th_{\br_i^\a} = -\half{1} \sum_{\{\bv c\}^\a} 
+\left [ D_{\bv c} (2\th_{\br_i^\a} + \th_{\br_i^\a + \bv c} + 
+\th_{\br_i^\a - \bv c}) + E_{\bv c}(2\th_{\br_i^\a} - \th_{\br_i^\a + 
+\bv c} - \th_{\br_i^\a - \bv c}) \right. \\ \left. + B_{\bv c} 
+\hat c \cdot (- \bv u_{\br_i^\a + \bv c} + \bv u_{\br_i^\a - \bv 
+c}) + C_{\bv c} \hat c \cdot (2\bv u_{\br_i^\a} - \bv u_{\br_i^\a 
++ \bv c} - \bv u_{\br_i^\a - \bv c}) \right ]. \end{multline*}
+Here, these sums are over the set $\{\bv c_j^\b \}_i^\a$, which is a set of 
+vectors characteristic of the equilibrium lattice that define nearest 
+neighbors to particle $i$ in position $\a$ of the unit cell. Unlike the simple 
+triangular lattice case, where all the coupling constants were the same in each 
+$\bv c$ direction, here we have many coupling constants (it's clear to see why 
+I avoided doing this analysis in its full generality to begin with). Now we 
+apply the Fourier transform, but we have to sum over the \emph{unit cells} and 
+not over the particles within the unit cell, so we have $\a$ different 
+amplitudes to keep track of for each field.
+\[ \bv u_{\br_i^\a} = \recip{\sqrt{N}} \sum_{\bv k} \tilde{\bv u}_{\bv k}^\a 
+e^{-i \Dot{k}{\br_i^\a} }, \qquad \bv \th_{\br_i^\a} = \recip{\sqrt N} \sum_{\bv 
+k} \tilde{\th}_{\bv k}^\a e^{-i\Dot{k}{\br_i^a} }.\]
+Plugging in these definitions, taking the second time derivatives as $-\w^2$, 
+and using the orthonormality of the exponential functions, we get the Fourier 
+transformed equations of motion:
+\[ \w^2_\a {\bv u}^\a_{\bv k} = \half{1} \sum_{\{\bv 
+c\}^\a} \hat c  \left [   A_{\bv c} \hat c \cdot \bv{u}_{\bv k}^\a 
+\paren{ 2 - e^{-i\Dot kc} - e^{i\Dot kc} }  + 
+B_{\bv c}(\th_{\br_i^\a + \bv c} - \th_{\br_i^\a - \bv c}) 
+\right. \\ \left.+ C_{\bv c} (2\th_{\br_i^\a} - \th_{\br_i^\a +\bv c} 
+- \th_{\br_i^\a - \bv c})   \right].\]
+
+\begin{multline*}   \w_\a^2 \th^\a_{\bv k} = \half{1} \sum_{\{\bv c\}^\a} 
+\left [ D_{\bv c} (2\th_{\br_i^\a} + \th_{\br_i^\a + \bv c} + 
+\th_{\br_i^\a - \bv c}) + E_{\bv c}(2\th_{\br_i^\a} - \th_{\br_i^\a + 
+\bv c} - \th_{\br_i^\a - \bv c}) \right. \\ \left. + B_{\bv c} 
+\hat c \cdot (- \bv u_{\br_i^\a + \bv c} + \bv u_{\br_i^\a - \bv 
+c}) + C_{\bv c} \hat c \cdot (2\bv u_{\br_i^\a} - \bv u_{\br_i^\a 
++ \bv c} - \bv u_{\br_i^\a - \bv c}) \right ]. \end{multline*}
+
+\subsection{Pentagon Crystal Modes}
+
+
+
+
+
 %%%%%%%%%
 \end{document} 

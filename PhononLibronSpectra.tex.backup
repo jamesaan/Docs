@@ -470,6 +470,229 @@ Because $\g(\th_1=\th_2=0) \propto \th_1^2 + \th_2^2$, but $\mu \propto 1$ there
 
 
 \section{Complex Unit Cells and Optical Libron Bands}
+
+\subsection{Toy Model: 1D Chain Revisited}
+
+Here, we'll revamp the 1D chain so we have two atoms of different types 
+supporting two degrees of freedom each, $a$ and $b$. The atoms will be labeled 
+$\a$ and $\b$, and there is one atom of each type in each unit cell. The 
+distance between $\a$ and $\b$ particles of the same cell is $c_1$, and the 
+distance between $\a$ and $\b$ particles of differing unit cells is $c_2$. 
+Figure \ref{1dchain2} illustrates the situation.
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+
+\draw (0,0) rectangle (3,1);
+\draw (3,0) rectangle (6,1);
+\draw (6,0) rectangle (9,1);
+\draw [color=blue,fill] (1,0.5) circle (0.3);
+\draw [color=purple,fill] (2,0.5) circle (0.2);
+\draw [color=blue,fill] (4,0.5) circle (0.3);
+\draw [color=purple,fill] (5,0.5) circle (0.2);
+\draw [color=blue,fill] (7,0.5) circle (0.3);
+\draw [color=purple,fill] (8,0.5) circle (0.2);
+\draw [dashed] (1,0.5) -- (2,0.5);
+\draw [dashed] (5,0.5) -- (7,0.5);
+\draw (1.5,0.5) node [anchor=south] {$c_1$};
+\draw (6,0.5) node [anchor=south east] {$c_2$};
+\draw (0.4,0.5) node {$\a$};
+\draw (2.5,0.5) node {$\b$};
+\draw (1.5,0) [anchor=north] node {$i-1$};
+\draw (4.5,0) [anchor=north] node {$i$};
+\draw (7.5,0) [anchor=north] node {$i+1$};
+\end{tikzpicture}
+\label{1dchain2}
+\caption{Intricate field interactions for many-particle unit cells.}
+\end{figure}
+
+The interactions between the fields that live on neighboring atoms will contain 
+terms that look like $(a^\a_i - a^\b_i)^2$ and $(a^\b_{i-1} - 
+a^\a_i)(b^\b_{i-1} - b^\a_i)$, and all of these terms will have different 
+coupling constants. We could use a matrix equation to describe the interaction 
+energy of the $c_1$ bond between atoms of cell $i$:
+\[ U_{c_1,i} = \half{1} \pmtrx{a^\a_i - a^\b_i & b^\a_i - b^\b_i}
+ \pmtrx{K_{aa} & K_{ab} \\ K_{ab} & K_{bb}} \pmtrx{a^\a_i - a^\b_i \\ b^\a_i - 
+b^\b_i}.\]
+The matrix $K$ must necessarily be symmetric. The $U_{c_2,i}$ term which bonds 
+the $\b$ atom of cell $i-1$ and the $\a$ atom of cell $i$ looks similar, but in 
+general, with a different coupling constant matrix:
+\[ U_{c_2,i} = \half{1} \pmtrx{a^\b_{i-1} - a^\a_i & b^\b_{i-1} - b^\a_i}
+ \pmtrx{M_{aa} & M_{ab} \\ M_{ab} & M_{bb}} \pmtrx{a^\b_{i-1} - a^\a_i & 
+b^\b_{i-1} - b^\a_i}.\]
+So the total energy $U$ is the sum over the $i$ cells of these two terms. It's 
+important to note that since the only terms that appear in the energy are 
+\emph{differences} in the field values $a$ and $b$, this theory will only 
+generate \emph{massless} modes, as opposed to the very first example I 
+provided where I put in a mass by hand. The mass is produced by the breaking of 
+translational invariance, but here, I'm maintaining translational invariance by 
+supposing the energy is only a function of differences in field values.
+
+It is easiest, in fact, to perform the Fourier transform here and now before 
+proceeding to derive the equations of motion. We should use the same convention 
+FT that we used in previous problems: $u_i=\recip{\sqrt{N}} \sum_k 
+\tilde{u}_k e^{-ikr_i}$, where $u_i$ is any field. Inserting the Fourier 
+transformed fields into the expression for energy of the $c_1$ type bonds:
+\begin{multline*} U_{c_1} = \half{1} \recip{N} \sum_i \sum_k \sum_{k'}  
+\pmtrx{\tilde a^\a_{k'} e^{-ik'r_i} - \tilde a^\b_{k'} e^{-ik'r_i - ik'c_1} & 
+\tilde b^\a_{k'} e^{-ik'r_i} - \tilde b^\b_{k'} e^{-ik'r_i - ik'c_1}} \cdot \\
+ \pmtrx{K_{aa} & K_{ab} \\ K_{ab} & K_{bb}}  \pmtrx{\tilde a^\a_{k} 
+e^{-ikr_i} - \tilde a^\b_{k} e^{-ikr_i - ikc_1} \\
+\tilde b^\a_{k} e^{-ikr_i} - \tilde b^\b_{k} e^{-ikr_i - ikc_1}}. 
+\end{multline*}
+Or, to make things a bit cleaner, we can pull out exponential factors from 
+everywhere:
+\begin{multline*} U_{c_1} = \half{1} \recip{N} \sum_i \sum_k \sum_{k'}  
+e^{-ik'r_i -ikr_i}
+\pmtrx{\tilde a^\a_{k'}  - \tilde a^\b_{k'} e^{- ik'c_1} & 
+\tilde b^\a_{k'} - \tilde b^\b_{k'} e^{- ik'c_1}}
+ \pmtrx{K_{aa} & K_{ab} \\ K_{ab} & K_{bb}}  \pmtrx{\tilde a^\a_{k} 
+ - \tilde a^\b_{k} e^{- ikc_1} \\
+\tilde b^\a_{k} - \tilde b^\b_{k} e^{- ikc_1}}. 
+\end{multline*}
+The sum over $i$ produces 0 unless the argument of the exponential out in 
+front, $(k+k')r_i$ vanishes, which implies $k = -k'$. The sum over $i$ in this 
+case produces a factor of $N$, which nicely cancels the Fourier transform 
+normalization, and then we can perform the sum over $k'$:
+\[ U_{c_1} = \half{1} \sum_{k} 
+\pmtrx{\tilde a^\a_{-k}  - \tilde a^\b_{-k} e^{ikc_1} & 
+\tilde b^\a_{-k} - \tilde b^\b_{-k} e^{ikc_1}}
+ \pmtrx{K_{aa} & K_{ab} \\ K_{ab} & K_{bb}}  \pmtrx{\tilde a^\a_{k} 
+ - \tilde a^\b_{k} e^{- ikc_1} \\
+\tilde b^\a_{k} - \tilde b^\b_{k} e^{- ikc_1}}.\]
+Likewise, for the $U_{c_2}$ term,
+\[ U_{c_2} = \half{1} \sum_{k} 
+\pmtrx{\tilde a^\a_{-k}  - \tilde a^\b_{-k} e^{-ikc_2} & 
+\tilde b^\a_{-k} - \tilde b^\b_{-k} e^{-ikc_2}}
+ \pmtrx{M_{aa} & M_{ab} \\ M_{ab} & M_{bb}}  \pmtrx{\tilde a^\a_{k} 
+ - \tilde a^\b_{k} e^{ ikc_2} \\
+\tilde b^\a_{k} - \tilde b^\b_{k} e^{ ikc_2}}.\]
+Instead of writing these energies in terms of the 2-component vector of 
+differences, we could write everything in terms of a 4-component vector of the 
+field values:
+\[ U_{c_1} = \pmtrx{\tilde a^\a_{-k} & \tilde b^\a_{-k} & \tilde a^\b_{-k} & 
+\tilde b^\b_{-k}} \pmtrx{ K_{aa} & K_{ab} & -K_{aa} e^{-ikc_1} & -K_{ab} 
+e^{-ikc_1} \\
+K_{ab} & K_{bb} & -K_{ab}e^{-ikc_1} & -K_{bb}e^{-ikc_1} \\ -K_{aa} e^{ikc_1} & 
+-K_{ab} e^{ikc_1} & K_{aa} & K_{ab} \\ -K_{ab} e^{ikc_1} & -K_{bb}e^{ikc_1} 
+& K_{ab} & K_{bb} } \pmtrx{\tilde a^\a_k \\ \tilde b^\a_k \\ \tilde a^\b_k \\ 
+\tilde b^\b_k}.\]
+Similarly:
+\[ U_{c_2} = \pmtrx{\tilde a^\a_{-k} & \tilde b^\a_{-k} & \tilde a^\b_{-k} & 
+\tilde b^\b_{-k}} \pmtrx{ M_{aa} & M_{ab} & -M_{aa} e^{ikc_2} & -M_{ab} 
+e^{ikc_2} \\
+M_{ab} & M_{bb} & -M_{ab}e^{ikc_2} & -M_{bb}e^{ikc_2} \\ -M_{aa} e^{-ikc_2} & 
+-M_{ab} e^{-ikc_2} & M_{aa} & M_{ab} \\ -M_{ab} e^{-ikc_2} & -M_{bb}e^{-ikc_2} 
+& M_{ab} & M_{bb} } \pmtrx{\tilde a^\a_k \\ \tilde b^\a_k \\ \tilde a^\b_k \\ 
+\tilde b^\b_k}.\]
+If we define the fields at atom $\a$ by $\bv u^\a = \paren{ a^\a, b^\a}$ and 
+the fields at atom $\b$ similarly, we can formulate the energies quite simply:
+\[ U = \half{1} \sum_k \pmtrx{ \bv{\tilde u}^\a_{-k} & \bv{\tilde u}^\b_{-k}} 
+\pmtrx{ K + M & - K e^{-ikc_1} - Me^{ikc_2} \\ - Ke^{ikc_1} - Me^{-ikc_2} & 
+K+M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
+Here, $K$ and $M$ are the full matrices, not components of the matrices. The 
+next useful step is to replace $\bv{\tilde u}_{-k}$ with $\bv{\tilde u}_k^*$, 
+the complex conjugate, which is a property of the Fourier transform of real 
+fields $\bv u_i$. By summing over all of $k$, we're actually double-counting, 
+because the modes of opposite wavenumber are connected in this way, that is, 
+$\bv{\tilde u}_{-k} = \bv{\tilde u}_k^*$.
+
+It's at this point that we need to derive the equations of motion, but first, 
+I'd like to clarify a technical but important detail with a brief example.
+
+\subsubsection{Complex degrees of freedom}
+Consider a 2D harmonic oscillator, whose Lagrangian is
+\[ \mathcal{L} = \half{1} \paren{ \dot x ^2 + \dot y^2} - \half{1} \w_0^2 
+\paren{x^2 + y^2}.\]
+Here, I've set the mass equal to one without loss of generality. The equations 
+of motion are very simple, they come from the Euler-Lagrange equations:
+\[ \der{}{t} \pder{\mathcal L}{\dot x} = \pder{\mathcal L}{x}, \qquad \der{}{t} 
+\pder{\mathcal L} {\dot y} = \pder{\mathcal L}{y}.\]
+\[ \der{}{t} \paren{\dot x} = -\w_0^2 x, \qquad \der{}{t} \paren{\dot y} = 
+-\w_0^2 y.\]
+\[ \ddot x = -\w_0^2 x, \qquad \ddot y = -\w_0^2 y.\]
+Another way to write the Lagrangian is by characterizing the complex degrees of 
+freedom:
+\[ z = \frac{x+iy}{\sqrt{2}} ,\qquad z^* = \frac{x-iy}{\sqrt 2}.\]
+Then the Lagrangian can be written succinctly as
+\[ \mathcal L = \dot z \dot z^* - \w_0^2 z z^*.\]
+So the Euler-Lagrange equations give us:
+\[ \der{}t\paren{ \dot z^* } = -\w_0^2 z^*, \qquad \der{}t\paren{ \dot z} = 
+-\w_0^2 z.\]
+\[ \ddot z^* = -\w_0^2 z^*, \qquad \ddot z = -\w_0^2 z.\]
+In terms of the modes of the harmonic oscillator, a wave in the variables $x$ 
+and $y$ are linearly polarized waves. The interpretation of $z$ and $z^*$ are 
+then circularly polarized wave modes. Notice that we included the $\sqrt{2}$ in 
+the definition of $z$ and $z^*$. Had we used some other normalization (or even 
+different normalizations), the results would've been identical. Let's define 
+instead:
+\[ w = C_1(x+iy),\qquad w^* = C_2(x-iy).\]
+Then the Lagrangian is
+\[ \mathcal L = \recip{2 C_1 C_2} \dot w \dot w^* - \recip{2C_1 C_2}\w_0^2 w 
+w^*.\]
+The Euler-Lagrange equations produce the same thing:
+\[ \ddot w^* = -\w_0^2 w^*, \qquad \ddot w = -\w_0^2 w.\]
+Notice that $w$ and $w^*$ are \emph{not} complex conjugates of one another. 
+They are \emph{separate, independent degrees of freedom.} This has to be the 
+case, because the original system had two degrees of freedom, any 
+reparameterization should also have two independent degrees of freedom, as 
+well.
+
+\hrulefill
+
+Returning to the derivation for the 1D chain, we have again:
+\[ U = \half{1} \sum_k \pmtrx{ \bv{\tilde u}^\a_{-k} & \bv{\tilde u}^\b_{-k}} 
+\pmtrx{ K + M & - K e^{-ikc_1} - Me^{ikc_2} \\ - Ke^{ikc_1} - Me^{-ikc_2} & 
+K+M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
+The sum over $k$ is over the entire Brillouin zone. However, we note that this 
+sum is necessarily symmetric about $k=0$. Instead of summing over $k$ from 
+$-\pi/(c_1+c_2)N$ to $\pi/(c_1+c_2)N$, we can just sum the $k\geq0$ twice. This 
+eliminates the $1/2$, and we write $\bv{\tilde u}_{-k}$ instead as $\bv{\tilde
+u}_{k}^*$. Our Lagrangian is then
+\[ \mathcal{L} = \sum_{k\geq 0} \pmtrx{ \bv{\dot{\tilde u}}^{\a *}_{k} & 
+\bv{\dot{\tilde u}}^{\b *}_{k}} \cdot \pmtrx{ \bv{\dot{\tilde u}}^\a_k \\ 
+\bv{\dot{\tilde u}}^\b_k } - 
+\pmtrx{ \bv{\tilde u}^{\a *}_{k} & \bv{\tilde 
+u}^{\b *}_{k}} \pmtrx{ K + M & - K e^{-ikc_1} - Me^{ikc_2} \\ - Ke^{ikc_1} - 
+Me^{-ikc_2} & K+M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
+Just as in the demonstrative example above, the Euler-Lagrange equations 
+furnish the equations of motion with the right factors of $1/2$ missing and 
+such:
+\[ \der{}{t} \paren{ \pder{\mathcal{L}}{\pmtrx{ \bv{\dot{\tilde u}}^{\a *}_{k} 
+& 
+\bv{\dot{\tilde u}}^{\b *}_{k}} } } = \pder{\mathcal{L}}{ \pmtrx{ \bv{\tilde 
+u}^{\a *}_{k} & \bv{\tilde 
+u}^{\b *}_{k}} }.\]
+\[ \pmtrx{ \bv{\ddot{\tilde u}}^\a_k \\ \bv{\ddot{\tilde u}}^\b_k } = -\pmtrx{ 
+K + M & - K e^{-ikc_1} - Me^{ikc_2} \\ - Ke^{ikc_1} - 
+Me^{-ikc_2} & K+M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
+Then going to frequency space:
+\[ \w^2 \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k } = 
+\pmtrx{ 
+K + M & - K e^{-ikc_1} - Me^{ikc_2} \\ - Ke^{ikc_1} - 
+Me^{-ikc_2} & K+M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
+This looks similar to the structure of the coupling matrices we derived for the 
+1D monatomic chain, which was:
+\[ \w^2 \pmtrx{ \tilde a_k \\ \tilde b_k } = \pmtrx{A\paren{e^{-ik\ell} - 2 + 
+e^{ik\ell}} + M & -C\paren{e^{-ik\ell} - 2 + e^{ik\ell}} \\ 
+-C\paren{e^{-ik\ell} - 2 + e^{ik\ell}} & B\paren{e^{-ik\ell} - 2 + e^{ik\ell}} 
+} \pmtrx{ \tilde a_k \\ \tilde b_k }.\]
+
+
+
+
+
+
+
+
+
+
+\pagebreak
+
+
+
+
 Here we'll treat the case where the unit cell of the lattice contains multiple 
 particles. For this, we'll need another index for all of our fields. Every 
 particle position now needs to be indexed by the unit cell $i$ and the 
@@ -485,7 +708,7 @@ a scalar field without Cartesian components $\mu$. Hopefully, the notation
 will be transparent enough to continue, so we can now generalize the equations 
 of motion from Section 2:
 \[ \ddot {\bv u}_{\br_i} = -\sum_{\{\bv 
-c\}_{\br_i}} \hat c  \left [   A_{\bv c} \hat c \cdot  (\bv 
+c\}_{\br_i}} \hat c  \left [   K_{\bv c} \hat c \cdot  (\bv 
 u_{\br_i^\a} - \bv u_{\br_i^\a + \bv c})  + 
 B_{\bv c}(\th_{\br_i^\a} + \th_{\br_i^\a + \bv c}) 
 \right. \\ \left.+ C_{\bv c} (\th_{\br_i^\a} - \th_{\br_i^\a +\bv c})   
@@ -493,7 +716,8 @@ B_{\bv c}(\th_{\br_i^\a} + \th_{\br_i^\a + \bv c})
 And the equation of motion for the $\th$ field:
 \[ \ddot \th_{\br_i} = -\sum_{\{\bv c\}_{\br_i} } \left [D_{\bv c}(\th_{\br_i} 
 +\th_{\br_i + \bv c}) + E_{\bv c} (\th_{\br_i} - \th_{\br_i + \bv c}) + B_{\bv 
-c} \hat c \cdot (\bv u_{\br_i} - \bv u_{\br_i +\bv c} ) + C_{\bv c}       \]
+c} \hat c \cdot (\bv u_{\br_i} - \bv u_{\br_i +\bv c} ) + C_{\bv c}   \right ]  
+  \]
 \begin{multline*}   \ddot \th_{\br_i^\a} = -\half{1} \sum_{\{\bv c\}^\a} 
 \left [ D_{\bv c} (2\th_{\br_i^\a} + \th_{\br_i^\a + \bv c} + 
 \th_{\br_i^\a - \bv c}) + E_{\bv c}(2\th_{\br_i^\a} - \th_{\br_i^\a + 

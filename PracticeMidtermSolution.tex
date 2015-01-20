@@ -1,0 +1,253 @@
+\documentclass[12pt]{article}
+\usepackage[top = 3cm,bottom=3cm,left=2cm,right=2cm]{geometry}        
+\geometry{letterpaper}
+\usepackage[parfill]{parskip}  
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usetikzlibrary{decorations.markings,arrows}
+\usepackage{bm}
+\usepackage{bbm}
+\usepackage{hyperref}
+ 
+ \begin{document}  
+ 
+\baselineskip 2.7ex
+\parskip 3.5ex
+
+\pagestyle{myheadings}
+\markright{\today \hfill Homework \# 4 Solutions \hfill}
+
+
+%Equations/Entries
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\bequo}{\begin{quotation}}
+\newcommand{\beqa}{\begin{eqnarray}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\leeq}[1]{\label{#1}\end{equation}}
+\newcommand{\equo}{\end{quotation}}
+\newcommand{\eeqa}{\end{eqnarray}}
+\newcommand{\non}{\nonumber}
+\newcommand{\mx}{\mbox}
+\newcommand{\mxf}[1]{\mbox{\footnotesize{#1}}}
+\newcommand{\lb}{\label}
+\newcommand{\fr}[1]{(\ref{#1})}
+\newtheorem{entry}{}[section]
+\newcommand{\bent}[1]{\vspace*{-2cm}\hspace*{-1cm}\begin{entry}\lb{e{#1}}\rm}
+\newcommand{\eent}{\end{entry}}
+\newcommand{\fre}[1]{{\bf\ref{e{#1}}}}
+\newcommand{\Emark}{$\sqcap\hspace{-2.7mm}\sqcup$}
+\newcommand{\sEmark}{{\fns $\sqcap\hspace{-2.3mm}\sqcup$}}
+\newcommand{\fn}{\footnote}
+
+
+%Greek Letters
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\newcommand{\g}{\gamma}
+\newcommand{\G}{\Gamma}
+\renewcommand{\d}{\delta}
+\renewcommand{\th}{\theta}
+\renewcommand{\k}{\kappa}
+\newcommand{\Th}{\Theta}
+\newcommand{\D}{\Delta}
+\newcommand{\e}{\epsilon}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\s}{\sigma}
+\renewcommand{\S}{\Sigma}
+\newcommand{\w}{\omega}
+\newcommand{\W}{\Omega}
+\newcommand{\al}{\alpha}
+\newcommand{\bet}{\beta}
+\newcommand{\gam}{\gamma}
+\newcommand{\lam}{\lambda}
+\newcommand{\Lam}{\Lambda}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ichi}\sichi
+\renewcommand{\ni}{\sni}
+\renewcommand{\r}{\rho}
+\renewcommand{\t}{\tau}
+\newcommand{\ph}{\varphi}
+\newcommand{\sichi}{{\mbox{{\footnotesize I}}}}
+\newcommand{\sni}{{\mbox{{\footnotesize II}}}}
+
+%color2010/6/9
+\newcommand{\red}{\color{red}}
+\newcommand{\blue}{\color{blue}}
+\newcommand{\green}{\color{green}}
+\definecolor{gray}{rgb}{0.5, 0.5, 0.5}
+\newcommand{\gray}{\color{gray}}
+
+%Derivatives
+\newcommand{\pder}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\pdert}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\fder}[2]{\frac{\delta {#1}}{\delta {#2}}}
+\newcommand{\PDD}[3]{\left.\frac{\partial^{2}{#1}}{\partial{#2}^{2}}\right|_{#3}
+}
+\newcommand{\PD}[3]{\left.\frac{\partial{#1}}{\partial{#2}}\right|_{#3}}
+\newcommand{\der}[2]{\frac{d {#1}}{d {#2}}}
+
+\renewcommand{\deg}{^\circ}
+\newcommand{\com}{{\bf [C] }}
+\newcommand{\cend}{\Emark\[\]\vspace*{-1. cm}}
+\newcommand{\x}{\times}
+
+%My commands
+\newcommand{\win}{\ddot\smile}
+\newcommand{\lose}{\ddot\frown}
+\newcommand{\avg}[1]{\left \langle #1 \right \rangle}
+\newcommand{\E}[1]{\ensuremath{\times10^{#1}}}
+\newcommand{\abs}[1]{\ensuremath{\left | #1 \right |}}
+\newcommand{\paren}[1]{\left(#1\right)}
+\newcommand{\recip}[1]{\frac{1}{#1}}
+\newcommand{\ex}[1]{\mathbb{E}[#1]}
+\newcommand{\bprob}[1]{\textbf{#1~---}}
+\newcommand{\unitv}[1]{\ensuremath{\mathbf{\hat{e}}_{#1}}}
+\newcommand{\goto}{\rightarrow}
+\newcommand{\expct}[1]{\mathbb{E}[#1]}
+\newcommand{\mtrx}[1]{\begin{matrix}#1\end{matrix}}
+\newcommand{\pmtrx}[1]{\paren{\begin{matrix}#1\end{matrix}}}
+\newcommand{\cosp}[1]{\cos{\paren{#1}}}
+\newcommand{\sinp}[1]{\sin{\paren{#1}}}
+\newcommand{\tanp}[1]{\tan{\paren{#1}}}
+\newcommand{\half}[1]{\frac{#1}{2}}
+\newcommand{\ham}{\mathcal{H}}
+\newcommand{\tr}{\mathrm{Tr}}
+\newcommand{\bv}[1]{\mathbf{#1}}
+\newcommand{\Der}[2]{\frac{d#1}{d#2}}
+\renewcommand{\Dot}[2]{\ensuremath{\bv{#1}\cdot\bv{#2}}}
+\newcommand{\Cross}[2]{\ensuremath{\bv{#1}\times\bv{#2}}}
+\newcommand{\del}{\ensuremath{\partial}}
+\newcommand{\R}{\ensuremath{\bv{r-r'}}}
+\newcommand{\aR}{\ensuremath{\abs{\R}}}
+\newcommand{\br}{\ensuremath{\bv{r}}}
+\newcommand{\impl}{\ensuremath{\quad \Rightarrow \quad}}
+\renewcommand{\div}[1]{\nabla \cdot \bv{#1}}
+\newcommand{\curl}[1]{\nabla \times \bv{#1}}
+\newcommand{\lapl}{\nabla^2}
+\newcommand{\vint}{\int d^3r}
+\newcommand{\oocs}{\recip{c^2}}
+\newcommand{\mnfp}[1]{\frac{\mu_0 #1}{4\pi}}
+\renewcommand{\iiint}{\int_{-\infty}^{\infty}}
+\newcommand{\tpi}[1]{\paren{2\pi}^{#1}}
+\newcommand{\ootpi}[1]{\recip{\paren{2\pi}^{#1}}}
+\newcommand{\Sig}{\bm{\s}}
+\renewcommand{\dag}{^\dagger}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\bprob{1} i. c,\quad ii. a, \quad iii. b, \quad iv. c,\quad v. a
+
+\hrulefill
+
+\bprob{2a} The number of ways to partition $m$ in particles into $n$ states is
+\[ \Omega = {m+n-1 \choose m}.\]
+The easiest way to do this is with bars and stars (\url{http://en.wikipedia.org/wiki/Stars_and_bars_(combinatorics)}). So for $m=3$ and $n=5$, the number of ways is $\Omega = 35.$ This is the case if our indistinguishable particles are bosons (like photons or helium-4).
+
+\bprob{2b} The probability of each microstate is $p=1/35$, and the entropy is then $S = k_B\log 35.$
+
+\bprob{2c} The number of ways to assign $m$ particles to $n$ bins is ${n \choose m}$, so here $\Omega = 10.$ This is the case if the particles are fermions (like electrons).
+
+\bprob{2d} The probability is $p=1/10$ and the entropy is $S = k_B \log 10$.
+
+\hrulefill
+
+\bprob{3a} If the pressure can fluctuate, then that means our volume is fixed. If entropy can fluctuate, then temperature is fixed, and if particle number can fluctuate, then chemical potential is fixed. So this means we're in the grand canonical ensemble, and the partition function is
+\[ \Xi = \sum_\nu e^{-\b E_\nu + \b \mu N_\nu}.\]
+Here, the number of microstates counts over the available energies and the available particle numbers.
+
+\bprob{3b} The probability of observing a micro state in the ensemble is this Boltzmann factor over the partition function:
+\[ P(\nu, N) = \frac{e^{-\b E_\nu + \b \mu N_\nu}}{\Xi}.\]
+
+\bprob{3c} The Gibbs entropy formula is
+\[ S = -k_B \sum_{\nu} p_\nu \log p_\nu.\]
+Here, the sum is over all possible microstates.
+\[ S = -k_B \sum_\nu p_\nu \log e^{-\b E_\nu + \b \mu N_\nu} + k_B \sum_\nu p_\nu \log \Xi.\]
+\[ S = -k_B \sum_\nu p_\nu \paren{-\b E_\nu + \b \mu N_\nu} + k_B\log \Xi \sum_\nu p_\nu.\]
+I can take the $\log \Xi$ out of the sum because $\Xi$ is just a number, it doesn't depend on the microstate $\nu$. Since the probabilities add up to 1, the second sum is just 1. And the first sum defines the average values of the energy and the particle number:
+\[ S = -k_B\paren{-\b \avg{E} + \b \mu \avg{N}} + k_B\log \Xi.\]
+\[ -k_BT \log \Xi = \avg{E} - \mu \avg{N} - ST.\]
+This is a double Legendre transform, and it defines the thermodynamic potential for the grand canonical ensemble.
+
+\bprob{3d} The variance of the particle number can be calculated with a second derivative as shown:
+\[ \s_N^2 = \avg{N^2} - \avg{N}^2 = \recip{\Xi} \sum_\nu N_\nu^2 e^{-\b E_\nu + \b \mu N_\nu} - \recip{\Xi^2} \paren{\sum_\nu N_\nu e^{-\b E_\nu + \b \mu N_\nu} }.\]
+\[ \s_N^2 = \recip{\Xi} \pder{^2\Xi}{(\b \mu)^2} - \recip{\Xi^2} \paren{ \pder{\Xi}{(\b\mu)} }^2.\]
+\[ \s_N^2 = \frac{\Xi \del_{\b\mu}^2 \Xi - (\del_{\b\mu} \Xi)^2}{\Xi^2} = \pder{}{\b\mu}\paren{ \recip{\Xi} \pder{\Xi}{\b\mu}}.\]
+\[ \s_N^2 = \pder{}{\b\mu} \paren{\pder{\log \Xi}{\b\mu}} = \pder{^2\log\Xi}{(\b\mu)^2}.\]
+The first derivative of $\log\Xi$ is proportional to $N$. To be exact, if we call the grand canonical free energy $\psi$, then
+\[ \pder{\log \Xi}{\b\mu} = k_BT \pder{\log \Xi}{\mu} = -\pder{\psi}{\mu} = \avg{N}.\]
+So we have
+\[ \s_N^2 = \PD{\avg{N}}{\b\mu}{T,V}.\]
+If we remember from homework 2, the average particle number for an ideal gas is
+\[ \avg{N} = \frac{V(2\pi m k_BT)^{3/2}}{h^3}  e^{\b\mu}.\]
+\[ \pder{N}{\b\mu} = \frac{V(2\pi m k_BT)^{3/2}}{h^3} e^{\b\mu} = \avg{N}.\]
+So we have
+\[ \s_N^2 = \avg{N}.\]
+
+\hrulefill
+
+\bprob{4a} From now on I'm going to use the shorthand common in physics that $\lam = \frac{h}{\sqrt{2\pi mk_BT}}$ is the thermal de Broglie wavelength. The ideal gas partition function for one particle is then
+\[ q_A = \frac{V}{\lam_A^3}, \qquad q_B = \frac{V}{\lam_B^3}.\]
+
+\bprob{4b} Since all the A particles are indistinguishable and all the B particles are indistinguishable, we need two combinatoric factors for the total partition function:
+\[ Q = \frac{q_A^{N_A} q_B^{N_B}}{N_A! N_B!}.\]
+
+\bprob{4c} The Helmholtz free energy is
+\[ A = -k_BT\log Q = -k_BT(N_A+N_B)\log V + 3k_BT (N_A\log \lam_A + N_B \log \lam_B) + k_BT\log(N_A!N_B!).\]
+
+\bprob{4d} If there is only one species, say they're both A, then the partition function is
+\[ Q = \frac{V^N}{\lam^{3N} N!}.\]
+The free energy is then
+\[ A = -Nk_BT\log \frac{V}{\lam_A^3} + k_BT\log N!.\]
+
+\bprob{4e} The entropy is given by
+\[ S = -\pder{A}{T}.\]
+The entropy of the mixed gas is
+\[ S_{A\&B} = Nk_B\log V - 3k_B(N_A\log\lam_A + N_B\log\lam_B) - \half{3}Nk_B - k_B\log(N_A!N_B!).\]
+We must also note $N_A+N_B = N$. The entropy in the case of just A particles is
+\[ S_{A} = Nk_B\log V - 3Nk_B\log\lam_A - \half{3}Nk_B - k_B\log N!.\]
+The difference is
+\[ \D S = S_{A\&B} - S_{A} = -3k_B (N_A\log\lam_A + N_B\log \lam_B - N\log \lam_A) -k_B\log\frac{N_A!N_B!}{N!}.\]
+It's important to realize that the thermal de Broglie wavelengths are only different if the masses of our particles are different. Let's assume for simplicity that the masses are equal so $\lam_A = \lam_B$. Then the whole first term vanishes and we're left with
+\[ \D S = k_B \log \frac{N!}{N_A!N_B!} = k_B \log {N \choose N_A}.\]
+This is a demonstration of the famous entropy of mixing associated with the Gibbs paradox.
+
+\hrulefill
+
+\bprob{5a} The one particle partition function for this gas is very nearly the same as the ideal gas partition function except for a multiplicative factor associated with the energy in the field.
+\newcommand{\elec}{\mathcal{E}}
+\[ Q_1 = \recip{h^3} \int_0^s\int_0^s\int_0^s dxdydz \iiint\iiint\iiint dp_x dp_y dp_z \, e^{-\frac{\b}{2m} (p_x^2+p_y^2+p_z^2) + \b q \elec x}.\]
+The momentum integrals are untouched, so we still get a factor of $1/\lam^3$:
+\[ Q_1 = \recip{\lam^3} \int_0^s\int_0^s\int_0^sdxdydz\, e^{\b q\elec x}.\]
+\[ Q_1 = \frac{s^2}{\lam^3}\int_0^s dx \, e^{\b q \elec x}.\]
+\[ Q_1 = \frac{s^2}{\lam^3 \b q \elec}\paren{e^{\b q \elec s} - 1}.\]
+
+\bprob{5b} the system partition function is just
+\[ Q = \frac{Q_1^N}{N!}.\]
+
+\bprob{5c} The Helmholtz free energy is
+\[ A = -k_BT \log Q =  -Nk_BT\log Q_1 +  k_BT \log N!.\]
+\[ A = -Nk_BT\paren{\log \frac{s^2}{q\elec} - 3\log \lam - \log \b + \log \paren{e^{\b q\elec s} -1} } + k_BT\log N!.\]
+
+\bprob{5d} The energy is
+\[ \avg{E} = -\pder{\log Q}{\b}.\]
+\[ \avg{E} = - N\pder{}{\b}\paren{ \log \frac{s^2}{q\elec} - 3\log \lam - \log \b + \log \paren{e^{\b q\elec s} -1} }.\]
+Remember $\lam \propto \sqrt{\b}$, so we have
+\[ \avg{E} = \frac{3}{2\b}N + \recip{\b}N - N\frac{q\elec s e^{\b q \elec s}}{e^{\b q \elec s}-1}.\]
+\[ \avg{E} = \half{5}Nk_BT - \frac{Nq\elec s e^{\b q \elec s}}{e^{\b q \elec s}-1}.\]
+
+\bprob{5e} The entropy is
+\[ S = -\pder{A}{T} = Nk_B\paren{\log \frac{s^2}{q\elec} - 3\log \lam - \log \b + \log \paren{e^{\b q\elec s} -1} } - k_B\log N! \mathrm{oh~my~god~derivatives}.\]
+
+\bprob{5f} The heat capacity is
+\[ C_V = \pder{E}{T}.\]
+\[ C_V = \frac{5}{2}Nk_B - Nq\elec s \pder{}{T} \frac{e^{\b q\elec s}}{e^{\b q \elec s} - 1}.\]
+\[ C_V = \frac{5}{2}Nk_B + \frac{N q\elec s}{k_BT^2} \pder{}{\b} \recip{1-e^{-\b q \elec s}}.\]
+\[ C_V = N\paren{ \half{5} + \paren{\frac{q\elec s}{k_BT}}^2\frac{e^{-\b q\elec s}}{\paren{1 - e^{-\b q \elec s}}^2} }.\]
+
+
+\end{document}

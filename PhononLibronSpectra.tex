@@ -690,83 +690,36 @@ unit cell and $f$ is the number of fields per particle. This big matrix is a
 $n\times n$ matrix whose components themselves are $f\times f$ matrices.
 
 
-
-
-
-
-
-
-
-
-\pagebreak
-
-
-
-
-Here we'll treat the case where the unit cell of the lattice contains multiple 
-particles. For this, we'll need another index for all of our fields. Every 
-particle position now needs to be indexed by the unit cell $i$ and the 
-particle within the unit cell $\a$, so we should identify lattice cites by 
-position vectors $\br_i^\a$. Thus, we have the field $\bv u_{\br_i^\a}$ and 
-$\th_{\br_i^\a}$. Sometimes, I will drop the $\br$ and just use the indices 
-$i$ and $\a$ on $\bv u$ and $\th$. To clarify, the field $u_{i,\mu}^\a$, now 
-needs three indices: $i$ counts over the unit cells, $\mu$ counts over the 
-components of $u$ ($x$ and $y$), and $\a$ is now the index that counts over the 
-particles \emph{within} the unit cell $i$. We can also address the field in 
-vector form as $\bv u_i^\a$. The field $\th_{i}^\a$ has two indices because it's 
-a scalar field without Cartesian components $\mu$. Hopefully, the notation 
-will be transparent enough to continue, so we can now generalize the equations 
-of motion from Section 2:
-\[ \ddot {\bv u}_{\br_i} = -\sum_{\{\bv 
-c\}_{\br_i}} \hat c  \left [   K_{\bv c} \hat c \cdot  (\bv 
-u_{\br_i^\a} - \bv u_{\br_i^\a + \bv c})  + 
-B_{\bv c}(\th_{\br_i^\a} + \th_{\br_i^\a + \bv c}) 
-\right. \\ \left.+ C_{\bv c} (\th_{\br_i^\a} - \th_{\br_i^\a +\bv c})   
-\right].\]
-And the equation of motion for the $\th$ field:
-\[ \ddot \th_{\br_i} = -\sum_{\{\bv c\}_{\br_i} } \left [D_{\bv c}(\th_{\br_i} 
-+\th_{\br_i + \bv c}) + E_{\bv c} (\th_{\br_i} - \th_{\br_i + \bv c}) + B_{\bv 
-c} \hat c \cdot (\bv u_{\br_i} - \bv u_{\br_i +\bv c} ) + C_{\bv c}   \right ]  
-  \]
-\begin{multline*}   \ddot \th_{\br_i^\a} = -\half{1} \sum_{\{\bv c\}^\a} 
-\left [ D_{\bv c} (2\th_{\br_i^\a} + \th_{\br_i^\a + \bv c} + 
-\th_{\br_i^\a - \bv c}) + E_{\bv c}(2\th_{\br_i^\a} - \th_{\br_i^\a + 
-\bv c} - \th_{\br_i^\a - \bv c}) \right. \\ \left. + B_{\bv c} 
-\hat c \cdot (- \bv u_{\br_i^\a + \bv c} + \bv u_{\br_i^\a - \bv 
-c}) + C_{\bv c} \hat c \cdot (2\bv u_{\br_i^\a} - \bv u_{\br_i^\a 
-+ \bv c} - \bv u_{\br_i^\a - \bv c}) \right ]. \end{multline*}
-Here, these sums are over the set $\{\bv c_j^\b \}_i^\a$, which is a set of 
-vectors characteristic of the equilibrium lattice that define nearest 
-neighbors to particle $i$ in position $\a$ of the unit cell. Unlike the simple 
-triangular lattice case, where all the coupling constants were the same in each 
-$\bv c$ direction, here we have many coupling constants (it's clear to see why 
-I avoided doing this analysis in its full generality to begin with). Now we 
-apply the Fourier transform, but we have to sum over the \emph{unit cells} and 
-not over the particles within the unit cell, so we have $\a$ different 
-amplitudes to keep track of for each field.
-\[ \bv u_{\br_i^\a} = \recip{\sqrt{N}} \sum_{\bv k} \tilde{\bv u}_{\bv k}^\a 
-e^{-i \Dot{k}{\br_i^\a} }, \qquad \bv \th_{\br_i^\a} = \recip{\sqrt N} \sum_{\bv 
-k} \tilde{\th}_{\bv k}^\a e^{-i\Dot{k}{\br_i^a} }.\]
-Plugging in these definitions, taking the second time derivatives as $-\w^2$, 
-and using the orthonormality of the exponential functions, we get the Fourier 
-transformed equations of motion:
-\[ \w^2_\a {\bv u}^\a_{\bv k} = \half{1} \sum_{\{\bv 
-c\}^\a} \hat c  \left [   A_{\bv c} \hat c \cdot \bv{u}_{\bv k}^\a 
-\paren{ 2 - e^{-i\Dot kc} - e^{i\Dot kc} }  + 
-B_{\bv c}(\th_{\br_i^\a + \bv c} - \th_{\br_i^\a - \bv c}) 
-\right. \\ \left.+ C_{\bv c} (2\th_{\br_i^\a} - \th_{\br_i^\a +\bv c} 
-- \th_{\br_i^\a - \bv c})   \right].\]
-
-\begin{multline*}   \w_\a^2 \th^\a_{\bv k} = \half{1} \sum_{\{\bv c\}^\a} 
-\left [ D_{\bv c} (2\th_{\br_i^\a} + \th_{\br_i^\a + \bv c} + 
-\th_{\br_i^\a - \bv c}) + E_{\bv c}(2\th_{\br_i^\a} - \th_{\br_i^\a + 
-\bv c} - \th_{\br_i^\a - \bv c}) \right. \\ \left. + B_{\bv c} 
-\hat c \cdot (- \bv u_{\br_i^\a + \bv c} + \bv u_{\br_i^\a - \bv 
-c}) + C_{\bv c} \hat c \cdot (2\bv u_{\br_i^\a} - \bv u_{\br_i^\a 
-+ \bv c} - \bv u_{\br_i^\a - \bv c}) \right ]. \end{multline*}
-
 \subsection{Pentagon Crystal Modes}
 
+The densest packing of the pentagon crystal is a rectangular Bravais lattice whose unit cells contain two antiparallel pentagons. The parametrization of the crystal I'm using in my simulations and the one I'll be using in this analysis relies on the following parameters of the densest packing structure (shown in Figure \ref{pentcrystal}):
+\begin{center}
+\def\arraystretch{1.2}
+\begin{tabular}{|c|c|c|c|} \hline
+Vector & Symbol & Value\\ \hline
+Short real-space lattice vector & $\bv a_1$ & $\half{1} \paren{1+\cos \frac{\pi}{5}}\hat x $\\ \hline
+Long real-space lattice vector & $\bv a_2$ &$ \half{3} \sin\frac{2\pi}{5} \hat y $\\ \hline
+Location of right-facing pentagon in unit cell& & $0$ \\ \hline
+Location of left-facing pentagon in unit cell& $\bv p$ & $\paren{\recip{4} + \frac{3}{4} \cos \frac{2\pi}{5} } \hat x + \frac{3}{4}\sin\frac{2\pi}{5} \hat y$  \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{pentagons.eps}
+\caption{Unproven pentagon densest packing. A magenta pentagon ($\a$ particle) and the blue pentagon ($\b$ particle) to its upper-right comprise the unit cell in this analysis. The vector going from the magenta to the blue pentagon is $\bv p$, the vector between pentagons in a row is $\bv a_1$, and the vector between pentagons in the same column is $\bv a_2$.}
+\label{pentcrystal}
+\end{figure}
+
+Now, we need to characterize the various matrices that couple the modes of each pentagon to each other. As before with the hexagons (page 5), we characterize the relevant degrees of freedom:
+\[ \bv v_{\br,\bv c} = \paren{ \paren{u_{x,\br} - u_{x,\br + \bv c}}\hat c_x, \paren{ u_{y,\br} - u_{y,\br + \bv c} } \hat c_y, \th_\br + \th_{\br + \bv c}, \th_\br - \th_{\br + \bv c} },\]
+and the general matrix that couples the pentagons' degrees of freedom looks like:
+\[ \bv M = \pmtrx{ A & A & B & C \\ A & A & B & C \\ B & B & D & F \\ C & C & F & E},\]
+so that the quadratic energy that characterizes an interaction between a pentagon and its neighbor separated by nearest-neighbor vector $\bv c$ is
+\[ U_{\br, \bv c} = \half{1} v_iM_{ij}v_j.\]
+The beautiful thing (which I didn't realize while doing the hexagon lattice) is that the coupling constants $B$ and $C$ must necessarily be 0. The reason is because of the inversion symmetry of interactions between 2D particles (not of the lattice!). If we take two pentagons and invert them across the $y$-axis, for example, the first two components of $\bv v$ are invariant ($u_x$ changes sign but so does $\hat c_x$, and $u_y$ and $\hat c_y$ are left invariant separately); the displacement degrees of freedom are \emph{even under inversion}. However, the pentagons' $\th$ degree of freedom (or to be more explicit, their angular displacement relative to an equilibrium angle), is swept out \emph{in the opposite direction}, so $\th \goto -\th$; the $\th$ degree of freedom is \emph{odd under inversion}. Because $U$ itself must be even under inversion, terms involving the product of one even and one odd degree of freedom cannot appear in $U$. Therefore, $B=C=0$ in the coupling matrix $\bv M$. In general, the constant $F$ can still be nonzero. In the hexagon crystal, $F$ vanished because of the complete inversion symmetry \emph{of the whole lattice}. In the triangular lattice, for every $\bv c$, there is an exact opposite $-\bv c$, and $F$ represented terms that got cancelled exactly when we summed over all six neighbors. Here in the pentagon crystal, this isn't the case, so we need to keep $F$.
+
+It's important to note that while terms coupling $\th$ and $\hat c \cdot \bv u$ cannot appear in $U$ to quadratic order, these degrees of freedom are coupled by \emph{cubic} terms. Because $\th^2$ is invariant under inversion symmetry, the smallest polynomial we can make that is even all together is $(\th^2) (\hat c \cdot \bv u)$, which is a cubic term.
 
 
 

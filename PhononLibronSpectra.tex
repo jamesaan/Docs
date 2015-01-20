@@ -12,6 +12,7 @@
 \usepackage{mathtools}
 \usetikzlibrary{decorations.markings,arrows}
 \usepackage{bm}
+\usepackage{subcaption}
  
  \begin{document}  
  
@@ -515,7 +516,7 @@ energy of the $c_1$ bond between atoms of cell $i$:
 \[ U_{c_1,i} = \half{1} \pmtrx{a^\a_i - a^\b_i & b^\a_i - b^\b_i}
  \pmtrx{K_{aa} & K_{ab} \\ K_{ab} & K_{bb}} \pmtrx{a^\a_i - a^\b_i \\ b^\a_i - 
 b^\b_i}.\]
-The matrix $K$ must necessarily be symmetric. The $U_{c_2,i}$ term which bonds 
+The matrix $\bv K$ must necessarily be symmetric. The $U_{c_2,i}$ term which bonds 
 the $\b$ atom of cell $i-1$ and the $\a$ atom of cell $i$ looks similar, but in 
 general, with a different coupling constant matrix:
 \[ U_{c_2,i} = \half{1} \pmtrx{a^\b_{i-1} - a^\a_i & b^\b_{i-1} - b^\a_i}
@@ -589,9 +590,9 @@ M_{ab} & M_{bb} & -M_{ab}e^{ikc_2} & -M_{bb}e^{ikc_2} \\ -M_{aa} e^{-ikc_2} &
 If we define the fields at atom $\a$ by $\bv u^\a = \paren{ a^\a, b^\a}$ and 
 the fields at atom $\b$ similarly, we can formulate the energies quite simply:
 \[ U = \half{1} \sum_k \pmtrx{ \bv{\tilde u}^\a_{-k} & \bv{\tilde u}^\b_{-k}} 
-\pmtrx{ K + M & - K e^{-ikc_1} - Me^{ikc_2} \\ - Ke^{ikc_1} - Me^{-ikc_2} & 
-K+M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
-Here, $K$ and $M$ are the full matrices, not components of the matrices. The 
+\pmtrx{ \bv K + \bv M & - \bv K e^{-ikc_1} - \bv Me^{ikc_2} \\ - \bv Ke^{ikc_1} - \bv Me^{-ikc_2} & 
+\bv K+\bv M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
+Here, $\bv K$ and $\bv M$ are the full matrices, not components of the matrices. The 
 next useful step is to replace $\bv{\tilde u}_{-k}$ with $\bv{\tilde u}_k^*$, 
 the complex conjugate, which is a property of the Fourier transform of real 
 fields $\bv u_i$. By summing over all of $k$, we're actually double-counting, 
@@ -643,8 +644,8 @@ well.
 
 Returning to the derivation for the 1D chain, we have again:
 \[ U = \half{1} \sum_k \pmtrx{ \bv{\tilde u}^\a_{-k} & \bv{\tilde u}^\b_{-k}} 
-\pmtrx{ K + M & - K e^{-ikc_1} - Me^{ikc_2} \\ - Ke^{ikc_1} - Me^{-ikc_2} & 
-K+M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
+\pmtrx{ \bv K + \bv M & - \bv K e^{-ikc_1} - \bv Me^{ikc_2} \\ - \bv Ke^{ikc_1} - \bv Me^{-ikc_2} & 
+\bv K+\bv M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
 The sum over $k$ is over the entire Brillouin zone. However, we note that this 
 sum is necessarily symmetric about $k=0$. Instead of summing over $k$ from 
 $-\pi/(c_1+c_2)N$ to $\pi/(c_1+c_2)N$, we can just sum the $k\geq0$ twice. This 
@@ -654,8 +655,8 @@ u}_{k}^*$. Our Lagrangian is then
 \bv{\dot{\tilde u}}^{\b *}_{k}} \cdot \pmtrx{ \bv{\dot{\tilde u}}^\a_k \\ 
 \bv{\dot{\tilde u}}^\b_k } - 
 \pmtrx{ \bv{\tilde u}^{\a *}_{k} & \bv{\tilde 
-u}^{\b *}_{k}} \pmtrx{ K + M & - K e^{-ikc_1} - Me^{ikc_2} \\ - Ke^{ikc_1} - 
-Me^{-ikc_2} & K+M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
+u}^{\b *}_{k}} \pmtrx{ \bv \bv K + \bv M & - \bv \bv K e^{-ikc_1} - \bv Me^{ikc_2} \\ - \bv \bv Ke^{ikc_1} - 
+\bv Me^{-ikc_2} & \bv \bv K+\bv M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
 Just as in the demonstrative example above, the Euler-Lagrange equations 
 furnish the equations of motion with the right factors of $1/2$ missing and 
 such:
@@ -665,22 +666,22 @@ such:
 u}^{\a *}_{k} & \bv{\tilde 
 u}^{\b *}_{k}} }.\]
 \[ \pmtrx{ \bv{\ddot{\tilde u}}^\a_k \\ \bv{\ddot{\tilde u}}^\b_k } = -\pmtrx{ 
-K + M & - K e^{-ikc_1} - Me^{ikc_2} \\ - Ke^{ikc_1} - 
-Me^{-ikc_2} & K+M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
+\bv K + \bv M & - \bv K e^{-ikc_1} - \bv Me^{ikc_2} \\ - \bv Ke^{ikc_1} - 
+\bv Me^{-ikc_2} & \bv K+\bv M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
 Then going to frequency space:
 \[ \w^2 \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k } = 
 \pmtrx{ 
-K + M & - K e^{-ikc_1} - Me^{ikc_2} \\ - Ke^{ikc_1} - 
-Me^{-ikc_2} & K+M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
-Here, $K$ and $M$ are the coupling matrices between the field $\tilde a$ and 
+\bv K + \bv M & - \bv K e^{-ikc_1} - \bv Me^{ikc_2} \\ - \bv Ke^{ikc_1} - 
+\bv Me^{-ikc_2} & \bv K+\bv M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
+Here, $\bv K$ and $\bv M$ are the coupling matrices between the field $\tilde a$ and 
 $\tilde b$, and they are embedded in a larger matrix that encodes the spatial 
 information of how atoms are organized and which atoms are coupled to which. 
 The set of $\a$ fields $\bv{\tilde u}^\a$ is coupled to the set of $\b$ 
-fields $\bv{\tilde u}^\b$ with a term like $-K e^{-ikc_1} -M e^{+ikc_2}$. 
+fields $\bv{\tilde u}^\b$ with a term like $-\bv K e^{-ikc_1} -\bv M e^{+ikc_2}$. 
 The first term couples the $\a$ fields to the $\b$ fields a 
-distance $c_1$ to the right using the matrix of spring constants $K$ and, and 
+distance $c_1$ to the right using the matrix of spring constants $\bv K$ and, and 
 the second term couples the $\a$ fields to the $\b$ fields to the left a 
-distance $c_2$ using the matrix of spring constants $M$.
+distance $c_2$ using the matrix of spring constants $\bv M$.
 
 In this formulation, the generalization to two dimensions is straightforward: 
 the only substitution to be made is $kc \goto \Dot kc$. Furthermore, we've 
@@ -721,8 +722,18 @@ The beautiful thing (which I didn't realize while doing the hexagon lattice) is 
 
 It's important to note that while terms coupling $\th$ and $\hat c \cdot \bv u$ cannot appear in $U$ to quadratic order, these degrees of freedom are coupled by \emph{cubic} terms. Because $\th^2$ is invariant under inversion symmetry, the smallest polynomial we can make that is even all together is $(\th^2) (\hat c \cdot \bv u)$, which is a cubic term.
 
+\begin{figure}
+\centering
+\begin{subfigure}{0.4\textwidth}
+\includegraphics[scale=0.6]{alphabonds.eps}
+\end{subfigure}
+\begin{subfigure}{0.4\textwidth}
+\includegraphics[scale=0.6]{betabonds.eps}
+\end{subfigure}
+\caption{The nearest neighbor configurations of $\a$ particles (left) and $\b$ particles (right). The nearest neighbor vectors are related to each other by a $\pi$ rotation. Further symmetries constrain the components of the set of $\bv c$: $\bv c_1 = -\bv c_4$, $c_{2,x} = c_{6,x}$, $c_{2,y}=-c_{6,y}$, $c_{3,x} = c_{5,x}$, and $c_{3,y} = -c_{5,y}$. The configuration is very nearly hexagonal, but the 6-fold symmetry is slightly broken into a 2-fold symmetry. To be explicit, the angle between $\bv c_1$ and $\bv c_2$ is $55.965^\circ$, the angle between $\bv c_2$ and $\bv c_3$ is $64.689^\circ$, and the angle between $\bv c_3$ and $\bv c_4$ is $59.346^\circ$.}
+\end{figure}
 
-
+There are three distinct bond types, characterized by the vectors $\bv c_{1,2,3}$, and the bonds characterized by $\bv c_{4,5,6}$ are related exactly by symmetry. In the toy model we considered previously, we had two bond types, which we characterized by two coupling matrices $\bv K$ and $\bv M$. Here we'll need three separate matrices to describe each of these bonds, and they will all look like the matrix $\bv M$ defined above (but with $B=C=0$). I'll write these different $\bv M$ matrices with a superscript $\bv M^{a=1,2,3}$, where it's hopefully obvious $a$ is an index and not an exponent.
 
 %%%%%%%%%
 \end{document} 

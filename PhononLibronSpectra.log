@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  20 JAN 2015 14:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  20 JAN 2015 15:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -574,21 +574,44 @@ Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 138.
 LaTeX Info: Redefining \bm on input line 204.
 )
+(/usr/local/texlive/2013/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen186
+\captionmargin@=\dimen187
+\captionwidth=\dimen188
+\caption@tempdima=\dimen189
+\caption@indent=\dimen190
+\caption@parindent=\dimen191
+\caption@hangindent=\dimen192
+)
+\c@ContinuedFloat=\count135
+Package caption Info: listings package is loaded.
+)
+\c@subfigure=\count136
+\c@subtable=\count137
+)
 (./PhononLibronSpectra.aux)
 \openout1 = `PhononLibronSpectra.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -626,27 +649,29 @@ LaTeX Font Info:    ... okay on input line 16.
 
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count135
-\scratchdimen=\dimen186
+\scratchcounter=\count138
+\scratchdimen=\dimen193
 \scratchbox=\box40
-\nofMPsegments=\count136
-\nofMParguments=\count137
+\nofMPsegments=\count139
+\nofMParguments=\count140
 \everyMPshowfont=\toks32
-\MPscratchCnt=\count138
-\MPscratchDim=\dimen187
-\MPnumerator=\count139
-\makeMPintoPDFobject=\count140
+\MPscratchCnt=\count141
+\MPscratchDim=\dimen194
+\MPnumerator=\count142
+\makeMPintoPDFobject=\count143
 \everyMPtoPDFconversion=\toks33
 )
-\c@lstlisting=\count141
+\c@lstlisting=\count144
  ABD: EveryShipout initializing macros
-\c@entry=\count142
-LaTeX Font Info:    Try loading font information for U+msa on input line 145.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+\c@entry=\count145
+LaTeX Font Info:    Try loading font information for U+msa on input line 146.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 145.
+LaTeX Font Info:    Try loading font information for U+msb on input line 146.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -654,18 +679,26 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [2] [3] [4] [5]
 [6]
-Overfull \hbox (43.93753pt too wide) detected at line 255
+Overfull \hbox (43.93753pt too wide) detected at line 256
 \OML/cmm/m/it/12 ![] [] \OT1/cmr/m/n/12 = [] [] [] \OML/cmm/m/it/12 :
  []
 
 [7] [8] [9] [10] [11] [12] [13] [14] [15]
-Overfull \hbox (6.25447pt too wide) detected at line 426
+Overfull \hbox (6.25447pt too wide) detected at line 427
 \OML/cmm/m/it/12 F \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 d\OT1/cmr/bx/n/12 k
   [] \OML/cmm/m/it/12 :
  []
 
-[16] [17] [18] [19]
-Overfull \hbox (10.54477pt too wide) detected at line 553
+[16] [17] [18]
+
+Package caption Warning: \label without proper \caption on input line 507.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `1dchain2' on page 19 undefined on input line 482.
+
+[19]
+Overfull \hbox (10.54477pt too wide) detected at line 554
  []$[]  \OML/cmm/m/it/12 U[] \OT1/cmr/m/n/12 = [][] [] [] [] \OML/cmm/m/it/12 e
 [] [] [] [] :  $ 
  []
@@ -679,47 +712,87 @@ Package epstopdf Info: Source file: <pentagons.eps>
 (epstopdf)                    size: 8433 bytes
 (epstopdf)             Command: <repstopdf --outfile=pentagons-eps-converted-to
 .pdf pentagons.eps>
-(epstopdf)             \includegraphics on input line 709.
+(epstopdf)             \includegraphics on input line 710.
 Package epstopdf Info: Output file is already uptodate.
 
 <pentagons-eps-converted-to.pdf, id=92, 351.3125pt x 504.88625pt>
 File: pentagons-eps-converted-to.pdf Graphic file (type pdf)
 
 <use pentagons-eps-converted-to.pdf>
-Package pdftex.def Info: pentagons-eps-converted-to.pdf used on input line 709.
+Package pdftex.def Info: pentagons-eps-converted-to.pdf used on input line 710.
 
 (pdftex.def)             Requested size: 210.78911pt x 302.93407pt.
- [23] [24 <./pentagons-eps-converted-to.pdf>] [25] (./PhononLibronSpectra.aux) 
-) 
+ [23] [24 <./pentagons-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <alphabonds.eps>
+(epstopdf)                    date: 2015-01-20 14:38:37
+(epstopdf)                    size: 384824 bytes
+(epstopdf)             Output file: <alphabonds-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-01-20 14:39:15
+(epstopdf)                    size: 7800 bytes
+(epstopdf)             Command: <repstopdf --outfile=alphabonds-eps-converted-t
+o.pdf alphabonds.eps>
+(epstopdf)             \includegraphics on input line 728.
+Package epstopdf Info: Output file is already uptodate.
+ <alphabonds-eps-converted-to.pdf, id=101, 260.975pt x 228.855pt>
+File: alphabonds-eps-converted-to.pdf Graphic file (type pdf)
+
+<use alphabonds-eps-converted-to.pdf>
+Package pdftex.def Info: alphabonds-eps-converted-to.pdf used on input line 728
+.
+(pdftex.def)             Requested size: 156.5862pt x 137.31404pt.
+Package epstopdf Info: Source file: <betabonds.eps>
+(epstopdf)                    date: 2015-01-20 14:38:44
+(epstopdf)                    size: 386974 bytes
+(epstopdf)             Output file: <betabonds-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-01-20 14:41:21
+(epstopdf)                    size: 7937 bytes
+(epstopdf)             Command: <repstopdf --outfile=betabonds-eps-converted-to
+.pdf betabonds.eps>
+(epstopdf)             \includegraphics on input line 731.
+Package epstopdf Info: Output file is already uptodate.
+
+<betabonds-eps-converted-to.pdf, id=102, 260.975pt x 228.855pt>
+File: betabonds-eps-converted-to.pdf Graphic file (type pdf)
+
+<use betabonds-eps-converted-to.pdf>
+Package pdftex.def Info: betabonds-eps-converted-to.pdf used on input line 731.
+
+(pdftex.def)             Requested size: 156.5862pt x 137.31404pt.
+ [25 <./alphabonds-eps-converted-to.pdf> <./betabonds-eps-converted-to.pdf>] (.
+/PhononLibronSpectra.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 13714 strings out of 493315
- 254621 string characters out of 6137904
- 317810 words of memory out of 5000000
- 16869 multiletter control sequences out of 15000+600000
+ 14811 strings out of 493315
+ 274634 string characters out of 6137904
+ 339778 words of memory out of 5000000
+ 17955 multiletter control sequences out of 15000+600000
  18078 words of font info for 66 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,15n,57p,1451b,602s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></
-usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></us
-r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></u
-sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
-r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
-/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/l
-ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
-al/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
-/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/te
-xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
-ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texliv
-e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
-/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2
-013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/201
-3/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2013
-/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on PhononLibronSpectra.pdf (25 pages, 280029 bytes).
+ 56i,15n,57p,1451b,621s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb><
+/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></
+usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
+r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
+local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
+l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
+exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
+ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texli
+ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
+13/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/201
+3/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on PhononLibronSpectra.pdf (25 pages, 293532 bytes).
 PDF statistics:
- 160 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
+ 166 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

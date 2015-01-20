@@ -733,7 +733,12 @@ It's important to note that while terms coupling $\th$ and $\hat c \cdot \bv u$ 
 \caption{The nearest neighbor configurations of $\a$ particles (left) and $\b$ particles (right). The nearest neighbor vectors are related to each other by a $\pi$ rotation. Further symmetries constrain the components of the set of $\bv c$: $\bv c_1 = -\bv c_4$, $c_{2,x} = c_{6,x}$, $c_{2,y}=-c_{6,y}$, $c_{3,x} = c_{5,x}$, and $c_{3,y} = -c_{5,y}$. The configuration is very nearly hexagonal, but the 6-fold symmetry is slightly broken into a 2-fold symmetry. To be explicit, the angle between $\bv c_1$ and $\bv c_2$ is $55.965^\circ$, the angle between $\bv c_2$ and $\bv c_3$ is $64.689^\circ$, and the angle between $\bv c_3$ and $\bv c_4$ is $59.346^\circ$.}
 \end{figure}
 
-There are three distinct bond types, characterized by the vectors $\bv c_{1,2,3}$, and the bonds characterized by $\bv c_{4,5,6}$ are related exactly by symmetry. In the toy model we considered previously, we had two bond types, which we characterized by two coupling matrices $\bv K$ and $\bv M$. Here we'll need three separate matrices to describe each of these bonds, and they will all look like the matrix $\bv M$ defined above (but with $B=C=0$). I'll write these different $\bv M$ matrices with a superscript $\bv M^{a=1,2,3}$, where it's hopefully obvious $a$ is an index and not an exponent.
+There are three distinct bond types, characterized by the vectors $\bv c_{1,2,3}$, and the bonds characterized by $\bv c_{4,5,6}$ are related exactly by symmetry. In the toy model we considered previously, we had two bond types, which we characterized by two coupling matrices $\bv K$ and $\bv M$. Here we'll need three separate matrices to describe each of these bonds, and they will all look like the matrix $\bv M$ defined above (but with $B=C=0$). I'll write these different $\bv M$ matrices with a subscript $\bv M_{a=1,2,3}$.
+
+Now, let's write down the energy of bond $\bv c_1$, for example:
+\[ U_{c_1,i} = \half{1} \bv v_{\br_i, \bv c_1} \cdot \bv M_1 \cdot \bv v_{\br_i,\bv c_1}.\]
+The elements of $\bv M_1$ are $A_1,D_1,E_1,$ and $F_1$. We perform the Fourier transform on $\bv v_{\br_i,\bv c_1}$:
+\[ \bv{\tilde v}_{\bv k,\bv c_1} = \paren{ \tilde u_{x,\bv k}^\a \paren{1-e^{-i\Dot{k}{c_1}}}, \, \tilde u_{y,\bv k}^\a\paren{1-e^{-i\Dot{k}{c_1}}}, \, \tilde \th_{\bv k}^\a \paren{1+e^{-i\Dot{k}{c_1} } }, \, \tilde \th_{\bv k}^\a \paren{1-e^{-i\Dot{k}{c_1} } }   }.\]
 
 %%%%%%%%%
 \end{document} 

@@ -23,7 +23,6 @@
 \usepackage{tikz}
 \usepackage{mathtools}
 \usepackage[caption=false]{subfig}
-\usepackage{svg}
 
 %Equations/Entries
 \newcommand{\beq}{\begin{equation}}
@@ -139,7 +138,7 @@
 \newcommand{\ootpi}[1]{\recip{\paren{2\pi}^{#1}}}
 
 
-\title{Topological Defects in Two-Dimensional Crystals}
+\title{January Group Meeting}
 \author{Jim Antonaglia}
 \date{\today}
 \begin{document}
@@ -150,42 +149,26 @@
 
 %% 2 %%
 \frame{
-\frametitle{But first, 2D magnetic systems}
+\frametitle{Simplest topological defects: 2D magnetic systems}
 \begin{itemize}
  \item 2-component spins on a 2D lattice
  \item $\mathcal H = -J \sum_{\langle i,j\rangle} \bv S_i \cdot \bv S_j$
  \item More complex than the $Z_2$ Ising model, Hamiltonian has $U(1)$ symmetry
- \item Disordered state: $\avg{S} = 0$
- \item Ordered state: $\avg{S} = $?
 \end{itemize}
 }
 
 %% 3 %%
 \frame{
-\frametitle{No long range order \emph{grace \`a} 
-Mermin \& Wagner}
-
-\begin{theorem}
-Systems whose ground states break a continuous symmetry cannot display long 
-range order in $d\leq 2$.
-\end{theorem}
-Why?
-Goldstone's theorem: broken symmetries $\Longrightarrow$ low-energy excitations
-\center{\textit{Long-wavelength spin waves wreck long-range order}}
-}
-
-%% 4 %%
-\frame{
-\frametitle{KT theory: there's still a phase transition}
+\frametitle{KT theory: phase transition via \emph{topological} excitations}
 \begin{figure}
  \centering
  \includegraphics[scale=0.45]{vortices4.eps}
 \end{figure}
-Topological defects pop in and out of the system and eventually separate, 
+Topological defect pairs pop in and out of the system and eventually unbind, 
 leading to exponentially decaying correlations
 }
 
-%% 5 %%
+%% 4 %%
 \frame{
 \frametitle{Crucial idea: order parameter space}
 \begin{figure}
@@ -195,6 +178,16 @@ leading to exponentially decaying correlations
 Vortices are characterized by nontrivial winding around OP space.
 }
 
+%% 5 %%
+\frame{
+\frametitle{Conservation of topological charge}
+\begin{itemize}
+\item A lone vortex can be detected arbitrarily far away from the vortex core.
+\item One single vortex has an energy that goes logarithmically with the size of the system: \emph{probability 0 in the thermodynamic limit.}
+\item One +1 vortex is indistinguishable from two +1 vortices and a -1 vortex (from sufficiently far from the cores).
+\item Therefore: \emph{there is a topological charge neutrality condition.} For every vortex spontaneously created, there is an anti vortex.
+\end{itemize}
+}
 
 %% 6 %%
 \frame{ 
@@ -202,7 +195,8 @@ Vortices are characterized by nontrivial winding around OP space.
 \begin{itemize}
  \item Crystals are characterized by broken translational and rotational 
 symmetry
-\item Crystal displacement field $\bv u(\br_i)$ lives on a 2D torus.
+\item Hexatic order parameter $\psi$ lives on a circle (1D torus) just like the XY model's order parameter.
+\item Crystal displacement field $\bv u(\br_i)$ lives on a 2D torus: this is its order parameter space.
 \end{itemize}
 \begin{figure}
  \centering
@@ -212,7 +206,7 @@ symmetry
 
 %% 7 %%
 \frame{
-\frametitle{Two types of topological defects}
+\frametitle{Two types of topological defects in 2D crystals}
 \begin{itemize}
  \item XY vortex $\goto$ winding number: disrupts spin-phase order
  \item Dislocation $\goto$ Burgers vector: disrupts translational order
@@ -229,17 +223,12 @@ symmetry
 \frame{ 
 \frametitle{Phase transitions in 2D \emph{rely} on topological defects}
 \begin{itemize}
- \item Long-wavelength fluctuations destroy order:
- \begin{itemize}
- \item XY: $\avg{e^{i\th}} = 0$
- \item Crystals: $\avg{e^{i\bv G \cdot \bv{u}(\br)}} = 0$, 
-$\avg{e^{6i\varphi}} = 0$
-\end{itemize}
  \item What distinguishes a disordered system from one that hasn't ``melted'' 
-in two dimensions if there is no order?
+in two dimensions?
  \begin{itemize}
  \item Stiffness (non-infinite susceptibility for XY, non-zero elastic 
 constants for crystals)
+ \item Stiffnesses are renormalized by the presence of defects
  \item Power-law correlations (as opposed to exponential correlations)
  \end{itemize}
  \item They won't show up in the Hamiltonian unless you:
@@ -250,13 +239,24 @@ constants for crystals)
 \end{itemize}
 }
 
-
+%% 9 %%
 \frame{
-\frametitle{SVG test}
-\begin{figure}
-\includesvg{phi071_N2500}
-\end{figure}
+\frametitle{Interactions of defects}
+\begin{itemize}
+ \item KTHNY theory says defects show Coulombic attraction.
+ \begin{itemize}
+  \item In 2D, Coulomb energy is not $1/r$ but $\log r$ instead.
+  \item Dislocations are vector charges, disclinations are scalar charges.
+ \end{itemize}
+ \item Costs energy to create the core of a defect/anti-defect pair, then costs more energy to separate them.
+\end{itemize}
 }
+
+%% FIGURESSSSS FAH DAAAAAYS %%
+
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  21 JAN 2015 11:01
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  21 JAN 2015 15:20
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1106,48 +1106,25 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_above_shortintertext_sep=\dimen218
 \l_MT_below_shortintertext_sep=\dimen219
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/svg/svg.sty
-Package: svg 2012/09/05 v1.0 SVG inclusion and extraction
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2012/10/14 v2.6b package option processing (HA)
-
-(/usr/local/texlive/2013/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-\XKV@toks=\toks57
-\XKV@tempa@toks=\toks58
-\XKV@depth=\count185
-File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
-))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/import/import.sty
-Package: import 2009/03/23  v 5.1
-)
-(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/transparent.sty
-Package: transparent 2007/01/08 v1.0 Transparency via pdfTeX's color stack (HO)
-
-)
-\SVG@out@width=\skip66
-\SVG@out@height=\skip67
-\c@svgfigure=\count186
-)
-\c@entry=\count187
+\c@entry=\count185
 
 (./Presentation.aux)
 \openout1 = `Presentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1185,20 +1162,20 @@ LaTeX Font Info:    ... okay on input line 145.
 
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count188
+\scratchcounter=\count186
 \scratchdimen=\dimen220
 \scratchbox=\box61
-\nofMPsegments=\count189
-\nofMParguments=\count190
-\everyMPshowfont=\toks59
-\MPscratchCnt=\count191
+\nofMPsegments=\count187
+\nofMParguments=\count188
+\everyMPshowfont=\toks57
+\MPscratchCnt=\count189
 \MPscratchDim=\dimen221
-\MPnumerator=\count192
-\makeMPintoPDFobject=\count193
-\everyMPtoPDFconversion=\toks60
+\MPnumerator=\count190
+\makeMPintoPDFobject=\count191
+\everyMPtoPDFconversion=\toks58
 ) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box62
-Package hyperref Info: Link coloring OFF on input line 145.
+Package hyperref Info: Link coloring OFF on input line 144.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1206,58 +1183,58 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count194
+\c@section@level=\count192
 )
-LaTeX Info: Redefining \ref on input line 145.
-LaTeX Info: Redefining \pageref on input line 145.
-LaTeX Info: Redefining \nameref on input line 145.
+LaTeX Info: Redefining \ref on input line 144.
+LaTeX Info: Redefining \pageref on input line 144.
+LaTeX Info: Redefining \nameref on input line 144.
 
 (./Presentation.out) (./Presentation.out)
 \@outlinefile=\write5
 \openout5 = `Presentation.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 145.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 144.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 145.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 144.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 145.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 145.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 144.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 144.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 145.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 144.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 145.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 145.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 144.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 144.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 145.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 144.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 145.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 145.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 144.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 144.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 145.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 144.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 145.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 145.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 144.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 144.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 145.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 144.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 145.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 144.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 145.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 144.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 145.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 144.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 145.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 144.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 145.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 144.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 145.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 144.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 145.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 144.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 145.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 144.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/beamer/translator/dicts/translato
 r-basic-dictionary/translator-basic-dictionary-English.dict
@@ -1283,51 +1260,30 @@ Dictionary: translator-numbers-dictionary, Language: English
 r-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 145.
+LaTeX Info: Redefining \includegraphics on input line 144.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count195
+\c@lstlisting=\count193
 
 (./Presentation.nav)
-Overfull \hbox (9.35913pt too wide) in paragraph at lines 145--145
- [][][][]  
- []
-
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 149.
-
-
-Overfull \hbox (9.35913pt too wide) has occurred while \output is active
- [][][][]  
- []
+(Font)              size <5> substituted on input line 148.
 
 [1
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for U+msa on input line 161.
+LaTeX Font Info:    Try loading font information for U+msa on input line 158.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 161.
+LaTeX Font Info:    Try loading font information for U+msb on input line 158.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (9.35913pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[2
-
-]
-Overfull \hbox (9.35913pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[3
+) [2
 
 ]
 Package epstopdf Info: Source file: <vortices4.eps>
@@ -1338,21 +1294,17 @@ Package epstopdf Info: Source file: <vortices4.eps>
 (epstopdf)                    size: 37443 bytes
 (epstopdf)             Command: <epstopdf --outfile=vortices4-eps-converted-to.
 pdf vortices4.eps>
-(epstopdf)             \includegraphics on input line 186.
+(epstopdf)             \includegraphics on input line 169.
 Package epstopdf Info: Output file is already uptodate.
- <vortices4-eps-converted-to.pdf, id=116, 381.425pt x 391.4625pt>
+
+<vortices4-eps-converted-to.pdf, id=87, 381.425pt x 391.4625pt>
 File: vortices4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use vortices4-eps-converted-to.pdf>
-Package pdftex.def Info: vortices4-eps-converted-to.pdf used on input line 186.
+Package pdftex.def Info: vortices4-eps-converted-to.pdf used on input line 169.
 
 (pdftex.def)             Requested size: 171.63965pt x 176.1565pt.
-
-Overfull \hbox (9.35913pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[4
+ [3
 
  <./vortices4-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <topologicalspace.eps>
@@ -1363,41 +1315,37 @@ Package epstopdf Info: Source file: <topologicalspace.eps>
 (epstopdf)                    size: 8828 bytes
 (epstopdf)             Command: <epstopdf --outfile=topologicalspace-eps-conver
 ted-to.pdf topologicalspace.eps>
-(epstopdf)             \includegraphics on input line 196.
+(epstopdf)             \includegraphics on input line 179.
 Package epstopdf Info: Output file is already uptodate.
 
-<topologicalspace-eps-converted-to.pdf, id=147, 357.335pt x 170.6375pt>
+<topologicalspace-eps-converted-to.pdf, id=118, 357.335pt x 170.6375pt>
 File: topologicalspace-eps-converted-to.pdf Graphic file (type pdf)
 
 <use topologicalspace-eps-converted-to.pdf>
 Package pdftex.def Info: topologicalspace-eps-converted-to.pdf used on input li
-ne 196.
+ne 179.
 (pdftex.def)             Requested size: 214.40265pt x 102.38327pt.
+ [4
 
-Overfull \hbox (9.35913pt too wide) has occurred while \output is active
- [][][][]  
- []
+ <./topologicalspace-eps-converted-to.pdf>] [5
 
-[5
-
- <./topologicalspace-eps-converted-to.pdf>]
-<OPspacecrystal.png, id=180, 539.01375pt x 513.92pt>
+] <OPspacecrystal.png, id=178, 539.01375pt x 513.92pt>
 File: OPspacecrystal.png Graphic file (type png)
- <use OPspacecrystal.png>
-Package pdftex.def Info: OPspacecrystal.png used on input line 211.
+
+<use OPspacecrystal.png>
+Package pdftex.def Info: OPspacecrystal.png used on input line 205.
 (pdftex.def)             Requested size: 134.7531pt x 128.47968pt.
 
-Overfull \hbox (9.35913pt too wide) has occurred while \output is active
- [][][][]  
+Overfull \vbox (11.2049pt too high) detected at line 205
  []
 
 [6
 
  <./OPspacecrystal.png>]
-<pointdefects.png, id=209, 368.37625pt x 366.36874pt>
+<pointdefects.png, id=208, 368.37625pt x 366.36874pt>
 File: pointdefects.png Graphic file (type png)
  <use pointdefects.png>
-Package pdftex.def Info: pointdefects.png used on input line 226.
+Package pdftex.def Info: pointdefects.png used on input line 220.
 (pdftex.def)             Requested size: 110.51372pt x 109.91147pt.
 Package epstopdf Info: Source file: <disclinations.eps>
 (epstopdf)                    date: 2015-01-20 19:00:02
@@ -1407,63 +1355,71 @@ Package epstopdf Info: Source file: <disclinations.eps>
 (epstopdf)                    size: 50092 bytes
 (epstopdf)             Command: <epstopdf --outfile=disclinations-eps-converted
 -to.pdf disclinations.eps>
-(epstopdf)             \includegraphics on input line 226.
+(epstopdf)             \includegraphics on input line 220.
 Package epstopdf Info: Output file is already uptodate.
 
-<disclinations-eps-converted-to.pdf, id=210, 348.30125pt x 179.67125pt>
+<disclinations-eps-converted-to.pdf, id=209, 348.30125pt x 179.67125pt>
 File: disclinations-eps-converted-to.pdf Graphic file (type pdf)
 
 <use disclinations-eps-converted-to.pdf>
 Package pdftex.def Info: disclinations-eps-converted-to.pdf used on input line 
-226.
+220.
 (pdftex.def)             Requested size: 208.98236pt x 107.80356pt.
+ [7
 
-Overfull \hbox (9.35913pt too wide) has occurred while \output is active
- [][][][]  
- []
+ <./pointdefects.png> <./disclinations-eps-converted-to.pdf>] [8
 
-[7
-
- <./pointdefects.png> <./disclinations-eps-converted-to.pdf>]
-Overfull \hbox (9.35913pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[8
+] [9
 
 ]
-runsystem(inkscape -z -C -f./phi071_N2500.svg -A./phi071_N2500.pdf --export-lat
-ex)...executed.
+\tf@nav=\write6
+\openout6 = `Presentation.nav'.
+
+\tf@toc=\write7
+\openout7 = `Presentation.toc'.
+
+\tf@snm=\write8
+\openout8 = `Presentation.snm'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 263.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 263.
+ (./Presentation.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 263.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 263.
+Package rerunfilecheck Info: File `Presentation.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.0pt have occurred.
 
-./Presentation.tex:259: LaTeX Error: File `./phi071_N2500' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.259 }
-       
-? 
-./Presentation.tex:259: Emergency stop.
- ...                                              
-                                                  
-l.259 }
-       
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
- 
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 263.
+ ) 
 Here is how much of TeX's memory you used:
- 21261 strings out of 493315
- 396126 string characters out of 6137904
- 476315 words of memory out of 5000000
- 24182 multiletter control sequences out of 15000+600000
+ 20905 strings out of 493315
+ 390314 string characters out of 6137904
+ 467278 words of memory out of 5000000
+ 23851 multiletter control sequences out of 15000+600000
  16049 words of font info for 59 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 49i,17n,87p,401b,639s stack positions out of 5000i,500n,10000p,200000b,80000s
-./Presentation.tex:259:  ==> Fatal error occurred, no output PDF file produced!
+ 49i,17n,57p,401b,565s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
+usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></us
+r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/
+local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/l
+ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/l
+ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/l
+ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
+al/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on Presentation.pdf (9 pages, 318533 bytes).
+PDF statistics:
+ 343 PDF objects out of 1000 (max. 8388607)
+ 293 compressed objects within 3 object streams
+ 19 named destinations out of 1000 (max. 500000)
+ 98 words of extra memory for PDF output out of 10000 (max. 10000000)
 

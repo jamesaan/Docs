@@ -1,0 +1,181 @@
+\documentclass[12pt]{article}
+\usepackage[top = 3cm,bottom=3cm,left=2cm,right=2cm]{geometry}        
+\geometry{letterpaper}
+\usepackage[parfill]{parskip}  
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usetikzlibrary{decorations.markings,arrows}
+\usepackage{bm}
+
+\begin{document}  
+ 
+\baselineskip 2.7ex
+\parskip 3.5ex
+
+\pagestyle{myheadings}
+\markright{James Antonaglia \hfill Harmonic Approximate Libron-Phonon Coupling \hfill}
+
+
+%Equations/Entries
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\bequo}{\begin{quotation}}
+\newcommand{\beqa}{\begin{eqnarray}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\leeq}[1]{\label{#1}\end{equation}}
+\newcommand{\equo}{\end{quotation}}
+\newcommand{\eeqa}{\end{eqnarray}}
+\newcommand{\non}{\nonumber}
+\newcommand{\mx}{\mbox}
+\newcommand{\mxf}[1]{\mbox{\footnotesize{#1}}}
+\newcommand{\lb}{\label}
+\newcommand{\fr}[1]{(\ref{#1})}
+\newtheorem{entry}{}[section]
+\newcommand{\bent}[1]{\vspace*{-2cm}\hspace*{-1cm}\begin{entry}\lb{e{#1}}\rm}
+\newcommand{\eent}{\end{entry}}
+\newcommand{\fre}[1]{{\bf\ref{e{#1}}}}
+\newcommand{\Emark}{$\sqcap\hspace{-2.7mm}\sqcup$}
+\newcommand{\sEmark}{{\fns $\sqcap\hspace{-2.3mm}\sqcup$}}
+\newcommand{\fn}{\footnote}
+
+
+%Greek Letters
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\newcommand{\g}{\gamma}
+\newcommand{\G}{\Gamma}
+\renewcommand{\d}{\delta}
+\renewcommand{\th}{\theta}
+\renewcommand{\k}{\kappa}
+\newcommand{\Th}{\Theta}
+\newcommand{\D}{\Delta}
+\newcommand{\e}{\epsilon}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\s}{\sigma}
+\renewcommand{\S}{\Sigma}
+\newcommand{\w}{\omega}
+\newcommand{\W}{\Omega}
+\newcommand{\al}{\alpha}
+\newcommand{\bet}{\beta}
+\newcommand{\gam}{\gamma}
+\newcommand{\lam}{\lambda}
+\newcommand{\Lam}{\Lambda}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ichi}\sichi
+\renewcommand{\ni}{\sni}
+\renewcommand{\r}{\rho}
+\renewcommand{\t}{\tau}
+\newcommand{\ph}{\varphi}
+\newcommand{\sichi}{{\mbox{{\footnotesize I}}}}
+\newcommand{\sni}{{\mbox{{\footnotesize II}}}}
+
+%color2010/6/9
+\newcommand{\red}{\color{red}}
+\newcommand{\blue}{\color{blue}}
+\newcommand{\green}{\color{green}}
+\definecolor{gray}{rgb}{0.5, 0.5, 0.5}
+\newcommand{\gray}{\color{gray}}
+
+%Derivatives
+\newcommand{\pder}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\pdert}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\fder}[2]{\frac{\delta {#1}}{\delta {#2}}}
+\newcommand{\PDD}[3]{\left.\frac{\partial^{2}{#1}}{\partial{#2}^{2}}\right|_{#3}
+}
+\newcommand{\PD}[3]{\left.\frac{\partial{#1}}{\partial{#2}}\right|_{#3}}
+\newcommand{\der}[2]{\frac{d {#1}}{d {#2}}}
+
+\renewcommand{\deg}{^\circ}
+\newcommand{\com}{{\bf [C] }}
+\newcommand{\cend}{\Emark\[\]\vspace*{-1. cm}}
+\newcommand{\x}{\times}
+
+%My commands
+\newcommand{\win}{\ddot\smile}
+\newcommand{\lose}{\ddot\frown}
+\newcommand{\avg}[1]{\left \langle #1 \right \rangle}
+\newcommand{\E}[1]{\ensuremath{\times10^{#1}}}
+\newcommand{\abs}[1]{\ensuremath{\left | #1 \right |}}
+\newcommand{\paren}[1]{\left(#1\right)}
+\newcommand{\recip}[1]{\frac{1}{#1}}
+\newcommand{\ex}[1]{\mathbb{E}[#1]}
+\newcommand{\bprob}[1]{\textbf{#1~---}}
+\newcommand{\unitv}[1]{\ensuremath{\mathbf{\hat{e}}_{#1}}}
+\newcommand{\goto}{\rightarrow}
+\newcommand{\expct}[1]{\mathbb{E}[#1]}
+\newcommand{\mtrx}[1]{\begin{matrix}#1\end{matrix}}
+\newcommand{\pmtrx}[1]{\paren{\begin{matrix}#1\end{matrix}}}
+\newcommand{\cosp}[1]{\cos{\paren{#1}}}
+\newcommand{\sinp}[1]{\sin{\paren{#1}}}
+\newcommand{\tanp}[1]{\tan{\paren{#1}}}
+\newcommand{\half}[1]{\frac{#1}{2}}
+\newcommand{\ham}{\mathcal{H}}
+\newcommand{\tr}{\mathrm{Tr}}
+\newcommand{\bv}[1]{\mathbf{#1}}
+\newcommand{\Der}[2]{\frac{d#1}{d#2}}
+\renewcommand{\Dot}[2]{\ensuremath{\bv{#1}\cdot\bv{#2}}}
+\newcommand{\Cross}[2]{\ensuremath{\bv{#1}\times\bv{#2}}}
+\newcommand{\del}{\ensuremath{\partial}}
+\newcommand{\R}{\ensuremath{\bv{r-r'}}}
+\newcommand{\aR}{\ensuremath{\abs{\R}}}
+\newcommand{\br}{\ensuremath{\bv{r}}}
+\newcommand{\impl}{\ensuremath{\quad \Rightarrow \quad}}
+\renewcommand{\div}[1]{\nabla \cdot \bv{#1}}
+\newcommand{\curl}[1]{\nabla \times \bv{#1}}
+\newcommand{\lapl}{\nabla^2}
+\newcommand{\vint}{\int d^3r}
+\newcommand{\oocs}{\recip{c^2}}
+\newcommand{\mnfp}[1]{\frac{\mu_0 #1}{4\pi}}
+\renewcommand{\iiint}{\int_{-\infty}^{\infty}}
+\newcommand{\tpi}[1]{\paren{2\pi}^{#1}}
+\newcommand{\ootpi}[1]{\recip{\paren{2\pi}^{#1}}}
+\newcommand{\sqb}[1]{\left [ #1 \right ]}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Librons and phonons in two dimensions}
+
+Consider a 2D crystal with two independent lattice vectors $\bv a^1$ and $\bv a^2$. We label the lattice sites with $\a$ and we assume there is some \emph{directional} interparticle potential $V(\bv d^\a,\bv d^\b)$ between adjacent particles in the lattice. We're interested in the normal modes of such a crystal, so we do our favorite approximation and assume small displacements and rotations. So let's look at a lattice site: its position is
+\[ \bv d ^\a = \br^\a + \bv u ^\a.\]
+I've defined a vector field that lives on our lattice, $\bv u$, which is the lattice displacement. In addition, we have another degree of freedom, the orientation of our particle, so we have a scalar field $\th$ that also lives on our lattice, so we refer to $\th^\a$.
+
+So now we examine the potential. It depends only on the \emph{relative} positions and let's suppose it only depends on the orientation of the $\a$th particle, as our PMFT does {\red (actually, this is a good question. Is it the case that the PMFT value of particle $\b$ sitting in the PMFT of particle $\a$ is the same as the value of particle $\a$ sitting in the PMFT of particle $\b$? It can't be the case, so I should add them both?)} 
+\[ V(\bv d^\a,\bv d^\b) = V(\bv R^\th \paren{\bv d^\a - \bv d^\b}).\]
+The relative position is $\bv d^a - \bv d^\b$, but we need to augment this with a rotation matrix which is parametrized by $\bv R^\th$. I'll use capital letters for matrices and small letters for vectors. The rotation matrix is
+\[ \bv R^\th = \pmtrx{\cos \th & \sin \th \\ - \sin \th & \cos \th}.\]
+I might have the signs switched around on the sines but it doesn't matter, we would just define $\th\goto -\th$. In 3D I'll have to be more careful. Anyway, We expand $V$ for small relative displacements:
+\[ V(\bv R^\th (\bv d^\a - \bv d^\b)) = V(\bv R^\th (\br ^\a - \br ^\b) + \bv R^\th (\bv u^\a - \bv u^\b)).\]
+\beq V(\bv R^\th (\bv d^\a - \bv d^\b)) = V(\bv R^\th (\br^\a - \br^\b)) + R^\th_{ij} u^{\a\b}_j \sqb{\del_i V}_{\bv R^\th (\br^\a - \br^\b)} + \recip{2} R^\th_{ij}u^{\a\b}_jR^\th_{k \ell}u^{\a\b}_\ell \sqb{\del_i \del_k V}_{\bv R^\th (\br^\a - \br^\b)}. \eeq
+Here, I've moved to Einstein summation convention for convenience, otherwise we'd be getting lost in vector derivative operations. I've also defined $u^{\a\b}_j = u^\a_j - u^\b_j$. Now the next small displacement approximation is to assume that the rotations of our crystal sites are small. This is the same as
+\[ \bv R^\th = \bv 1 - (\bv 1 - \bv R^\th) \approx \bv 1 - \bv D^\th.\]
+Where, to first order in $\th$,
+\[ \bv D^\th = \pmtrx{0 & \th \\ -\th & 0}.\]
+So we look at the first term:
+\[ V(\bv R^\th (\br^\a - \br^\b)) = V(\bv R^\th \br^{\a\b}).\]
+Here, I've done a similar shorthand, and we identify $\br^{\a\b}$ to be a Bravais lattice vector that joins nearest neighbors (not necessarily a primitive vector). So we put in $\bv R = \bv 1 - \bv D$ and take $\bv D \br^{\a\b}$ to be our small parameter:
+\[ V(\bv R^\th \br^{\a\b}) \approx V(\br^{\a\b}) - D^\th_{ij}r^{\a\b}_j \sqb{\del_i V}_{\br^{\a\b}} + \half{1} D^\th_{ij}r^{\a\b}_j D^\th_{k\ell} r^{\a\b}_\ell \sqb{\del_i\del_k V}_{\br^{\a\b}}.\]
+The first term is a constant, and when we sum over all nearest neighbors of all the lattice sites will give us a constant once again, so we can remove it. The second term is zero because $\br^{\a\b}$ is the equilibrium position of $V$, so we have its gradient equal to zero at that point.
+\[ V(\bv R^\th \br^{\a\b}) \approx \half{1} D^\th_{ij}r^{\a\b}_j D^\th_{k\ell} r^{\a\b}_\ell \sqb{\del_i\del_k V}_{\br^{\a\b}}.\]
+So far so good, looks like Hooke's law. Now let's do the second term in Eq. 1.
+\[ \sqb{\del_i V}_{\bv R^\th \br^{\a\b}} \approx \sqb{\del_i V}_{\br^{\a\b}} - D^\th_{k j}r^{\a\b}_j \sqb{\del_k \del_i V}_{\br^{\a\b}}.\]
+Once again, the first term is zero because $\br^{\a\b}$ is the equilibrium position. Now we return to Eq. 1:
+\[ V(\bv R^\th \bv d^{\a\b}) \approx \half{1} D^\th_{ij}r^{\a\b}_j D^\th_{k\ell} r^{\a\b}_\ell \sqb{\del_i\del_k V}_{\br^{\a\b}} -R^\th_{ij} u^{\a\b}_j D^\th_{k\ell}r^{\a\b}_\ell \sqb{\del_k \del_i V}_{\br^{\a\b}} + \recip{2} R^\th_{ij}u^{\a\b}_jR^\th_{k \ell}u^{\a\b}_\ell \sqb{\del_i \del_k V}_{\bv R^\th (\br^\a - \br^\b)}.\]
+The second term here has a factor of $R$, a factor of $u$ and a factor of $D$, so if we want to stick just to quadratic order, we let $\bv R^\th \approx \bv 1$. The third term we'll do the same thing to, so we just set all the $\bv R^\th$ to the identity. Finally we have
+\[ V^{\a\b} = \paren{ \half{1} D^\th_{ij}r^{\a\b}_j D^\th_{k\ell} r^{\a\b}_\ell - u^{\a\b}_i D^\th_{k\ell}r^{\a\b}_\ell  +\half{1}u^{\a\b}_i u^{\a\b}_k       } \sqb{\del_i\del_k V}_{\br^{\a\b}}.\]
+So here we have it, this is a coupled oscillator equation. Let's put it in a Lagrangian now, so we throw in the kinetic energy terms:
+\[ \mathcal{L} = \sum_\a\paren{ \half{m}(\dot{\bv u}^\a)^2    + \half{I}(\dot{\th}^\a)^2 - \sum_\b  \paren{ \half{1} D^\th_{ij}r^{\a\b}_j D^\th_{k\ell} r^{\a\b}_\ell - u^{\a\b}_i D^\th_{k\ell}r^{\a\b}_\ell  +\half{1}u^{\a\b}_i u^{\a\b}_k       } \sqb{\del_i\del_k V}_{\br^{\a\b}}    }.\]
+The first term is the translational kinetic energy, and the second term is the rotational kinetic energy. The third term is the elastic restoring force that prevents an individual particle from rotating in place. It's interesting that this term is totally local, in that it depends only on the value of the field $\th$ at the particular lattice point $\a$. It looks like it depends on its nearest neighbors, but $\br^{\a\b}$ are fixed lattice vectors. The fifth term couples relative displacements from equilibrium, which is the term that propagates a disturbance in the field $\bv u$. This is the term that gives rise to phonons. The fourth term couples relative displacements and rotations.
+
+The field $\bv u^\a$ measures vibrations around the equilibrium position, but the field $\th$ measures \emph{librations} around the equilibrium \emph{orientation} (coming from Latin \emph{librare}, to balance or sway). The fourth term in the Lagrangian couples phonons and \emph{librons}. I find it interesting (interesting in the sense that I probably did something wrong) that there's no term coupling relative orientations, like a $(\th^\a-\th^\b)^2$ term.
+
+\section{Further development of 2D model}
+What's next to do? Well, I have a Lagrangian here, and I could take the continuum limit and make a classical field theory for the vector field $\bv u(\br)$ and the scalar field $\th(\br)$. I would construct a system Hamiltonian include third order or fourth order couplings which would allow us to look for phase transitions by changing the parameters that would show up in coefficients, \emph{i.e.} $\del_i\del_k\del_m V$ or $\del_i\del_k\del_m\del_n V$. These potential terms would depend on the packing fraction $\phi$, because our potential depends on $\phi$. Below some critical $\phi_C$, we know that the libron modes vanish because the rotator crystal goes plastic. Above this critical $\phi_C$, we expect the rotations to couple to the phonons.
+
+
+
+\end{document}

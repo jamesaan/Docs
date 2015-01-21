@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  6 MAY 2014 16:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  8 OCT 2014 12:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**template.tex
-(./template.tex
+**"Simple Shape Ensemble.tex"
+(./Simple Shape Ensemble.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/article.cls
@@ -574,8 +574,8 @@ Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 138.
 LaTeX Info: Redefining \bm on input line 204.
 )
-(./template.aux)
-\openout1 = `template.aux'.
+(./Simple Shape Ensemble.aux)
+\openout1 = `"Simple Shape Ensemble.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
@@ -658,28 +658,28 @@ Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 178.
 
-[3] [4] [5] [6] (./template.aux) ) 
+[3] [4] [5] [6] (./Simple Shape Ensemble.aux) ) 
 Here is how much of TeX's memory you used:
  13600 strings out of 493315
- 252278 string characters out of 6137904
+ 252397 string characters out of 6137904
  306790 words of memory out of 5000000
  16763 multiletter control sequences out of 15000+600000
  11753 words of font info for 43 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,6n,57p,1209b,219s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2013/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsl12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmti12.pfb>
-Output written on template.pdf (6 pages, 131325 bytes).
+ 56i,6n,57p,1244b,219s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2013/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2013/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2013/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2013/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmti12.pfb>
+Output written on "Simple Shape Ensemble.pdf" (6 pages, 133902 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  50 compressed objects within 1 object stream

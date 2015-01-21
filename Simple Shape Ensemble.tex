@@ -1,0 +1,229 @@
+\documentclass[12pt]{article}
+\usepackage[top = 3cm,bottom=3cm,left=2cm,right=2cm]{geometry}        
+\geometry{letterpaper}
+\usepackage[parfill]{parskip}  
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usetikzlibrary{decorations.markings,arrows}
+\usepackage{bm}
+
+\begin{document}  
+ 
+\baselineskip 2.7ex
+\parskip 3.5ex
+
+\pagestyle{myheadings}
+\markright{James Antonaglia \hfill Simple Shape Ensemble \hfill}
+
+
+%Equations/Entries
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\bequo}{\begin{quotation}}
+\newcommand{\beqa}{\begin{eqnarray}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\leeq}[1]{\label{#1}\end{equation}}
+\newcommand{\equo}{\end{quotation}}
+\newcommand{\eeqa}{\end{eqnarray}}
+\newcommand{\non}{\nonumber}
+\newcommand{\mx}{\mbox}
+\newcommand{\mxf}[1]{\mbox{\footnotesize{#1}}}
+\newcommand{\lb}{\label}
+\newcommand{\fr}[1]{(\ref{#1})}
+\newtheorem{entry}{}[section]
+\newcommand{\bent}[1]{\vspace*{-2cm}\hspace*{-1cm}\begin{entry}\lb{e{#1}}\rm}
+\newcommand{\eent}{\end{entry}}
+\newcommand{\fre}[1]{{\bf\ref{e{#1}}}}
+\newcommand{\Emark}{$\sqcap\hspace{-2.7mm}\sqcup$}
+\newcommand{\sEmark}{{\fns $\sqcap\hspace{-2.3mm}\sqcup$}}
+\newcommand{\fn}{\footnote}
+
+
+%Greek Letters
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\newcommand{\g}{\gamma}
+\newcommand{\G}{\Gamma}
+\renewcommand{\d}{\delta}
+\renewcommand{\th}{\theta}
+\renewcommand{\k}{\kappa}
+\newcommand{\Th}{\Theta}
+\newcommand{\D}{\Delta}
+\newcommand{\e}{\epsilon}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\s}{\sigma}
+\renewcommand{\S}{\Sigma}
+\newcommand{\w}{\omega}
+\newcommand{\W}{\Omega}
+\newcommand{\al}{\alpha}
+\newcommand{\bet}{\beta}
+\newcommand{\gam}{\gamma}
+\newcommand{\lam}{\lambda}
+\newcommand{\Lam}{\Lambda}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ichi}\sichi
+\renewcommand{\ni}{\sni}
+\renewcommand{\r}{\rho}
+\renewcommand{\t}{\tau}
+\newcommand{\ph}{\varphi}
+\newcommand{\sichi}{{\mbox{{\footnotesize I}}}}
+\newcommand{\sni}{{\mbox{{\footnotesize II}}}}
+
+%color2010/6/9
+\newcommand{\red}{\color{red}}
+\newcommand{\blue}{\color{blue}}
+\newcommand{\green}{\color{green}}
+\definecolor{gray}{rgb}{0.5, 0.5, 0.5}
+\newcommand{\gray}{\color{gray}}
+
+%Derivatives
+\newcommand{\pder}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\pdert}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\fder}[2]{\frac{\delta {#1}}{\delta {#2}}}
+\newcommand{\PDD}[3]{\left.\frac{\partial^{2}{#1}}{\partial{#2}^{2}}\right|_{#3}
+}
+\newcommand{\PD}[3]{\left.\frac{\partial{#1}}{\partial{#2}}\right|_{#3}}
+\newcommand{\der}[2]{\frac{d {#1}}{d {#2}}}
+
+\renewcommand{\deg}{^\circ}
+\newcommand{\com}{{\bf [C] }}
+\newcommand{\cend}{\Emark\[\]\vspace*{-1. cm}}
+\newcommand{\x}{\times}
+
+%My commands
+\newcommand{\win}{\ddot\smile}
+\newcommand{\lose}{\ddot\frown}
+\newcommand{\avg}[1]{\left \langle #1 \right \rangle}
+\newcommand{\E}[1]{\ensuremath{\times10^{#1}}}
+\newcommand{\abs}[1]{\ensuremath{\left | #1 \right |}}
+\newcommand{\paren}[1]{\left(#1\right)}
+\newcommand{\recip}[1]{\frac{1}{#1}}
+\newcommand{\ex}[1]{\mathbb{E}[#1]}
+\newcommand{\bprob}[1]{\textbf{#1~---}}
+\newcommand{\unitv}[1]{\ensuremath{\mathbf{\hat{e}}_{#1}}}
+\newcommand{\goto}{\rightarrow}
+\newcommand{\expct}[1]{\mathbb{E}[#1]}
+\newcommand{\mtrx}[1]{\begin{matrix}#1\end{matrix}}
+\newcommand{\pmtrx}[1]{\paren{\begin{matrix}#1\end{matrix}}}
+\newcommand{\cosp}[1]{\cos{\paren{#1}}}
+\newcommand{\sinp}[1]{\sin{\paren{#1}}}
+\newcommand{\tanp}[1]{\tan{\paren{#1}}}
+\newcommand{\half}[1]{\frac{#1}{2}}
+\newcommand{\ham}{\mathcal{H}}
+\newcommand{\tr}{\mathrm{Tr}}
+\newcommand{\bv}[1]{\mathbf{#1}}
+\newcommand{\Der}[2]{\frac{d#1}{d#2}}
+\renewcommand{\Dot}[2]{\ensuremath{\bv{#1}\cdot\bv{#2}}}
+\newcommand{\Cross}[2]{\ensuremath{\bv{#1}\times\bv{#2}}}
+\newcommand{\del}{\ensuremath{\partial}}
+\newcommand{\R}{\ensuremath{\bv{r-r'}}}
+\newcommand{\aR}{\ensuremath{\abs{\R}}}
+\newcommand{\br}{\ensuremath{\bv{r}}}
+\newcommand{\impl}{\ensuremath{\quad \Rightarrow \quad}}
+\renewcommand{\div}[1]{\nabla \cdot \bv{#1}}
+\newcommand{\curl}[1]{\nabla \times \bv{#1}}
+\newcommand{\lapl}{\nabla^2}
+\newcommand{\vint}{\int d^3r}
+\newcommand{\oocs}{\recip{c^2}}
+\newcommand{\mnfp}[1]{\frac{\mu_0 #1}{4\pi}}
+\renewcommand{\iiint}{\int_{-\infty}^{\infty}}
+\newcommand{\tpi}[1]{\paren{2\pi}^{#1}}
+\newcommand{\ootpi}[1]{\recip{\paren{2\pi}^{#1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Consider a bunch of hard particles in one dimension, and they have size $\ell$. The equation of state for such an ideal gas can be solved exactly in the $NPT$ ensemble. The partition function is the integral over all of phase space, considering that our system $S$ is connected to a reservoir $R$ of volume and energy:
+
+\[ Z = \int dx^S dx^R \d(E - \mathcal{H}^S - \mathcal{H}^R) \d(V - V^S - V^R).\]
+\[ Z = \int dx^S \int dx^R \d(\mathcal{H}^R - (E-\mathcal{H}^S)) \d(V^R - (E-V^S)).\]
+
+The interior integral is simply the phase space volume allowed by the reservoir, and this phase space volume is related to the entropy of the reservoir:
+\[ Z = \int dx^S e^{S(E-\mathcal{H}^S,V-V^S)}.\]
+Here, I have set $k_B = 1$, and so I am working with dimensionless entropy and temperature in units of energy. By considering the total energy and volume to be much larger than the energy and volume of the system under interest, we make a Taylor expansion in $S$:
+\[ Z = \int dx^S \exp\paren{S^R(E) - \mathcal{H}^S\pder{S}{E} - V^S \pder{S}{V}}.\]
+The first term is a constant and can be removed with impunity. The other terms are given by the partial derivatives of entropy, which give us the familiar $NpT$ ensemble:
+\[ Z = \int dx \exp\paren{-\b \mathcal{H} - \b P V}.\]
+Here, $\b = 1/T$ and $dx$ is a differential of all the microscopic degrees of freedom. With $\mathcal{H}$ simply the free particle Hamiltonian $p^2/2m$, the integral over momentum in one dimension is simple, and gives us $N$ factors of $\lam$, the thermal de Broglie wavelength.
+\[ Z = \recip{\lam^N} \int dx_1 dx_2\ldots dx_N \, e^{-\b PV}.\]
+We can do this integral in a slick way with a nice change of variables:
+\[ q_1 = x_1,\quad q_2 = x_2 - x_1,\quad q_3 = x_3 - x_2\ldots \quad q_N = x_N - x_{N-1}.\]
+And the volume of the system is, in general, a function of the microscopic degrees of freedom. In this simple case, we take the volume of the system to be the coordinate of the $N^\mathrm{th}$ particle,
+\[ V = V(\{x_i\}) = x_N = \sum_i q_i.\]
+We take the former positions $x_i$ to be the location of the left-most part of the particle, and we have the freedom to choose $x_0=0$ by translational invariance. So the leftmost that the first particle can sit is at $x_1 = \ell$, and it can slide all the way to infinity. The second particle can sit at $x_2 = x_1+\ell$ all the way to infinity, so it follows that we can integrate all the $q_i$ from $\ell\goto \infty$. The Jacobian of the transformation is 1, so there's no cost of the change of variables.
+
+We can now factorize the entire partition function:
+\[ Z = \recip{\lam^N} \paren{\int_\ell^\infty dq\, e^{-\b P q}}^N.\]
+\[ Z = \paren{\frac{e^{-\b P \ell}}{\b P \lam}}^N.\]
+Taking the partial derivative with respect to $\b P$ gives the average volume, which I'll just write as $V$:
+\[ V = -\pder{\log Z}{\b P} = \frac{N}{\b P } + N\ell.\]
+And now the equation of state is simply
+\[ \boxed{ (V-N\ell)P = N T.}\]
+This makes a lot of sense as a specialization of the van der Waals equation of state with vanishing particle interactions.
+
+Now, let's consider that the particles have further microscopic degrees of freedom that are allowed to fluctuate. We'll allow the particles to transform between particles of length $\ell_1$ and $\ell_2$. In the Ising spirit, let's use $\s$ to denote a particular \emph{alchemical state} . If we allow these new degrees of freedom to fluctuate, then we include them in the allowed phase space of the system and they must be computed in $Z$. The calculation is only slightly more complicated than above. Here, we allow the lengths of the particle to be a function of $\s$: $\ell \goto \ell(\s)$. We can in principle construct this function explicitly, but all we truly need to know how to do is sum over its possible arguments. Now, the partition function:
+\[ Z = \sum_{\{\s\}} Z_\s.\]
+$Z_\s$ is simply the partition function under a fixed alchemical state.
+\[ Z_\s = \recip{\lam^N}\prod_i \paren{\int_{\ell_i(\s)}^\infty dq_i\, e^{-\b P q_i}}.\]
+This integral is either $e^{-\b P \ell_1}/\b p$ or $e^{-\b p \ell_2}/\b p$, so we have
+\[ Z_\s = \recip{\paren{\b P \lam}^N} \prod_i e^{-\b P\ell_i(\s)}.\]
+$\ell_i(\s)$ is the length of the $i^\mathrm{th}$ particle in alchemical state $\s$. We can move the product into a sum in the exponential:
+\[ Z_\s = \recip{\paren{\b P \lam}^N} \exp\paren{-\b P \sum_i L_i(\s)} = \recip{\paren{\b P \lam}^N} \exp{\paren{-\b P L(\s)}}.\]
+We now have defined a function $L$ as a function of the alchemical state $\s$, and it represents the total length of the particles. Now we can compute the total partition function:
+\[ Z = \sum_{\{ \s \} } Z_\s = \recip{(\b P \lam)^N} \sum_{\{ \s \} } \paren{e^{-\b P \ell_1 n_1(\s)}}\paren{e^{-\b P \ell_2 n_2(\s)}}.\]
+Here, I've split up the function $L(\s)$ into two parts that will allow us to compute the sum. We have by necessity $n_1+n_2 = N$ for any $\s$, and for a given $\s$, we have $ N \choose {n_1}$ ways to distribute $n_1$ particles of length $\ell_1$ along the chain, so the sum over $\s$ becomes simple:
+\[ Z = \recip{(\b P \lam)^N} \sum_{n=0}^N {N \choose n} \paren{e^{-\b P \ell_1}}^{n}\paren{e^{-\b P \ell_2}}^{N-n}.\]
+\[ Z = \paren{\frac{e^{-\b P \ell_1} + e^{-\b P \ell_2}}{\b P \lam}}^N.\]
+Now if we take the logarithm and the derivative with respect to $\b p$, we obtain the new equation of state:
+\[ V = \frac{N}{\b P} - \frac{N}{e^{-\b P \ell_1} + e^{-\b P \ell_2}}\paren{-\ell_1e^{-\b P \ell_1} + -\ell_2e^{-\b P \ell_2}}.\]
+\[ \boxed{ P\paren{V - N\frac{\ell_1 e^{-\b P \ell_1} + \ell_2e^{-\b P \ell_2}}{e^{-\b P \ell_1} + e^{-\b P \ell_2}}} = N T.}\]
+We can check very easily that for $\ell_1 = \ell_2$ we obtain the previous equation of state for fixed particle sizes.
+
+Comparing this equation of state and the more simple one derived above, we can pick out a new macroscopic thermodynamic variable that we defined earlier. In the first case, with homogenous particles, the total length was
+\[ L = N \ell.\]
+Here, allowing the particles to alchemically fluctuate, we have
+\[ L = N\frac{\ell_1 e^{-\b P \ell_1} + \ell_2e^{-\b P \ell_2}}{e^{-\b P \ell_1} + e^{-\b P \ell_2}}.\]
+In this simple illustrative example, this emergent thermodynamic variable, before integrating out the microscopic degrees of freedom, was simply
+\[ L(\s) = \ell_1 n_1(\s) + \ell_2 n_2(\s).\]
+This state variable didn't depend on the position or momenta of any of the particles, only the shape of the particles. In general, any analogous thermodynamic variable which encodes the ``total" shape of the system in any microstate will be a function of the positions and orientations as well as the shapes of the particles. Also, there will most likely not be such a straightforward way to interpret the ``total shape" of the system as there is in this simple case. The total shape here is simply the total length, and the length is simply a characteristic to parameterize the shapes available. In a system where you can swap out circles and squares for each other, we could parametrize the circles by 0 and the squares by 1, and so by adding up this variable over all the particles in the system, you parametrize the total ``squareness" of the system. This thus creates a thermodynamic variable that we can play with that, most importantly, \emph{is extensive}. Then for this extensive variable, we can associate a conjugate \emph{intensive} thermodynamic field analogous to pressure or chemical potential. Let's declare this the \emph{alchemical potential} and throw it into the Gibbs relation:
+\[ dS = \recip{T} dE + \frac{P}{T} dV - \frac{\a}{T} dL.\]
+This modifies our expression for the partition function. We can still safely integrate out the momenta:
+\[ Z = \recip{\lam^N} \sum_\s \int dx \, e^{-\b P V(x) + \b \a L(\s)}.\]
+Here, $x$ denotes the complete configurational state of the system and $\s$ denotes the complete alchemical state. It's good to remind the reader here that it's not general that our macroscopic variables $V$ and $L$ are decoupled completely. Nothing really has changed in a computational sense, so I'll go ahead and write down the final expression for the partition function:
+\[ Z = \paren{\frac{e^{-\b \ell_1 (P - \a)} + e^{-\b \ell_2 (P-\a)}}{\b P \lam}}^N.\]
+\[ \log Z = -N \log \b P \lam + N \log \paren{e^{-\b \ell_1 (P - \a)} + e^{-\b \ell_2 (P-\a)}}.\]
+We find the volume of the system with a derivative again (here I want to use the averaging bracket notation to be really explicit):
+\[ \avg{V} = -\pder{\log Z}{\b P} = \frac{N}{\b P} + N \frac{\ell_1e^{-\b \ell_1 (P - \a)} + \ell_2e^{-\b \ell_2 (P-\a)}}{e^{-\b \ell_1 (P - \a)} + e^{-\b \ell_2 (P-\a)}}.\]
+This is different from our previous findings, because it contains our alchemical potential $\a$. But we find the average length of the system $L$ with a similar derivative:
+\[ \avg{L} = \recip{Z} \sum_\s \int dx dp \, L(\s) e^{-\b \mathcal{H}(p) - \b PV(x) + \b \a L(\s)}.\]
+\[ \avg{L} = \pder{\log Z}{\b \a}.\]
+\[ \avg{L} = N \frac{\ell_1e^{-\b \ell_1 (P - \a)} + \ell_2e^{-\b \ell_2 (P-\a)}}{e^{-\b \ell_1 (P - \a)} + e^{-\b \ell_2 (P-\a)}}.\]
+We've gotten the total shape of the system as a function of the alchemical potential and the pressure. So if we specify the alchemical potential and pressure, we specify the total length of the system. In this case, $\a$ is of the same units as $P$ which is totally reasonable, as changing the shapes of the particles is tantamount to changing their volume. Let's reduce the temperature to very near 0, so $\b \goto \infty$. The average length of the particles is determined completely by $P-\a$, and in this low temperature limit, we'll get a nice result whether $P>\a$ or $P<\a$. 
+\[ \ell = \frac{\ell_1 + \ell_2 e^{-\b(P-\a)(\ell_2-\ell_1)}}{1+e^{-\b (P-\a)(\ell_2-\ell_1)}}.\]
+In the above expression, for $P >\a$ at zero temperature (and assuming $\ell_2>\ell_1$), the exponentials would plummet to zero, and the average length of our particles would be the smaller $\ell_1$: pressure dominates and so the system wants to compress. If instead $\a> P$, then the exponentials blow up and we obtain $\ell = \ell_2$: the alchemical potential dominates and the system expands.
+
+But what about in a fixed shape ensemble? This has been in a fixed alchemical potential ensemble, but as it stands, how do we physically intuit the alchemical potential in a meaningful way to suggest we can fix it? Let's return to the fixed shape ensemble:
+\[ Z = \paren{\frac{e^{-\b P \ell}}{\b P \lam}}^N. \]
+Here, we have a fixed $L = N\ell$. Now, we can extract the alchemical potential in the same way we extract any other thermodynamic variable, with an appropriate derivative of the logarithm of the partition function. Taking $-T \log Z$ gives the Gibbs free energy, for which we of course have
+\[ -\pder{\log Z}{\b P} = \pder{G}{P} = V,\]
+which came from the Gibbs relation:
+\[ dE = TdS - PdV + \a dL.\]
+We make a double Legendre transform into the $NPT$ ensemble:
+\[ G = E - TS + PV = \a L.\]
+\[ dE - d(TS) + d(PV) = -S dT + VdP + \a dL.\]
+\[ dG = -S dT + V dP + \a dL.\]
+This shows we can get the alchemical potential with a derivative with respect to $L$:
+\[ \pder{G}{L} = -\pder{\log Z}{\b L} = \a.\]
+\[ \log Z = -N\log \b P \lam - N \b P \ell = -N \log \b P \lam - P \b L.\]
+\[ \boxed{ \a = P.}\]
+In the fixed shape ensemble, the alchemical potential is simply the pressure! Thus, in equilibrium, when the total length of the system is fixed, the rigidity of the particles ensures that $\a$ is equal to $P$ so that their shape does not change. This suggests that if we would like to change $\a$, we need to provide the particles with a source of internal pressure. If we make their interior out of a collapsable scaffolding manipulable by remote control or something, this would be a method to fix the alchemical potential. In ensemble statistical mechanics, we conceive of a bath that is connected to our system that is supplying it with particles, energy, volume, etc., but here the connection is not as clear. We can imagine a bath that swaps out $\ell_1$ with $\ell_2$ in a one to one fashion such that we preserve particle number, but the bath analogy should not be taken too literally.
+
+What is more useful is to consider the process of minimizing the appropriate free energy as the maximization of entropy \emph{subject to particular constraints.} In the microcanonical ensemble, our available phase space is restricted to an energy hypersurface. In the canonical ensemble, we restrict the \emph{average} energy, and in the isothermal-isobaric ensemble we additionally restrict the \emph{average} volume. So we can conceive of an \emph{isoalchemical} ensemble in which the \emph{average} total shape of the particles are fixed. Once again, I stress that only in this simple case does ``total shape" have a really intuitive physical meaning.
+
+
+
+\end{document}

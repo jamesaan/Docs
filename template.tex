@@ -12,14 +12,14 @@
 \usepackage{mathtools}
 \usetikzlibrary{decorations.markings,arrows}
 \usepackage{bm}
- 
- \begin{document}  
+
+\begin{document}  
  
 \baselineskip 2.7ex
 \parskip 3.5ex
 
 \pagestyle{myheadings}
-\markright{James Antonaglia \hfill fuckin partial derivatives, man \hfill}
+\markright{James Antonaglia \hfill Harmonic Approximate Libron-Phonon Coupling \hfill}
 
 
 %Equations/Entries
@@ -135,21 +135,8 @@
 \newcommand{\tpi}[1]{\paren{2\pi}^{#1}}
 \newcommand{\ootpi}[1]{\recip{\paren{2\pi}^{#1}}}
 
-%%%%%%%%
-
-Yeah, I see exactly what happens now. What you have is totally fine until you sub out $\PD{E}{x}{T}$ for $J$, which isn't exactly right. We can get the right expression by expressing $E$ as a function of $x$ and $S$:
-\[ E(x,T) = E(x,S(x,T)).\]
-\[ \PD{E}{x}{T} = \PD ExS + \PD ES x \PD S x T.\]
-We can use a Maxwell relation to swap out the last partial derivative:
-\[ \PD S x T = - \PD J T x.\]
-Now we can use
-\[ dE = T dS + J dx.,\qquad \PD ExS = J,\quad \PD E S x = T.\]
-So all in all:
-\[ \PD E x T = J - T \PD J T x.\]
-\[ \PD E x T = ax - bT + cTx - T(-b + cx) = ax.\]
-And this is all preceded by $\PD{}{T}{x}$, so then we get 0!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
-%%%%%%%%%
-\end{document} 
+\end{document}

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  6 MAY 2014 16:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  21 MAY 2014 18:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**template.tex
-(./template.tex
+**"Harmonic Approximate Libron-Phonon Coupling.tex"
+(./Harmonic Approximate Libron-Phonon Coupling.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/article.cls
@@ -574,8 +574,8 @@ Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 138.
 LaTeX Info: Redefining \bm on input line 204.
 )
-(./template.aux)
-\openout1 = `template.aux'.
+(./Harmonic Approximate Libron-Phonon Coupling.aux)
+\openout1 = `"Harmonic Approximate Libron-Phonon Coupling.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
@@ -641,48 +641,52 @@ LaTeX Font Info:    ... okay on input line 16.
 \c@lstlisting=\count141
  ABD: EveryShipout initializing macros
 \c@entry=\count142
-LaTeX Font Info:    Try loading font information for U+msa on input line 140.
+LaTeX Font Info:    Try loading font information for U+msa on input line 143.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 140.
+LaTeX Font Info:    Try loading font information for U+msb on input line 143.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-] [2]
+]
+Overfull \hbox (4.62039pt too wide) detected at line 167
+\OML/cmm/m/it/12 V\OT1/cmr/m/n/12 (\OT1/cmr/bx/n/12 R[]d[]\OT1/cmr/m/n/12 ) \OM
+S/cmsy/m/n/12 ^^Y []\OML/cmm/m/it/12 D[]r[]D[]r[] [][] \OMS/cmsy/m/n/12 ^^@ \OM
+L/cmm/m/it/12 R[]u[]D[]r[] [][] \OT1/cmr/m/n/12 + []\OML/cmm/m/it/12 R[]u[]R[]u
+[] [][] :
+ []
 
-Package amsmath Warning: Foreign command \atopwithdelims;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 178.
-
-[3] [4] [5] [6] (./template.aux) ) 
+[2] [3] (./Harmonic Approximate Libron-Phonon Coupling.aux) ) 
 Here is how much of TeX's memory you used:
- 13600 strings out of 493315
- 252278 string characters out of 6137904
- 306790 words of memory out of 5000000
- 16763 multiletter control sequences out of 15000+600000
- 11753 words of font info for 43 fonts, out of 8000000 for 9000
+ 13605 strings out of 493315
+ 252644 string characters out of 6137904
+ 307790 words of memory out of 5000000
+ 16767 multiletter control sequences out of 15000+600000
+ 12359 words of font info for 45 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,6n,57p,1209b,219s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2013/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsl12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmti12.pfb>
-Output written on template.pdf (6 pages, 131325 bytes).
+ 56i,7n,57p,820b,219s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texliv
+e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive
+/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2
+013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/20
+13/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/201
+3/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2013/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2013/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2013/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on "Harmonic Approximate Libron-Phonon Coupling.pdf" (3 pages, 1
+27919 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
- 50 compressed objects within 1 object stream
+ 65 PDF objects out of 1000 (max. 8388607)
+ 47 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

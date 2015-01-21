@@ -1,0 +1,88 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Final_Project_Antonaglia.aux
+The style file: uiuchept.bst
+Database file #1: Final_Project_Refs.bib
+You're missing a field name---line 15 of file Final_Project_Refs.bib
+ :   
+ :   %url = {http://link.aps.org/doi/10.1103/PhysRevB.16.1217}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 31 of file Final_Project_Refs.bib
+ :   
+ :   %url = {http://link.aps.org/doi/10.1103/PhysRevLett.17.1133}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 61 of file Final_Project_Refs.bib
+ :   
+ :   year = {2013}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 91 of file Final_Project_Refs.bib
+ :   
+ :   %url = {http://link.aps.org/doi/10.1103/PhysRevLett.87.098303}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 128 of file Final_Project_Refs.bib
+ :   
+ :   %url = {http://link.aps.org/doi/10.1103/PhysRevLett.41.121}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 143 of file Final_Project_Refs.bib
+ : 
+ : %url = {http://link.aps.org/doi/10.1103/PhysRevB.19.1855}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You can't pop an empty literal stack for entry Jose
+while executing---line 2447 of file uiuchept.bst
+You can't pop an empty literal stack for entry MerminWagner
+while executing---line 2447 of file uiuchept.bst
+Name 1 in "Chaikin, P.M, and Lubensky, T.C." has a comma at the end for entry Chaikin
+while executing---line 2447 of file uiuchept.bst
+Warning--empty year in 40years
+You can't pop an empty literal stack for entry 2dmelt
+while executing---line 2447 of file uiuchept.bst
+You can't pop an empty literal stack for entry young
+while executing---line 2447 of file uiuchept.bst
+You've used 10 entries,
+            2281 wiz_defined-function locations,
+            599 strings with 5172 characters,
+and the built_in function-call counts, 2923 in all, are:
+= -- 301
+> -- 67
+< -- 0
++ -- 27
+- -- 17
+* -- 224
+:= -- 346
+add.period$ -- 13
+call.type$ -- 10
+change.case$ -- 7
+chr.to.int$ -- 0
+cite$ -- 11
+duplicate$ -- 166
+empty$ -- 324
+format.name$ -- 17
+if$ -- 753
+int.to.chr$ -- 0
+int.to.str$ -- 10
+missing$ -- 33
+newline$ -- 36
+num.names$ -- 11
+pop$ -- 68
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 103
+stack$ -- 0
+substring$ -- 197
+swap$ -- 66
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 25
+width$ -- 12
+write$ -- 77
+(There were 11 error messages)

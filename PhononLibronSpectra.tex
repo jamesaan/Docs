@@ -504,8 +504,8 @@ Figure \ref{1dchain2} illustrates the situation.
 \draw (4.5,0) [anchor=north] node {$i$};
 \draw (7.5,0) [anchor=north] node {$i+1$};
 \end{tikzpicture}
-\label{1dchain2}
 \caption{Intricate field interactions for many-particle unit cells.}
+\label{1dchain2}
 \end{figure}
 
 The interactions between the fields that live on neighboring atoms will contain 
@@ -655,8 +655,10 @@ u}_{k}^*$. Our Lagrangian is then
 \bv{\dot{\tilde u}}^{\b *}_{k}} \cdot \pmtrx{ \bv{\dot{\tilde u}}^\a_k \\ 
 \bv{\dot{\tilde u}}^\b_k } - 
 \pmtrx{ \bv{\tilde u}^{\a *}_{k} & \bv{\tilde 
-u}^{\b *}_{k}} \pmtrx{ \bv \bv K + \bv M & - \bv \bv K e^{-ikc_1} - \bv Me^{ikc_2} \\ - \bv \bv Ke^{ikc_1} - 
-\bv Me^{-ikc_2} & \bv \bv K+\bv M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
+u}^{\b *}_{k}} \pmtrx{ \bv K + \bv M & - \bv K e^{-ikc_1} - \bv 
+Me^{ikc_2} \\ - \bv Ke^{ikc_1} - 
+\bv Me^{-ikc_2} & \bv K+\bv M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde 
+u}^\b_k }.\]
 Just as in the demonstrative example above, the Euler-Lagrange equations 
 furnish the equations of motion with the right factors of $1/2$ missing and 
 such:
@@ -730,15 +732,167 @@ It's important to note that while terms coupling $\th$ and $\hat c \cdot \bv u$ 
 \begin{subfigure}{0.4\textwidth}
 \includegraphics[scale=0.6]{betabonds.eps}
 \end{subfigure}
-\caption{The nearest neighbor configurations of $\a$ particles (left) and $\b$ particles (right). The nearest neighbor vectors are related to each other by a $\pi$ rotation. Further symmetries constrain the components of the set of $\bv c$: $\bv c_1 = -\bv c_4$, $c_{2,x} = c_{6,x}$, $c_{2,y}=-c_{6,y}$, $c_{3,x} = c_{5,x}$, and $c_{3,y} = -c_{5,y}$. The configuration is very nearly hexagonal, but the 6-fold symmetry is slightly broken into a 2-fold symmetry. To be explicit, the angle between $\bv c_1$ and $\bv c_2$ is $55.965^\circ$, the angle between $\bv c_2$ and $\bv c_3$ is $64.689^\circ$, and the angle between $\bv c_3$ and $\bv c_4$ is $59.346^\circ$.}
+\caption{The nearest neighbor configurations of $\a$ particles (left) and $\b$ 
+particles (right). The nearest neighbor vectors are related to each other by a 
+$\pi$ rotation. Further symmetries constrain the components of the set of $\bv 
+c$: $\bv c_1 = -\bv c_4$, $c_{2,x} = c_{6,x}$, $c_{2,y}=-c_{6,y}$, $c_{3,x} = 
+c_{5,x}$, and $c_{3,y} = -c_{5,y}$. The configuration is very nearly hexagonal, 
+but the 6-fold symmetry is slightly broken into a 2-fold symmetry. To be 
+explicit, the angle between $\bv c_1$ and $\bv c_2$ is $55.965^\circ$, the angle 
+between $\bv c_2$ and $\bv c_3$ is $64.689^\circ$, and the angle between $\bv 
+c_3$ and $\bv c_4$ is $59.346^\circ$.}
+\label{pentagonnn}
 \end{figure}
 
 There are three distinct bond types, characterized by the vectors $\bv c_{1,2,3}$, and the bonds characterized by $\bv c_{4,5,6}$ are related exactly by symmetry. In the toy model we considered previously, we had two bond types, which we characterized by two coupling matrices $\bv K$ and $\bv M$. Here we'll need three separate matrices to describe each of these bonds, and they will all look like the matrix $\bv M$ defined above (but with $B=C=0$). I'll write these different $\bv M$ matrices with a subscript $\bv M_{a=1,2,3}$.
 
 Now, let's write down the energy of bond $\bv c_1$, for example:
-\[ U_{c_1,i} = \half{1} \bv v_{\br_i, \bv c_1} \cdot \bv M_1 \cdot \bv v_{\br_i,\bv c_1}.\]
+\[ U_{\bv c_1,i} = \half{1} \bv v_{\br_i, \bv c_1} \cdot \bv M_1 \cdot \bv 
+v_{\br_i,\bv c_1}.\]
 The elements of $\bv M_1$ are $A_1,D_1,E_1,$ and $F_1$. We perform the Fourier transform on $\bv v_{\br_i,\bv c_1}$:
-\[ \bv{\tilde v}_{\bv k,\bv c_1} = \paren{ \tilde u_{x,\bv k}^\a \paren{1-e^{-i\Dot{k}{c_1}}}, \, \tilde u_{y,\bv k}^\a\paren{1-e^{-i\Dot{k}{c_1}}}, \, \tilde \th_{\bv k}^\a \paren{1+e^{-i\Dot{k}{c_1} } }, \, \tilde \th_{\bv k}^\a \paren{1-e^{-i\Dot{k}{c_1} } }   }.\]
+\[ \bv{\tilde v}_{\bv k,\bv c_1} = \paren{ \hat c_{1,x}\tilde u_{x,\bv k}^\a 
+\paren{1-e^{-i\Dot{k}{c_1}}}, \, \hat c_{1,y}\tilde u_{y,\bv 
+k}^\a\paren{1-e^{-i\Dot{k}{c_1}}}, \, \tilde \th_{\bv k}^\a 
+\paren{1+e^{-i\Dot{k}{c_1} } }, \, \tilde \th_{\bv k}^\a 
+\paren{1-e^{-i\Dot{k}{c_1} } }   }.\]
+
+Performing the matrix product, we can make a new matrix of just the field 
+values, not their differences or sums:
+\begin{multline*} U_{\bv c_1,\bv k} = \half{1} \paren{\tilde u^{\a *}_{x,\bv 
+k}, \, \tilde u^{\a *}_{y,\bv k},\, \tilde \th^{\a *}_{\bv k}} \cdot \\ \pmtrx{ 
+4A_1 \hat c_{1,x}^2 \sin^2\half{\Dot{k}{c_1}} & 4A_1 \hat 
+c_{1,x} \hat c_{1,y} \sin^2\half{\Dot{k}{c_1}} & 0 \\ 4A_1 \hat 
+c_{1,x} \hat c_{1,y} \sin^2\half{\Dot{k}{c_1}} & 4A_1 \hat 
+c_{1,y}^2 \sin^2\half{\Dot{k}{c_1}} & 0 \\ 0 & 0 & 4D_1\cos^2 
+\half{\Dot{k}{c_1}} + 4E_1 \sin^2 \half{\Dot{k}{c_1}} } \pmtrx{ \tilde 
+u^\a_{x,\bv k} \\ \tilde u^\a_{y,\bv k} \\ \tilde \th^\a_{\bv k} 
+}.\end{multline*}
+Here we see again that the $F_1$ term has dropped out. Also note, that this 
+term in the energy does not contain any $\b$ fields, because this energy is 
+the bond energy between two $\a$ particles. Now, let's perform the same 
+analysis of the energy for the bond spanned by $\bv c_2$ that joins an $\a$ 
+particle with a $\b$ particle. Here, the matrix will be larger dimensional. 
+This time, the vector $\bv v_{\bv r_i,\bv c_2}$ contains both $\a$ and $\b$ 
+fields. Also, for all our sanity, I'm going to drop the $\bv k$ subscript, and 
+assume that these Fourier modes take a wavevector argument.
+\[ \bv v_{\bv r_i, \bv c_2} = \paren{ \hat c_{2,x}\paren{\tilde u_x^\a- 
+\tilde u_x^\b e^{-i\Dot{k}{c_2}}}, \, \hat c_{2,y}\paren{\tilde 
+u_y^\a-\tilde u_y^\b e^{-i\Dot{k}{c_2}}}, \, \tilde \th^\a +
+\tilde \th^\b e^{-i\Dot{k}{c_2}}, \, \tilde \th^\a -\tilde 
+\th^\b e^{-i\Dot{k}{c_2} } }.\]
+\begin{multline*} U_{\bv c_2} = \half{1} \paren{\tilde u_x^{\a *} 
+, \, \tilde 
+u_y^{\a *} , \, \tilde \th^{\a *} , \, \tilde u_x^{\b *} , \, \tilde u_y^{\b *}, 
+\, \tilde \th^{\b *} } \cdot \\  \pmtrx{
+ A_2\bv C_2 & 0 & -A_2 \bv C_2 e^{-i\Dot{k}{c_2}} & 0 \\
+0 & D_2 + 2F_2 + E_2 & 0 & D_2e^{-i\Dot{k}{c_2}} - 
+E_2e^{-i\Dot{k}{c_2}} \\
+-A_2 \bv C_2 e^{i\Dot{k}{c_2}} & 0 & A_2 \bv C_2 & 0  \\
+0 &  D_2 e^{i\Dot{k}{c_2}} - E_2 e^{i\Dot{k}{c_2}} & 0  & D_2 - 2F_2 + 
+E_2}
+\pmtrx{\tilde u_x^{\a} \\ \tilde 
+u_y^{\a} \\ \tilde \th^{\a} \\ \tilde u_x^{\b} \\ \tilde u_y^{\b} \\  \tilde 
+\th^{\b} }.\end{multline*}
+Here, for the sake of fitting the whole equation within the margins, the 
+$2\times 2$ matrix $\bv C_2$ is defined as the outer product of the vector $\bv 
+c_2$ with itself
+\[ \bv C_2 = \pmtrx{ \hat c_{2,x}^2 & \hat c_{2,x}\hat c_{2,y} \\ \hat 
+c_{2,x}\hat c_{2,y} & \hat c_{2,y}^2 }.\]
+We need one term in the energy for every wavevector $\bv k$ and for every kind 
+of distinct bond $\bv c_i$. We need to be careful which bonds we count because 
+some are related just by a translation by a lattice vector. For example, we 
+already counted the bond between two $\a$ particles spanned by $\bv c_1$, but 
+we should not count a term between two $\a$ particles spanned by $\bv c_4$, 
+because this bond is related to the first bond by a translation by $\bv a_1$. 
+However, we \emph{do} need to count the bond spanned by $\bv c_1$ that joins 
+two $\b$ \emph{particles} together, because this bond is related to the 
+$\a$-$\a$ bond by the vector $\bv p$, which isn't a lattice vector but a vector 
+characteristic of the unit cell. To make sure we tile all of bond space with 
+the right number of bonds without overlap, we need \emph{six} terms. To 
+illustrate, refer to Figure \ref{pentagonnn}. The first three bonds are the 
+$\a$-$\a$ bond by $\bv c_1$, the $\a$-$\b$ bond by $\bv c_2$, and the $\a$-$\b$ 
+bond by $\bv c_3$, which are shown in the left subfigure. The second set of 
+three bonds (right subfigure) are the $\b$-$\b$ bond by $-\bv c_4$, the 
+$\b$-$\a$ bond by $-\bv c_5$, and the $\b$-$\a$ bond by $-\bv c_6$. The 
+potential energy at wavevector $\bv k$ is thus
+\[ U_{\bv k} = \half{1} \paren{\tilde {\bv u}^{\a *} 
+, \, \tilde \th^{\a *} , \, \tilde {\bv u}^{\b *} , \, \tilde \th^{\b *} }\cdot 
+\paren{ \sum_{i=1\ldots 6} \bv K_i } \cdot \pmtrx{\tilde {\bv u}^{\a} \\ \tilde 
+\th^{\a} \\ \tilde {\bv u}^{\b} \\  \tilde \th^{\b} }.\]
+And the six matrices $\bv K_i$ are the following:
+\[ \bv K_1 = \pmtrx{ 4A_1 \bv C_1 \sin^2 \half{\Dot{k}{c_1}} & 0 & 0 & 0\\ 0 & 
+4D_1 \cos^2\half{\Dot{k}{c_1}} + 4E_1 \sin^2 \half{\Dot{k}{c_1}} & 0 & 0 \\ 
+0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0}.\]
+\[ \bv K_2 = \pmtrx{
+ A_2\bv C_2 & 0 & -A_2 \bv C_2 e^{-i\Dot{k}{c_2}} & 0 \\
+0 & D_2 + 2F_2 + E_2 & 0 & D_2e^{-i\Dot{k}{c_2}} - 
+E_2e^{-i\Dot{k}{c_2}} \\
+-A_2 \bv C_2 e^{i\Dot{k}{c_2}} & 0 & A_2 \bv C_2 & 0  \\
+0 &  D_2 e^{i\Dot{k}{c_2}} - E_2 e^{i\Dot{k}{c_2}} & 0  & D_2 - 2F_2 + 
+E_2}.\]
+\[ \bv K_3 = \pmtrx{
+ A_3\bv C_3 & 0 & -A_3 \bv C_3 e^{-i\Dot{k}{c_3}} & 0 \\
+0 & D_3 + 2F_3 + E_3 & 0 & D_3e^{-i\Dot{k}{c_3}} - 
+E_3e^{-i\Dot{k}{c_3}} \\
+-A_3 \bv C_3 e^{i\Dot{k}{c_3}} & 0 & A_3 \bv C_3 & 0  \\
+0 &  D_3 e^{i\Dot{k}{c_3}} - E_3 e^{i\Dot{k}{c_3}} & 0  & D_3 - 2F_3 + 
+E_3}.\]
+\[ \bv K_4 = \pmtrx{ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 4A_1 \bv C_4
+\sin^2 \half{\Dot{k}{c_4}}\\ 0 & 0 & 0 & 4D_1 \cos^2\half{\Dot{k}{c_4}} + 4E_1 
+\sin^2 \half{\Dot{k}{c_4}} }.\]
+\[ \bv K_5 = \pmtrx{ A_3\bv C_5 & 0 & -A_3 \bv C_5 e^{-i\Dot{k}{c_5}} & 0 \\
+0 & D_3 - 2F_3 + E_3 & 0 & D_3e^{-i\Dot{k}{c_5}} - 
+E_3e^{-i\Dot{k}{c_5}} \\
+-A_3 \bv C_5 e^{i\Dot{k}{c_5}} & 0 & A_3 \bv C_5 & 0  \\
+0 &  D_3 e^{i\Dot{k}{c_5}} - E_3 e^{i\Dot{k}{c_5}} & 0  & D_3 + 2F_3 + 
+E_3}.\]
+\[ \bv K_6 = \pmtrx{ A_2\bv C_6 & 0 & -A_2 \bv C_6 e^{-i\Dot{k}{c_6}} & 0 \\
+0 & D_2 - 2F_2 + E_2 & 0 & D_2e^{-i\Dot{k}{c_6}} - 
+E_2e^{-i\Dot{k}{c_6}} \\
+-A_2 \bv C_6 e^{i\Dot{k}{c_6}} & 0 & A_2 \bv C_6 & 0  \\
+0 &  D_2 e^{i\Dot{k}{c_6}} - E_2 e^{i\Dot{k}{c_6}} & 0  & D_2 + 2F_2 + 
+E_2}.\]
+Here, the large capital $\bv C_i$ are again the outer products of the $\bv c_i$ 
+with themselves. Here, it actually makes sense to separate the phonons and 
+libron degrees of freedom:
+\[ U = \half{1} \paren{\tilde {\bv u}^{\a *}, \, \tilde {\bv u}^{\b *}}\cdot 
+\bv K_{\bv u} \cdot \pmtrx{\tilde {\bv u}^{\a}  \\ \tilde {\bv u}^{\b}} + 
+\half{1} \paren{\tilde \th^{\a *} , \, \tilde \th^{\b *} } \cdot \bv K_{\th} 
+\cdot \pmtrx{ \tilde \th^\a \\ \tilde \th^\b }.\]
+Where, here, these separated coupling matrices are the sums of components of 
+all the $\bv K_i$ defined above. Interestingly, the terms involving $F_{2,3}$ 
+cancel each other in $\bv K_\th$.
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}
+\[ \Scale[0.8]{\bv K_{\bv u} = \pmtrx{ 4A_1\bv C_1 \sin^2 \half{\Dot{k}{c_1}} 
++ A_2(\bv C_2 + \bv C_6) + A_3 (\bv C_3 + \bv C_5) & -A_2\paren{ \bv C_2 
+e^{-i\Dot{k}{c_2}} + \bv C_6 e^{-i\Dot{k}{c_6} }} - A_3\paren{ \bv C_3 
+e^{-i\Dot{k}{c_3}} + \bv C_5 e^{-i\Dot{k}{c_5} }} \\ -A_2\paren{ \bv C_2 
+e^{i\Dot{k}{c_2}} + \bv C_6 e^{i\Dot{k}{c_6} }} - A_3\paren{ \bv C_3 
+e^{i\Dot{k}{c_3}} + \bv C_5 e^{i\Dot{k}{c_5} }} & 4A_1\bv C_4 \sin^2 
+\half{\Dot{k}{c_4}} + 
+A_2(\bv C_2 + \bv C_6) + A_3 (\bv C_3 + \bv C_5)}.}\]
+\[ \Scale[0.8]{\bv K_\th = \pmtrx{ 4D_1 \cos^2 \half{\Dot{k}{c_1}} + 4E_1 
+\sin^2 \half{\Dot{k}{c_1}} + 2(D_2+D_3+E_2+E_3) & 
+(D_2-E_2)\paren{e^{-i\Dot{k}{c_2}} + e^{-i\Dot{k}{c_6}} } + 
+(D_3-E_3)\paren{e^{-i\Dot{k}{c_3}} + e^{-i\Dot{k}{c_5}} } \\ 
+(D_2-E_2)\paren{e^{i\Dot{k}{c_2}} + 
+e^{i\Dot{k}{c_6}} } + (D_3-E_3)\paren{e^{i\Dot{k}{c_3}} + e^{i\Dot{k}{c_5}} 
+} & 4D_1 \cos^2 \half{\Dot{k}{c_4}} + 4E_1 \sin^2 
+\half{\Dot{k}{c_4}} + 2(D_2+D_3+E_2+E_3)}.}\]
+We're \emph{so close.} I'd like to take a closer look at $\bv K_\th$, because 
+it actually has a rather simple form. Because $\bv c_1 = -\bv c_4$, the first 
+diagonal element is actually exactly equal to the second diagonal element, so 
+the form of $\bv K_\th$ is
+\[ \bv K_\th = \pmtrx{ x & y \\ y^* & x}.\]
+This is a particularly easy matrix to diagonalize, and its eigenvalues are
+\[ \w^2 = x \pm \sqrt{yy^*}.\]
+The minus term will give us the acoustic libron branch, and the plus term will 
+give us the optical libron branch. If we expand $x\pm \abs{y}$ around $\bv k = 
+0$, we should be able to glean what each mode looks like. In this low $k$ 
+limit, we have
+\begin{multline*} \w^2 \approx 4D_1 + E_1 \paren{\Dot{k}{c_1}}^2 + 
+2(D_2+D_3+E_2+E_3) \\ \pm \abs{ 2(D_2+D_3-E_2-E_3) + 
+i(D_2-E_2)\Dot{k}{(c_2+c_6)}+i(D_3-E_3)\Dot{k}{(c_3+c_5)}}. \end{multline*}
 
 %%%%%%%%%
 \end{document} 

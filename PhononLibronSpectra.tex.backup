@@ -12,6 +12,7 @@
 \usepackage{mathtools}
 \usetikzlibrary{decorations.markings,arrows}
 \usepackage{bm}
+\usepackage{subcaption}
  
  \begin{document}  
  
@@ -503,8 +504,8 @@ Figure \ref{1dchain2} illustrates the situation.
 \draw (4.5,0) [anchor=north] node {$i$};
 \draw (7.5,0) [anchor=north] node {$i+1$};
 \end{tikzpicture}
-\label{1dchain2}
 \caption{Intricate field interactions for many-particle unit cells.}
+\label{1dchain2}
 \end{figure}
 
 The interactions between the fields that live on neighboring atoms will contain 
@@ -515,7 +516,7 @@ energy of the $c_1$ bond between atoms of cell $i$:
 \[ U_{c_1,i} = \half{1} \pmtrx{a^\a_i - a^\b_i & b^\a_i - b^\b_i}
  \pmtrx{K_{aa} & K_{ab} \\ K_{ab} & K_{bb}} \pmtrx{a^\a_i - a^\b_i \\ b^\a_i - 
 b^\b_i}.\]
-The matrix $K$ must necessarily be symmetric. The $U_{c_2,i}$ term which bonds 
+The matrix $\bv K$ must necessarily be symmetric. The $U_{c_2,i}$ term which bonds 
 the $\b$ atom of cell $i-1$ and the $\a$ atom of cell $i$ looks similar, but in 
 general, with a different coupling constant matrix:
 \[ U_{c_2,i} = \half{1} \pmtrx{a^\b_{i-1} - a^\a_i & b^\b_{i-1} - b^\a_i}
@@ -589,9 +590,9 @@ M_{ab} & M_{bb} & -M_{ab}e^{ikc_2} & -M_{bb}e^{ikc_2} \\ -M_{aa} e^{-ikc_2} &
 If we define the fields at atom $\a$ by $\bv u^\a = \paren{ a^\a, b^\a}$ and 
 the fields at atom $\b$ similarly, we can formulate the energies quite simply:
 \[ U = \half{1} \sum_k \pmtrx{ \bv{\tilde u}^\a_{-k} & \bv{\tilde u}^\b_{-k}} 
-\pmtrx{ K + M & - K e^{-ikc_1} - Me^{ikc_2} \\ - Ke^{ikc_1} - Me^{-ikc_2} & 
-K+M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
-Here, $K$ and $M$ are the full matrices, not components of the matrices. The 
+\pmtrx{ \bv K + \bv M & - \bv K e^{-ikc_1} - \bv Me^{ikc_2} \\ - \bv Ke^{ikc_1} - \bv Me^{-ikc_2} & 
+\bv K+\bv M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
+Here, $\bv K$ and $\bv M$ are the full matrices, not components of the matrices. The 
 next useful step is to replace $\bv{\tilde u}_{-k}$ with $\bv{\tilde u}_k^*$, 
 the complex conjugate, which is a property of the Fourier transform of real 
 fields $\bv u_i$. By summing over all of $k$, we're actually double-counting, 
@@ -605,14 +606,14 @@ I'd like to clarify a technical but important detail with a brief example.
 Consider a 2D harmonic oscillator, whose Lagrangian is
 \[ \mathcal{L} = \half{1} \paren{ \dot x ^2 + \dot y^2} - \half{1} \w_0^2 
 \paren{x^2 + y^2}.\]
-Here, I've set the mass equal to one without loss of generality. The equations 
+Here, I've set the mass equal to one for simplicity. The equations 
 of motion are very simple, they come from the Euler-Lagrange equations:
 \[ \der{}{t} \pder{\mathcal L}{\dot x} = \pder{\mathcal L}{x}, \qquad \der{}{t} 
 \pder{\mathcal L} {\dot y} = \pder{\mathcal L}{y}.\]
 \[ \der{}{t} \paren{\dot x} = -\w_0^2 x, \qquad \der{}{t} \paren{\dot y} = 
 -\w_0^2 y.\]
 \[ \ddot x = -\w_0^2 x, \qquad \ddot y = -\w_0^2 y.\]
-Another way to write the Lagrangian is by characterizing the complex degrees of 
+Another way to write the Lagrangian is by defining the complex degrees of 
 freedom:
 \[ z = \frac{x+iy}{\sqrt{2}} ,\qquad z^* = \frac{x-iy}{\sqrt 2}.\]
 Then the Lagrangian can be written succinctly as
@@ -643,8 +644,8 @@ well.
 
 Returning to the derivation for the 1D chain, we have again:
 \[ U = \half{1} \sum_k \pmtrx{ \bv{\tilde u}^\a_{-k} & \bv{\tilde u}^\b_{-k}} 
-\pmtrx{ K + M & - K e^{-ikc_1} - Me^{ikc_2} \\ - Ke^{ikc_1} - Me^{-ikc_2} & 
-K+M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
+\pmtrx{ \bv K + \bv M & - \bv K e^{-ikc_1} - \bv Me^{ikc_2} \\ - \bv Ke^{ikc_1} - \bv Me^{-ikc_2} & 
+\bv K+\bv M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
 The sum over $k$ is over the entire Brillouin zone. However, we note that this 
 sum is necessarily symmetric about $k=0$. Instead of summing over $k$ from 
 $-\pi/(c_1+c_2)N$ to $\pi/(c_1+c_2)N$, we can just sum the $k\geq0$ twice. This 
@@ -654,8 +655,10 @@ u}_{k}^*$. Our Lagrangian is then
 \bv{\dot{\tilde u}}^{\b *}_{k}} \cdot \pmtrx{ \bv{\dot{\tilde u}}^\a_k \\ 
 \bv{\dot{\tilde u}}^\b_k } - 
 \pmtrx{ \bv{\tilde u}^{\a *}_{k} & \bv{\tilde 
-u}^{\b *}_{k}} \pmtrx{ K + M & - K e^{-ikc_1} - Me^{ikc_2} \\ - Ke^{ikc_1} - 
-Me^{-ikc_2} & K+M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
+u}^{\b *}_{k}} \pmtrx{ \bv K + \bv M & - \bv K e^{-ikc_1} - \bv 
+Me^{ikc_2} \\ - \bv Ke^{ikc_1} - 
+\bv Me^{-ikc_2} & \bv K+\bv M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde 
+u}^\b_k }.\]
 Just as in the demonstrative example above, the Euler-Lagrange equations 
 furnish the equations of motion with the right factors of $1/2$ missing and 
 such:
@@ -665,99 +668,209 @@ such:
 u}^{\a *}_{k} & \bv{\tilde 
 u}^{\b *}_{k}} }.\]
 \[ \pmtrx{ \bv{\ddot{\tilde u}}^\a_k \\ \bv{\ddot{\tilde u}}^\b_k } = -\pmtrx{ 
-K + M & - K e^{-ikc_1} - Me^{ikc_2} \\ - Ke^{ikc_1} - 
-Me^{-ikc_2} & K+M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
+\bv K + \bv M & - \bv K e^{-ikc_1} - \bv Me^{ikc_2} \\ - \bv Ke^{ikc_1} - 
+\bv Me^{-ikc_2} & \bv K+\bv M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
 Then going to frequency space:
 \[ \w^2 \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k } = 
 \pmtrx{ 
-K + M & - K e^{-ikc_1} - Me^{ikc_2} \\ - Ke^{ikc_1} - 
-Me^{-ikc_2} & K+M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
-This looks similar to the structure of the coupling matrices we derived for the 
-1D monatomic chain, which was:
-\[ \w^2 \pmtrx{ \tilde a_k \\ \tilde b_k } = \pmtrx{A\paren{e^{-ik\ell} - 2 + 
-e^{ik\ell}} + M & -C\paren{e^{-ik\ell} - 2 + e^{ik\ell}} \\ 
--C\paren{e^{-ik\ell} - 2 + e^{ik\ell}} & B\paren{e^{-ik\ell} - 2 + e^{ik\ell}} 
-} \pmtrx{ \tilde a_k \\ \tilde b_k }.\]
+\bv K + \bv M & - \bv K e^{-ikc_1} - \bv Me^{ikc_2} \\ - \bv Ke^{ikc_1} - 
+\bv Me^{-ikc_2} & \bv K+\bv M} \pmtrx{ \bv{\tilde u}^\a_k \\ \bv{\tilde u}^\b_k }.\]
+Here, $\bv K$ and $\bv M$ are the coupling matrices between the field $\tilde a$ and 
+$\tilde b$, and they are embedded in a larger matrix that encodes the spatial 
+information of how atoms are organized and which atoms are coupled to which. 
+The set of $\a$ fields $\bv{\tilde u}^\a$ is coupled to the set of $\b$ 
+fields $\bv{\tilde u}^\b$ with a term like $-\bv K e^{-ikc_1} -\bv M e^{+ikc_2}$. 
+The first term couples the $\a$ fields to the $\b$ fields a 
+distance $c_1$ to the right using the matrix of spring constants $\bv K$ and, and 
+the second term couples the $\a$ fields to the $\b$ fields to the left a 
+distance $c_2$ using the matrix of spring constants $\bv M$.
 
+In this formulation, the generalization to two dimensions is straightforward: 
+the only substitution to be made is $kc \goto \Dot kc$. Furthermore, we've 
+teased out the structure of the master coupling matrix, which is in general has 
+size $nf \times nf $, where $n$ is the number of particles in the 
+unit cell and $f$ is the number of fields per particle. This big matrix is a 
+$n\times n$ matrix whose components themselves are $f\times f$ matrices.
 
-
-
-
-
-
-
-
-
-\pagebreak
-
-
-
-
-Here we'll treat the case where the unit cell of the lattice contains multiple 
-particles. For this, we'll need another index for all of our fields. Every 
-particle position now needs to be indexed by the unit cell $i$ and the 
-particle within the unit cell $\a$, so we should identify lattice cites by 
-position vectors $\br_i^\a$. Thus, we have the field $\bv u_{\br_i^\a}$ and 
-$\th_{\br_i^\a}$. Sometimes, I will drop the $\br$ and just use the indices 
-$i$ and $\a$ on $\bv u$ and $\th$. To clarify, the field $u_{i,\mu}^\a$, now 
-needs three indices: $i$ counts over the unit cells, $\mu$ counts over the 
-components of $u$ ($x$ and $y$), and $\a$ is now the index that counts over the 
-particles \emph{within} the unit cell $i$. We can also address the field in 
-vector form as $\bv u_i^\a$. The field $\th_{i}^\a$ has two indices because it's 
-a scalar field without Cartesian components $\mu$. Hopefully, the notation 
-will be transparent enough to continue, so we can now generalize the equations 
-of motion from Section 2:
-\[ \ddot {\bv u}_{\br_i} = -\sum_{\{\bv 
-c\}_{\br_i}} \hat c  \left [   K_{\bv c} \hat c \cdot  (\bv 
-u_{\br_i^\a} - \bv u_{\br_i^\a + \bv c})  + 
-B_{\bv c}(\th_{\br_i^\a} + \th_{\br_i^\a + \bv c}) 
-\right. \\ \left.+ C_{\bv c} (\th_{\br_i^\a} - \th_{\br_i^\a +\bv c})   
-\right].\]
-And the equation of motion for the $\th$ field:
-\[ \ddot \th_{\br_i} = -\sum_{\{\bv c\}_{\br_i} } \left [D_{\bv c}(\th_{\br_i} 
-+\th_{\br_i + \bv c}) + E_{\bv c} (\th_{\br_i} - \th_{\br_i + \bv c}) + B_{\bv 
-c} \hat c \cdot (\bv u_{\br_i} - \bv u_{\br_i +\bv c} ) + C_{\bv c}   \right ]  
-  \]
-\begin{multline*}   \ddot \th_{\br_i^\a} = -\half{1} \sum_{\{\bv c\}^\a} 
-\left [ D_{\bv c} (2\th_{\br_i^\a} + \th_{\br_i^\a + \bv c} + 
-\th_{\br_i^\a - \bv c}) + E_{\bv c}(2\th_{\br_i^\a} - \th_{\br_i^\a + 
-\bv c} - \th_{\br_i^\a - \bv c}) \right. \\ \left. + B_{\bv c} 
-\hat c \cdot (- \bv u_{\br_i^\a + \bv c} + \bv u_{\br_i^\a - \bv 
-c}) + C_{\bv c} \hat c \cdot (2\bv u_{\br_i^\a} - \bv u_{\br_i^\a 
-+ \bv c} - \bv u_{\br_i^\a - \bv c}) \right ]. \end{multline*}
-Here, these sums are over the set $\{\bv c_j^\b \}_i^\a$, which is a set of 
-vectors characteristic of the equilibrium lattice that define nearest 
-neighbors to particle $i$ in position $\a$ of the unit cell. Unlike the simple 
-triangular lattice case, where all the coupling constants were the same in each 
-$\bv c$ direction, here we have many coupling constants (it's clear to see why 
-I avoided doing this analysis in its full generality to begin with). Now we 
-apply the Fourier transform, but we have to sum over the \emph{unit cells} and 
-not over the particles within the unit cell, so we have $\a$ different 
-amplitudes to keep track of for each field.
-\[ \bv u_{\br_i^\a} = \recip{\sqrt{N}} \sum_{\bv k} \tilde{\bv u}_{\bv k}^\a 
-e^{-i \Dot{k}{\br_i^\a} }, \qquad \bv \th_{\br_i^\a} = \recip{\sqrt N} \sum_{\bv 
-k} \tilde{\th}_{\bv k}^\a e^{-i\Dot{k}{\br_i^a} }.\]
-Plugging in these definitions, taking the second time derivatives as $-\w^2$, 
-and using the orthonormality of the exponential functions, we get the Fourier 
-transformed equations of motion:
-\[ \w^2_\a {\bv u}^\a_{\bv k} = \half{1} \sum_{\{\bv 
-c\}^\a} \hat c  \left [   A_{\bv c} \hat c \cdot \bv{u}_{\bv k}^\a 
-\paren{ 2 - e^{-i\Dot kc} - e^{i\Dot kc} }  + 
-B_{\bv c}(\th_{\br_i^\a + \bv c} - \th_{\br_i^\a - \bv c}) 
-\right. \\ \left.+ C_{\bv c} (2\th_{\br_i^\a} - \th_{\br_i^\a +\bv c} 
-- \th_{\br_i^\a - \bv c})   \right].\]
-
-\begin{multline*}   \w_\a^2 \th^\a_{\bv k} = \half{1} \sum_{\{\bv c\}^\a} 
-\left [ D_{\bv c} (2\th_{\br_i^\a} + \th_{\br_i^\a + \bv c} + 
-\th_{\br_i^\a - \bv c}) + E_{\bv c}(2\th_{\br_i^\a} - \th_{\br_i^\a + 
-\bv c} - \th_{\br_i^\a - \bv c}) \right. \\ \left. + B_{\bv c} 
-\hat c \cdot (- \bv u_{\br_i^\a + \bv c} + \bv u_{\br_i^\a - \bv 
-c}) + C_{\bv c} \hat c \cdot (2\bv u_{\br_i^\a} - \bv u_{\br_i^\a 
-+ \bv c} - \bv u_{\br_i^\a - \bv c}) \right ]. \end{multline*}
 
 \subsection{Pentagon Crystal Modes}
 
+The densest packing of the pentagon crystal is a rectangular Bravais lattice whose unit cells contain two antiparallel pentagons. The parametrization of the crystal I'm using in my simulations and the one I'll be using in this analysis relies on the following parameters of the densest packing structure (shown in Figure \ref{pentcrystal}):
+\begin{center}
+\def\arraystretch{1.2}
+\begin{tabular}{|c|c|c|c|} \hline
+Vector & Symbol & Value\\ \hline
+Short real-space lattice vector & $\bv a_1$ & $\half{1} \paren{1+\cos \frac{\pi}{5}}\hat x $\\ \hline
+Long real-space lattice vector & $\bv a_2$ &$ \half{3} \sin\frac{2\pi}{5} \hat y $\\ \hline
+Location of right-facing pentagon in unit cell& & $0$ \\ \hline
+Location of left-facing pentagon in unit cell& $\bv p$ & $\paren{\recip{4} + \frac{3}{4} \cos \frac{2\pi}{5} } \hat x + \frac{3}{4}\sin\frac{2\pi}{5} \hat y$  \\ \hline
+\end{tabular}
+\end{center}
 
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{pentagons.eps}
+\caption{Unproven pentagon densest packing. A magenta pentagon ($\a$ particle) and the blue pentagon ($\b$ particle) to its upper-right comprise the unit cell in this analysis. The vector going from the magenta to the blue pentagon is $\bv p$, the vector between pentagons in a row is $\bv a_1$, and the vector between pentagons in the same column is $\bv a_2$.}
+\label{pentcrystal}
+\end{figure}
+
+Now, we need to characterize the various matrices that couple the modes of each pentagon to each other. As before with the hexagons (page 5), we characterize the relevant degrees of freedom:
+\[ \bv v_{\br,\bv c} = \paren{ \paren{u_{x,\br} - u_{x,\br + \bv c}}\hat c_x, \paren{ u_{y,\br} - u_{y,\br + \bv c} } \hat c_y, \th_\br + \th_{\br + \bv c}, \th_\br - \th_{\br + \bv c} },\]
+and the general matrix that couples the pentagons' degrees of freedom looks like:
+\[ \bv M = \pmtrx{ A & A & B & C \\ A & A & B & C \\ B & B & D & F \\ C & C & F & E},\]
+so that the quadratic energy that characterizes an interaction between a pentagon and its neighbor separated by nearest-neighbor vector $\bv c$ is
+\[ U_{\br, \bv c} = \half{1} v_iM_{ij}v_j.\]
+The beautiful thing (which I didn't realize while doing the hexagon lattice) is that the coupling constants $B$ and $C$ must necessarily be 0. The reason is because of the inversion symmetry of interactions between 2D particles (not of the lattice!). If we take two pentagons and invert them across the $y$-axis, for example, the first two components of $\bv v$ are invariant ($u_x$ changes sign but so does $\hat c_x$, and $u_y$ and $\hat c_y$ are left invariant separately); the displacement degrees of freedom are \emph{even under inversion}. However, the pentagons' $\th$ degree of freedom (or to be more explicit, their angular displacement relative to an equilibrium angle), is swept out \emph{in the opposite direction}, so $\th \goto -\th$; the $\th$ degree of freedom is \emph{odd under inversion}. Because $U$ itself must be even under inversion, terms involving the product of one even and one odd degree of freedom cannot appear in $U$. Therefore, $B=C=0$ in the coupling matrix $\bv M$. In general, the constant $F$ can still be nonzero. In the hexagon crystal, $F$ vanished because of the complete inversion symmetry \emph{of the whole lattice}. In the triangular lattice, for every $\bv c$, there is an exact opposite $-\bv c$, and $F$ represented terms that got cancelled exactly when we summed over all six neighbors. Here in the pentagon crystal, this isn't the case, so we need to keep $F$.
+
+It's important to note that while terms coupling $\th$ and $\hat c \cdot \bv u$ cannot appear in $U$ to quadratic order, these degrees of freedom are coupled by \emph{cubic} terms. Because $\th^2$ is invariant under inversion symmetry, the smallest polynomial we can make that is even all together is $(\th^2) (\hat c \cdot \bv u)$, which is a cubic term.
+
+\begin{figure}
+\centering
+\begin{subfigure}{0.4\textwidth}
+\includegraphics[scale=0.6]{alphabonds.eps}
+\end{subfigure}
+\begin{subfigure}{0.4\textwidth}
+\includegraphics[scale=0.6]{betabonds.eps}
+\end{subfigure}
+\caption{The nearest neighbor configurations of $\a$ particles (left) and $\b$ 
+particles (right). The nearest neighbor vectors are related to each other by a 
+$\pi$ rotation. Further symmetries constrain the components of the set of $\bv 
+c$: $\bv c_1 = -\bv c_4$, $c_{2,x} = c_{6,x}$, $c_{2,y}=-c_{6,y}$, $c_{3,x} = 
+c_{5,x}$, and $c_{3,y} = -c_{5,y}$. The configuration is very nearly hexagonal, 
+but the 6-fold symmetry is slightly broken into a 2-fold symmetry. To be 
+explicit, the angle between $\bv c_1$ and $\bv c_2$ is $55.965^\circ$, the angle 
+between $\bv c_2$ and $\bv c_3$ is $64.689^\circ$, and the angle between $\bv 
+c_3$ and $\bv c_4$ is $59.346^\circ$.}
+\label{pentagonnn}
+\end{figure}
+
+There are three distinct bond types, characterized by the vectors $\bv c_{1,2,3}$, and the bonds characterized by $\bv c_{4,5,6}$ are related exactly by symmetry. In the toy model we considered previously, we had two bond types, which we characterized by two coupling matrices $\bv K$ and $\bv M$. Here we'll need three separate matrices to describe each of these bonds, and they will all look like the matrix $\bv M$ defined above (but with $B=C=0$). I'll write these different $\bv M$ matrices with a subscript $\bv M_{a=1,2,3}$.
+
+Now, let's write down the energy of bond $\bv c_1$, for example:
+\[ U_{\bv c_1,i} = \half{1} \bv v_{\br_i, \bv c_1} \cdot \bv M_1 \cdot \bv 
+v_{\br_i,\bv c_1}.\]
+The elements of $\bv M_1$ are $A_1,D_1,E_1,$ and $F_1$. We perform the Fourier transform on $\bv v_{\br_i,\bv c_1}$:
+\[ \bv{\tilde v}_{\bv k,\bv c_1} = \paren{ \hat c_{1,x}\tilde u_{x,\bv k}^\a 
+\paren{1-e^{-i\Dot{k}{c_1}}}, \, \hat c_{1,y}\tilde u_{y,\bv 
+k}^\a\paren{1-e^{-i\Dot{k}{c_1}}}, \, \tilde \th_{\bv k}^\a 
+\paren{1+e^{-i\Dot{k}{c_1} } }, \, \tilde \th_{\bv k}^\a 
+\paren{1-e^{-i\Dot{k}{c_1} } }   }.\]
+
+Performing the matrix product, we can make a new matrix of just the field 
+values, not their differences or sums:
+\begin{multline*} U_{\bv c_1,\bv k} = \half{1} \paren{\tilde u^{\a *}_{x,\bv 
+k}, \, \tilde u^{\a *}_{y,\bv k},\, \tilde \th^{\a *}_{\bv k}} \cdot \\ \pmtrx{ 
+4A_1 \hat c_{1,x}^2 \sin^2\half{\Dot{k}{c_1}} & 4A_1 \hat 
+c_{1,x} \hat c_{1,y} \sin^2\half{\Dot{k}{c_1}} & 0 \\ 4A_1 \hat 
+c_{1,x} \hat c_{1,y} \sin^2\half{\Dot{k}{c_1}} & 4A_1 \hat 
+c_{1,y}^2 \sin^2\half{\Dot{k}{c_1}} & 0 \\ 0 & 0 & 4D_1\cos^2 
+\half{\Dot{k}{c_1}} + 4E_1 \sin^2 \half{\Dot{k}{c_1}} } \pmtrx{ \tilde 
+u^\a_{x,\bv k} \\ \tilde u^\a_{y,\bv k} \\ \tilde \th^\a_{\bv k} 
+}.\end{multline*}
+Here we see again that the $F_1$ term has dropped out. Also note, that this 
+term in the energy does not contain any $\b$ fields, because this energy is 
+the bond energy between two $\a$ particles. Now, let's perform the same 
+analysis of the energy for the bond spanned by $\bv c_2$ that joins an $\a$ 
+particle with a $\b$ particle. Here, the matrix will be larger dimensional. 
+This time, the vector $\bv v_{\bv r_i,\bv c_2}$ contains both $\a$ and $\b$ 
+fields. Also, for all our sanity, I'm going to drop the $\bv k$ subscript, and 
+assume that these Fourier modes take a wavevector argument.
+\[ \bv v_{\bv r_i, \bv c_2} = \paren{ \hat c_{2,x}\paren{\tilde u_x^\a- 
+\tilde u_x^\b e^{-i\Dot{k}{c_2}}}, \, \hat c_{2,y}\paren{\tilde 
+u_y^\a-\tilde u_y^\b e^{-i\Dot{k}{c_2}}}, \, \tilde \th^\a +
+\tilde \th^\b e^{-i\Dot{k}{c_2}}, \, \tilde \th^\a -\tilde 
+\th^\b e^{-i\Dot{k}{c_2} } }.\]
+\begin{multline*} U_{\bv c_2} = \half{1} \paren{\tilde u_x^{\a *} 
+, \, \tilde 
+u_y^{\a *} , \, \tilde \th^{\a *} , \, \tilde u_x^{\b *} , \, \tilde u_y^{\b *}, 
+\, \tilde \th^{\b *} } \cdot \\  \pmtrx{
+ A_2\bv C_2 & 0 & -A_2 \bv C_2 e^{-i\Dot{k}{c_2}} & 0 \\
+0 & D_2 + 2F_2 + E_2 & 0 & D_2e^{-i\Dot{k}{c_2}} - 
+E_2e^{-i\Dot{k}{c_2}} \\
+-A_2 \bv C_2 e^{i\Dot{k}{c_2}} & 0 & A_2 \bv C_2 & 0  \\
+0 &  D_2 e^{i\Dot{k}{c_2}} - E_2 e^{i\Dot{k}{c_2}} & 0  & D_2 - 2F_2 + 
+E_2}
+\pmtrx{\tilde u_x^{\a} \\ \tilde 
+u_y^{\a} \\ \tilde \th^{\a} \\ \tilde u_x^{\b} \\ \tilde u_y^{\b} \\  \tilde 
+\th^{\b} }.\end{multline*}
+Here, for the sake of fitting the whole equation within the margins, the 
+$2\times 2$ matrix $\bv C_2$ is defined as the outer product of the vector $\bv 
+c_2$ with itself
+\[ \bv C_2 = \pmtrx{ \hat c_{2,x}^2 & \hat c_{2,x}\hat c_{2,y} \\ \hat 
+c_{2,x}\hat c_{2,y} & \hat c_{2,y}^2 }.\]
+We need one term in the energy for every wavevector $\bv k$ and for every kind 
+of distinct bond $\bv c_i$. We need to be careful which bonds we count because 
+some are related just by a translation by a lattice vector. For example, we 
+already counted the bond between two $\a$ particles spanned by $\bv c_1$, but 
+we should not count a term between two $\a$ particles spanned by $\bv c_4$, 
+because this bond is related to the first bond by a translation by $\bv a_1$. 
+However, we \emph{do} need to count the bond spanned by $\bv c_1$ that joins 
+two $\b$ \emph{particles} together, because this bond is related to the 
+$\a$-$\a$ bond by the vector $\bv p$, which isn't a lattice vector but a vector 
+characteristic of the unit cell. To make sure we tile all of bond space with 
+the right number of bonds without overlap, we need \emph{six} terms. To 
+illustrate, refer to Figure \ref{pentagonnn}. The first three bonds are the 
+$\a$-$\a$ bond by $\bv c_1$, the $\a$-$\b$ bond by $\bv c_2$, and the $\a$-$\b$ 
+bond by $\bv c_3$, which are shown in the left subfigure. The second set of 
+three bonds (right subfigure) are the $\b$-$\b$ bond by $-\bv c_4$, the 
+$\b$-$\a$ bond by $-\bv c_5$, and the $\b$-$\a$ bond by $-\bv c_6$. The 
+potential energy at wavevector $\bv k$ is thus
+\[ U_{\bv k} = \half{1} \paren{\tilde {\bv u}^{\a *} 
+, \, \tilde \th^{\a *} , \, \tilde {\bv u}^{\b *} , \, \tilde \th^{\b *} }\cdot 
+\paren{ \sum_{i=1\ldots 6} \bv K_i } \cdot \pmtrx{\tilde {\bv u}^{\a} \\ \tilde 
+\th^{\a} \\ \tilde {\bv u}^{\b} \\  \tilde \th^{\b} }.\]
+And the six matrices $\bv K_i$ are the following:
+\[ \bv K_1 = \pmtrx{ 4A_1 \bv C_1 \sin^2 \half{\Dot{k}{c_1}} & 0 & 0 & 0\\ 0 & 
+4D_1 \cos^2\half{\Dot{k}{c_1}} + 4E_1 \sin^2 \half{\Dot{k}{c_1}} & 0 & 0 \\ 
+0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0}.\]
+\[ \bv K_2 = \pmtrx{
+ A_2\bv C_2 & 0 & -A_2 \bv C_2 e^{-i\Dot{k}{c_2}} & 0 \\
+0 & D_2 + 2F_2 + E_2 & 0 & D_2e^{-i\Dot{k}{c_2}} - 
+E_2e^{-i\Dot{k}{c_2}} \\
+-A_2 \bv C_2 e^{i\Dot{k}{c_2}} & 0 & A_2 \bv C_2 & 0  \\
+0 &  D_2 e^{i\Dot{k}{c_2}} - E_2 e^{i\Dot{k}{c_2}} & 0  & D_2 - 2F_2 + 
+E_2}.\]
+\[ \bv K_3 = \pmtrx{
+ A_3\bv C_3 & 0 & -A_3 \bv C_3 e^{-i\Dot{k}{c_3}} & 0 \\
+0 & D_3 + 2F_3 + E_3 & 0 & D_3e^{-i\Dot{k}{c_3}} - 
+E_3e^{-i\Dot{k}{c_3}} \\
+-A_3 \bv C_3 e^{i\Dot{k}{c_3}} & 0 & A_3 \bv C_3 & 0  \\
+0 &  D_3 e^{i\Dot{k}{c_3}} - E_3 e^{i\Dot{k}{c_3}} & 0  & D_3 - 2F_3 + 
+E_3}.\]
+\[ \bv K_4 = \pmtrx{ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 4A_1 \bv C_4
+\sin^2 \half{\Dot{k}{c_4}}\\ 0 & 0 & 0 & 4D_1 \cos^2\half{\Dot{k}{c_4}} + 4E_1 
+\sin^2 \half{\Dot{k}{c_4}} }.\]
+\[ \bv K_5 = \pmtrx{ A_3\bv C_5 & 0 & -A_3 \bv C_5 e^{-i\Dot{k}{c_5}} & 0 \\
+0 & D_3 - 2F_3 + E_3 & 0 & D_3e^{-i\Dot{k}{c_5}} - 
+E_3e^{-i\Dot{k}{c_5}} \\
+-A_3 \bv C_5 e^{i\Dot{k}{c_5}} & 0 & A_3 \bv C_5 & 0  \\
+0 &  D_3 e^{i\Dot{k}{c_5}} - E_3 e^{i\Dot{k}{c_5}} & 0  & D_3 + 2F_3 + 
+E_3}.\]
+\[ \bv K_6 = \pmtrx{ A_2\bv C_6 & 0 & -A_2 \bv C_6 e^{-i\Dot{k}{c_6}} & 0 \\
+0 & D_2 - 2F_2 + E_2 & 0 & D_2e^{-i\Dot{k}{c_6}} - 
+E_2e^{-i\Dot{k}{c_6}} \\
+-A_2 \bv C_6 e^{i\Dot{k}{c_6}} & 0 & A_2 \bv C_6 & 0  \\
+0 &  D_2 e^{i\Dot{k}{c_6}} - E_2 e^{i\Dot{k}{c_6}} & 0  & D_2 + 2F_2 + 
+E_2}.\]
+Here, the large capital $\bv C_i$ are again the outer products of the $\bv c_i$ 
+with themselves. Here, it actually makes sense to separate the phonons and 
+libron degrees of freedom:
+\[ U = \half{1} \paren{\tilde {\bv u}^{\a *}, \, \tilde {\bv u}^{\b *}}\cdot 
+\bv K_{\bv u} \cdot \pmtrx{\tilde {\bv u}^{\a}  \\ \tilde {\bv u}^{\b}} + 
+\half{1} \paren{\tilde \th^{\a *} , \, \tilde \th^{\b *} } \cdot \bv K_{\th} 
+\cdot \pmtrx{ \tilde \th^\a \\ \tilde \th^\b }.\]
+Where, here, these separated coupling matrices are the sums of components of 
+all the $\bv K_i$ defined above. Interestingly, the terms involving $F_{2,3}$ 
+cancel each other in $\bv K_\th$.
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}
+\[ \Scale[0.85]{\bv K_{\bv u} = \pmtrx{ 4A_1\bv C_1 \sin^2 \half{\Dot{k}{c_1}} 
++ A_2(\bv C_2 + \bv C_6) + A_3 (\bv C_3 + \bv C_5) & -A_2\paren{ \bv C_2 
+e^{-i\Dot{k}{c_2}} + \bv C_6 e^{-i\Dot{k}{c_6} }} - A_3\paren{ \bv C_3 
+e^{-i\Dot{k}{c_3}} + \bv C_5 e^{-i\Dot{k}{c_5} }} \\ -A_2\paren{ \bv C_2 
+e^{i\Dot{k}{c_2}} + \bv C_6 e^{i\Dot{k}{c_6} }} - A_3\paren{ \bv C_3 
+e^{i\Dot{k}{c_3}} + \bv C_5 e^{i\Dot{k}{c_5} }} & 4A_1\bv C_4 \sin^2 
+\half{\Dot{k}{c_4}} + 
+A_2(\bv C_2 + \bv C_6) + A_3 (\bv C_3 + \bv C_5)}.}\]
 
 
 

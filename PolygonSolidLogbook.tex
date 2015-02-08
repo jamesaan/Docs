@@ -22,7 +22,7 @@
 \parskip 3.5ex
 
 \pagestyle{myheadings}
-\markright{James Antonaglia \hfill Phonon Libron Spectra \hfill}
+\markright{James Antonaglia \hfill Polygon Crystal Logbook \hfill}
 
 
 %Equations/Entries
@@ -173,7 +173,64 @@ sampled. The relevant $\bv k$ vectors to sample are $n_1 \bv G_1/n + n_2 \bv
 G_2/n$, where $n_i$ are integers. This way, the same number of Fourier modes 
 are sampled as there are degrees of freedom in the real space system.
 
-The Fourier modes are analyzed by considering their correlation functions. 
+The Fourier modes are analyzed by considering their correlation functions. In 
+Monte Carlo, dynamical information is not available, so collective degrees of 
+freedom need to be analyzed from correlation functions by way of a kind of 
+generalized law of equipartition. We assume that this hard particle system 
+which is controlled exclusively by entropic interactions can be approximated by 
+a harmonic Hamiltonian:
+\beq \mathcal{H} = \recip{2m} p_i \d_{ij} p_j + \recip{2I} 
+L_i \d_{ij} L_j + \half 1 x_i K_{ij} x_j. \eeq
+The first term is the translational kinetic energy and the second term is the 
+rotational kinetic energy. The last term is a harmonic coupling by a $3N\times 
+3N$ matrix, and $x_i$ represent both the particle positions and particle 
+orientations. In thermal equilibrium, it is provable that
+\beq \avg{x_i x_j} =  k_BTK_{ij}^{-1}. \eeq
+The matrix $K_{ij}$ is partially diagonalized by the Fourier transform with 
+respect to the lattice vectors $\bv a_{1,2}(\phi)$, so we find that
+\beq \avg{\tilde x^*_{\mu,\bv k} \tilde x_{\nu, \bv k} } = C_{\mu\nu,\bv k} 
+= k_BT K_{\mu\nu,\bv k}^{-1}. \eeq
+This decomposes the large $3N\times 3N$ matrix $K_{ij}$ into a block diagonal 
+$n^2\times n^2$ matrix whose diagonal elements are $3n_\mathrm{unit} \times 
+3n_\mathrm{unit}$ matrices $K_{\mu\nu}$. The modes $\tilde x_\mu$ can represent 
+either $\bv{\tilde u}_x^{\a,\b\ldots}$, $\bv{\tilde u}_y^{\a,\b\ldots}$ or 
+$\tilde \th^{\a,\b\ldots}$. The ultimate output of the analysis is the matrix 
+$K_{\mu\nu,\bv k}$, which is obtained by computing every correlation 
+function of all modes of the same wave vector and inverting the resulting matrix 
+$C_{\mu\nu,\bv k}$. The elements of $\bv K_{\bv k}$ are the squares of the 
+phonon and libron dispersion relations, \emph{i.e.\!} they furnish $\w^2(\bv 
+k)$ for all $\bv k$ sampled in the Brillouin zone and for all collective modes 
+$\bv {\tilde u}^{\a,\b\ldots}$ and $\tilde \th^{\a,\b\ldots}$.
+
+The matrices $\bv K_{\bv k}$ depend on the packing 
+fraction $\phi$, the number of particles $N$, and the number of Monte 
+Carlo sweeps taken $s$. If $s$ is too small, then there is not a sufficient 
+number of statistically independent Monte Carlo frames to compute the elements 
+of the correlation matrix $\bv C$. The effect of $s$ will be explored in Section 
+2.
+
+In principle, the matrix $\bv C$ should be independent of $N$ (or equivalently 
+$n$), but having larger $N$ helps resolve $\bv C$ as a function of $\bv k$, the 
+wavevector, as the Brillouin zone is more densely populated. The effect of $N$ 
+will be explored in Section 3.
+
+The matrix $\bv C$ is most markedly affected by changes in the packing 
+fraction. Because some polygon crystals melt into various phases (hexatic, 
+rotator, or plain fluid), particular elements of $\bv C$ should simply vanish 
+across these transitions, which I will show leads to flat dispersion relations. 
+That is, particular elements of $\bv K_{\bv k}$ become independent of $\bv k$. 
+The effect of packing fraction will be shown in Section 4.
+
+One of the difficulties in discerning meaningful interpretations of $\bv K_{\bv 
+k}$ is obviously the high dimensionality of the matrix. It is necessarily 
+symmetric, so it has $3n_\mathrm{unit} (3n_\mathrm{unit}+1)/2$ independent 
+components, each of which is a function of the two-dimensional $\bv k$. Even 
+for the one-particle unit cell of the hexagon crystal, there are 6 independent 
+elements of $\bv K_{\bv k}$ that need to be explored. Luckily, at quadratic 
+order, the phonon mode is uncoupled from the libron mode, so this reduces the 
+6 components to 4 components (this uncoupling will also be demonstrated 
+explicitly in Section 5).
+
 
 %%Finite size effects
 
@@ -190,7 +247,7 @@ The Fourier modes are analyzed by considering their correlation functions.
 
 
 
-
+%%Nonlinear effects
 
 
 

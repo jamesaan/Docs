@@ -3,6 +3,7 @@
 \geometry{letterpaper}
 \usepackage[parfill]{parskip}  
 \usepackage{graphicx}
+\graphicspath{{/Users/jamesaan/Rotator_Hex/}}
 \usepackage{amssymb}
 \usepackage{epstopdf}
 \usepackage{listings}
@@ -13,6 +14,7 @@
 \usetikzlibrary{decorations.markings,arrows}
 \usepackage{bm}
 \usepackage{subcaption}
+\usepackage{grffile}
  
  \begin{document}  
  
@@ -143,6 +145,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Overview}
+\label{sec:overview}
+
 This document is meant to log my progress in the investigation of mechanical 
 modes in crystals of hard regular polygon particles. The system consists of $N 
 = n^2\times n_{\mathrm{unit}}$ particles, where $n$ is some integer and 
@@ -194,8 +198,8 @@ This decomposes the large $3N\times 3N$ matrix $K_{ij}$ into a block diagonal
 $n^2\times n^2$ matrix whose diagonal elements are $3n_\mathrm{unit} \times 
 3n_\mathrm{unit}$ matrices $K_{\mu\nu}$. The modes $\tilde x_\mu$ can represent 
 either $\bv{\tilde u}_x^{\a,\b\ldots}$, $\bv{\tilde u}_y^{\a,\b\ldots}$ or 
-$\tilde \th^{\a,\b\ldots}$. The ultimate output of the analysis is the matrix 
-$K_{\mu\nu,\bv k}$, which is obtained by computing every correlation 
+$\tilde \th^{\a,\b\ldots}$. The ultimate output of the analysis are the
+$K_{\mu\nu,\bv k}$, which are obtained by computing every correlation 
 function of all modes of the same wave vector and inverting the resulting matrix 
 $C_{\mu\nu,\bv k}$. The elements of $\bv K_{\bv k}$ are the squares of the 
 phonon and libron dispersion relations, \emph{i.e.\!} they furnish $\w^2(\bv 
@@ -207,19 +211,19 @@ fraction $\phi$, the number of particles $N$, and the number of Monte
 Carlo sweeps taken $s$. If $s$ is too small, then there is not a sufficient 
 number of statistically independent Monte Carlo frames to compute the elements 
 of the correlation matrix $\bv C$. The effect of $s$ will be explored in Section 
-2.
+\ref{sec:s}.
 
 In principle, the matrix $\bv C$ should be independent of $N$ (or equivalently 
 $n$), but having larger $N$ helps resolve $\bv C$ as a function of $\bv k$, the 
 wavevector, as the Brillouin zone is more densely populated. The effect of $N$ 
-will be explored in Section 3.
+will be explored in Section \ref{sec:N}.
 
 The matrix $\bv C$ is most markedly affected by changes in the packing 
-fraction. Because some polygon crystals melt into various phases (hexatic, 
+fraction. Because polygon crystals melt into various phases (hexatic, 
 rotator, or plain fluid), particular elements of $\bv C$ should simply vanish 
 across these transitions, which I will show leads to flat dispersion relations. 
 That is, particular elements of $\bv K_{\bv k}$ become independent of $\bv k$. 
-The effect of packing fraction will be shown in Section 4.
+The effect of packing fraction will be shown in Section \ref{sec:phi}.
 
 One of the difficulties in discerning meaningful interpretations of $\bv K_{\bv 
 k}$ is obviously the high dimensionality of the matrix. It is necessarily 
@@ -229,26 +233,97 @@ for the one-particle unit cell of the hexagon crystal, there are 6 independent
 elements of $\bv K_{\bv k}$ that need to be explored. Luckily, at quadratic 
 order, the phonon mode is uncoupled from the libron mode, so this reduces the 
 6 components to 4 components (this uncoupling will also be demonstrated 
-explicitly in Section 5).
+explicitly in Section \ref{sec:higherorder}).
 
+To alleviate the difficulty in plotting a large-dimensional object as a function of a two-dimensional object, I resorted to taking cross sections in the Brillouin zone and plotting each of the $3n_\mathrm{unit}(3n_\mathrm{unit}+1)/2$ elements in the same figure. A sample plot is shown in Figure \ref{sample}. These should be interpreted as giving the square frequencies of collective modes.
 
-%%Finite size effects
+\begin{figure}
+\centering
+%\includegraphics[scale=1.0]{bird.jpg}
+\includegraphics[scale=0.75]{{N=[2500]_pfi=[0.8]_steps=[10000000.0]_xxyyxyththxyth_kx=0}.eps}
+\caption{Sample figure for $\phi = 0.8$ (I used ``pfi" for ``packing fraction" and don't remember why I had the extra i). The curves marked with closed circles and error bars are from simulation data, and curves of the same color marked with x's are best-fit theoretical curves. The object $K_{yy}$ is the dispersion curve for a longitudinal phonon traveling in the $y$ direction (because here, the component $k_x = 0$), and $K_{xx}$ is the dispersion for a transverse phonon. Along this particular axis in the Brillouin zone, the off-diagonal component $K_{xy}$ is 0, but is displayed anyway. $K_{\th\th}$ is the dispersion for the libron, and because it is so much smaller than the phonon dispersion, we see that the libron is a more relaxed mode than the phonon. The off-diagonal elements $K_{x\th}$ and $K_{y\th}$ should also be 0 for all points in the Brillouin zone, but are also shown anyway. More plots will feature the $\th$ elements zoomed in.}
+\label{sample} 
+\end{figure}
 
+\pagebreak
 
+\section{Theoretical model}
+\label{sec:theory}
+
+The dispersion curves produced by the Fourier analysis described in Section \ref{sec:overview} are fitted by a harmonic lattice model. A fundamental assumption of all the models is that the free energy of the system can be broken down into a sum of pairwise potentials between polygons that are close together. The simplest model assumes that this effective interaction energy is so close range that only nearest neighbors of the lattice feel each other. Furthermore, the two-body interaction potential is assumed to be at least twice-differentiable, so a harmonic approximation can be made. With the quadratic assumption, the dispersion curves can be calculated exactly as a function of only a couple parameters which correspond to second derivatives of the two-body potential. Lattices with high symmetry like the triangular lattice of hard hexagons have only 3 free parameters (1 for the phonons and 2 for the librons). In general, the theoretical matrix $\bv K_{\bv k}$ is of the form
+\beq \bv K_{\bv k} = \pmtrx{ K_{xx} & K_{xy} & K_{x\th} \\ K_{xy} & K_{yy} & K_{y\th} \\ K_{x\th} & K_{y\th} & K_{\th\th} } = \pmtrx{ 4 \g_{xx} & 4\g_{xy} & 0 \\ 4\g_{xy} & 4\g_{yy} & 0 \\ 0 & 0 & 4 \mu + 4 \g}. \eeq
+\beq \g_{ij} = \half{1} \sum_{\bv c} A_{\bv c} \hat{c}_i\hat{c}_j \sin^2\paren{\half{\Dot{k}{c}}}, \quad \g = \half{1} \sum_{\bv c} E_{\bv c}\sin^2\paren{\half{\Dot{k}{c}}}, \quad \mu = \half{1} \sum_{\bv c} D_{\bv c}\cos^2\paren{\half{\Dot{k}{c}}}. \eeq
+The off-diagonal elements used to contain parameters like $B, C,$ and $F$, but those ended up going to zero by symmetries, so I found myself in a similar boat to Maxwell, who had so many vector fields to deal with while formalizing electromagnetic theory that he just labeled them alphabetically. The constants $A_{\bv c}$, $E_{\bv c}$ and $D_{\bv c}$ depend on the vector $\bv c$ which separates two particles. In the hexagon lattice, all the nearest neighbors are the same by six-fold symmetry, so all of these parameters are independent of $\bv c$. In the pentagon lattice, the crystal only has two-fold symmetry, which brings us from 18 independent parameters to 9.
+
+If we include next nearest neighbor interactions, then this introduces another set of constants that correspond to a second derivative of the effective interatomic pair potential, this time at a further distance. For both hexagons and pentagons, this would double the number of phenomenological constants to fit to. However, all of these constants appear as exterior multiplicative factors: the functional form of the dispersion curves are entirely predicted.
+
+\begin{center}
+\begin{tabular}{|| l ||c|c|c|c|c|c|c||} \hline \hline
+N \quad s \quad $\phi$ & $0.850$ & 0.800 & 0.750 & 0.710 & 0.700 & 0.690 & 0.680 \\ \hline \hline
+$26^2,\, 3\E6$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ \\ \hline
+$50^2, \,3\E6$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\ \hline
+$100^2,\, 3\E6$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\ \hline
+$26^2,\, 1\E7$ & $\surd$ & r & r & r & r & r & r \\ \hline
+$50^2, \,1\E7$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ \\ \hline
+$100^2,\, 1\E7$ & $\times$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ \\ \hline
+$26^2,\, 3\E7$ & $\surd$ & ? & ? & ? & ? & ? & ? \\ \hline
+$50^2, \,3\E7$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\ \hline
+$100^2,\, 3\E7$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\ \hline \hline
+\end{tabular}
+\end{center}
+
+\pagebreak
 %%Timescale effects
+\section{Small sampling effects}
+\label{sec:s}
+
+In a given simulation, $s$ is the number of Monte Carlo sweeps, and snapshots are taken at a period such that there are $10^3$ presumably statistically independent frames to make correlation functions from. Therefore, every sampled frame is separated a period of $T = s\times 10^{-3}$ sweeps. If this period is too small, frames won't be sufficiently independent from each other and spurious correlations will be introduced. However, if $T$ is needlessly long, simulation time is wasted. Below are some plots of the dispersion curves at various packing fractions for hexagons. Keep in mind that at around $\phi = 0.700$--$0.710$ the crystal melts into a hexatic phase. It's not unreasonable that critical slowing down may occur near this transition point, and so shorter simulations may vary from longer simulations significantly.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.75]{{N=[676]_pfi=[0.85]_steps=[3000000.0, 10000000.0, 30000000.0]_xxyythth_kx=0}.pdf}
+\caption{$N=676$ and $\phi = 0.850$. For a sufficiently dense crystal, running the simulation longer than $3\E6$ sweeps doesn't change the dispersion curves at all.}
+\label{steps1}
+\end{figure}
 
 
+\pagebreak
+%%Finite size effects
+\section{Finite size effects}
+\label{sec:N}
 
 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.85]{{N=[2500, 10000]_pfi=[0.8]_steps=[10000000.0]_xxyy_kx=0}.pdf}
+\caption{Phonon dispersion for two systems at $\phi = 0.8$, one has $N=50^2$ and the other has $N=100^2$. The simulation data are essentially identical, and the theoretical curves vary by about 2\%. The $N=100^2$ curve has the advantage of having finer resolution in k-space, but the $N=50^2$ curve takes far less time to run. The theoretical curves show striking systematic error for large values of $k_y$}
+\label{finitesize1}
+\end{figure}
 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.75]{{N=[2500, 10000]_pfi=[0.8]_steps=[10000000.0]_xxyy_nnn_kx=0}.pdf}
+\caption{Same systems as Figure \ref{finitesize1}, but now the theoretical curves include next-nearest-neighbor interactions. By including these interactions, the fitting model gains another parameter, an effective next-nearest-neighbor stiffness constant. This model fits the longitudinal phonon curve better, but not the transverse anymore.}
+\label{finitesize2}
+\end{figure}
+
+\pagebreak
 %%Packing fraction effects
+\section{Packing fraction effects}
+\label{sec:phi}
 
 
 
-
-
+\pagebreak
 %%Nonlinear effects
+\section{Next-nearest-neighbor and nonlinear effects}
+\label{sec:higherorder}
 
+
+\pagebreak
+%%Topological stuff
+\section{Topological properties of defects}
+\label{sec:top}
 
 
 

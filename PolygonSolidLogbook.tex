@@ -3,7 +3,7 @@
 \geometry{letterpaper}
 \usepackage[parfill]{parskip}  
 \usepackage{graphicx}
-\graphicspath{{/Users/jamesaan/Rotator_Hex/}}
+\graphicspath{{/Users/jamesaan/Docs/Logfigures/}}
 \usepackage{amssymb}
 \usepackage{epstopdf}
 \usepackage{listings}
@@ -15,6 +15,7 @@
 \usepackage{bm}
 \usepackage{subcaption}
 \usepackage{grffile}
+\usepackage{float}
  
  \begin{document}  
  
@@ -189,7 +190,7 @@ The first term is the translational kinetic energy and the second term is the
 rotational kinetic energy. The last term is a harmonic coupling by a $3N\times 
 3N$ matrix, and $x_i$ represent both the particle positions and particle 
 orientations. In thermal equilibrium, it is provable that
-\beq \avg{x_i x_j} =  k_BTK_{ij}^{-1}. \eeq
+\beq \avg{x_i x_j} =  k_BTK_{ij}^{-1}. \leeq{gen_equipartition}
 The matrix $K_{ij}$ is partially diagonalized by the Fourier transform with 
 respect to the lattice vectors $\bv a_{1,2}(\phi)$, so we find that
 \beq \avg{\tilde x^*_{\mu,\bv k} \tilde x_{\nu, \bv k} } = C_{\mu\nu,\bv k} 
@@ -237,10 +238,10 @@ explicitly in Section \ref{sec:higherorder}).
 
 To alleviate the difficulty in plotting a large-dimensional object as a function of a two-dimensional object, I resorted to taking cross sections in the Brillouin zone and plotting each of the $3n_\mathrm{unit}(3n_\mathrm{unit}+1)/2$ elements in the same figure. A sample plot is shown in Figure \ref{sample}. These should be interpreted as giving the square frequencies of collective modes.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 %\includegraphics[scale=1.0]{bird.jpg}
-\includegraphics[scale=0.75]{{N=[2500]_pfi=[0.8]_steps=[10000000.0]_xxyyxyththxyth_kx=0}.eps}
+\includegraphics[scale=0.85]{{N=[2500]_pfi=[0.8]_steps=[10000000.0]_xxyyxyththxyth_kx=0}.pdf}
 \caption{Sample figure for $\phi = 0.8$ (I used ``pfi" for ``packing fraction" and don't remember why I had the extra i). The curves marked with closed circles and error bars are from simulation data, and curves of the same color marked with x's are best-fit theoretical curves. The object $K_{yy}$ is the dispersion curve for a longitudinal phonon traveling in the $y$ direction (because here, the component $k_x = 0$), and $K_{xx}$ is the dispersion for a transverse phonon. Along this particular axis in the Brillouin zone, the off-diagonal component $K_{xy}$ is 0, but is displayed anyway. $K_{\th\th}$ is the dispersion for the libron, and because it is so much smaller than the phonon dispersion, we see that the libron is a more relaxed mode than the phonon. The off-diagonal elements $K_{x\th}$ and $K_{y\th}$ should also be 0 for all points in the Brillouin zone, but are also shown anyway. More plots will feature the $\th$ elements zoomed in.}
 \label{sample} 
 \end{figure}
@@ -257,60 +258,213 @@ The off-diagonal elements used to contain parameters like $B, C,$ and $F$, but t
 
 If we include next nearest neighbor interactions, then this introduces another set of constants that correspond to a second derivative of the effective interatomic pair potential, this time at a further distance. For both hexagons and pentagons, this would double the number of phenomenological constants to fit to. However, all of these constants appear as exterior multiplicative factors: the functional form of the dispersion curves are entirely predicted.
 
+A key technical point is that for all the phonon dispersion curves, $\bv k = 0$ is a totally unaccessible mode, and is not shown in any plots. This is because the $\bv k = 0$ mode is a uniform translation. However, since the crystal can move any amount in the periodic simulation box, this mode is completely free. Because any particle motion in MC is a random event, the correlation function associated with the average position of the entire crystal will be arbitrarily small, so when it is inverted to give the phonon dispersion, the associated frequency is arbitrarily \emph{large}. This divergence is totally artificial and a result of the simulation method, which does not preserve momentum conservation.
+
+Here is a table of the simulations that have been completed. The rows vary in $N$ and $s$, and the columns vary in $\phi$.
 \begin{center}
 \begin{tabular}{|| l ||c|c|c|c|c|c|c||} \hline \hline
 N \quad s \quad $\phi$ & $0.850$ & 0.800 & 0.750 & 0.710 & 0.700 & 0.690 & 0.680 \\ \hline \hline
-$26^2,\, 3\E6$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ \\ \hline
+$26^2,\, 3\E6$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\times$ \\ \hline
 $50^2, \,3\E6$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\ \hline
 $100^2,\, 3\E6$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\ \hline
-$26^2,\, 1\E7$ & $\surd$ & r & r & r & r & r & r \\ \hline
+$26^2,\, 1\E7$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ \\ \hline
 $50^2, \,1\E7$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ \\ \hline
 $100^2,\, 1\E7$ & $\times$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ \\ \hline
-$26^2,\, 3\E7$ & $\surd$ & ? & ? & ? & ? & ? & ? \\ \hline
+$26^2,\, 3\E7$ & $\surd$ & $\times$ & $\times$ & $\surd$ & $\surd$ & $\times$ & $\times$ \\ \hline
 $50^2, \,3\E7$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\ \hline
 $100^2,\, 3\E7$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\ \hline \hline
 \end{tabular}
 \end{center}
+
+
 
 \pagebreak
 %%Timescale effects
 \section{Small sampling effects}
 \label{sec:s}
 
-In a given simulation, $s$ is the number of Monte Carlo sweeps, and snapshots are taken at a period such that there are $10^3$ presumably statistically independent frames to make correlation functions from. Therefore, every sampled frame is separated a period of $T = s\times 10^{-3}$ sweeps. If this period is too small, frames won't be sufficiently independent from each other and spurious correlations will be introduced. However, if $T$ is needlessly long, simulation time is wasted. Below are some plots of the dispersion curves at various packing fractions for hexagons. Keep in mind that at around $\phi = 0.700$--$0.710$ the crystal melts into a hexatic phase. It's not unreasonable that critical slowing down may occur near this transition point, and so shorter simulations may vary from longer simulations significantly.
+In a given simulation, $s$ is the number of Monte Carlo sweeps, and snapshots are taken at a period such that there are $10^3/2$ presumably statistically independent frames to make correlation functions from. $10^3$ frames are taken but only the latter half of them are used to compute correlation functions from, as to ensure the the simulations have equilibrated. Therefore, every sampled frame is separated a period of $T = s\times 10^{-3}$ sweeps. If this period is too small, frames won't be sufficiently independent from each other and spurious correlations will be introduced. However, if $T$ is needlessly long, simulation time is wasted. Below are some plots of the dispersion curves at various packing fractions for hexagons. Keep in mind that at around $\phi = 0.700$--$0.710$ the crystal melts into a hexatic phase. It's not unreasonable that critical slowing down may occur near this transition point, and so shorter simulations may vary from longer simulations significantly.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.75]{{N=[676]_pfi=[0.85]_steps=[3000000.0, 10000000.0, 30000000.0]_xxyythth_kx=0}.pdf}
+\includegraphics[scale=0.85]{{N=[676]_pfi=[0.85]_steps=[3000000.0, 10000000.0, 30000000.0]_xxyythth_kx=0}.pdf}
 \caption{$N=676$ and $\phi = 0.850$. For a sufficiently dense crystal, running the simulation longer than $3\E6$ sweeps doesn't change the dispersion curves at all.}
 \label{steps1}
 \end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.85]{{N=[676]_pfi=[0.71]_steps=[3000000.0, 10000000.0, 30000000.0]_yy_kx=0}.pdf}
+\caption{$N=676$ and $\phi = 0.710$. Only the longitudinal phonon is shown for clarity. The dispersion curve changes drastically as the simulation runtime is increased. Error bars are significantly reduced, and had the simulation not been run for longer, I would have mistakenly assumed that the phonon mode had survived even down to $\phi=0.710$. Clearly, though, long-time correlations play a large role.}
+\label{steps2}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.85]{{N=[676]_pfi=[0.71]_steps=[3000000.0, 10000000.0, 30000000.0]_thth_kx=0}.pdf}
+\caption{$N=676$ and $\phi = 0.710$, same conditions as Figure \ref{steps2}. Though the phonon mode was very sensitive to the time sampling, the libron mode shows robustness, because this mode survives the crystal melting transition into the hexatic phase.}
+\label{steps3}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.85]{{N=[676]_pfi=[0.7]_steps=[10000000.0, 30000000.0]_yy_kx=0}.pdf}
+\caption{$N=676$ and $\phi = 0.700$. The phonon mode is totally extinguished at this density, as shown by the longer-time simulation. There are large error bars associated with long-wavelength modes, which is not surprising because dislocation defects pervade the system at this density, so phonons on short length scaled (large $k$-vectors) will be well resolved, but small $k$-vector phonons will not. The $s=3\E6$ simulation is not even shown because it is such garbage.}
+\label{steps4}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.85]{{N=[676]_pfi=[0.7]_steps=[3000000.0, 10000000.0, 30000000.0]_thth_kx=0}.pdf}
+\caption{$N=676$ and $\phi = 0.700$. The libron mode is beginning to show large deviations as a function of simulation time at this density. We're nearing the hexatic phase transition density, which is somewhere around $0.69$}
+\label{steps5}
+\end{figure}
+
+The main takeaway of Figures \ref{steps1}--\ref{steps5} is that either longer simulations need to be run or the sampling period needs to be changed as the critical point is approached. The latter is clearly the simplest method, but it reduces the number of independent frames to create correlation functions from.
 
 
 \pagebreak
 %%Finite size effects
 \section{Finite size effects}
 \label{sec:N}
+All the following figures are for $N = 26^2, 50^2$ and $100^2$ at $s=10^7$. They show densities $\phi = 0.800, 0.710$ and $0.700$.
 
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.85]{{N=[2500, 10000]_pfi=[0.8]_steps=[10000000.0]_xxyy_kx=0}.pdf}
-\caption{Phonon dispersion for two systems at $\phi = 0.8$, one has $N=50^2$ and the other has $N=100^2$. The simulation data are essentially identical, and the theoretical curves vary by about 2\%. The $N=100^2$ curve has the advantage of having finer resolution in k-space, but the $N=50^2$ curve takes far less time to run. The theoretical curves show striking systematic error for large values of $k_y$}
+\includegraphics[scale=0.85]{{N=[676, 2500, 10000]_pfi=[0.8]_steps=[10000000.0]_xxyy_kx=0}.pdf}
+\caption{Phonon dispersion for three systems at $\phi = 0.8$. The simulation data are essentially identical, and the theoretical curves vary by about 2\%. The $N=100^2$ curve has the advantage of having finer resolution in k-space, but the $N=26^2$ curve takes far less time to run. The theoretical curves show striking systematic error for large values of $k_y$, and I don't quite understand why. This suggests that, at this density, more is going on at short length scales than just nearest neighbor interactions.}
 \label{finitesize1}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.75]{{N=[2500, 10000]_pfi=[0.8]_steps=[10000000.0]_xxyy_nnn_kx=0}.pdf}
-\caption{Same systems as Figure \ref{finitesize1}, but now the theoretical curves include next-nearest-neighbor interactions. By including these interactions, the fitting model gains another parameter, an effective next-nearest-neighbor stiffness constant. This model fits the longitudinal phonon curve better, but not the transverse anymore.}
+\includegraphics[scale=0.85]{{N=[676, 2500, 10000]_pfi=[0.8]_steps=[10000000.0]_thth_kx=0}.pdf}
+\caption{Libron dispersion of the same system as Figure \ref{finitesize1}. There is no sacrifice made at all by running small simulations to explore the libron dynamics at high densities.}
 \label{finitesize2}
 \end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.85]{{N=[676, 2500, 10000]_pfi=[0.71]_steps=[10000000.0]_xxyy_kx=0}.pdf}
+\caption{Phonon modes at density of $\phi=0.710$. The small systems show unacceptable error in that it predicts the phonon has significant dispersion at this density. Figure \ref{finitesize4} shows the bottom of the graph in more detail.}
+\label{finitesize3}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.85]{{N=[2500, 10000]_pfi=[0.71]_steps=[10000000.0]_xxyy_kx=0}.pdf}
+\caption{Phonon modes in same system as Figure \ref{finitesize3}. Compared to the $N=100^2$ simulations, the $N=50^2$ simulations are unacceptable as well.}
+\label{finitesize4}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.85]{{N=[10000]_pfi=[0.71]_steps=[10000000.0]_xxyy_kx=0}.pdf}
+\caption{Phonon modes in same system as Figure \ref{finitesize3} only at $N = 100^2$. The phonon dispersion is very flat and has large fluctuations at low wavelength, which is to be expected of any finite-sized system. This is really as good as it's going to get without running enormous simulations.}
+\label{finitesize5}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.85]{{N=[676, 2500, 10000]_pfi=[0.71]_steps=[10000000.0]_thth_kx=0}.pdf}
+\caption{Libron mode in same system as Figure \ref{finitesize3}. The modes of characteristically small length scales (large $k$-vectors) are unaffected by increasing system size, but going to large systems elucidate long-wavelength dynamics.}
+\label{finitesize6}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.85]{{N=[676, 2500, 10000]_pfi=[0.7]_steps=[10000000.0]_xxyy_kx=0}.pdf}
+\caption{Phonon modes at density of $\phi=0.700$. The small systems are essentially hot garbage.}
+\label{finitesize7}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.85]{{N=[10000]_pfi=[0.7]_steps=[10000000.0]_xxyy_kx=0}.pdf}
+\caption{Phonon modes at density of $\phi=0.700$ and system size of just $100^2$. Not totally garbage but it tells us that the phonon is essentially gone at this density.}
+\label{finitesize7}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.85]{{N=[676, 2500, 10000]_pfi=[0.7]_steps=[10000000.0]_thth_kx=0}.pdf}
+\caption{Libron modes at density of $\phi=0.700$. Most of them agree that the libron dispersion is going flat but the larger simulations tell us that its $\bv k = 0$ mode frequency is also approaching zero.}
+\label{finitesize7}
+\end{figure}
+
+The takeaway from this comparison of finite size effects is that the $\bv k=0$ mode is sensitive to the number of particles in the system and the distance from the critical point. Small simulations are deceptive 
 
 \pagebreak
 %%Packing fraction effects
 \section{Packing fraction effects}
 \label{sec:phi}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.85]{{N=[2500]_pfi=[0.8, 0.79, 0.78, 0.77, 0.76, 0.75, 0.74, 0.73, 0.72, 0.715, 0.71]_steps=[10000000.0]_yy_kx=0}.pdf}
+\caption{Longitudinal phonon for $N=50^2$ and $s=10^7$ and for $\phi$ decreasing from $0.800$ to $0.710$. The first major jump occurs between $0.730$ and $0.720$, then another one from $0.720$ to $0.715$. Note also that the theoretical curves fail to fit the phonon dispersion for large $\abs{\bv k}$ at higher densities.}
+\label{phi1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.85]{{N=[2500]_pfi=[0.8, 0.79, 0.78, 0.77, 0.76, 0.75, 0.74, 0.73, 0.72, 0.715, 0.71]_steps=[10000000.0]_thth_kx=0}.pdf}
+\caption{Libron for $N=50^2$ and $s=10^7$ and for $\phi$ decreasing from $0.800$ to $0.710$. The libron dispersion is more or less smooth as the density is decreased, unlike the phonon dispersion.}
+\label{phi2}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.85]{{N=[2500]_pfi=[0.71, 0.709, 0.708, 0.707, 0.706, 0.705, 0.704, 0.703, 0.702, 0.701, 0.7]_steps=[10000000.0]_thth_kx=0}.pdf}
+\caption{Libron for $N=50^2$ and $s=10^7$ and for $\phi$ decreasing from $0.710$ to $0.700$. The libron dispersion deviates more and more from predicted theory curves as the density is decreased. Large $k$ dispersion is relatively flat near $\phi = 0.700$ and the $\bv k = 0$ mode frequency decreases with decreasing density.}
+\label{phi5}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.85]{{N=[10000]_pfi=[0.8, 0.75, 0.71]_steps=[10000000.0]_yy_kx=0}.pdf}
+\caption{Longitudinal phonon for $N=100^2$ and $s=10^7$ and for $\phi$ decreasing from $0.800$ to $0.710$. These simulations were very long, so the resolution of Figure \ref{phi1} would have been wasteful. The same features are present, a jump to a near flat dispersion around $\phi = 0.710$. Figure \ref{phi6} shows lower $\phi$ with a smaller $y$-axis.}
+\label{phi5}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.85]{{N=[10000]_pfi=[0.71, 0.7, 0.69, 0.68]_steps=[10000000.0]_yy_kx=0}.pdf}
+\caption{Longitudinal phonon for $N=100^2$ and $s=10^7$ and for $\phi$ decreasing from $0.710$ to $0.680$. Zooming in reveals that the dispersion curves don't fit the theory at all near the phase transition (to be expected), and error bars are very large compared to the magnitude of the dispersion itself.}
+\label{phi6}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.85]{{N=[10000]_pfi=[0.8, 0.75, 0.71, 0.7, 0.69, 0.68]_steps=[10000000.0]_thth_kx=0}.pdf}
+\caption{Libron dispersion for $N=100^2$ and $s=10^7$ and for $\phi$ decreasing from $0.800$ to $0.680$. As the density is lowered through the crystal$\goto$hexatic transition and closer to the hexatic$\goto$ fluid transition, the libron's dispersion becomes flatter for $k>0$ and the $\bv k = 0$ mode continues to move towards 0. Once $\w(\bv k = 0) = 0$, this signifies a density at which the libron mode is no longer massive and a uniform rotation of the hexagons no longer costs energy (or rather entropy). The lower densities are provided in zoom in Figure \ref{phi8}}
+\label{phi7}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.85]{{N=[10000]_pfi=[0.7, 0.69, 0.68]_steps=[10000000.0]_thth_kx=0}.pdf}
+\caption{Same as Figure \ref{phi7} but only for lower densities. It may not be clear, but the error bars near $k = 0$ are actually very small, compared to the error bars at $k>0$.}
+\label{phi8}
+\end{figure}
+
+Near phase transitions, the phonon and libron spectra can become flat. I'd like to explore and explain what that signifies. The potential energy part of the Hamiltonian expressed in terms of the Fourier components of the libron field $\tilde \th_{\bv k}$ (I'll just use the libron field for simplicity, and without loss of generality, because the librons and phonons are uncoupled at these densities anyway) is
+\beq \mathcal{H} = \half{1} \sum_{\bv k} \tilde \th^*_{\bv k} K_{\th\th,\bv k} \tilde \th_{\bv k}. \eeq
+Now, if we consider that the matrix $K_{\th\th,\bv k}$ is \emph{totally independent} of the wavevector $\bv k$, which is the case if the dispersion curve is \emph{totally flat}, then we can pull it out of the sum and perform the inverse Fourier transform:
+\beq \mathcal{H} = \half{1} K_{\th\th} \sum_{\bv k} \tilde \th^*_{\bv k} \tilde \th_{\bv k} = \recip{2N}K_{\th\th} \sum_{\bv k} \sum_{\bv r_i} \sum_{\bv r_j} \th_i \th_j e^{i \bv k \cdot (\bv r_i - \bv r_j)}.\eeq
+The orthogonality of the exponentials means that $\sum_{\bv k} e^{i \bv k \cdot (\bv r_i - \bv r_j)} = N\d_{ij}$, which then gives us back the real space Hamiltonian:
+\beq \mathcal{H} = \half{1} K_{\th\th} \sum_i \th_i^2. \eeq
+This is a set of uncoupled harmonic oscillators with spring constant $K_{\th\th}$, and if we use the generalized equipartition theorem (Eq. \ref{gen_equipartition}), we see that
+\beq \avg{\th_i \th_j} = \frac{k_BT}{K_{\th\th}} \d_{ij}.\eeq
+No orientational degree of freedom is correlated with any other degree of freedom. Yet, they still appear in the Hamiltonian and cost energy, evidently. This isn't exactly the right way to think about it. The fact that $K_{\th\th,\bv k= 0}\goto 0$ should be important. If we let $K_{\th\th,\bv k=0} = 0$ strictly, then we'll have an uninvertible matrix, so let's let it go to $\e K_{\th\th}$ to see what happens. So let's put that in:
+\beq \mathcal{H} = \half{1}K_{\th\th} \sum_{\bv k \neq 0} \tilde \th^*_{\bv k} \tilde \th_{\bv k} + \half{1}K_{\th\th}\e = \half{1}K_{\th\th} \sum_{\bv k} \tilde \th^*_{\bv k} \tilde \th_{\bv k} - \half{1}K_{\th\th}(1-\e) \tilde \th^*_{0} \tilde \th_{0}. \eeq
+Performing the inverse Fourier transform:
+\beq \mathcal{H} = \half{1}K_{\th\th} \sum_{i} \th_i^2 - \recip{2N} K_{\th\th}(1-\e) \sum_{i,j} \th_i \th_j. \eeq
+\beq \mathcal{H} = \recip{2N} K_{\th\th} \bm \th \cdot \pmtrx{N-1+\e & -1+\e & -1+\e & -1+\e & \ldots \\ -1+\e & N-1+\e & -1+\e & -1+\e & -1+\e \\ -1+\e & -1+\e & N-1+\e & -1+\e & -1+\e \\ -1+\e & -1+\e & -1+\e & N-1+\e & -1+\e \\ \vdots & -1+\e & -1+\e & -1+\e & \ddots} \cdot \bm \th = \half{1} \th_i K'_{ij} \th_j \eeq
+Mathematica gives us the unintuitive result that the inverse of this matrix (which is proportional to the correlation function matrix of all the orientational degrees of freedom) is
+\beq K'^{-1}_{ij} =  \recip{\e NK_{\th\th}} \pmtrx{ 1+(N-1)\e & 1- \e & 1 - \e & \ldots \\ 1 - \e &  1 + (N-1)\e & 1-\e  & 1-\e \\ 1 - \e & 1- \e & 1 + (N-1)\e & 1-\e \\ \vdots & 1-\e & 1-\e & \ddots }. \eeq
+
 
 
 
@@ -319,16 +473,18 @@ In a given simulation, $s$ is the number of Monte Carlo sweeps, and snapshots ar
 \section{Next-nearest-neighbor and nonlinear effects}
 \label{sec:higherorder}
 
+%begin{figure}[h]
+%\centering
+%\includegraphics[scale=0.85]{{N=[2500, 10000]_pfi=[0.8]_steps=[10000000.0]_xxyy_nnn_kx=0}.pdf}
+%\caption{Same systems as Figure \ref{finitesize1}, but now the theoretical curves include next-nearest-neighbor interactions. By including these interactions, the fitting model gains another parameter, an effective next-nearest-neighbor stiffness constant. This model fits the longitudinal phonon curve better, but not the transverse anymore.}
+%\label{nnn_finitesize2}
+%\end{figure}
+
 
 \pagebreak
 %%Topological stuff
 \section{Topological properties of defects}
 \label{sec:top}
-
-
-
-
-
 
 
 

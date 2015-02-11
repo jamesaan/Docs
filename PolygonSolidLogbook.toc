@@ -1,7 +1,7 @@
 \contentsline {section}{\numberline {1}Overview}{1}
-\contentsline {section}{\numberline {2}Theoretical model}{5}
-\contentsline {section}{\numberline {3}Small sampling effects}{7}
-\contentsline {section}{\numberline {4}Finite size effects}{8}
-\contentsline {section}{\numberline {5}Packing fraction effects}{9}
-\contentsline {section}{\numberline {6}Next-nearest-neighbor and nonlinear effects}{10}
-\contentsline {section}{\numberline {7}Topological properties of defects}{11}
+\contentsline {section}{\numberline {2}Theoretical model}{4}
+\contentsline {section}{\numberline {3}Small sampling effects}{6}
+\contentsline {section}{\numberline {4}Finite size effects}{11}
+\contentsline {section}{\numberline {5}Packing fraction effects}{20}
+\contentsline {section}{\numberline {6}Next-nearest-neighbor and nonlinear effects}{28}
+\contentsline {section}{\numberline {7}Topological properties of defects}{29}

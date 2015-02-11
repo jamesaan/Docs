@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  10 FEB 2015 15:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  11 FEB 2015 16:37
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -604,21 +604,39 @@ Package grffile Info: Option `extendedchars' is set to `false'.
 Package grffile Info: Option `space' is set to `true'.
 Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 486.
 )
-(./PolygonSolidLogbook.aux)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count138
+\float@exts=\toks32
+\float@box=\box40
+\@float@everytoks=\toks33
+\@floatcapt=\box41
+)
+(./PolygonSolidLogbook.aux
+
+LaTeX Warning: Label `finitesize7' multiply defined.
+
+
+LaTeX Warning: Label `finitesize7' multiply defined.
+
+
+LaTeX Warning: Label `phi5' multiply defined.
+
+)
 \openout1 = `PolygonSolidLogbook.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -656,138 +674,354 @@ LaTeX Font Info:    ... okay on input line 19.
 
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count138
+\scratchcounter=\count139
 \scratchdimen=\dimen193
-\scratchbox=\box40
-\nofMPsegments=\count139
-\nofMParguments=\count140
-\everyMPshowfont=\toks32
-\MPscratchCnt=\count141
+\scratchbox=\box42
+\nofMPsegments=\count140
+\nofMParguments=\count141
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count142
 \MPscratchDim=\dimen194
-\MPnumerator=\count142
-\makeMPintoPDFobject=\count143
-\everyMPtoPDFconversion=\toks33
+\MPnumerator=\count143
+\makeMPintoPDFobject=\count144
+\everyMPtoPDFconversion=\toks35
 )
-\c@lstlisting=\count144
+\c@lstlisting=\count145
  ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
  (./PolygonSolidLogbook.toc)
 \tf@toc=\write4
 \openout4 = `PolygonSolidLogbook.toc'.
 
-\c@entry=\count145
-LaTeX Font Info:    Try loading font information for U+msa on input line 151.
+\c@entry=\count146
+LaTeX Font Info:    Try loading font information for U+msa on input line 152.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 151.
+LaTeX Font Info:    Try loading font information for U+msb on input line 152.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-Overfull \hbox (1.79636pt too wide) in paragraph at lines 238--239
+Overfull \hbox (1.79636pt too wide) in paragraph at lines 239--240
 \OT1/cmr/m/n/12 ob-ject, I re-sorted to tak-ing cross sec-tions in the Bril-lou
 in zone and plot-ting each of the $3\OML/cmm/m/it/12 n[]\OT1/cmr/m/n/12 (3\OML/
 cmm/m/it/12 n[] \OT1/cmr/m/n/12 +
  []
 
 [2]
-Package epstopdf Info: Source file: </Users/jamesaan/Rotator_Hex/N=[2500]_pfi=[
-0.8]_steps=[10000000.0]_xxyyxyththxyth_kx=0.eps>
-(epstopdf)                    date: 2015-02-09 10:21:27
-(epstopdf)                    size: 118840 bytes
-(epstopdf)             Output file: </Users/jamesaan/Rotator_Hex/N=[2500]_pfi=[
-0.8]_steps=[10000000.0]_xxyyxyththxyth_kx=0-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-02-10 13:46:10
-(epstopdf)                    size: 73154 bytes
-(epstopdf)             Command: <epstopdf --outfile=/Users/jamesaan/Rotator_Hex
-/N=[2500]_pfi=[0.8]_steps=[10000000.0]_xxyyxyththxyth_kx=0-eps-converted-to.pdf
- /Users/jamesaan/Rotator_Hex/N=[2500]_pfi=[0.8]_steps=[10000000.0]_xxyyxyththxy
-th_kx=0.eps>
-(epstopdf)             \includegraphics on input line 243.
-Package epstopdf Info: Output file is already uptodate.
+</Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.8]_steps=[10000000.0]_xxyyxyth
+thxyth_kx=0.pdf, id=23, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.8]_steps=[10000000.0]_xxy
+yxyththxyth_kx=0.pdf Graphic file (type pdf)
 
-</Users/jamesaan/Rotator_Hex/N=[2500]_pfi=[0.8]_steps=[10000000.0]_xxyyxyththxy
-th_kx=0-eps-converted-to.pdf, id=23, 578.16pt x 433.62pt>
-File: /Users/jamesaan/Rotator_Hex/N=[2500]_pfi=[0.8]_steps=[10000000.0]_xxyyxyt
-hthxyth_kx=0-eps-converted-to.pdf Graphic file (type pdf)
+<use /Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.8]_steps=[10000000.0]_xxyy
+xyththxyth_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.8]_ste
+ps=[10000000.0]_xxyyxyththxyth_kx=0.pdf used on input line 244.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+ [3 </Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.8]_steps=[10000000.0]_xxyy
+xyththxyth_kx=0.pdf>] [4] [5]
+</Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.85]_steps=[3000000.0, 10000000.
+0, 30000000.0]_xxyythth_kx=0.pdf, id=389, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.85]_steps=[3000000.0, 1000
+0000.0, 30000000.0]_xxyythth_kx=0.pdf Graphic file (type pdf)
 
-<use /Users/jamesaan/Rotator_Hex/N=[2500]_pfi=[0.8]_steps=[10000000.0]_xxyyxyth
-thxyth_kx=0-eps-converted-to.pdf>
-Package pdftex.def Info: /Users/jamesaan/Rotator_Hex/N=[2500]_pfi=[0.8]_steps=[
-10000000.0]_xxyyxyththxyth_kx=0-eps-converted-to.pdf used on input line 243.
-(pdftex.def)             Requested size: 433.61893pt x 325.2142pt.
- [3] [4 </Users/jamesaan/Rotator_Hex/N=[2500]_pfi=[0.8]_steps=[10000000.0]_xxyy
-xyththxyth_kx=0-eps-converted-to.pdf>]
-[5] [6]
-</Users/jamesaan/Rotator_Hex/N=[676]_pfi=[0.85]_steps=[3000000.0, 10000000.0, 3
-0000000.0]_xxyythth_kx=0.pdf, id=45, 578.16pt x 433.62pt>
-File: /Users/jamesaan/Rotator_Hex/N=[676]_pfi=[0.85]_steps=[3000000.0, 10000000
-.0, 30000000.0]_xxyythth_kx=0.pdf Graphic file (type pdf)
-
-<use /Users/jamesaan/Rotator_Hex/N=[676]_pfi=[0.85]_steps=[3000000.0, 10000000.
-0, 30000000.0]_xxyythth_kx=0.pdf>
-Package pdftex.def Info: /Users/jamesaan/Rotator_Hex/N=[676]_pfi=[0.85]_steps=[
-3000000.0, 10000000.0, 30000000.0]_xxyythth_kx=0.pdf used on input line 284.
-(pdftex.def)             Requested size: 433.61893pt x 325.2142pt.
- [7 </Users/jamesaan/Rotator_Hex/N=[676]_pfi=[0.85]_steps=[3000000.0, 10000000.
-0, 30000000.0]_xxyythth_kx=0.pdf>]
-</Users/jamesaan/Rotator_Hex/N=[2500, 10000]_pfi=[0.8]_steps=[10000000.0]_xxyy_
-kx=0.pdf, id=347, 578.16pt x 433.62pt>
-File: /Users/jamesaan/Rotator_Hex/N=[2500, 10000]_pfi=[0.8]_steps=[10000000.0]_
-xxyy_kx=0.pdf Graphic file (type pdf)
-
-<use /Users/jamesaan/Rotator_Hex/N=[2500, 10000]_pfi=[0.8]_steps=[10000000.0]_x
-xyy_kx=0.pdf>
-Package pdftex.def Info: /Users/jamesaan/Rotator_Hex/N=[2500, 10000]_pfi=[0.8]_
-steps=[10000000.0]_xxyy_kx=0.pdf used on input line 298.
+<use /Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.85]_steps=[3000000.0, 10000
+000.0, 30000000.0]_xxyythth_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.85]_ste
+ps=[3000000.0, 10000000.0, 30000000.0]_xxyythth_kx=0.pdf used on input line 290
+.
 (pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
 
-</Users/jamesaan/Rotator_Hex/N=[2500, 10000]_pfi=[0.8]_steps=[10000000.0]_xxyy_
-nnn_kx=0.pdf, id=348, 578.16pt x 433.62pt>
-File: /Users/jamesaan/Rotator_Hex/N=[2500, 10000]_pfi=[0.8]_steps=[10000000.0]_
-xxyy_nnn_kx=0.pdf Graphic file (type pdf)
+</Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.71]_steps=[3000000.0, 10000000.
+0, 30000000.0]_yy_kx=0.pdf, id=390, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.71]_steps=[3000000.0, 1000
+0000.0, 30000000.0]_yy_kx=0.pdf Graphic file (type pdf)
 
-<use /Users/jamesaan/Rotator_Hex/N=[2500, 10000]_pfi=[0.8]_steps=[10000000.0]_x
-xyy_nnn_kx=0.pdf>
-Package pdftex.def Info: /Users/jamesaan/Rotator_Hex/N=[2500, 10000]_pfi=[0.8]_
-steps=[10000000.0]_xxyy_nnn_kx=0.pdf used on input line 305.
-(pdftex.def)             Requested size: 433.61893pt x 325.2142pt.
+<use /Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.71]_steps=[3000000.0, 10000
+000.0, 30000000.0]_yy_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.71]_ste
+ps=[3000000.0, 10000000.0, 30000000.0]_yy_kx=0.pdf used on input line 297.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+ [6 </Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.85]_steps=[3000000.0, 10000
+000.0, 30000000.0]_xxyythth_kx=0.pdf>]
+</Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.71]_steps=[3000000.0, 10000000.
+0, 30000000.0]_thth_kx=0.pdf, id=691, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.71]_steps=[3000000.0, 1000
+0000.0, 30000000.0]_thth_kx=0.pdf Graphic file (type pdf)
 
+<use /Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.71]_steps=[3000000.0, 10000
+000.0, 30000000.0]_thth_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.71]_ste
+ps=[3000000.0, 10000000.0, 30000000.0]_thth_kx=0.pdf used on input line 304.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+ [7 </Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.71]_steps=[3000000.0, 10000
+000.0, 30000000.0]_yy_kx=0.pdf>]
+</Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.7]_steps=[10000000.0, 30000000.
+0]_yy_kx=0.pdf, id=830, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.7]_steps=[10000000.0, 3000
+0000.0]_yy_kx=0.pdf Graphic file (type pdf)
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+<use /Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.7]_steps=[10000000.0, 30000
+000.0]_yy_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.7]_step
+s=[10000000.0, 30000000.0]_yy_kx=0.pdf used on input line 311.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+ [8 </Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.71]_steps=[3000000.0, 10000
+000.0, 30000000.0]_thth_kx=0.pdf>]
+</Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.7]_steps=[3000000.0, 10000000.0
+, 30000000.0]_thth_kx=0.pdf, id=971, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.7]_steps=[3000000.0, 10000
+000.0, 30000000.0]_thth_kx=0.pdf Graphic file (type pdf)
 
-[8 </Users/jamesaan/Rotator_Hex/N=[2500, 10000]_pfi=[0.8]_steps=[10000000.0]_xx
-yy_kx=0.pdf>] [9 </Users/jamesaan/Rotator_Hex/N=[2500, 10000]_pfi=[0.8]_steps=[
-10000000.0]_xxyy_nnn_kx=0.pdf>] [10] [11] (./PolygonSolidLogbook.aux) ) 
+<use /Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.7]_steps=[3000000.0, 100000
+00.0, 30000000.0]_thth_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.7]_step
+s=[3000000.0, 10000000.0, 30000000.0]_thth_kx=0.pdf used on input line 318.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+ [9 </Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.7]_steps=[10000000.0, 30000
+000.0]_yy_kx=0.pdf>] [10 </Users/jamesaan/Docs/Logfigures/N=[676]_pfi=[0.7]_ste
+ps=[3000000.0, 10000000.0, 30000000.0]_thth_kx=0.pdf>]
+</Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.8]_steps=[10000000
+.0]_xxyy_kx=0.pdf, id=1224, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.8]_steps=[100
+00000.0]_xxyy_kx=0.pdf Graphic file (type pdf)
+
+<use /Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.8]_steps=[1000
+0000.0]_xxyy_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_p
+fi=[0.8]_steps=[10000000.0]_xxyy_kx=0.pdf used on input line 335.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+
+</Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.8]_steps=[10000000
+.0]_thth_kx=0.pdf, id=1225, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.8]_steps=[100
+00000.0]_thth_kx=0.pdf Graphic file (type pdf)
+
+<use /Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.8]_steps=[1000
+0000.0]_thth_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_p
+fi=[0.8]_steps=[10000000.0]_thth_kx=0.pdf used on input line 342.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+ [11 </Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.8]_steps=[100
+00000.0]_xxyy_kx=0.pdf>]
+</Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.71]_steps=[1000000
+0.0]_xxyy_kx=0.pdf, id=1640, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.71]_steps=[10
+000000.0]_xxyy_kx=0.pdf Graphic file (type pdf)
+
+<use /Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.71]_steps=[100
+00000.0]_xxyy_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_p
+fi=[0.71]_steps=[10000000.0]_xxyy_kx=0.pdf used on input line 349.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+ [12 </Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.8]_steps=[100
+00000.0]_thth_kx=0.pdf>]
+</Users/jamesaan/Docs/Logfigures/N=[2500, 10000]_pfi=[0.71]_steps=[10000000.0]_
+xxyy_kx=0.pdf, id=1879, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[2500, 10000]_pfi=[0.71]_steps=[1000000
+0.0]_xxyy_kx=0.pdf Graphic file (type pdf)
+
+<use /Users/jamesaan/Docs/Logfigures/N=[2500, 10000]_pfi=[0.71]_steps=[10000000
+.0]_xxyy_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[2500, 10000]_pfi=[0
+.71]_steps=[10000000.0]_xxyy_kx=0.pdf used on input line 356.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+ [13 </Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.71]_steps=[10
+000000.0]_xxyy_kx=0.pdf>]
+</Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.71]_steps=[10000000.0]_xxyy_k
+x=0.pdf, id=2294, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.71]_steps=[10000000.0]_x
+xyy_kx=0.pdf Graphic file (type pdf)
+
+<use /Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.71]_steps=[10000000.0]_xx
+yy_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.71]_s
+teps=[10000000.0]_xxyy_kx=0.pdf used on input line 363.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+ [14 </Users/jamesaan/Docs/Logfigures/N=[2500, 10000]_pfi=[0.71]_steps=[1000000
+0.0]_xxyy_kx=0.pdf>]
+</Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.71]_steps=[1000000
+0.0]_thth_kx=0.pdf, id=2653, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.71]_steps=[10
+000000.0]_thth_kx=0.pdf Graphic file (type pdf)
+
+<use /Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.71]_steps=[100
+00000.0]_thth_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_p
+fi=[0.71]_steps=[10000000.0]_thth_kx=0.pdf used on input line 370.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+ [15 </Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.71]_steps=[10000000.0]_x
+xyy_kx=0.pdf>]
+</Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.7]_steps=[10000000
+.0]_xxyy_kx=0.pdf, id=2909, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.7]_steps=[100
+00000.0]_xxyy_kx=0.pdf Graphic file (type pdf)
+
+<use /Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.7]_steps=[1000
+0000.0]_xxyy_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_p
+fi=[0.7]_steps=[10000000.0]_xxyy_kx=0.pdf used on input line 377.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+ [16 </Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.71]_steps=[10
+000000.0]_thth_kx=0.pdf>]
+</Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.7]_steps=[10000000.0]_xxyy_kx
+=0.pdf, id=3149, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.7]_steps=[10000000.0]_xx
+yy_kx=0.pdf Graphic file (type pdf)
+
+<use /Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.7]_steps=[10000000.0]_xxy
+y_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.7]_st
+eps=[10000000.0]_xxyy_kx=0.pdf used on input line 384.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+ [17 </Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.7]_steps=[100
+00000.0]_xxyy_kx=0.pdf>]
+</Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.7]_steps=[10000000
+.0]_thth_kx=0.pdf, id=3565, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.7]_steps=[100
+00000.0]_thth_kx=0.pdf Graphic file (type pdf)
+
+<use /Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.7]_steps=[1000
+0000.0]_thth_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_p
+fi=[0.7]_steps=[10000000.0]_thth_kx=0.pdf used on input line 391.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+ [18 </Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.7]_steps=[10000000.0]_xx
+yy_kx=0.pdf>] [19 </Users/jamesaan/Docs/Logfigures/N=[676, 2500, 10000]_pfi=[0.
+7]_steps=[10000000.0]_thth_kx=0.pdf>]
+</Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.8, 0.79, 0.78, 0.77, 0.76, 0.7
+5, 0.74, 0.73, 0.72, 0.715, 0.71]_steps=[10000000.0]_yy_kx=0.pdf, id=4059, 578.
+16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.8, 0.79, 0.78, 0.77, 0.76
+, 0.75, 0.74, 0.73, 0.72, 0.715, 0.71]_steps=[10000000.0]_yy_kx=0.pdf Graphic f
+ile (type pdf)
+
+<use /Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.8, 0.79, 0.78, 0.77, 0.76,
+ 0.75, 0.74, 0.73, 0.72, 0.715, 0.71]_steps=[10000000.0]_yy_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.8, 0.7
+9, 0.78, 0.77, 0.76, 0.75, 0.74, 0.73, 0.72, 0.715, 0.71]_steps=[10000000.0]_yy
+_kx=0.pdf used on input line 405.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+
+</Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.8, 0.79, 0.78, 0.77, 0.76, 0.7
+5, 0.74, 0.73, 0.72, 0.715, 0.71]_steps=[10000000.0]_thth_kx=0.pdf, id=4060, 57
+8.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.8, 0.79, 0.78, 0.77, 0.76
+, 0.75, 0.74, 0.73, 0.72, 0.715, 0.71]_steps=[10000000.0]_thth_kx=0.pdf Graphic
+ file (type pdf)
+
+<use /Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.8, 0.79, 0.78, 0.77, 0.76,
+ 0.75, 0.74, 0.73, 0.72, 0.715, 0.71]_steps=[10000000.0]_thth_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.8, 0.7
+9, 0.78, 0.77, 0.76, 0.75, 0.74, 0.73, 0.72, 0.715, 0.71]_steps=[10000000.0]_th
+th_kx=0.pdf used on input line 412.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+
+[20 </Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.8, 0.79, 0.78, 0.77, 0.76,
+ 0.75, 0.74, 0.73, 0.72, 0.715, 0.71]_steps=[10000000.0]_yy_kx=0.pdf>]
+</Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.71, 0.709, 0.708, 0.707, 0.706
+, 0.705, 0.704, 0.703, 0.702, 0.701, 0.7]_steps=[10000000.0]_thth_kx=0.pdf, id=
+4678, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.71, 0.709, 0.708, 0.707, 
+0.706, 0.705, 0.704, 0.703, 0.702, 0.701, 0.7]_steps=[10000000.0]_thth_kx=0.pdf
+ Graphic file (type pdf)
+
+<use /Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.71, 0.709, 0.708, 0.707, 0
+.706, 0.705, 0.704, 0.703, 0.702, 0.701, 0.7]_steps=[10000000.0]_thth_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.71, 0.
+709, 0.708, 0.707, 0.706, 0.705, 0.704, 0.703, 0.702, 0.701, 0.7]_steps=[100000
+00.0]_thth_kx=0.pdf used on input line 419.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+[21 </Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.8, 0.79, 0.78, 0.77, 0.76,
+ 0.75, 0.74, 0.73, 0.72, 0.715, 0.71]_steps=[10000000.0]_thth_kx=0.pdf>]
+</Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.8, 0.75, 0.71]_steps=[1000000
+0.0]_yy_kx=0.pdf, id=5307, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.8, 0.75, 0.71]_steps=[10
+000000.0]_yy_kx=0.pdf Graphic file (type pdf)
+
+<use /Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.8, 0.75, 0.71]_steps=[100
+00000.0]_yy_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.8, 0.
+75, 0.71]_steps=[10000000.0]_yy_kx=0.pdf used on input line 426.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+ [22 </Users/jamesaan/Docs/Logfigures/N=[2500]_pfi=[0.71, 0.709, 0.708, 0.707, 
+0.706, 0.705, 0.704, 0.703, 0.702, 0.701, 0.7]_steps=[10000000.0]_thth_kx=0.pdf
+>]
+</Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.71, 0.7, 0.69, 0.68]_steps=[1
+0000000.0]_yy_kx=0.pdf, id=5936, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.71, 0.7, 0.69, 0.68]_ste
+ps=[10000000.0]_yy_kx=0.pdf Graphic file (type pdf)
+
+<use /Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.71, 0.7, 0.69, 0.68]_step
+s=[10000000.0]_yy_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.71, 0
+.7, 0.69, 0.68]_steps=[10000000.0]_yy_kx=0.pdf used on input line 433.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+ [23 </Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.8, 0.75, 0.71]_steps=[10
+000000.0]_yy_kx=0.pdf>]
+</Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.8, 0.75, 0.71, 0.7, 0.69, 0.6
+8]_steps=[10000000.0]_thth_kx=0.pdf, id=6295, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.8, 0.75, 0.71, 0.7, 0.69
+, 0.68]_steps=[10000000.0]_thth_kx=0.pdf Graphic file (type pdf)
+
+<use /Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.8, 0.75, 0.71, 0.7, 0.69,
+ 0.68]_steps=[10000000.0]_thth_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.8, 0.
+75, 0.71, 0.7, 0.69, 0.68]_steps=[10000000.0]_thth_kx=0.pdf used on input line 
+440.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+ [24 </Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.71, 0.7, 0.69, 0.68]_ste
+ps=[10000000.0]_yy_kx=0.pdf>]
+</Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.7, 0.69, 0.68]_steps=[1000000
+0.0]_thth_kx=0.pdf, id=6756, 578.16pt x 433.62pt>
+File: /Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.7, 0.69, 0.68]_steps=[10
+000000.0]_thth_kx=0.pdf Graphic file (type pdf)
+
+<use /Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.7, 0.69, 0.68]_steps=[100
+00000.0]_thth_kx=0.pdf>
+Package pdftex.def Info: /Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.7, 0.
+69, 0.68]_steps=[10000000.0]_thth_kx=0.pdf used on input line 447.
+(pdftex.def)             Requested size: 491.43832pt x 368.57874pt.
+ [25 </Users/jamesaan/Docs/Logfigures/N=[10000]_pfi=[0.8, 0.75, 0.71, 0.7, 0.69
+, 0.68]_steps=[10000000.0]_thth_kx=0.pdf>] [26 </Users/jamesaan/Docs/Logfigures
+/N=[10000]_pfi=[0.7, 0.69, 0.68]_steps=[10000000.0]_thth_kx=0.pdf>] [27] [28] [
+29] (./PolygonSolidLogbook.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 14781 strings out of 493315
- 275173 string characters out of 6137904
- 334842 words of memory out of 5000000
- 17928 multiletter control sequences out of 15000+600000
+ 14916 strings out of 493315
+ 283956 string characters out of 6137904
+ 331410 words of memory out of 5000000
+ 18059 multiletter control sequences out of 15000+600000
  12359 words of font info for 45 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,8n,57p,1095b,289s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/lo
-cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/loc
-al/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local
-/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/
-texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/t
-exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/tex
-live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texli
-ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/
-2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2
-013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on PolygonSolidLogbook.pdf (11 pages, 484567 bytes).
+ 56i,9n,57p,1095b,295s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
+/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
+usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
+/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/l
+ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/l
+ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loc
+al/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/
+texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/t
+exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
+ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on PolygonSolidLogbook.pdf (29 pages, 2298558 bytes).
 PDF statistics:
- 1107 PDF objects out of 1200 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 7842 PDF objects out of 8907 (max. 8388607)
+ 239 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 123 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,24 +1,61 @@
 \relax 
 \@writefile{toc}{\contentsline {section}{\numberline {1}Overview}{1}}
 \newlabel{sec:overview}{{1}{1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Sample figure for $\phi = 0.8$ (I used ``pfi" for ``packing fraction" and don't remember why I had the extra i). The curves marked with closed circles and error bars are from simulation data, and curves of the same color marked with x's are best-fit theoretical curves. The object $K_{yy}$ is the dispersion curve for a longitudinal phonon traveling in the $y$ direction (because here, the component $k_x = 0$), and $K_{xx}$ is the dispersion for a transverse phonon. Along this particular axis in the Brillouin zone, the off-diagonal component $K_{xy}$ is 0, but is displayed anyway. $K_{\theta \theta }$ is the dispersion for the libron, and because it is so much smaller than the phonon dispersion, we see that the libron is a more relaxed mode than the phonon. The off-diagonal elements $K_{x\theta }$ and $K_{y\theta }$ should also be 0 for all points in the Brillouin zone, but are also shown anyway. More plots will feature the $\theta $ elements zoomed in.\relax }}{4}}
+\newlabel{gen_equipartition}{{2}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Sample figure for $\phi = 0.8$ (I used ``pfi" for ``packing fraction" and don't remember why I had the extra i). The curves marked with closed circles and error bars are from simulation data, and curves of the same color marked with x's are best-fit theoretical curves. The object $K_{yy}$ is the dispersion curve for a longitudinal phonon traveling in the $y$ direction (because here, the component $k_x = 0$), and $K_{xx}$ is the dispersion for a transverse phonon. Along this particular axis in the Brillouin zone, the off-diagonal component $K_{xy}$ is 0, but is displayed anyway. $K_{\theta \theta }$ is the dispersion for the libron, and because it is so much smaller than the phonon dispersion, we see that the libron is a more relaxed mode than the phonon. The off-diagonal elements $K_{x\theta }$ and $K_{y\theta }$ should also be 0 for all points in the Brillouin zone, but are also shown anyway. More plots will feature the $\theta $ elements zoomed in.\relax }}{3}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{sample}{{1}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Theoretical model}{5}}
-\newlabel{sec:theory}{{2}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Small sampling effects}{7}}
-\newlabel{sec:s}{{3}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces $N=676$ and $\phi = 0.850$. For a sufficiently dense crystal, running the simulation longer than $3\ensuremath  {\times 10^{6}}$ sweeps doesn't change the dispersion curves at all.\relax }}{7}}
-\newlabel{steps1}{{2}{7}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Finite size effects}{8}}
-\newlabel{sec:N}{{4}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Phonon dispersion for two systems at $\phi = 0.8$, one has $N=50^2$ and the other has $N=100^2$. The simulation data are essentially identical, and the theoretical curves vary by about 2\%. The $N=100^2$ curve has the advantage of having finer resolution in k-space, but the $N=50^2$ curve takes far less time to run. The theoretical curves show striking systematic error for large values of $k_y$\relax }}{8}}
-\newlabel{finitesize1}{{3}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Same systems as Figure 3\hbox {}, but now the theoretical curves include next-nearest-neighbor interactions. By including these interactions, the fitting model gains another parameter, an effective next-nearest-neighbor stiffness constant. This model fits the longitudinal phonon curve better, but not the transverse anymore.\relax }}{9}}
-\newlabel{finitesize2}{{4}{9}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Packing fraction effects}{9}}
-\newlabel{sec:phi}{{5}{9}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Next-nearest-neighbor and nonlinear effects}{10}}
-\newlabel{sec:higherorder}{{6}{10}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Topological properties of defects}{11}}
-\newlabel{sec:top}{{7}{11}}
+\newlabel{sample}{{1}{3}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Theoretical model}{4}}
+\newlabel{sec:theory}{{2}{4}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Small sampling effects}{6}}
+\newlabel{sec:s}{{3}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces $N=676$ and $\phi = 0.850$. For a sufficiently dense crystal, running the simulation longer than $3\ensuremath  {\times 10^{6}}$ sweeps doesn't change the dispersion curves at all.\relax }}{6}}
+\newlabel{steps1}{{2}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces $N=676$ and $\phi = 0.710$. Only the longitudinal phonon is shown for clarity. The dispersion curve changes drastically as the simulation runtime is increased. Error bars are significantly reduced, and had the simulation not been run for longer, I would have mistakenly assumed that the phonon mode had survived even down to $\phi =0.710$. Clearly, though, long-time correlations play a large role.\relax }}{7}}
+\newlabel{steps2}{{3}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces $N=676$ and $\phi = 0.710$, same conditions as Figure 3\hbox {}. Though the phonon mode was very sensitive to the time sampling, the libron mode shows robustness, because this mode survives the crystal melting transition into the hexatic phase.\relax }}{8}}
+\newlabel{steps3}{{4}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces $N=676$ and $\phi = 0.700$. The phonon mode is totally extinguished at this density, as shown by the longer-time simulation. There are large error bars associated with long-wavelength modes, which is not surprising because dislocation defects pervade the system at this density, so phonons on short length scaled (large $k$-vectors) will be well resolved, but small $k$-vector phonons will not. The $s=3\ensuremath  {\times 10^{6}}$ simulation is not even shown because it is such garbage.\relax }}{9}}
+\newlabel{steps4}{{5}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces $N=676$ and $\phi = 0.700$. The libron mode is beginning to show large deviations as a function of simulation time at this density. We're nearing the hexatic phase transition density, which is somewhere around $0.69$\relax }}{10}}
+\newlabel{steps5}{{6}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Finite size effects}{11}}
+\newlabel{sec:N}{{4}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Phonon dispersion for three systems at $\phi = 0.8$. The simulation data are essentially identical, and the theoretical curves vary by about 2\%. The $N=100^2$ curve has the advantage of having finer resolution in k-space, but the $N=26^2$ curve takes far less time to run. The theoretical curves show striking systematic error for large values of $k_y$, and I don't quite understand why. This suggests that, at this density, more is going on at short length scales than just nearest neighbor interactions.\relax }}{11}}
+\newlabel{finitesize1}{{7}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Libron dispersion of the same system as Figure 7\hbox {}. There is no sacrifice made at all by running small simulations to explore the libron dynamics at high densities.\relax }}{12}}
+\newlabel{finitesize2}{{8}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Phonon modes at density of $\phi =0.710$. The small systems show unacceptable error in that it predicts the phonon has significant dispersion at this density. Figure 10\hbox {} shows the bottom of the graph in more detail.\relax }}{13}}
+\newlabel{finitesize3}{{9}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Phonon modes in same system as Figure 9\hbox {}. Compared to the $N=100^2$ simulations, the $N=50^2$ simulations are unacceptable as well.\relax }}{14}}
+\newlabel{finitesize4}{{10}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Phonon modes in same system as Figure 9\hbox {} only at $N = 100^2$. The phonon dispersion is very flat and has large fluctuations at low wavelength, which is to be expected of any finite-sized system. This is really as good as it's going to get without running enormous simulations.\relax }}{15}}
+\newlabel{finitesize5}{{11}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Libron mode in same system as Figure 9\hbox {}. The modes of characteristically small length scales (large $k$-vectors) are unaffected by increasing system size, but going to large systems elucidate long-wavelength dynamics.\relax }}{16}}
+\newlabel{finitesize6}{{12}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Phonon modes at density of $\phi =0.700$. The small systems are essentially hot garbage.\relax }}{17}}
+\newlabel{finitesize7}{{13}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Phonon modes at density of $\phi =0.700$ and system size of just $100^2$. Not totally garbage but it tells us that the phonon is essentially gone at this density.\relax }}{18}}
+\newlabel{finitesize7}{{14}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Libron modes at density of $\phi =0.700$. Most of them agree that the libron dispersion is going flat but the larger simulations tell us that its $\mathbf  {k} = 0$ mode frequency is also approaching zero.\relax }}{19}}
+\newlabel{finitesize7}{{15}{19}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Packing fraction effects}{20}}
+\newlabel{sec:phi}{{5}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Longitudinal phonon for $N=50^2$ and $s=10^7$ and for $\phi $ decreasing from $0.800$ to $0.710$. The first major jump occurs between $0.730$ and $0.720$, then another one from $0.720$ to $0.715$. Note also that the theoretical curves fail to fit the phonon dispersion for large $\ensuremath  {\left | \mathbf  {k} \right |}$ at higher densities.\relax }}{20}}
+\newlabel{phi1}{{16}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Libron for $N=50^2$ and $s=10^7$ and for $\phi $ decreasing from $0.800$ to $0.710$. The libron dispersion is more or less smooth as the density is decreased, unlike the phonon dispersion.\relax }}{21}}
+\newlabel{phi2}{{17}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Libron for $N=50^2$ and $s=10^7$ and for $\phi $ decreasing from $0.710$ to $0.700$. The libron dispersion deviates more and more from predicted theory curves as the density is decreased. Large $k$ dispersion is relatively flat near $\phi = 0.700$ and the $\mathbf  {k} = 0$ mode frequency decreases with decreasing density.\relax }}{22}}
+\newlabel{phi5}{{18}{22}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Longitudinal phonon for $N=100^2$ and $s=10^7$ and for $\phi $ decreasing from $0.800$ to $0.710$. These simulations were very long, so the resolution of Figure 16\hbox {} would have been wasteful. The same features are present, a jump to a near flat dispersion around $\phi = 0.710$. Figure 20\hbox {} shows lower $\phi $ with a smaller $y$-axis.\relax }}{23}}
+\newlabel{phi5}{{19}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Longitudinal phonon for $N=100^2$ and $s=10^7$ and for $\phi $ decreasing from $0.710$ to $0.680$. Zooming in reveals that the dispersion curves don't fit the theory at all near the phase transition (to be expected), and error bars are very large compared to the magnitude of the dispersion itself.\relax }}{24}}
+\newlabel{phi6}{{20}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Libron dispersion for $N=100^2$ and $s=10^7$ and for $\phi $ decreasing from $0.800$ to $0.680$. As the density is lowered through the crystal$\rightarrow $hexatic transition and closer to the hexatic$\rightarrow $ fluid transition, the libron's dispersion becomes flatter for $k>0$ and the $\mathbf  {k} = 0$ mode continues to move towards 0. Once $\omega (\mathbf  {k} = 0) = 0$, this signifies a density at which the libron mode is no longer massive and a uniform rotation of the hexagons no longer costs energy (or rather entropy). The lower densities are provided in zoom in Figure 22\hbox {}\relax }}{25}}
+\newlabel{phi7}{{21}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Same as Figure 21\hbox {} but only for lower densities. It may not be clear, but the error bars near $k = 0$ are actually very small, compared to the error bars at $k>0$.\relax }}{26}}
+\newlabel{phi8}{{22}{26}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Next-nearest-neighbor and nonlinear effects}{28}}
+\newlabel{sec:higherorder}{{6}{28}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Topological properties of defects}{29}}
+\newlabel{sec:top}{{7}{29}}

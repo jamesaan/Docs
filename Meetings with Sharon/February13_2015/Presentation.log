@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  12 FEB 2015 14:55
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  12 FEB 2015 15:06
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1395,13 +1395,6 @@ Package pdftex.def Info: ../../Logfigures/N=[10000]_pfi=[0.8, 0.75, 0.71]_steps
 =[10000000.0]_yy_kx=0.pdf used on input line 217.
 (pdftex.def)             Requested size: 260.16959pt x 195.1272pt.
 
-
-LaTeX Warning: Reference `phi6' on page 9 undefined on input line 217.
-
-
-LaTeX Warning: Reference `phi6' on page 9 undefined on input line 217.
-
-
 Overfull \vbox (1.32466pt too high) detected at line 217
  []
 
@@ -1459,140 +1452,127 @@ Package pdftex.def Info: ../../Logfigures/N=[10000]_pfi=[0.7, 0.69, 0.68]_steps
 
  <../../Logfigures/N=[10000]_pfi=[0.7, 0.69, 0.68]_steps=[10000000.0]_thth_kx=0
 .pdf>]
-
-LaTeX Warning: Reference `gen_equipartition' on page 13 undefined on input line
- 265.
-
-
-Overfull \hbox (58.76889pt too wide) detected at line 265
-\OMS/cmsy/m/n/10.95 H \OT1/cmss/m/n/10.95 = []\OT1/cmss/m/it/10.95 K[]\OML/cmm/
-b/it/10.95 ^^R \OMS/cmsy/m/n/10.95 ^^A [] ^^A \OML/cmm/b/it/10.95 ^^R \OT1/cmss
-/m/n/10.95 = []\OML/cmm/m/it/10.95 ^^R[]\OT1/cmss/m/it/10.95 K[]\OML/cmm/m/it/1
-0.95 ^^R[]
- []
-
-
-Overfull \vbox (656.14986pt too high) detected at line 265
+Overfull \vbox (227.03127pt too high) detected at line 257
  []
 
 [13
 
 ] [14
 
-] <phi071_bounddislocations.pdf, id=4121, 227.62204pt x 121.99118pt>
+] <phi071_bounddislocations.pdf, id=4119, 227.62204pt x 121.99118pt>
 File: phi071_bounddislocations.pdf Graphic file (type pdf)
 
 <use phi071_bounddislocations.pdf>
-Package pdftex.def Info: phi071_bounddislocations.pdf used on input line 285.
+Package pdftex.def Info: phi071_bounddislocations.pdf used on input line 277.
 (pdftex.def)             Requested size: 318.66867pt x 170.78647pt.
  [15
 
  <./phi071_bounddislocations.pdf>]
-<phi070_stringofdefects.pdf, id=10974, 227.62204pt x 188.65414pt>
+<phi070_stringofdefects.pdf, id=10972, 227.62204pt x 188.65414pt>
 File: phi070_stringofdefects.pdf Graphic file (type pdf)
 
 <use phi070_stringofdefects.pdf>
-Package pdftex.def Info: phi070_stringofdefects.pdf used on input line 294.
+Package pdftex.def Info: phi070_stringofdefects.pdf used on input line 286.
 (pdftex.def)             Requested size: 250.38501pt x 207.52019pt.
 
-Overfull \vbox (1.5162pt too high) detected at line 294
+Overfull \vbox (1.5162pt too high) detected at line 286
  []
 
 [16
 
  <./phi070_stringofdefects.pdf>]
-<phi0685_boundaries.pdf, id=12713, 227.62204pt x 188.65414pt>
+<phi0685_boundaries.pdf, id=12711, 227.62204pt x 188.65414pt>
 File: phi0685_boundaries.pdf Graphic file (type pdf)
 
 <use phi0685_boundaries.pdf>
-Package pdftex.def Info: phi0685_boundaries.pdf used on input line 303.
+Package pdftex.def Info: phi0685_boundaries.pdf used on input line 295.
 (pdftex.def)             Requested size: 250.38501pt x 207.52019pt.
 
-Overfull \vbox (1.5162pt too high) detected at line 303
+Overfull \vbox (1.5162pt too high) detected at line 295
  []
 
 [17
 
  <./phi0685_boundaries.pdf>]
-<phi0685_hexaticphase.pdf, id=13923, 227.62204pt x 188.65414pt>
+<phi0685_hexaticphase.pdf, id=13921, 227.62204pt x 188.65414pt>
 File: phi0685_hexaticphase.pdf Graphic file (type pdf)
 
 <use phi0685_hexaticphase.pdf>
-Package pdftex.def Info: phi0685_hexaticphase.pdf used on input line 312.
+Package pdftex.def Info: phi0685_hexaticphase.pdf used on input line 304.
 (pdftex.def)             Requested size: 273.14507pt x 226.38382pt.
 
-Overfull \vbox (20.37984pt too high) detected at line 312
+Overfull \vbox (20.37984pt too high) detected at line 304
  []
 
 [18
 
  <./phi0685_hexaticphase.pdf>]
-<phi068_antivortex.pdf, id=21502, 227.62204pt x 188.65414pt>
+<phi068_antivortex.pdf, id=21500, 227.62204pt x 188.65414pt>
 File: phi068_antivortex.pdf Graphic file (type pdf)
 
 <use phi068_antivortex.pdf>
-Package pdftex.def Info: phi068_antivortex.pdf used on input line 321.
+Package pdftex.def Info: phi068_antivortex.pdf used on input line 313.
 (pdftex.def)             Requested size: 273.14507pt x 226.38382pt.
 
-Overfull \vbox (20.37984pt too high) detected at line 321
+Overfull \vbox (20.37984pt too high) detected at line 313
  []
 
 [19
 
  <./phi068_antivortex.pdf>]
-<phi068_vortexpairs.pdf, id=22206, 227.62204pt x 188.65414pt>
+<phi068_vortexpairs.pdf, id=22204, 227.62204pt x 188.65414pt>
 File: phi068_vortexpairs.pdf Graphic file (type pdf)
 
 <use phi068_vortexpairs.pdf>
-Package pdftex.def Info: phi068_vortexpairs.pdf used on input line 330.
+Package pdftex.def Info: phi068_vortexpairs.pdf used on input line 322.
 (pdftex.def)             Requested size: 273.14507pt x 226.38382pt.
 
-Overfull \vbox (20.37984pt too high) detected at line 330
+Overfull \vbox (20.37984pt too high) detected at line 322
  []
 
 [20
 
  <./phi068_vortexpairs.pdf>]
-<phi068_netvortices.pdf, id=22618, 227.62204pt x 188.65414pt>
+<phi068_netvortices.pdf, id=22616, 227.62204pt x 188.65414pt>
 File: phi068_netvortices.pdf Graphic file (type pdf)
 
 <use phi068_netvortices.pdf>
-Package pdftex.def Info: phi068_netvortices.pdf used on input line 339.
+Package pdftex.def Info: phi068_netvortices.pdf used on input line 331.
 (pdftex.def)             Requested size: 273.14507pt x 226.38382pt.
 
-Overfull \vbox (20.37984pt too high) detected at line 339
+Overfull \vbox (20.37984pt too high) detected at line 331
  []
 
 [21
 
  <./phi068_netvortices.pdf>]
-<phi067_N16000_color.pdf, id=23562, 227.62204pt x 157.83226pt>
+<phi067_N16000_color.pdf, id=23561, 227.62204pt x 157.83226pt>
 File: phi067_N16000_color.pdf Graphic file (type pdf)
 
 <use phi067_N16000_color.pdf>
-Package pdftex.def Info: phi067_N16000_color.pdf used on input line 348.
+Package pdftex.def Info: phi067_N16000_color.pdf used on input line 340.
 (pdftex.def)             Requested size: 307.29037pt x 213.07397pt.
 
-Overfull \vbox (7.06999pt too high) detected at line 348
+Overfull \vbox (7.06999pt too high) detected at line 340
  []
 
 [22
 
  <./phi067_N16000_color.pdf>]
-<couplings_zoom.png, id=24982, 578.16pt x 433.62pt>
+<couplings_zoom.png, id=24981, 578.16pt x 433.62pt>
 File: couplings_zoom.png Graphic file (type png)
  <use couplings_zoom.png>
-Package pdftex.def Info: couplings_zoom.png used on input line 361.
+Package pdftex.def Info: couplings_zoom.png used on input line 353.
 (pdftex.def)             Requested size: 173.44933pt x 130.087pt.
 
-<libcouplings_zoom.png, id=24984, 578.16pt x 433.62pt>
+<libcouplings_zoom.png, id=24983, 578.16pt x 433.62pt>
 File: libcouplings_zoom.png Graphic file (type png)
 
 <use libcouplings_zoom.png>
-Package pdftex.def Info: libcouplings_zoom.png used on input line 361.
+Package pdftex.def Info: libcouplings_zoom.png used on input line 353.
 (pdftex.def)             Requested size: 173.44933pt x 130.087pt.
 
-Overfull \hbox (4.60335pt too wide) in paragraph at lines 361--361
+Overfull \hbox (4.60335pt too wide) in paragraph at lines 353--353
  [][] 
  []
 
@@ -1608,11 +1588,11 @@ Overfull \hbox (4.60335pt too wide) in paragraph at lines 361--361
 \tf@snm=\write8
 \openout8 = `Presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 365.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 365.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 357.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 357.
  (./Presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 365.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 365.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 357.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 357.
 Package rerunfilecheck Info: File `Presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1620,44 +1600,35 @@ Package rerunfilecheck Info: File `Presentation.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 365.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 357.
  ) 
 Here is how much of TeX's memory you used:
  21596 strings out of 493315
- 403660 string characters out of 6137904
- 497967 words of memory out of 5000000
- 24485 multiletter control sequences out of 15000+600000
+ 403640 string characters out of 6137904
+ 488372 words of memory out of 5000000
+ 24486 multiletter control sequences out of 15000+600000
  26855 words of font info for 96 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 49i,17n,57p,1203b,565s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{gen_equipartition} has been referenced but does n
-ot exist, replaced by a fixed one
-
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
-sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
-/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/l
-ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/l
-ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/lo
-cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/loc
-al/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local
-/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/loca
-l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/loca
-l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/loca
-l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local
-/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
-texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Presentation.pdf (23 pages, 5008656 bytes).
+ 49i,17n,57p,1068b,565s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
+/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr
+/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr
+/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/
+local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/l
+ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/loc
+al/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/loc
+al/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
+l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on Presentation.pdf (23 pages, 5005085 bytes).
 PDF statistics:
- 25076 PDF objects out of 26593 (max. 8388607)
- 14373 compressed objects within 144 object streams
- 51 named destinations out of 1000 (max. 500000)
+ 25074 PDF objects out of 26593 (max. 8388607)
+ 14371 compressed objects within 144 object streams
+ 50 named destinations out of 1000 (max. 500000)
  152 words of extra memory for PDF output out of 10000 (max. 10000000)
 

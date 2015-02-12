@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  11 FEB 2015 16:37
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  12 FEB 2015 14:58
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1000,11 +1000,11 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  14916 strings out of 493315
  283956 string characters out of 6137904
- 331410 words of memory out of 5000000
+ 332410 words of memory out of 5000000
  18059 multiletter control sequences out of 15000+600000
  12359 words of font info for 45 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,9n,57p,1095b,295s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,9n,57p,1226b,295s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
 /usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
@@ -1018,7 +1018,7 @@ texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/t
 exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
 xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
 ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on PolygonSolidLogbook.pdf (29 pages, 2298558 bytes).
+Output written on PolygonSolidLogbook.pdf (29 pages, 2302087 bytes).
 PDF statistics:
  7842 PDF objects out of 8907 (max. 8388607)
  239 compressed objects within 3 object streams

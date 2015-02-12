@@ -269,7 +269,7 @@ $50^2, \,3\E6$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$
 $100^2,\, 3\E6$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\ \hline
 $26^2,\, 1\E7$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ \\ \hline
 $50^2, \,1\E7$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ \\ \hline
-$100^2,\, 1\E7$ & $\times$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ \\ \hline
+$100^2,\, 1\E7$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ \\ \hline
 $26^2,\, 3\E7$ & $\surd$ & $\times$ & $\times$ & $\surd$ & $\surd$ & $\times$ & $\times$ \\ \hline
 $50^2, \,3\E7$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\ \hline
 $100^2,\, 3\E7$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\ \hline \hline
@@ -464,6 +464,12 @@ Performing the inverse Fourier transform:
 \beq \mathcal{H} = \recip{2N} K_{\th\th} \bm \th \cdot \pmtrx{N-1+\e & -1+\e & -1+\e & -1+\e & \ldots \\ -1+\e & N-1+\e & -1+\e & -1+\e & -1+\e \\ -1+\e & -1+\e & N-1+\e & -1+\e & -1+\e \\ -1+\e & -1+\e & -1+\e & N-1+\e & -1+\e \\ \vdots & -1+\e & -1+\e & -1+\e & \ddots} \cdot \bm \th = \half{1} \th_i K'_{ij} \th_j \eeq
 Mathematica gives us the unintuitive result that the inverse of this matrix (which is proportional to the correlation function matrix of all the orientational degrees of freedom) is
 \beq K'^{-1}_{ij} =  \recip{\e NK_{\th\th}} \pmtrx{ 1+(N-1)\e & 1- \e & 1 - \e & \ldots \\ 1 - \e &  1 + (N-1)\e & 1-\e  & 1-\e \\ 1 - \e & 1- \e & 1 + (N-1)\e & 1-\e \\ \vdots & 1-\e & 1-\e & \ddots }. \eeq
+At this point I'd like to pause to interpret these results. The determinant of the matrix $\bv K'(\e)$ is $\mathcal{O}(\e)$. What this tells us is that if we let $\e\goto 0$ exactly, $\bv K'$ will no longer have an inverse and correlation functions will no longer be finite. The $\bv k = 0$ mode is \emph{floppy}. However, if we examine the components of $K'_{ij}$, all the off-diagonal components are nonzero and of order $1/N$, whereas the diagonal components are of order $1$. There is \emph{nonzero coupling to every particle in the system} but there is \emph{no cost to rotating all the particles the same amount}. That is, we can send every $\th_i \goto \th_i + \Delta \th$ and it wouldn't cost any energy. However, \emph{every particle is weakly coupled to every other particle}, and by weakly, it is meant that the coupling between $\th_i$ and $\th_j$ is order $1/N$ (but there are $\sim N$ degrees of freedom that $\th_i$ is coupled to, so it is weakly coupled to the whole system by $\mathcal{O}(1)$ interactions). The way I am interpreting this is that this represents an ideal gas that is coupled in a mean-field manner to itself, just like the infinite-range Ising model.
+%To make this more explicit, we can expand the Hamiltonian for $\e=0$ (I computed this for $N=3$ and verified that it generalized in Mathematica):
+%\beq \mathcal{H} = \half{1}\th_i K'_{ij} \th_j = \frac{K_{\th\th}}{2N} \sum_{i>j} \paren{\th_i - \th_j}^2. \eeq
+%Let's see how the Hamiltonian changes if we rotate all the particles by a small (formally differential) amount $\d\th_i$ (not necessarily the same for all the particles):
+%\[ \mathcal{H}' = \paren{\th_i + \d\th_i} K'_{ij} \paren{\th_j+\d\th_j}.\]
+%\[ \d\mathcal{H} = \mathcal{H}'-\mathcal{H} = 2\d\th_i K'_{ij} \th_j + \mathcal{O}(\d\th^2).\]
 
 
 

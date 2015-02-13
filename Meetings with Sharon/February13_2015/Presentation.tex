@@ -164,7 +164,7 @@
 \frame{
 \begin{itemize}
 \frametitle{Work in the literature}
-\item Taner Yildirim, \emph{Solid State Communications}, 124 (2002) 449--455: ``Lattice dynamics of solid cubans within the quasi-harmonic approximation." Uses empirically determined interatomic potentials for cubane (C$_8$H$_8$) molecules and makes an enormous dynamical matrix out of the quadratic approximations to the pair potentials. Doesn't treat the non-commutativity of 3D rotations at all, finds phonons and librons are weakly coupled, \emph{does} find that they are gapped.
+\item Taner Yildirim, \emph{Solid State Communications}, 124 (2002) 449--455: ``Lattice dynamics of solid cubane within the quasi-harmonic approximation." Uses empirically determined interatomic potentials for cubane (C$_8$H$_8$) molecules and makes an enormous dynamical matrix out of the quadratic approximations to the pair potentials. Doesn't treat the non-commutativity of 3D rotations at all, finds phonons and librons are weakly coupled, \emph{does} find that they are gapped.
 \item P. Keim, G. Maret, U. Herz, and H.H. von Grunberg, \emph{Phys. Rev. Lett.} \textbf{92} 21 (2004): ``Harmonic Lattice Behavior of Two-Dimensional Colloidal Crystals." Experimental work: takes microvideography of 2D spherical colloids and uses correlation functions to determine the phonon mode frequencies of colloids interacting with $1/r^3$ repulsive potentials. ``Our results demonstrate that a colloidal crystal can be seen as a bead-spring lattice immersed in a viscous fluid. A normal vibration mode then transforms into a `normal relaxation mode.'"
 \end{itemize}
 }
@@ -248,7 +248,7 @@ Phonons and Librons in Hard Hexagons
 Near phase transitions, the phonon and libron spectra become flat except for at $\bv k = 0$. I'd like to explore what that signifies. The potential energy part of the Hamiltonian expressed in terms of the Fourier components of the libron field $\tilde \th_{\bv k}$ (I'll just use the libron field for simplicity, and without loss of generality, because the librons and phonons are uncoupled at these densities anyway) is
 \beq \mathcal{H} = \half{1} \sum_{\bv k} \tilde \th^*_{\bv k} K_{\th\th,\bv k} \tilde \th_{\bv k}. \eeq
 If we let $K_{\th\th,\bv k=0} = 0$ and $K_{\th\th}$ for all other $\bv k$ vectors. So let's put that in:
-\beq \mathcal{H} = \half{1}K_{\th\th} \sum_{\bv k \neq 0} \tilde \th^*_{\bv k} \tilde \th_{\bv k} + \half{1}K_{\th\th}\e = \half{1}K_{\th\th} \sum_{\bv k} \tilde \th^*_{\bv k} \tilde \th_{\bv k} - \half{1}K_{\th\th} \tilde \th^*_{0} \tilde \th_{0}. \eeq
+\beq \mathcal{H} = \half{1}K_{\th\th} \sum_{\bv k \neq 0} \tilde \th^*_{\bv k} \tilde \th_{\bv k} = \half{1}K_{\th\th} \sum_{\bv k} \tilde \th^*_{\bv k} \tilde \th_{\bv k} - \half{1}K_{\th\th} \tilde \th^*_{0} \tilde \th_{0}. \eeq
 Performing the inverse Fourier transform:
 \beq \mathcal{H} = \half{1}K_{\th\th} \sum_{i} \th_i^2 - \recip{2N} K_{\th\th} \sum_{i,j} \th_i \th_j. \eeq
 }
@@ -256,7 +256,12 @@ Performing the inverse Fourier transform:
 \frame{
 \beq \mathcal{H} = \recip{2N} K_{\th\th} \bm \th \cdot \pmtrx{N-1 & -1 & -1 & -1 & \ldots \\ -1 & N-1 & -1 & -1 & -1 \\ -1 & -1 & N-1 & -1 & -1 \\ -1 & -1 & -1 & N-1 & -1 \\ \vdots & -1 & -1 & -1 & \ddots} \cdot \bm \th = \half{1} \th_i K'_{ij} \th_j \eeq
 \[ \det{\bv K'} = 0.\]
-$\bv K'$ no longer has an inverse and correlation functions will no longer be well defined. However, all the off-diagonal components are nonzero and of order $1/N$, whereas the diagonal components are of order $1$. There is \emph{nonzero coupling to every particle in the system} but there is \emph{no cost to rotating all the particles the same amount}. That is, we can send every $\th_i \goto \th_i + \Delta \th$ and it wouldn't cost any energy. However, \emph{every particle is weakly coupled to every other particle}, and by weakly ($\mathcal{O}(N)$). The way I am interpreting this is that this represents an ideal gas that is coupled in a mean-field manner to itself, just like the infinite-range Ising model.
+}
+
+\frame{
+\beq \mathcal{H} = \frac{K_{\th\th}}{2N} \sum_{i>j} \paren{\th_i - \th_j}^2. \eeq
+
+$\bv K'$ no longer has an inverse and correlation functions will no longer be well defined. However, all the off-diagonal components are nonzero and of order $1/N$, whereas the diagonal components are of order $1$. There is \emph{nonzero coupling to every particle in the system} but there is \emph{no cost to rotating all the particles the same amount}. That is, we can send every $\th_i \goto \th_i + \Delta \th$ and it wouldn't cost any energy. However, \emph{every particle is weakly coupled to every other particle}, and by weakly ($\mathcal{O}(1/N)$). The way I am interpreting this is that this represents an ideal gas that is coupled in a mean-field manner to itself, just like the infinite-range Ising model.
 
 }
 

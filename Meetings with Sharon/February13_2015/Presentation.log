@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  12 FEB 2015 15:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  13 FEB 2015 10:44
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1451,134 +1451,137 @@ Package pdftex.def Info: ../../Logfigures/N=[10000]_pfi=[0.7, 0.69, 0.68]_steps
  [12
 
  <../../Logfigures/N=[10000]_pfi=[0.7, 0.69, 0.68]_steps=[10000000.0]_thth_kx=0
-.pdf>]
-Overfull \vbox (227.03127pt too high) detected at line 257
- []
-
-[13
+.pdf>] [13
 
 ] [14
 
-] <phi071_bounddislocations.pdf, id=4119, 227.62204pt x 121.99118pt>
+] [15
+
+] [16
+
+]
+<phi071_bounddislocations.pdf, id=4173, 227.62204pt x 121.99118pt>
 File: phi071_bounddislocations.pdf Graphic file (type pdf)
 
 <use phi071_bounddislocations.pdf>
-Package pdftex.def Info: phi071_bounddislocations.pdf used on input line 277.
+Package pdftex.def Info: phi071_bounddislocations.pdf used on input line 291.
 (pdftex.def)             Requested size: 318.66867pt x 170.78647pt.
- [15
+ [17
 
  <./phi071_bounddislocations.pdf>]
-<phi070_stringofdefects.pdf, id=10972, 227.62204pt x 188.65414pt>
+<phi070_stringofdefects.pdf, id=11026, 227.62204pt x 188.65414pt>
 File: phi070_stringofdefects.pdf Graphic file (type pdf)
 
 <use phi070_stringofdefects.pdf>
-Package pdftex.def Info: phi070_stringofdefects.pdf used on input line 286.
+Package pdftex.def Info: phi070_stringofdefects.pdf used on input line 300.
 (pdftex.def)             Requested size: 250.38501pt x 207.52019pt.
 
-Overfull \vbox (1.5162pt too high) detected at line 286
- []
-
-[16
-
- <./phi070_stringofdefects.pdf>]
-<phi0685_boundaries.pdf, id=12711, 227.62204pt x 188.65414pt>
-File: phi0685_boundaries.pdf Graphic file (type pdf)
-
-<use phi0685_boundaries.pdf>
-Package pdftex.def Info: phi0685_boundaries.pdf used on input line 295.
-(pdftex.def)             Requested size: 250.38501pt x 207.52019pt.
-
-Overfull \vbox (1.5162pt too high) detected at line 295
- []
-
-[17
-
- <./phi0685_boundaries.pdf>]
-<phi0685_hexaticphase.pdf, id=13921, 227.62204pt x 188.65414pt>
-File: phi0685_hexaticphase.pdf Graphic file (type pdf)
-
-<use phi0685_hexaticphase.pdf>
-Package pdftex.def Info: phi0685_hexaticphase.pdf used on input line 304.
-(pdftex.def)             Requested size: 273.14507pt x 226.38382pt.
-
-Overfull \vbox (20.37984pt too high) detected at line 304
+Overfull \vbox (1.5162pt too high) detected at line 300
  []
 
 [18
 
- <./phi0685_hexaticphase.pdf>]
-<phi068_antivortex.pdf, id=21500, 227.62204pt x 188.65414pt>
-File: phi068_antivortex.pdf Graphic file (type pdf)
+ <./phi070_stringofdefects.pdf>]
+<phi0685_boundaries.pdf, id=12765, 227.62204pt x 188.65414pt>
+File: phi0685_boundaries.pdf Graphic file (type pdf)
 
-<use phi068_antivortex.pdf>
-Package pdftex.def Info: phi068_antivortex.pdf used on input line 313.
-(pdftex.def)             Requested size: 273.14507pt x 226.38382pt.
+<use phi0685_boundaries.pdf>
+Package pdftex.def Info: phi0685_boundaries.pdf used on input line 309.
+(pdftex.def)             Requested size: 250.38501pt x 207.52019pt.
 
-Overfull \vbox (20.37984pt too high) detected at line 313
+Overfull \vbox (1.5162pt too high) detected at line 309
  []
 
 [19
 
- <./phi068_antivortex.pdf>]
-<phi068_vortexpairs.pdf, id=22204, 227.62204pt x 188.65414pt>
-File: phi068_vortexpairs.pdf Graphic file (type pdf)
+ <./phi0685_boundaries.pdf>]
+<phi0685_hexaticphase.pdf, id=13976, 227.62204pt x 188.65414pt>
+File: phi0685_hexaticphase.pdf Graphic file (type pdf)
 
-<use phi068_vortexpairs.pdf>
-Package pdftex.def Info: phi068_vortexpairs.pdf used on input line 322.
+<use phi0685_hexaticphase.pdf>
+Package pdftex.def Info: phi0685_hexaticphase.pdf used on input line 318.
 (pdftex.def)             Requested size: 273.14507pt x 226.38382pt.
 
-Overfull \vbox (20.37984pt too high) detected at line 322
+Overfull \vbox (20.37984pt too high) detected at line 318
  []
 
 [20
 
- <./phi068_vortexpairs.pdf>]
-<phi068_netvortices.pdf, id=22616, 227.62204pt x 188.65414pt>
-File: phi068_netvortices.pdf Graphic file (type pdf)
+ <./phi0685_hexaticphase.pdf>]
+<phi068_antivortex.pdf, id=21555, 227.62204pt x 188.65414pt>
+File: phi068_antivortex.pdf Graphic file (type pdf)
 
-<use phi068_netvortices.pdf>
-Package pdftex.def Info: phi068_netvortices.pdf used on input line 331.
+<use phi068_antivortex.pdf>
+Package pdftex.def Info: phi068_antivortex.pdf used on input line 327.
 (pdftex.def)             Requested size: 273.14507pt x 226.38382pt.
 
-Overfull \vbox (20.37984pt too high) detected at line 331
+Overfull \vbox (20.37984pt too high) detected at line 327
  []
 
 [21
 
- <./phi068_netvortices.pdf>]
-<phi067_N16000_color.pdf, id=23561, 227.62204pt x 157.83226pt>
-File: phi067_N16000_color.pdf Graphic file (type pdf)
+ <./phi068_antivortex.pdf>]
+<phi068_vortexpairs.pdf, id=22258, 227.62204pt x 188.65414pt>
+File: phi068_vortexpairs.pdf Graphic file (type pdf)
 
-<use phi067_N16000_color.pdf>
-Package pdftex.def Info: phi067_N16000_color.pdf used on input line 340.
-(pdftex.def)             Requested size: 307.29037pt x 213.07397pt.
+<use phi068_vortexpairs.pdf>
+Package pdftex.def Info: phi068_vortexpairs.pdf used on input line 336.
+(pdftex.def)             Requested size: 273.14507pt x 226.38382pt.
 
-Overfull \vbox (7.06999pt too high) detected at line 340
+Overfull \vbox (20.37984pt too high) detected at line 336
  []
 
 [22
 
- <./phi067_N16000_color.pdf>]
-<couplings_zoom.png, id=24981, 578.16pt x 433.62pt>
-File: couplings_zoom.png Graphic file (type png)
- <use couplings_zoom.png>
-Package pdftex.def Info: couplings_zoom.png used on input line 353.
-(pdftex.def)             Requested size: 173.44933pt x 130.087pt.
+ <./phi068_vortexpairs.pdf>]
+<phi068_netvortices.pdf, id=22671, 227.62204pt x 188.65414pt>
+File: phi068_netvortices.pdf Graphic file (type pdf)
 
-<libcouplings_zoom.png, id=24983, 578.16pt x 433.62pt>
-File: libcouplings_zoom.png Graphic file (type png)
+<use phi068_netvortices.pdf>
+Package pdftex.def Info: phi068_netvortices.pdf used on input line 345.
+(pdftex.def)             Requested size: 273.14507pt x 226.38382pt.
 
-<use libcouplings_zoom.png>
-Package pdftex.def Info: libcouplings_zoom.png used on input line 353.
-(pdftex.def)             Requested size: 173.44933pt x 130.087pt.
-
-Overfull \hbox (4.60335pt too wide) in paragraph at lines 353--353
- [][] 
+Overfull \vbox (20.37984pt too high) detected at line 345
  []
 
 [23
 
- <./couplings_zoom.png> <./libcouplings_zoom.png>]
+ <./phi068_netvortices.pdf>]
+<phi067_N16000_color.pdf, id=23615, 227.62204pt x 157.83226pt>
+File: phi067_N16000_color.pdf Graphic file (type pdf)
+
+<use phi067_N16000_color.pdf>
+Package pdftex.def Info: phi067_N16000_color.pdf used on input line 354.
+(pdftex.def)             Requested size: 307.29037pt x 213.07397pt.
+
+Overfull \vbox (7.06999pt too high) detected at line 354
+ []
+
+[24
+
+ <./phi067_N16000_color.pdf>]
+<couplings_zoom.png, id=25037, 578.16pt x 433.62pt>
+File: couplings_zoom.png Graphic file (type png)
+ <use couplings_zoom.png>
+Package pdftex.def Info: couplings_zoom.png used on input line 367.
+(pdftex.def)             Requested size: 173.44933pt x 130.087pt.
+
+<libcouplings_zoom.png, id=25039, 578.16pt x 433.62pt>
+File: libcouplings_zoom.png Graphic file (type png)
+
+<use libcouplings_zoom.png>
+Package pdftex.def Info: libcouplings_zoom.png used on input line 367.
+(pdftex.def)             Requested size: 173.44933pt x 130.087pt.
+
+Overfull \hbox (4.60335pt too wide) in paragraph at lines 367--367
+ [][] 
+ []
+
+[25
+
+ <./couplings_zoom.png> <./libcouplings_zoom.png>] [26
+
+]
 \tf@nav=\write6
 \openout6 = `Presentation.nav'.
 
@@ -1588,28 +1591,27 @@ Overfull \hbox (4.60335pt too wide) in paragraph at lines 353--353
 \tf@snm=\write8
 \openout8 = `Presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 357.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 357.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 383.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 383.
  (./Presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 357.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 357.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 383.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 383.
 Package rerunfilecheck Info: File `Presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 357.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 383.
  ) 
 Here is how much of TeX's memory you used:
- 21596 strings out of 493315
- 403640 string characters out of 6137904
- 488372 words of memory out of 5000000
- 24486 multiletter control sequences out of 15000+600000
+ 21641 strings out of 493315
+ 404772 string characters out of 6137904
+ 482372 words of memory out of 5000000
+ 24525 multiletter control sequences out of 15000+600000
  26855 words of font info for 96 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 49i,17n,57p,1068b,565s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,17n,57p,734b,565s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
@@ -1625,10 +1627,10 @@ cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/lo
 cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/loc
 al/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
 l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Presentation.pdf (23 pages, 5005085 bytes).
+Output written on Presentation.pdf (26 pages, 5009892 bytes).
 PDF statistics:
- 25074 PDF objects out of 26593 (max. 8388607)
- 14371 compressed objects within 144 object streams
- 50 named destinations out of 1000 (max. 500000)
- 152 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 25157 PDF objects out of 26593 (max. 8388607)
+ 14449 compressed objects within 145 object streams
+ 56 named destinations out of 1000 (max. 500000)
+ 158 words of extra memory for PDF output out of 10000 (max. 10000000)
 
